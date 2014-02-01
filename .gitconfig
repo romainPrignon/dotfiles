@@ -1,68 +1,98 @@
 [alias]
-	# View abbreviated SHA, description, and history graph of the latest 20 commits
-	graph = log --pretty=oneline -n 20 --graph --abbrev-commit --all --decorate
-	# View the current working tree status using the short format
-	s = status -s
-	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
-	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-	# Pull in remote changes for the current repository and all its submodules
-	p = !"git pull; git submodule foreach git pull origin master"
-	# Clone a repository including all submodules
-	c = clone --recursive
-	# Commit all changes
-	ca = !git add -A && git commit -av
-	# Switch to a branch, creating it if necessary
-	go = checkout -B
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
-	# Credit an author on the latest commit
-	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
-	# Interactive rebase with the given number of latest commits
-	reb = "!r() { git rebase -i HEAD~$1; }; r"
-	# Find branches containing commit
-	fb = "!f() { git branch -a --contains $1; }; f"
-	# Find tags containing commit
-	ft = "!f() { git describe --always --contains $1; }; f"
-	# Find commits by source code
-	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
-	# Find commits by commit message
-	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
-	# Remove branches that have already been merged with master
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	
+	# common command
+	st = status
+	cl = clone
+	clr = clone --recursive
+	co = checkout
+	cob = checkout -B
+	cp = cherry-pick
+	ci = commit
+	cim = commit -m
+	br = branch 
+	rb = rebase
+	rbi = rebase -i
 
 	# Pull
-    pl   = pull
-    plo  = pull --rebase origin
-    plom = pull --rebase origin master
-    plog = pull --rebase origin gh-pages
-    plu  = pull --rebase upstream
-    plum = pull --rebase upstream master
-    plug = pull --rebase upstream gh-pages
+    pl   	= pull
+    plr  	= pull --rebase
+    
+    plo 	= pull origin
+    plro 	= pull --rebase origin
+    
+    plom 	= pull origin master
+    plog 	= pull origin gh-pages
+    plod 	= pull origin develop
+    plos 	= pull origin staging
+
+    plrom 	= pull --rebase origin master
+    plrog 	= pull --rebase origin gh-pages
+    plrod 	= pull --rebase origin develop
+    plros 	= pull --rebase origin staging
+    
+    plu  	= pull upstream
+    plru  	= pull --rebase upstream
+    
+    plrum	= pull upstream master
+    plrum	= pull --rebase upstream master
 
     # Push
     ps   = push
     pso  = push origin
+    
     psom = push origin master
+    psod = push origin develop
+    psos = push origin staging
     psog = push origin gh-pages
+
     psu  = push upstream
     psum = push upstream master
-    psug = push upstream gh-pages
 
-    # Commit
-    cm = commit -m
-    ca = commit --amend -m
 
-    # Checkout
-    co = checkout
-    cb = checkout -b
+	#submodule section
+	# Pull in remote changes for the current repository and all its submodules
+	#plsub = !"git pull; git submodule foreach git pull origin master"
 
-    # Cherry-pick
-    cp = cherry-pick
 
+	# log section
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+	graph = log --pretty=oneline --graph --abbrev-commit --all --decorate
+
+
+	# find section
+	# Find branches containing commit
+	fbc = "!f() { git branch -a --contains $1; }; f"
+	
+	# Find tags containing commit
+	ftc = "!f() { git describe --always --contains $1; }; f"
+	
+	# Find commits by source code
+	fcs = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+	
+	# Find commits by commit message
+	fcm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+
+	# usefull command section
+    # change last commit
+    amend = commit --amend -C HEAD
+
+    # undo last commit
+    undo = reset --soft HEAD^
+
+    # standup
+    standup = log --since '1 day ago' --oneline --author <YOUREMAIL>
+
+	# Show the diff between the latest commit and the current state
+	sincelastcommit = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+	
+	# Remove branches that have already been merged with master
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
@@ -77,10 +107,6 @@
 	# [default] space-before-tab: looks for spaces before tabs at the beginning of
 	# a line
 	whitespace = space-before-tab,indent-with-non-tab,trailing-space
-	# Make `git rebase` safer on OS X
-	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-	trustctime = false
-
 [color]
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
