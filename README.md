@@ -1,5 +1,3 @@
-# Mathias’s dotfiles
-
 ## Installation
 
 ### Using Git and the bootstrap script
