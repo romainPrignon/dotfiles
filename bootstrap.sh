@@ -2,7 +2,7 @@
 cd "$(dirname "${BASH_SOURCE}")"
 git pull origin master
 function doIt() {
-	sudo rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
+	sudo rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "gnome-terminal-theme-monokai.sh" \
 		--exclude "README.md" -av --no-perms . ~
 	source ~/.bash_profile
 }
