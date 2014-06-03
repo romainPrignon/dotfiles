@@ -1,0 +1,478 @@
+{
+	"folder_history":
+	[
+		"/home/romainprignon/workspace"
+	],
+	"last_version": 3059,
+	"last_window_id": 3,
+	"log_indexing": false,
+	"settings":
+	{
+		"new_window_height": 0.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"build_system": "",
+			"command_palette":
+			{
+				"height": 159.0,
+				"selected_items":
+				[
+					[
+						"ista",
+						"Package Control: Install Package"
+					]
+				],
+				"width": 449.0
+			},
+			"console":
+			{
+				"height": 139.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/romainprignon/.gitconfig"
+			],
+			"find":
+			{
+				"height": 25.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"string",
+					"1B1B1D1D1E1E",
+					"1C1C1C1C1C1C",
+					"E0E0E0E0E0E0"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 25.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"replace":
+			{
+				"height": 46.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 0.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"gh",
+						"gh-pages"
+					],
+					[
+						"st",
+						"staging"
+					]
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/home/romainprignon/workspace/dotfiles/.bash_prompt",
+					"settings":
+					{
+						"buffer_size": 1632,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/romainprignon/workspace/dotfiles/gnome-terminal-theme-monokai.sh",
+					"settings":
+					{
+						"buffer_size": 859,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/romainprignon/workspace/dotfiles/bootstrap.sh",
+					"settings":
+					{
+						"buffer_size": 498,
+						"line_ending": "Unix"
+					}
+				}
+			],
+			"build_system": "",
+			"command_palette":
+			{
+				"height": 96.0,
+				"selected_items":
+				[
+					[
+						"instl",
+						"Package Control: Install Package"
+					],
+					[
+						"ista",
+						"Package Control: Install Package"
+					]
+				],
+				"width": 449.0
+			},
+			"console":
+			{
+				"height": 139.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/romainprignon/workspace/dotfiles/.vimrc",
+				"/home/romainprignon/workspace/dotfiles/.gitconfig",
+				"/home/romainprignon/workspace/dotfiles/.aliases",
+				"/home/romainprignon/workspace/dotfiles/.bash_profile",
+				"/home/romainprignon/workspace/dotfiles/.functions",
+				"/home/romainprignon/workspace/dotfiles/.gitignore",
+				"/home/romainprignon/workspace/dotfiles/gnome-terminal-theme-monokai.sh",
+				"/home/romainprignon/workspace/dotfiles/bootstrap.sh",
+				"/home/romainprignon/workspace/dotfiles/init/Preferences.sublime-settings",
+				"/home/romainprignon/workspace/dotfiles/.exports",
+				"/home/romainprignon/workspace/dotfiles/.gitattributes",
+				"/home/romainprignon/workspace/dotfiles/README.md",
+				"/home/romainprignon/workspace/dotfiles/.vim/undo/.gitignore",
+				"/home/romainprignon/workspace/dotfiles/init/Mathias.terminal",
+				"/home/romainprignon/workspace/dotfiles/.screenrc",
+				"/home/romainprignon/workspace/dotfiles/.gvimrc",
+				"/home/romainprignon/.gitconfig"
+			],
+			"find":
+			{
+				"height": 25.0
+			},
+			"find_in_files":
+			{
+				"height": 93.0,
+				"where_history":
+				[
+					"/home/romainprignon/workspace/dotfiles"
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"export",
+					"ci",
+					"st",
+					"httpcompression",
+					"subl",
+					"Preferences",
+					"string",
+					"1B1B1D1D1E1E",
+					"1C1C1C1C1C1C",
+					"E0E0E0E0E0E0"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"folders":
+			[
+				{
+					"follow_symlinks": true,
+					"path": "/home/romainprignon/workspace"
+				}
+			],
+			"groups":
+			[
+				{
+					"selected": 2,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/home/romainprignon/workspace/dotfiles/.bash_prompt",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1632,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1124,
+										1124
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+									"translate_tabs_to_spaces": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 357.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/romainprignon/workspace/dotfiles/gnome-terminal-theme-monokai.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 859,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/home/romainprignon/workspace/dotfiles/bootstrap.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 498,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										95,
+										95
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 25.0
+			},
+			"input":
+			{
+				"height": 33.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"position": "0,1,0,0,0,0,0,0,0,1920,986",
+			"project": "",
+			"replace":
+			{
+				"height": 46.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+					[
+						"boo",
+						"dotfiles/bootstrap.sh"
+					],
+					[
+						"ali",
+						"dotfiles/.aliases"
+					]
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 255.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 1,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}
