@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="scrollback_unlimited" mtime="1402318687" type="bool" value="true"/>
+	<entry name="cursor_shape" mtime="1402326149" type="string">
+        <stringvalue>ibeam</stringvalue>
+    </entry>
+    <entry name="scrollback_unlimited" mtime="1402318687" type="bool" value="true"/>
 	<entry name="background_color" mtime="1402318687" type="string">
 		<stringvalue>#272728282222</stringvalue>
 	</entry>
