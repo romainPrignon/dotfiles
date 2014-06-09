@@ -1,14 +1,13 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"default_line_ending": "unix",
-	"show_encoding": true,
+	"show_line_endings": true,
+    "show_encoding": true,
 	"detect_indentation": false,
 	"file_exclude_patterns":
 	[
 		".DS_Store",
 		"Desktop.ini",
 		"*.pyc",
-		"._*",
 		"Thumbs.db",
 		".Spotlight-V100",
 		".Trashes"
@@ -24,8 +23,9 @@
 	"remember_open_files": true,
 	"rulers":
 	[
-		100
+		120
 	],
+    "word_wrap": true,
 	"tab_size": 4,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
@@ -36,6 +36,5 @@
 	"remember_open_folders": true,
 	"scroll_past_end": false,
 	"scroll_speed": 2,
-	"ensure_newline_at_eof_on_save": true,
-    "show_minimap": false
+	"ensure_newline_at_eof_on_save": true
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="scrollback_unlimited" mtime="1402318687" type="bool" value="true"/>
+	<entry name="background_color" mtime="1402318687" type="string">
+		<stringvalue>#272728282222</stringvalue>
+	</entry>
+	<entry name="visible_name" mtime="1402318687" type="string">
+		<stringvalue>romainPrignon</stringvalue>
+	</entry>
+	<entry name="foreground_color" mtime="1402318687" type="string">
+		<stringvalue>#EEEEEEEEEEEE</stringvalue>
+	</entry>
+</gconf>
