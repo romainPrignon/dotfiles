@@ -9,9 +9,8 @@ case $- in
       *) return;;
 esac
 
-source ~/.profile
+source ~/.bash_profile
 source ~/.exports
-source ~/.inputrc
 
 if [ -f ~/.aliases ]; then
     . ~/.aliases
