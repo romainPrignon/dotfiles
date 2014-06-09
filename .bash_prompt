@@ -24,6 +24,7 @@ esac
 
 #if ps -p$PPID
 gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/background_color "#272728282222"
+gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/cursor_shape "ibeam"
 
 
 
