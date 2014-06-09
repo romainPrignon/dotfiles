@@ -1,34 +1,9 @@
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+if [[ $COLORTERM = gnome-* ]]; then
+	gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/background_color "#272728282222"
+	gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/cursor_shape "ibeam"
+	gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/foreground_color "#EEEEEEEEEEEE"
+	gconftool-2 -s -t bool /apps/gnome-terminal/profiles/Default/use_theme_colors false
 fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
-
-
-#if [ -n "$SSH_CLIENT" ]; then
-#    PS1="Via ssh: "
-#else
-#    PS1="Local: "
-#fi
-
-#if ps -p$PPID
-gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/background_color "#272728282222"
-gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/cursor_shape "ibeam"
-gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/foreground_color "#EEEEEEEEEEEE"
-gconftool-2 -s -t bool /apps/gnome-terminal/profiles/Default/use_theme_colors false
-
-
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
 	export TERM=gnome-256color
@@ -43,7 +18,7 @@ if tput setaf 1 &> /dev/null; then
 		ORANGE=$(tput setaf 172)
 		GREEN=$(tput setaf 190)
 		PURPLE=$(tput setaf 141)
-		WHITE=$(tput setaf 0)
+		WHITE=$(tput setaf 255)
 	else
 		MAGENTA=$(tput setaf 5)
 		ORANGE=$(tput setaf 4)
@@ -79,4 +54,39 @@ function parse_git_branch() {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+PS1=""
+
+# If this is an xterm set the title to user@host:dir
+if [[ $TERM = xterm ]]; then
+	PS1="$PS1\[\e]0;\u@\h: \w\a\]"
+	#PS1="$PS1\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]"
+fi
+
+if [ -n "$SSH_CLIENT" ]; then
+    if [ "$color_prompt" = yes ]; then
+    	PS1="$PS1\[${BOLD}${MAGENTA}\]\u\[$WHITE\]@\[$ORANGE\]\h\[$WHITE\]:\[$GREEN\]\w"
+	else
+	    PS1="$PS1\u@\h:\w"
+	fi
+else
+    if [ "$color_prompt" = yes ]; then
+    	PS1="$PS1\[${BOLD}${MAGENTA}\]\u\[$WHITE\]:\[$GREEN\]\w"
+	else
+	    PS1="$PS1\u:\w"
+	fi
+fi
+
+#PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+if [ "$color_prompt" = yes ]; then
+	PS1="$PS1 \[$PURPLE\]($(parse_git_branch))"
+else
+    PS1="$PS1 ($(parse_git_branch))"
+fi
+
+if [ "$color_prompt" = yes ]; then
+	PS1="$PS1 \[$WHITE\]\$\[$RESET\] "
+else
+    PS1="$PS1 \$\[$RESET\] "
+fi
+
+unset color_prompt force_color_prompt
