@@ -1,9 +1,12 @@
+[user]
+    name = Romain Prignon
+    email = pro.rprignon@gmail.com
 [alias]
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
-	
+
 	# common command
 	st = status
 	cl = clone
@@ -13,17 +16,17 @@
 	cp = cherry-pick
 	ci = commit
 	cim = commit -m
-	br = branch 
+	br = branch
 	rb = rebase
 	rbi = rebase -i
 
 	# Pull
     pl   	= pull
     plr  	= pull --rebase
-    
+
     plo 	= pull origin
     plro 	= pull --rebase origin
-    
+
     plom 	= pull origin master
     plog 	= pull origin gh-pages
     plod 	= pull origin develop
@@ -33,17 +36,17 @@
     plrog 	= pull --rebase origin gh-pages
     plrod 	= pull --rebase origin develop
     plros 	= pull --rebase origin staging
-    
+
     plu  	= pull upstream
     plru  	= pull --rebase upstream
-    
+
     plrum	= pull upstream master
     plrum	= pull --rebase upstream master
 
     # Push
     ps   = push
     pso  = push origin
-    
+
     psom = push origin master
     psod = push origin develop
     psos = push origin staging
@@ -66,13 +69,13 @@
 	# find section
 	# Find branches containing commit
 	fbc = "!f() { git branch -a --contains $1; }; f"
-	
+
 	# Find tags containing commit
 	ftc = "!f() { git describe --always --contains $1; }; f"
-	
+
 	# Find commits by source code
 	fcs = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
-	
+
 	# Find commits by commit message
 	fcm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
@@ -89,10 +92,10 @@
 
 	# Show the diff between the latest commit and the current state
 	sincelastcommit = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-	
+
 	# Remove branches that have already been merged with master
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-	
+
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix

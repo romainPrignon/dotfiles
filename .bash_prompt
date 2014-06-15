@@ -2,7 +2,8 @@ if [[ $COLORTERM = gnome-* ]]; then
 	gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/background_color "#272728282222"
 	gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/cursor_shape "ibeam"
 	gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/foreground_color "#EEEEEEEEEEEE"
-	gconftool-2 -s -t bool /apps/gnome-terminal/profiles/Default/use_theme_colors false
+    gconftool-2 -s -t bool /apps/gnome-terminal/profiles/Default/use_theme_colors false
+	gconftool-2 -s -t bool /apps/gnome-terminal/profiles/Default/scrollback_unlimited true
 fi
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
@@ -57,10 +58,11 @@ function parse_git_branch() {
 PS1=""
 
 # If this is an xterm set the title to user@host:dir
-if [[ $TERM = xterm ]]; then
+# if ssh then user@host:dir else user:dir
+#if [[ $TERM = xterm ]]; then
 	PS1="$PS1\[\e]0;\u@\h: \w\a\]"
 	#PS1="$PS1\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]"
-fi
+#fi
 
 if [ -n "$SSH_CLIENT" ]; then
     if [ "$color_prompt" = yes ]; then
