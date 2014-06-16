@@ -1,35 +1,40 @@
 if [[ $COLORTERM = gnome-* ]]; then
-	gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/background_color "#272728282222"
+	export TERM=xterm-256color
+    gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/background_color "#272728282222"
 	gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/cursor_shape "ibeam"
 	gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/foreground_color "#EEEEEEEEEEEE"
     gconftool-2 -s -t bool /apps/gnome-terminal/profiles/Default/use_theme_colors false
 	gconftool-2 -s -t bool /apps/gnome-terminal/profiles/Default/scrollback_unlimited true
 fi
 
-if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
-	export TERM=gnome-256color
-elif infocmp xterm-256color >/dev/null 2>&1; then
-	export TERM=xterm-256color
-fi
-
-if tput setaf 1 &> /dev/null; then
-    tput sgr0
-    if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
-        MAGENTA=$(tput setaf 9)
-        ORANGE=$(tput setaf 172)
-        GREEN=$(tput setaf 190)
-        PURPLE=$(tput setaf 141)
-        WHITE=$(tput setaf 255)
-    else
-        MAGENTA=$(tput setaf 5)
-        ORANGE=$(tput setaf 4)
-        GREEN=$(tput setaf 2)
-        PURPLE=$(tput setaf 1)
-        WHITE=$(tput setaf 7)
-    fi
-    BOLD=$(tput bold)
-    RESET=$(tput sgr0)
-else
+#if tput setaf 1 &> /dev/null; then
+#    tput sgr0
+#    if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
+#        RED=$(tput setaf 9)
+#        MAGENTA=$(tput setaf 9)
+#        ORANGE=$(tput setaf 172)
+#        YELLOW=$(tput setaf 172)
+#        GREEN=$(tput setaf 190)
+#        PURPLE=$(tput setaf 141)
+#        BLUE=$(tput setaf 141)
+#        CYAN=$(tput setaf 141)
+#        WHITE=$(tput setaf 255)
+#        BLACK=$(tput setaf 0)
+#    else
+#        RED=$(tput setaf 5)
+#        YELLOW=$(tput setaf 4)
+#        BLUE=$(tput setaf 3)
+#        CYAN=$(tput setaf 3)
+#        BLACK=$(tput setaf 0)
+#        MAGENTA=$(tput setaf 5)
+#        ORANGE=$(tput setaf 4)
+#        GREEN=$(tput setaf 2)
+#        PURPLE=$(tput settaf 1)
+#        WHITE=$(tput setaf 7)
+#    fi
+#    BOLD=$(tput bold)
+#    RESET=$(tput sgr0)
+#else
     RED="\033[1;31m"
     YELLOW="\033[1;33m"
     GREEN="\033[1;32m"
@@ -40,7 +45,7 @@ else
     BLACK="\033[1;30m"
     BOLD=""
     RESET="\033[m"
-fi
+#fi
 
 export RED
 export YELLOW
@@ -53,41 +58,33 @@ export BLACK
 export BOLD
 export RESET
 
-function parse_git_dirty() {
-	[[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo " | *"
-}
-
-function parse_git_branch() {
-	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
-}
-
 PS1="\n"
+#chroot ${debian_chroot:+($debian_chroot)}
 
-# If this is an xterm set the title to user@host:dir
-# if ssh then user@host:dir else user:dir
-#if [[ $TERM = xterm ]]; then
-    PS1="$PS1\[\e]0;\u@\h: \w\a\]"
-	#PS1="$PS1\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]"
-#fi
+if [[ $TERM == *xterm* ]]; then
+    PS1="$PS1\[\e]0;\u@\h:\w\a\]"
+fi
 
 if [ -n "$SSH_CLIENT" ]; then
     if [ "$color_prompt" = yes ]; then
-        PS1="$PS1\[${BOLD}${PURPLE}\]\u\[$WHITE\]@\[$PURPLE\]\h \[$CYAN\]\w"
+        PS1="$PS1\[$BOLD$PURPLE\]\u\[$WHITE\]@\[$PURPLE\]\h \[$CYAN\]\w"
 	else
 	    PS1="$PS1\u@\h \w"
 	fi
 else
     if [ "$color_prompt" = yes ]; then
-        PS1="$PS1\[${BOLD}${PURPLE}\]\u \[$CYAN\]\w"
+        PS1="$PS1\[$PURPLE\]\u \[$CYAN\]\w"
 	else
 	    PS1="$PS1\u \w"
 	fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1="$PS1 \$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \[$YELLOW\]($(parse_git_branch)) \")"
-else
-    PS1="$PS1 \$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ($(parse_git_branch)) \")"
+if [ -f ~/.git_prompt ]; then
+    source ~/.git_prompt
+    #source ~/.git-prompt/gitprompt.sh
+    #PS1="$PS1\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \[$YELLOW\](\$(parse_git_branch))\")"
+    PS1="$PS1\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \[$YELLOW\][\$(get_git_info)]\")"
+    #PS1="$PS1\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \[$YELLOW\](\$(setGitPrompt))\")"
 fi
 
 if [ "$color_prompt" = yes ]; then
