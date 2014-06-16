@@ -148,7 +148,7 @@ get_git_info () {
     output="$branch"
 
     # Add on the git status
-    output=" $output | $(get_git_status)$(get_git_progress) "
+    output=" $output $(get_git_status)$(get_git_progress) "
 
     # Echo our output
     echo "$output"
