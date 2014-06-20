@@ -55,32 +55,10 @@
     psu  = push upstream
     psum = push upstream master
 
-
-	#submodule section
-	# Pull in remote changes for the current repository and all its submodules
-	#plsub = !"git pull; git submodule foreach git pull origin master"
-
-
 	# log section
-	# View abbreviated SHA, description, and history graph of the latest 20 commits
-	graph = log --pretty=oneline --graph --abbrev-commit --all --decorate
+	graph = log --oneline --graph --abbrev-commit --decorate
+    graphall = log --graph --oneline --abbrev-commit --decorate --all
 
-
-	# find section
-	# Find branches containing commit
-	fbc = "!f() { git branch -a --contains $1; }; f"
-
-	# Find tags containing commit
-	ftc = "!f() { git describe --always --contains $1; }; f"
-
-	# Find commits by source code
-	fcs = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
-
-	# Find commits by commit message
-	fcm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
-
-
-	# usefull command section
     # change last commit
     amend = commit --amend -C HEAD
 
@@ -88,13 +66,7 @@
     undo = reset --soft HEAD^
 
     # standup
-    standup = log --since '1 day ago' --oneline --author <YOUREMAIL>
-
-	# Show the diff between the latest commit and the current state
-	sincelastcommit = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-
-	# Remove branches that have already been merged with master
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+    standup = log --since '1 day ago' --oneline --author pro.rprignon@gmail.com
 
 [apply]
 	# Detect whitespace errors when applying a patch
