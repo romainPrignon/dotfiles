@@ -4,9 +4,9 @@ then
 fi
 
 # Default values for the appearance of the prompt. Configure at will.
-GIT_PROMPT_PREFIX="$Bold[$ResetColor"
-GIT_PROMPT_SUFFIX="$Bold]$ResetColor"
-GIT_PROMPT_SEPARATOR="$Bold|$ResetColor"
+GIT_PROMPT_PREFIX="["
+GIT_PROMPT_SUFFIX="]"
+GIT_PROMPT_SEPARATOR="|"
 GIT_PROMPT_STAGED="$BGreen•$ResetColor "
 GIT_PROMPT_CONFLICTS="$BRed⬢$ResetColor "
 GIT_PROMPT_CHANGED="$BRed±$ResetColor "
