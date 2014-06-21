@@ -1,5 +1,6 @@
-# Reset
-ResetColor="\[\033[0m\]"       # Text Reset
+# other
+ResetColor="\[\033[0m\]"            # Text Reset
+Bold="\[\033[1m\]"                  # Text Bold
 
 # Regular Colors
 export Black="\[\033[0;30m\]"        # Black
@@ -53,51 +54,28 @@ if [[ $COLORTERM = gnome-* ]]; then
 	gconftool-2 -s -t bool /apps/gnome-terminal/profiles/Default/scrollback_unlimited true
 fi
 
-PS1="\n"
 #${debian_chroot:+($debian_chroot)}
 
 if [[ $TERM == *xterm* ]]; then
-    TERM_TITLE="$PS1\[\e]0;\u@\h:\w\a\]"
+    TERM_TITLE="\[\e]0;\u@\h:\w\a\]"
 fi
 
 if [ -n "$SSH_CLIENT" ]; then
-    PROMPT_START="$PS1$Cyan\u$White@$Cyan\h $Yellow\w$ResetColor"
+    PROMPT_START="\n$BCyan\u$BWhite@$BCyan\h $BYellow\w$ResetColor"
 else
-    PROMPT_START="$PS1$Cyan\u $Yellow\w$ResetColor"
+    PROMPT_START="\n$BCyan\u $BYellow\w$ResetColor"
 fi
 
-#if [ -n "$SSH_CLIENT" ]; then
-#    if [ "$color_prompt" = yes ]; then
-#        PS1="$PS1\[$BOLD$PURPLE\]\u\[$WHITE\]@\[$PURPLE\]\h \[$CYAN\]\w"
-#	else
-#	    PS1="$PS1\u@\h \w"
-#	fi
-#else
-#    if [ "$color_prompt" = yes ]; then
-#        PS1="$PS1\[$PURPLE\]\u \[$CYAN\]\w"
-#	else
-#	    PS1="$PS1\u \w"
-#	fi
-#fi
-
-if [ -f ~/.git_prompt/gitprompt.sh ]; then
+#if [ -f ~/.git_prompt/gitprompt.sh ]; then
     source ~/.git-prompt/gitprompt.sh
     GIT_PROMPT="$(setGitPrompt)"
-    #source ~/.git_prompt
-    #PS1="$PS1\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \[$YELLOW\](\$(parse_git_branch))\")"
-    #PS1="$PS1\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \[$YELLOW\](\$(setGitPrompt))\")"
-fi
-
-#if [ "$color_prompt" = yes ]; then
-#    if [ $(id -u) -eq 0 ]; then
-#        PS1="$PS1 \[$RED\]\$\[$RESET\] "
-#    else
-#        PS1="$PS1 \[$WHITE\]\$\[$RESET\] "
-#    fi
-#else
-#    PS1="$PS1 \$\[$RESET\] "
 #fi
-PROMPT_END=" \$ $ResetColor"
+
+if [ $(id -u) -eq 0 ]; then
+    PROMPT_END=" $BRed\$ $ResetColor"
+    else
+    PROMPT_END=" $Bold\$ $ResetColor"
+fi
 
 PS1="$TERM_TITLE$PROMPT_START$GIT_PROMPT$PROMPT_END"
 unset color_prompt force_color_prompt

@@ -4,15 +4,15 @@ then
 fi
 
 # Default values for the appearance of the prompt. Configure at will.
-GIT_PROMPT_PREFIX="["
-GIT_PROMPT_SUFFIX="]"
-GIT_PROMPT_SEPARATOR="|"
-GIT_PROMPT_STAGED="\[$RED\]• "
-GIT_PROMPT_CONFLICTS="\[$RED\]■ "
-GIT_PROMPT_CHANGED="\[$CYAN\]± "
+GIT_PROMPT_PREFIX="$Bold[$ResetColor"
+GIT_PROMPT_SUFFIX="$Bold]$ResetColor"
+GIT_PROMPT_SEPARATOR="$Bold|$ResetColor"
+GIT_PROMPT_STAGED="$BGreen•$ResetColor "
+GIT_PROMPT_CONFLICTS="$BRed⬢$ResetColor "
+GIT_PROMPT_CHANGED="$BRed±$ResetColor "
 GIT_PROMPT_REMOTE=" "
 GIT_PROMPT_UNTRACKED="…"
-GIT_PROMPT_CLEAN="\[$GREEN\]√"
+GIT_PROMPT_CLEAN="$BGreen√$ResetColor"
 
 function update_current_git_vars() {
     unset __CURRENT_GIT_STATUS
