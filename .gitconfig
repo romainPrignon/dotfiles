@@ -2,45 +2,53 @@
     name = Romain Prignon
     email = pro.rprignon@gmail.com
 [alias]
-	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
 
-	# common command
-	st = status
+    st = status
+    cp = cherry-pick
+
+    #clone
 	cl = clone
-	clr = clone --recursive
+    clr = clone --recursive
+
+	# checkout
 	co = checkout
 	cob = checkout -B
-	cp = cherry-pick
-	ci = commit
-	cim = commit -m
-	br = branch
+
+    #commit
+    ci = commit
+    cim = commit -m
+	cia = commit -a
+    ciam = commit -a -m
+
+	#rebase
 	rb = rebase
 	rbi = rebase -i
 
+    # fetch
+    f = fetch
+    fo = fetch origin
+    fu = fetch upstream
+
 	# Pull
     pl   	= pull
-    plr  	= pull --rebase
-
     plo 	= pull origin
-    plro 	= pull --rebase origin
-
     plom 	= pull origin master
     plog 	= pull origin gh-pages
     plod 	= pull origin develop
-    plos 	= pull origin staging
 
+    plr     = pull --rebase
+    plro    = pull --rebase origin
     plrom 	= pull --rebase origin master
     plrog 	= pull --rebase origin gh-pages
     plrod 	= pull --rebase origin develop
-    plros 	= pull --rebase origin staging
 
     plu  	= pull upstream
-    plru  	= pull --rebase upstream
+    plum	= pull upstream master
 
-    plrum	= pull upstream master
+    plru    = pull --rebase upstream
     plrum	= pull --rebase upstream master
 
     # Push
@@ -49,15 +57,14 @@
 
     psom = push origin master
     psod = push origin develop
-    psos = push origin staging
     psog = push origin gh-pages
 
     psu  = push upstream
     psum = push upstream master
 
 	# log section
-	graph = log --oneline --graph --abbrev-commit --decorate
-    graphall = log --graph --oneline --abbrev-commit --decorate --all
+    lg = log --oneline --graph --abbrev-commit --decorate
+    lga = log --graph --oneline --abbrev-commit --decorate --all
 
     # change last commit
     amend = commit --amend -C HEAD
@@ -68,42 +75,21 @@
     # standup
     standup = log --since '1 day ago' --oneline --author pro.rprignon@gmail.com
 
-[apply]
-	# Detect whitespace errors when applying a patch
-	whitespace = fix
-
 [core]
-	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
-	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and
-	# all kinds of trailing whitespace as an error.
-	# [default] trailing-space: looks for spaces at the end of a line
-	# [default] space-before-tab: looks for spaces before tabs at the beginning of
-	# a line
-	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+    whitespace = fix, indent-with-non-tab,trailing-space, cr-at-eol
 [color]
-	# Use colors in Git commands that are capable of colored output when
-	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
     interactive = auto
-[merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
-
-# URL shorthands
-[url "git@github.com:"]
-	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-	insteadOf = "github:"
-[url "git@gist.github.com:"]
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-	insteadOf = "gist:"
-
 [push]
 	default = tracking
+    #default = simple
+[help]
+    autocorrect = -1
+[gc]
+  auto=1
+#[gitflow "prefix"]
+#    feature = feature-
+#    release = release-
+#    hotfix = hotfix-
+#    support = support-
+#    versiontag = v
