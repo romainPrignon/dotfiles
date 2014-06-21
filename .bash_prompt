@@ -72,11 +72,11 @@ if [ $(id -u) -eq 0 ]; then
     PROMPT_END=" $Bold\$ $ResetColor"
 fi
 
-if [ -d ~/.git_prompt ]; then
+#if [ -d ~/.git_prompt ]; then
     source ~/.git-prompt/gitprompt.sh
-else
-    PS1="$TERM_TITLE$PROMPT_START$PROMPT_END"
-fi
+#else
+ #   PS1="$TERM_TITLE$PROMPT_START$PROMPT_END"
+#fi
 
 
 unset color_prompt force_color_prompt
