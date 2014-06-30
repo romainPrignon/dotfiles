@@ -81,11 +81,13 @@
 [core]
     whitespace = fix, indent-with-non-tab,trailing-space, cr-at-eol
 [color]
-	ui = auto
+    ui = auto
     interactive = auto
 [push]
     default = upstream
     #default = simple
+[diff]
+    mnemonicPrefix = true
 [help]
     autocorrect = -1
 [gc]
