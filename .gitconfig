@@ -2,45 +2,48 @@
     name = Romain Prignon
     email = pro.rprignon@gmail.com
 [alias]
-	tags = tag -l
-	branches = branch -a
-	remotes = remote -v
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
 
     st = status
     cp = cherry-pick
 
     #clone
-	cl = clone
+    cl = clone
     clr = clone --recursive
 
-	# checkout
-	co = checkout
-	cob = checkout -B
+    # checkout
+    co = checkout
+    cob = checkout -B
 
     #commit
     ci = commit
     cim = commit -m
-	cia = commit -a
+    cia = commit -a
     ciam = commit -a -m
 
-	#rebase
-	rb = rebase
-	rbi = rebase -i
+    #rebase
+    rb = rebase
+    rbi = rebase -i
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbs = rebase --skip
 
     # fetch
     f = fetch
     fo = fetch origin
     fu = fetch upstream
 
-	# Pull
+    # Pull
     pl   	= pull
     plo 	= pull origin
     plom 	= pull origin master
     plog 	= pull origin gh-pages
     plod 	= pull origin develop
 
-    plr     = pull --rebase
-    plro    = pull --rebase origin
+    plr         = pull --rebase
+    plro        = pull --rebase origin
     plrom 	= pull --rebase origin master
     plrog 	= pull --rebase origin gh-pages
     plrod 	= pull --rebase origin develop
@@ -48,7 +51,7 @@
     plu  	= pull upstream
     plum	= pull upstream master
 
-    plru    = pull --rebase upstream
+    plru        = pull --rebase upstream
     plrum	= pull --rebase upstream master
 
     # Push
@@ -62,7 +65,7 @@
     psu  = push upstream
     psum = push upstream master
 
-	# log section
+    # log section
     lg = log --oneline --graph --abbrev-commit --decorate
     lga = log --graph --oneline --abbrev-commit --decorate --all
 
@@ -81,7 +84,7 @@
 	ui = auto
     interactive = auto
 [push]
-	default = tracking
+    default = upstream
     #default = simple
 [help]
     autocorrect = -1
