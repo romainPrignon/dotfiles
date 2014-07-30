@@ -7,3 +7,10 @@ function v() {
         vim "$@"
     fi
 }
+
+function sublime()
+{
+    "$@" > ~/$$.txt
+    sublime-text ~/$$.txt
+    rm ~/$$.txt
+}
