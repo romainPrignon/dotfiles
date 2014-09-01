@@ -1,0 +1,14 @@
+{
+	"http_proxy": "http://squid.alptis.local:8080",
+	"https_proxy": "http://squid.alptis.local:8080",
+	"installed_packages":
+	[
+		"DocBlockr",
+		"Evernote",
+		"JSHint Gutter",
+		"Phpcs",
+		"PHPUnit Completions"
+	],
+	"proxy_password": "",
+	"proxy_username": ""
+}

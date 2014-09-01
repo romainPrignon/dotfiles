@@ -1,0 +1,7 @@
+{
+    //"phpcs_php_path": "",
+    "phpcs_executable_path":"C:\\Users\\romainp\\appData\\roaming\\composer\\vendor\\bin\\phpcs.bat",
+    "phpmd_executable_path":"C:\\Users\\romainp\\appData\\roaming\\composer\\vendor\\bin\\phpmd.bat",
+    "php_cs_fixer_executable_path":"C:\\Users\\romainp\\app\\runtime\\php-cs-fixer.phar",
+    "php_cs_fixer_on_save": false,
+}
