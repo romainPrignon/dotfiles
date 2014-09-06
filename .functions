@@ -3,5 +3,5 @@ function sublime()
 {
     "$@" > ~/$$.txt
     subl ~/$$.txt
-    rm ~/$$.txt
+    #rm ~/$$.txt
 }
