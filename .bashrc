@@ -4,6 +4,20 @@ case $- in
       *) return;;
 esac
 
+# include aliases
+if [ -f "$HOME/.aliases" ]; then
+    . "$HOME/.aliases"
+fi
+
+# include functions
+if [ -f "$HOME/.functions" ]; then
+    . "$HOME/.functions"
+fi
+
+if [ -f "$HOME/.bash_prompt" ]; then
+    . "$HOME/.bash_prompt"
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -31,8 +45,4 @@ shopt -s cdspell
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-if [ -f "$HOME/.bash_prompt" ]; then
-    . "$HOME/.bash_prompt"
 fi

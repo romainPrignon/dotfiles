@@ -2,6 +2,6 @@
 function sublime()
 {
     "$@" > ~/$$.txt
-    sublime-text ~/$$.txt
+    subl ~/$$.txt
     rm ~/$$.txt
 }

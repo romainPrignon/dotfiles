@@ -10,13 +10,3 @@ if [ -n "$BASH_VERSION" ]; then
     . "$HOME/.bashrc"
     fi
 fi
-
-# include aliases
-if [ -f "$HOME/.aliases" ]; then
-    . "$HOME/.aliases"
-fi
-
-# include functions
-if [ -f "$HOME/.functions" ]; then
-    . "$HOME/.functions"
-fi
