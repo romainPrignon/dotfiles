@@ -1,1 +1,17 @@
-# export variable here
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+PATH="/usr/local/go/bin:$PATH"
+PATH="$HOME/app/PhpStorm/bin:$PATH"
+PATH="$HOME/app/android-studio/bin:$PATH"
+
+# Make nano the default editor
+export EDITOR="nano";
+
+# Highlight section titles in manual pages
+export LESS_TERMCAP_md="${yellow}";
+
+# Always enable colored `grep` output
+export GREP_OPTIONS="--color=auto";

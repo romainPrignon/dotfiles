@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application>
   <component name="DimensionService">
-    <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.1920.986" x="690" y="282" />
-    <location key="OptionsEditor.0.0.1920.986" x="375" y="59" />
-    <location key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.1920.986" x="689" y="298" />
-    <location key="FileChooserDialogImpl.0.0.1920.986" x="738" y="164" />
-    <location key="WELCOME_SCREEN.0.0.1920.986" x="955" y="251" />
-    <size key="#com.intellij.fileTypes.FileTypeChooser.0.0.1920.986" width="589" height="417" />
-    <size key="OptionsEditor.0.0.1920.986" width="1226" height="863" />
-    <size key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.1920.986" width="929" height="496" />
-    <size key="FileChooserDialogImpl.0.0.1920.986" width="512" height="495" />
+    <location key="WELCOME_SCREEN.0.0.1920.986" x="827" y="250" />
   </component>
   <component name="LafManager">
     <laf class-name="idea.dark.laf.classname" />
@@ -19,15 +11,7 @@
     <property name="DefaultHtmlDoctype.MigrateToHtml5" value="true" />
     <property name="PhpStorm.InitialConfiguration" value="true" />
     <property name="PhpStorm.initialConfigurationShown" value="true" />
-    <property name="installation.uid" value="59ddb00b-054d-41ea-a208-3ee4e323615f" />
-    <property name="file.chooser.recent.files" value="$USER_HOME$/Téléchargements/settings.jar&#10;/home/romainprignon/workspace" />
-    <property name="toolwindow.stripes.buttons.info.shown" value="true" />
-    <property name="DeploymentNotificationsComponent.WarnDisplayed.Java7&amp;Windows7FTPIssue" value="false" />
-    <property name="file.colors.enable.non.project" value="494539" />
-    <property name="Non-Project Files" value="494539" />
-    <property name="export.settings.path" value="$USER_HOME$/.WebIde70/config/settings.jar" />
-    <property name="SingleInspectionProfilePanel.VERTICAL_DIVIDER_PROPORTION" value="0.5" />
-    <property name="SingleInspectionProfilePanel.HORIZONTAL_DIVIDER_PROPORTION" value="0.5" />
+    <property name="installation.uid" value="403e8e66-6c1c-459a-a70e-c1e2622a761b" />
   </component>
 </application>
 

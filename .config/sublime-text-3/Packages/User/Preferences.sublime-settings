@@ -1,5 +1,6 @@
 {
 	"default_line_ending": "unix",
+	"default_encoding": "UTF-8",
 	"show_line_endings": true,
     "show_encoding": true,
 	"detect_indentation": false,
@@ -25,7 +26,6 @@
 	[
 		120
 	],
-    "word_wrap": true,
     "wrap_width": 120,
 	"tab_size": 4,
 	"translate_tabs_to_spaces": true,

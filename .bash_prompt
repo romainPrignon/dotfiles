@@ -54,8 +54,6 @@ if [[ $COLORTERM = gnome-* ]]; then
 	gconftool-2 -s -t bool /apps/gnome-terminal/profiles/Default/scrollback_unlimited true
 fi
 
-#${debian_chroot:+($debian_chroot)}
-
 if [[ $TERM == *xterm* ]]; then
     TERM_TITLE="\[\e]0;\u@\h:\w\a\]"
 fi
@@ -68,15 +66,12 @@ fi
 
 if [ $(id -u) -eq 0 ]; then
     PROMPT_END=" $BRed\$ $ResetColor"
-    else
+else
     PROMPT_END=" $Bold\$ $ResetColor"
 fi
 
-#if [ -d ~/.git_prompt ]; then
-    source ~/.git-prompt/gitprompt.sh
-#else
- #   PS1="$TERM_TITLE$PROMPT_START$PROMPT_END"
-#fi
-
-
-unset color_prompt force_color_prompt
+if [ -d "$HOME/.git-prompt" ]; then
+    . ~/.git-prompt/gitprompt.sh
+else
+    PS1="$TERM_TITLE$PROMPT_START$PROMPT_END"
+fi
