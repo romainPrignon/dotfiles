@@ -1,7 +1,10 @@
 {
-    //"phpcs_php_path": "",
-    "phpcs_executable_path":"C:\\Users\\romainp\\appData\\roaming\\composer\\vendor\\bin\\phpcs.bat",
-    "phpmd_executable_path":"C:\\Users\\romainp\\appData\\roaming\\composer\\vendor\\bin\\phpmd.bat",
-    "php_cs_fixer_executable_path":"C:\\Users\\romainp\\app\\runtime\\php-cs-fixer.phar",
+    //"phpcs_php_path": "F:\\runtime\\php",
+    "phpcs_executable_path":"F:\\runtime\\composer\\vendor\\bin\\phpcs.bat",
+    "phpcs_show_errors_on_save": false,
+    "phpcs_show_gutter_marks": false,
+    //"phpmd_executable_path":"C:\\Users\\romainp\\appData\\roaming\\composer\\vendor\\bin\\phpmd.bat",
+    "php_cs_fixer_executable_path":"F:\\runtime\\composer\\vendor\\bin\\php-cs-fixer.bat",
     "php_cs_fixer_on_save": false,
+    "scheck_command_on_save": true,
 }

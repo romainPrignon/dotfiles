@@ -1,0 +1,8 @@
+{
+    "codeintel_max_recursive_dir_depth": 25,
+    "PHP": {
+            "phpExtraPaths": [],
+            "codeintel_scan_files_in_project": true,
+            "codeintel_max_recursive_dir_depth": 25
+        }
+}
