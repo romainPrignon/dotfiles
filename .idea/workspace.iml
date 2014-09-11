@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/ActuIndependant" />
+      <excludeFolder url="file://$MODULE_DIR$/ActuIndependant-old" />
+      <excludeFolder url="file://$MODULE_DIR$/Alptis3" />
+      <excludeFolder url="file://$MODULE_DIR$/AlptisAssoLibraries" />
+      <excludeFolder url="file://$MODULE_DIR$/AlptisLibraries" />
+      <excludeFolder url="file://$MODULE_DIR$/AlptisOrg" />
+      <excludeFolder url="file://$MODULE_DIR$/AlptisPortail" />
+      <excludeFolder url="file://$MODULE_DIR$/AlptisPortail/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/AlptisPortail/temp/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/AlptisPortail/var" />
+      <excludeFolder url="file://$MODULE_DIR$/AlptisResources" />
+      <excludeFolder url="file://$MODULE_DIR$/EspaceProServices" />
+      <excludeFolder url="file://$MODULE_DIR$/ExemplesRemboursement" />
+      <excludeFolder url="file://$MODULE_DIR$/ExtranetLibraries" />
+      <excludeFolder url="file://$MODULE_DIR$/PortailAlptis/app/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/PortailAlptis/app/logs" />
+      <excludeFolder url="file://$MODULE_DIR$/WebserviceMobile" />
+      <excludeFolder url="file://$MODULE_DIR$/asso_alptis_org" />
+      <excludeFolder url="file://$MODULE_DIR$/gacol" />
+      <excludeFolder url="file://$MODULE_DIR$/geremi" />
+      <excludeFolder url="file://$MODULE_DIR$/modx-1.0.10" />
+      <excludeFolder url="file://$MODULE_DIR$/mutuelle_fr" />
+      <excludeFolder url="file://$MODULE_DIR$/olympe" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://$MODULE_DIR$/PortailAlptis/vendor/alptis/alptis-asso-libraries/builds/tests/atoum.phar" />
+          <root url="phar://$MODULE_DIR$/PortailAlptis/vendor/alptis/wrapper/tests/mageekguy.atoum.phar" />
+          <root url="phar://$MODULE_DIR$/PortailAlptis/vendor/alptis/alptis-asso-libraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silextuts/vendor/romainprignon/ressources/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/romainprignonLibraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silextuts/vendor/romainprignon/silexTutsLibraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silextuts/vendor/romainprignon/romainprignonlibraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/PortailAlptis/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silextuts/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silextuts/phpunit.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silexTutsLibraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/gituts/composer.phar" />
+          <root url="phar://$MODULE_DIR$/PortailAlptis/vendor/alptis/ExtranetLibraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/PortailAlptis/composer.phar" />
+          <root url="phar://$MODULE_DIR$/PortailAlptis/vendor/alptis/AlptisLibraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/Ressources/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silextuts/vendor/romainprignon/tarification/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/phpunituts/phpunit.phar" />
+        </CLASSES>
+        <SOURCES>
+          <root url="phar://$MODULE_DIR$/PortailAlptis/vendor/alptis/alptis-asso-libraries/builds/tests/atoum.phar" />
+          <root url="phar://$MODULE_DIR$/PortailAlptis/vendor/alptis/wrapper/tests/mageekguy.atoum.phar" />
+          <root url="phar://$MODULE_DIR$/PortailAlptis/vendor/alptis/alptis-asso-libraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silextuts/vendor/romainprignon/ressources/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/romainprignonLibraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silextuts/vendor/romainprignon/silexTutsLibraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silextuts/vendor/romainprignon/romainprignonlibraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/PortailAlptis/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silextuts/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silextuts/phpunit.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silexTutsLibraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/gituts/composer.phar" />
+          <root url="phar://$MODULE_DIR$/PortailAlptis/vendor/alptis/ExtranetLibraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/PortailAlptis/composer.phar" />
+          <root url="phar://$MODULE_DIR$/PortailAlptis/vendor/alptis/AlptisLibraries/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/Ressources/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/silextuts/vendor/romainprignon/tarification/composer.phar" />
+          <root url="phar://$MODULE_DIR$/tuts/phpunituts/phpunit.phar" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" scope="PROVIDED" name="sass-stdlib" level="application" />
+  </component>
+</module>
+
