@@ -1,0 +1,33 @@
+proxy
+=====
+
+package.control
+----------------
+"http_proxy": ""
+"https_proxy": ""
+"proxy_password": ""
+"proxy_username": ""
+
+JShint
+======
+"node_path": {
+    "windows": "F:/runtime/node/node.exe",
+    "linux": "/usr/bin/nodejs",
+},
+
+phpcs
+=====
+{
+	"phpcs_php_path": "F:\\runtime\\...",
+    "phpcs_executable_path":"F:\\runtime\\composer\\vendor\\bin\\...",
+    "phpmd_executable_path":"F:\\runtime\\composer\\vendor\\bin\\...",
+    "php_cs_fixer_executable_path":"F:\\runtime\\composer\\vendor\\bin\\...",
+}
+
+vcsgutter
+=========
+"non_blocking": true,
+"vcs_paths": {
+	"diff": "F:\\app\\diffutils\\bin\\diff.exe",
+	"git": "F:\\app\\git\\bin\\git.exe",
+}
