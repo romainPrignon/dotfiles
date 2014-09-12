@@ -69,11 +69,14 @@
     lg = log --oneline --graph --abbrev-commit --decorate
     lga = log --graph --oneline --abbrev-commit --decorate --all
 
-    # change last commit
+    # change last commit message
     amend = commit --amend -C HEAD
 
     # undo last commit
-    undo = reset --soft HEAD^
+    uncommit = reset --soft HEAD^
+	
+	# unstage change
+	unstage = reset HEAD
 
     # standup
     standup = log --since '1 day ago' --oneline --author pro.rprignon@gmail.com
