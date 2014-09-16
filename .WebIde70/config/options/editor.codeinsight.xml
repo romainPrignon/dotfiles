@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application>
+  <component name="CodeInsightSettings">
+    <option name="SURROUND_SELECTION_ON_QUOTE_TYPED" value="true" />
+  </component>
   <component name="DaemonCodeAnalyzerSettings" profile="Default">
     <option name="NEXT_ERROR_ACTION_GOES_TO_ERRORS_FIRST" value="true" />
     <option name="AUTOREPARSE_DELAY" value="300" />
