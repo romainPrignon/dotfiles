@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="php-interpreter-version">
+      <project id="workspace" values="not installed" />
+    </group>
+    <group name="module type">
+      <project id="workspace" values="WEB_MODULE" />
+    </group>
+    <group name="vcs">
+      <project id="workspace" values="Git" />
+    </group>
+    <group name="php-servers">
+      <project id="workspace" values="0" />
+    </group>
+    <group name="php-include-path">
+      <project id="workspace" values="0" />
+    </group>
+    <group name="file-type">
+      <project id="workspace" values="YAML,ReST,XML,SmartyConfig,CSS,JavaScript,UNKNOWN,SQL,HTML,Ini,Images,LESS,PHP,Locale,JSON,PLAIN_TEXT,SCSS,Smarty,C++,ARCHIVE,PHAR,Native,TypeScript,Twig,htaccess" />
+    </group>
+    <group name="php-debug-skipped-paths">
+      <project id="workspace" values="0" />
+    </group>
+    <group name="javaScript Scope Usages">
+      <project id="workspace" values="Project,Project" />
+    </group>
+    <group name="JavaScript versions">
+      <project id="workspace" values="ECMAScript 5.1" />
+    </group>
+    <group name="php-interpreters">
+      <project id="workspace" values="0" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="CreateFile.CreateFileAction" count="1" />
+      <entry feature="ideaapp.started" count="1" />
+    </counts>
+  </component>
+</application>
+

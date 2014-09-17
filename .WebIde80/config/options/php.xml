@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="MessDetector">
+    <option name="messDetectorPath" value="F:\runtime\composer\vendor\bin\phpmd.bat" />
+  </component>
+  <component name="PhpCodeSniffer">
+    <option name="phpCodeSnifferPath" value="F:\runtime\composer\vendor\bin\phpcs.bat" />
+    <option name="standards" value="MySource;PEAR;PHPCS;PSR1;PSR2;Squiz;Zend" />
+  </component>
+</application>
+
