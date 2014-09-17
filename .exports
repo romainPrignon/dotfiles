@@ -3,9 +3,23 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+export INPUTRC="$HOME/.inputrc"
+export COMPOSER_HOME="$HOME/.composer"
+
+PATH="$HOME/.composer/vendor/bin:$PATH"
 PATH="/usr/local/go/bin:$PATH"
 PATH="$HOME/app/PhpStorm/bin:$PATH"
 PATH="$HOME/app/android-studio/bin:$PATH"
 
 # Make nano the default editor
 export EDITOR="nano";
+
+# proxy
+#export http_proxy=http://squid.alptis.local:8080
+#export HTTP_PROXY=$http_proxy
+#export https_proxy=$http_proxy
+#export HTTPS_PROXY=$http_proxy
+#export HTTP_PROXY=$http_proxy
+#export HTTP_PROXY=$http_proxy
+#export HTTP_PROXY_REQUEST_FULLURI=true
+#export HTTPS_PROXY_REQUEST_FULLURI=false
