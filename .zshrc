@@ -68,5 +68,4 @@ fi
 # export LANG=fr_FR.UTF-8
 
 bindkey "^K"      kill-whole-line                      # ctrl-k
-
-
+bindkey '^Z'      backward-kill-word
