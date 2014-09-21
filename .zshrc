@@ -56,16 +56,12 @@ if [ -f "$HOME/.functions" ]; then
     . "$HOME/.functions"
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# include key-bindings
+if [ -f "$HOME/.zsh/.key-bindings" ]; then
+    . "$HOME/.zsh/.key-bindings"
+fi
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=fr_FR.UTF-8
-
-bindkey "^K"      kill-whole-line                      # ctrl-k
-bindkey '^Z'      backward-kill-word
+# include zsh_prompt
+if [ -f "$HOME/.zsh/.zsh_prompt" ]; then
+    . "$HOME/.zsh/.zsh_prompt"
+fi
