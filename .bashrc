@@ -57,3 +57,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# starting command
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval `ssh-agent -s` > /dev/null
+  ssh-add
+fi
