@@ -5,3 +5,17 @@ function sublime()
     subl ~/$$.txt
     #rm ~/$$.txt
 }
+
+function docker_rm_container()
+{
+    docker rm $(docker ps -a -q)
+}
+
+function docker_rm_image()
+{
+    IMAGE_IDS=$(docker images | grep "^<none>" | awk "{print $3}")
+
+    if [ -n "$IMAGE_IDS" ]; then
+      docker rmi $IMAGE_IDS > /dev/null 2>&1
+    fi
+}
