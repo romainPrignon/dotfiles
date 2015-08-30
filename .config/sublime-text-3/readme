@@ -1,3 +1,16 @@
+keymap
+=====
+
+{ "keys": ["ctrl+alt+c"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+
+	{ "keys": ["ctrl+e"], "command": "show_overlay", "args": {"overlay": "command_palette", "text": "Evernote: "} },
+	{ "keys": ["ctrl+e", "ctrl+l"], "command": "open_evernote_note", "args": {"ascending": false, "by_searching": "*", "max_notes": 20, "order": "updated"} },
+	{ "keys": ["ctrl+e", "ctrl+e"], "command": "open_evernote_note", "args": {"by_searching": true} },
+	{ "keys": ["ctrl+e", "ctrl+n"], "command": "new_evernote_note"},
+	{ "keys": ["ctrl+e", "ctrl+o"], "command": "open_evernote_note"},
+	{ "keys": ["ctrl+s"], "command": "save_evernote_note", "context": [{"key": "evernote_note"}, {"key": "evernote_has_guid"}] },
+	{ "keys": ["ctrl+s"], "command": "send_to_evernote", "context": [{"key": "evernote_note"}, {"key": "evernote_has_guid", "operator": "equal", "operand": false}] }
+
 proxy
 =====
 
