@@ -1,4 +1,3 @@
 {
-	"noteStoreUrl": "http://www.evernote.com/shard/s298/notestore",
-	"token": "S=s298:U=293be5a:E=14e6d93ac4f:C=14715e27f18:P=1cd:A=en-devtoken:V=2:H=bea14e5c23c0433b2f427457ea691a10"
+	"update_on_save": true
 }
