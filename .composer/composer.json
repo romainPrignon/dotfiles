@@ -1,9 +1,9 @@
 {
 	"require": {
-        "pdepend/pdepend": "2.0.*",
-		"phpmd/phpmd" : "dev-master",
-        "squizlabs/php_codesniffer": "dev-master",
-        "fabpot/php-cs-fixer": "0.5.*@dev",
-        "phpunit/phpunit": "4.2.*"
+        "pdepend/pdepend": "@stable",
+	    "phpmd/phpmd" : "@stable",
+        "squizlabs/php_codesniffer": "@stable",
+        "fabpot/php-cs-fixer": "@stable",
+        "phpunit/phpunit": "@stable"
 	}
 }
