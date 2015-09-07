@@ -1,14 +1,41 @@
 {
-	"http_proxy": "http://squid.alptis.local:8080",
-	"https_proxy": "http://squid.alptis.local:8080",
-	"installed_packages":
-	[
-		"DocBlockr",
-		"Evernote",
-		"JSHint Gutter",
-		"Phpcs",
-		"PHPUnit Completions"
-	],
-	"proxy_password": "",
-	"proxy_username": ""
+    "http_proxy": "",
+    "https_proxy": "",
+    "proxy_password": "",
+    "proxy_username": "",
+    "in_process_packages":
+    [
+    ],
+    "installed_packages":
+    [
+        "AdvancedNewFile",
+        "All Autocomplete",
+        "AngularJS",
+        "Babel",
+        "Behat",
+        "DocBlockr",
+        "EditorConfig",
+        "Filter Lines",
+        "JavaScript Completions",
+        "LESS",
+        "Modific",
+        "Node Completions",
+        "Package Control",
+        "PHP Completions Kit",
+        "PHP Getters and Setters",
+        "PHP-Twig",
+        "Sass",
+        "SideBarEnhancements",
+        "SublimeCodeIntel",
+        "SublimeLinter",
+        "SublimeLinter-jscs",
+        "SublimeLinter-jshint",
+        "SublimeLinter-jsxhint",
+        "SublimeLinter-php",
+        "SublimeLinter-phpcs",
+        "Theme - Flatland",
+        "TypeScript",
+        "PHPUnit Completions",
+        "Evernote"
+    ]
 }

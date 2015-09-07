@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[
+var_dump(${1:expression});die;
+]]></content>
+    <tabTrigger>var_dump</tabTrigger>
+    <scope>source.PHP</scope>
+</snippet>
