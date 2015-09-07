@@ -1,8 +1,9 @@
 [
-    { 
-        "keys": ["ctrl+v"], "command": "paste_and_indent" 
-    },
-    { 
-        "keys": ["ctrl+shift+v"], "command": "paste" 
-    }
+    { "keys": ["ctrl+k"], "command": "focus_side_bar" },
+    { "keys": ["ctrl+j"], "command": "toggle_side_bar" },
+    { "keys": ["ctrl+alt+b"], "command": "goto_python_definition"},
+    { "keys": ["ctrl+alt+n"], "command": "advanced_new_file_new"},
+    { "keys": ["ctrl+shift+v"], "command": "paste" },
+    { "keys": ["ctrl+v"], "command": "paste_and_indent" },
+    { "keys": ["f5"], "command": "refresh_folder_list" }
 ]
