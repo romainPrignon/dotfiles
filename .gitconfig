@@ -85,16 +85,13 @@
     orphans = git fsck --full
 
 [core]
-    whitespace = fix, trailing-space, space-before-tab
-[color]
-    ui = auto
-    interactive = auto
+    autocrlf = true
+
 [push]
-    default = upstream
-    #default = simple
+    default = simple
+
 [diff]
     mnemonicPrefix = true
-[help]
-    autocorrect = -1
+
 [gc]
   auto=1
