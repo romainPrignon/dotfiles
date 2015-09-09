@@ -84,9 +84,6 @@
     # find orphans
     orphans = git fsck --full
 
-[core]
-    autocrlf = true
-
 [push]
     default = simple
 
