@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
-cd "$(dirname "${BASH_SOURCE}")"
-git pull origin master;
-function doIt() {
-    rsync --exclude ".git/" --exclude "bootstrap.sh" --exclude ".WebIde70/" --exclude ".WebIde80/" --exclude "README.md" -av --no-perms . ~
-    source ~/.profile
-}
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	doIt
-else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
-	echo
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		doIt
-	fi
-fi
-unset doIt
+
+cp -rf .composer ~/.composer
+cp -rf .config ~/.config
+cp -rf .git-prompt ~/.git-prompt
+cp -rf .ssh ~/.ssh
+cp -rf .aliases ~/.aliases
+cp -rf .bash_prompt ~/.bash_prompt
+cp -rf .bashrc ~/.bashrc
+cp -rf .editorconfig ~/.editorconfig
+cp -rf .exports ~/.exports
+cp -rf .functions ~/.functions
+cp -rf .git_prompt ~/.git_prompt
+cp -rf .gitattributes ~/.gitattributes
+cp -rf .gitconfig ~/.gitconfig
+cp -rf .gitignore ~/.gitignore
+cp -rf .inputrc ~/.inputrc
+cp -rf .profile ~/.profile
+cp -rf .vimrc ~/.vimrc

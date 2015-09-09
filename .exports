@@ -11,14 +11,14 @@ export GOPATH=$HOME/.go
 
 PATH="$HOME/.composer/vendor/bin:$PATH"
 PATH="$GOROOT/bin:$PATH"
-PATH="$HOME/app/PhpStorm/bin:$PATH"
+PATH="$HOME/app/phpstorm/bin:$PATH"
 PATH="$HOME/app/android-studio/bin:$PATH"
 
 # Make nano the default editor
 export EDITOR="nano";
 
 # proxy
-#export http_proxy=http://squid.alptis.local:8080
+#export http_proxy=http://some.host:8080
 #export HTTP_PROXY=$http_proxy
 #export https_proxy=$http_proxy
 #export HTTPS_PROXY=$http_proxy

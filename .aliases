@@ -23,7 +23,7 @@ alias .....="cd ../../../.."
 alias d="cd ~/Documents"
 alias dl="cd ~/Téléchargements"
 alias w="cd ~/workspace"
-alias g="git"
+alias g="LANGUAGE=en_US.UTF-8 git"
 alias h="history"
 
 #git
