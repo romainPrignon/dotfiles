@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+ln -sf [dotfile-dir-absolute-path]/.composer [home-dir-absolute-path]/.composer
+ln -sf [dotfile-dir-absolute-path]/.config [home-dir-absolute-path]/.config
+ln -sf [dotfile-dir-absolute-path]/.git-prompt [home-dir-absolute-path]/.git-prompt
+ln -sf [dotfile-dir-absolute-path]/.ssh [home-dir-absolute-path]/.ssh
+ln -sf [dotfile-dir-absolute-path]/.aliases [home-dir-absolute-path]/.aliases
+ln -sf [dotfile-dir-absolute-path]/.bash_prompt [home-dir-absolute-path]/.bash_prompt
+ln -sf [dotfile-dir-absolute-path]/.bashrc [home-dir-absolute-path]/.bashrc
+ln -sf [dotfile-dir-absolute-path]/.editorconfig [home-dir-absolute-path]/.editorconfig
+ln -sf [dotfile-dir-absolute-path]/.exports [home-dir-absolute-path]/.exports
+ln -sf [dotfile-dir-absolute-path]/.functions [home-dir-absolute-path]/.functions
+ln -sf [dotfile-dir-absolute-path]/.git_prompt [home-dir-absolute-path]/.git_prompt
+ln -sf [dotfile-dir-absolute-path]/.gitattributes [home-dir-absolute-path]/.gitattributes
+ln -sf [dotfile-dir-absolute-path]/.gitconfig [home-dir-absolute-path]/.gitconfig
+ln -sf [dotfile-dir-absolute-path]/.gitignore [home-dir-absolute-path]/.gitignore
+ln -sf [dotfile-dir-absolute-path]/.inputrc [home-dir-absolute-path]/.inputrc
+ln -sf [dotfile-dir-absolute-path]/.profile [home-dir-absolute-path]/.profile
+ln -sf [dotfile-dir-absolute-path]/.vimrc [home-dir-absolute-path]/.vimrc
