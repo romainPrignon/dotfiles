@@ -1,0 +1,6 @@
+<templateSet group="Zen CSS">
+  <template name="bgc" value="background-color:$VAR0$;" description="background-color:#fff;" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR0" expression="" defaultValue="&quot;#fff&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+</templateSet>

@@ -1,0 +1,12 @@
+<application>
+  <component name="MessDetector">
+    <phpmd_settings>
+      <MessDetectorConfiguration tool_path="F:\runtime\composer\vendor\bin\phpmd.bat" />
+    </phpmd_settings>
+  </component>
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <PhpCSConfiguration tool_path="F:\runtime\composer\vendor\bin\phpcs.bat" />
+    </phpcs_settings>
+  </component>
+</application>

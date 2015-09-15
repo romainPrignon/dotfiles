@@ -1,0 +1,20 @@
+<application>
+  <component name="DimensionService">
+    <location key="SettingsEditor.0.0.1280.1024" x="125" y="110" />
+    <location key="FileChooserDialogImpl.0.0.1280.1024" x="380" y="429" />
+    <location key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.1280.1024" x="350" y="357" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.1280.1024" x="351" y="451" />
+    <location key="#com.intellij.ide.util.MemberChooser.0.0.1280.1024" x="375" y="250" />
+    <location key="StructurePopup.0.0.1280.1024" x="383" y="305" />
+    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.1280.1024" x="353" y="388" />
+    <location key="WELCOME_SCREEN.0.0.1280.1024" x="639" y="230" />
+    <location key="IdeErrosDialog.0.0.1280.1024" x="182" y="379" />
+    <size key="SettingsEditor.0.0.1280.1024" width="1098" height="664" />
+    <size key="FileChooserDialogImpl.0.0.1280.1024" width="510" height="523" />
+    <size key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.1280.1024" width="570" height="331" />
+    <size key="#com.intellij.ide.util.MemberChooser.0.0.1280.1024" width="520" height="545" />
+    <size key="StructurePopup.0.0.1280.1024" width="502" height="369" />
+    <size key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.1280.1024" width="563" height="241" />
+    <size key="IdeErrosDialog.0.0.1280.1024" width="906" height="371" />
+  </component>
+</application>
