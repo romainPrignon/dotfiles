@@ -1,0 +1,64 @@
+{
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "rules": {
+    "no-dupe-keys": 2,
+    "no-duplicate-case": 2,
+    "no-reserved-keys": 2,
+    "valid-jsdoc": [2, {
+      "requireReturn": false,
+      "requireParamDescription": false
+    }],
+    "no-extra-boolean-cast": 2,
+    "eqeqeq": 2,
+    "curly": [2, "all"],
+    "default-case": 2,
+    "no-caller": 2,
+    "no-eq-null": 2,
+    "no-eval": 2,
+    "no-floating-decimal": 2,
+    "no-implied-eval": 2,
+    "no-loop-func": 2,
+    "no-multi-str": 2,
+    "no-native-reassign": 2,
+    "no-param-reassign": 2,
+    "no-redeclare": 2,
+    "no-throw-literal": 2,
+    "wrap-iife": [2, "outside"],
+
+    "strict": 2,
+
+    "no-shadow": 2,
+    "no-undef": 2,
+    "no-undef-init": 2,
+    "no-unused-vars": [2, {"vars": "all", "args": "after-used"}],
+    "no-use-before-define": 2,
+    "no-shadow-restricted-names": 2,
+
+    "handle-callback-err": [2, "^.*(e|E)rr" ],
+
+    "indent": [2, 2, {"indentSwitchCase": false}],
+    "brace-style": [2, "1tbs", { "allowSingleLine": true }],
+    "quotes": [2, "single", "avoid-escape"],
+    "semi": [2, "always"],
+    "semi-spacing": [2, {"before": false, "after": true}],
+    "new-cap": 2,
+    "no-array-constructor": 2,
+    "new-parens": 2,
+    "camelcase": [2, {"properties": "always"}],
+    "eol-last": 2,
+    "no-mixed-spaces-and-tabs": 2,
+    "no-multiple-empty-lines": [2, {"max": 2}],
+    "no-nested-ternary": 2,
+    "no-trailing-spaces": 2,
+    "space-after-keywords": [2, "always"],
+
+    "max-len": [2, 120, 2]
+  }
+}

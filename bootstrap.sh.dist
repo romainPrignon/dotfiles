@@ -17,3 +17,6 @@ ln -sf [dotfile-dir-absolute-path]/.gitignore [home-dir-absolute-path]/.gitignor
 ln -sf [dotfile-dir-absolute-path]/.inputrc [home-dir-absolute-path]/.inputrc
 ln -sf [dotfile-dir-absolute-path]/.profile [home-dir-absolute-path]/.profile
 ln -sf [dotfile-dir-absolute-path]/.vimrc [home-dir-absolute-path]/.vimrc
+ln -sf [dotfile-dir-absolute-path]/.eslintrc [home-dir-absolute-path]/.eslintrc
+ln -sf [dotfile-dir-absolute-path]/.jscsrc [home-dir-absolute-path]/.jscsrc
+ln -sf [dotfile-dir-absolute-path]/.jshintrc [home-dir-absolute-path]/.jshintrc
