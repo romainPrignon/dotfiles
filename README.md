@@ -8,3 +8,5 @@ git clone https://github.com/romainprignon/dotfiles.git
 cd dotfiles
 ./bootstrap.sh
 ```
+On windows :
+mklink /H C:\Users\Smith\.vimrc C:\Users\Smith\workspace\dotfiles\.vimrc
