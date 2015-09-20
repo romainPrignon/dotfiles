@@ -1,6 +1,4 @@
 mklink /H C:\Users\Administrateur\.aliases C:\Users\Administrateur\workspace\dotfiles\.aliases
-mklink /H C:\Users\Administrateur\.git-prompt\gitprompt.sh C:\Users\Administrateur\workspace\dotfiles\.git-prompt\gitprompt.sh
-mklink /H C:\Users\Administrateur\.git-prompt\gitstatus.py C:\Users\Administrateur\workspace\dotfiles\.git-prompt\gitstatus.py
 mklink /H C:\Users\Administrateur\.bash_prompt C:\Users\Administrateur\workspace\dotfiles\.bash_prompt
 mklink /H C:\Users\Administrateur\.bashrc C:\Users\Administrateur\workspace\dotfiles\.bashrc
 mklink /H C:\Users\Administrateur\.editorconfig C:\Users\Administrateur\workspace\dotfiles\.editorconfig
