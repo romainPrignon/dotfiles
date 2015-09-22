@@ -1,43 +1,26 @@
 <application>
   <component name="PropertiesComponent">
-    <property name="log.debug.categories" value="" />
-    <property name="evlsprt3.7" value="12" />
+    <property name="evlsprt3.PS-142.4289" value="19" />
     <property name="DefaultHtmlDoctype.MigrateToHtml5" value="true" />
+    <property name="DefaultHtmlDoctype.Refreshed" value="2" />
     <property name="PhpStorm.InitialConfiguration" value="true" />
+    <property name="installation.uid" value="658a33ff-0107-4df1-910b-643e2f01a614" />
     <property name="PhpStorm.initialConfigurationShown" value="true" />
-    <property name="file.chooser.recent.files" value="$USER_HOME$/sshfs/app54/site-bo&#10;/home/romain/sshfs/app54/service-deco&#10;/home/romain/sshfs/app54/bundle-entity-photoviewer&#10;/home/romain/workspace/romainprignon/dotfiles/exported-settings/phpstorm-default.jar&#10;F:/runtime/composer/vendor/bin/phpcs.bat&#10;F:/runtime/composer/vendor/bin/phpmd.bat&#10;F:/runtime/composer/vendor/bin/phpmd&#10;U:/workspace/PortailAlptis&#10;U:/workspace" />
+    <property name="PLUGIN_FILTER" value="eslint&#10;symfon" />
+    <property name="file.chooser.recent.files" value="/usr/local/bin/eslint&#10;/usr/local/lib/node_modules/eslint/bin/eslint.js&#10;/home/romain/.composer/vendor/bin/phpcs&#10;/home/romain/workspace/romainprignon/starter-php-component" />
     <property name="toolwindow.stripes.buttons.info.shown" value="true" />
     <property name="DeploymentNotificationsComponent.WarnDisplayed.Java7&amp;Windows7FTPIssue" value="false" />
-    <property name="file.colors.enable.non.project" value="494539" />
-    <property name="FileStructurePopup.narrowDown" value="true" />
-    <property name="KEYMAP" value="project&#10;comment" />
-    <property name="SingleInspectionProfilePanel.VERTICAL_DIVIDER_PROPORTION" value="0.5" />
-    <property name="SingleInspectionProfilePanel.HORIZONTAL_DIVIDER_PROPORTION" value="0.5" />
-    <property name="FileTemplates.CurrentTab" value="Templates" />
-    <property name="FileTemplates.SelectedTemplate" value="PHP Interface" />
-    <property name="KEYMAP_IN_QUICK_LISTS" value="" />
-    <property name="INSPECTION_FILTER_HISTORY" value="typo&#10;&quot;New in 13&quot;" />
+    <property name="lastTip" value="5" />
+    <property name="KEYMAP" value="revert&#10;compare&#10;diff&#10;comment&#10;project" />
+    <property name="selected.color.option.type" value="FILESTATUS_ADDED" />
+    <property name="ColorChooser.RecentColors" value="64-153-255-255,,,0-57-205-255,,,0-48-170-255,,,0-65-205-255" />
+    <property name="settings.code.style.selected.tab.PHP" value="Other" />
+    <property name="FileTemplates.SelectedTemplate" value="HTML File" />
+    <property name="settings.code.style.selected.tab.JavaScript" value="Tabs and Indents" />
     <property name="JSHintOptionsTreeView.TREE_SCROLL_BAR_HORIZONTAL" value="20" />
-    <property name="JSHintOptionsTreeView.TREE_SCROLL_BAR_VERTICAL" value="0" />
+    <property name="JSHintOptionsTreeView.TREE_SCROLL_BAR_VERTICAL" value="1429" />
     <property name="JSHintOptionsTreeView.TREE_SELECTED_NODE_ID" value="1" />
-    <property name="FileColorsEnabled" value="true" />
-    <property name="FileColorsForTabsEnabled" value="false" />
-    <property name="FileColorsForProjectViewEnabled" value="true" />
-    <property name="Copy.OpenInEditor" value="true" />
-    <property name="com.intellij.openapi.editor.actions.MultiplePasteAction$1.splitter" value="0.3" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="DefaultHtmlDoctype.Refreshed" value="2" />
-    <property name="PhpStorm.multiCaretsEnabled" value="true" />
-    <property name="ProjectStructure.SecondLevelElements" value="0.2" />
     <property name="evlsprt.PS-142.4289" value="150015ec700" />
-    <property name="evlsprt2.PS-142.4289" value="14fbc3544f0" />
-    <property name="evlsprt3.PS-142.4289" value="11" />
-    <property name="installation.uid" value="90114750-2ef8-47c6-a806-ac08e198b421" />
-    <property name="lastTip" value="6" />
-    <property name="selected.color.option.type" value="PHP_VAR" />
-    <property name="ChangesViewManager.DETAILS_SPLITTER_PROPORTION" value="0.5" />
-    <property name="RESTClient.httpMethod" value="GET&#10;POST&#10;PUT&#10;PATCH&#10;DELETE&#10;HEAD&#10;OPTIONS" />
-    <property name="com.intellij.diagnostic.IdeErrorsDialogactiveTab" value="1" />
-    <property name="ColorChooser.RecentColors" value="0-0-0-255,,,255-255-255-255" />
+    <property name="evlsprt2.PS-142.4289" value="14fe0409325" />
   </component>
 </application>

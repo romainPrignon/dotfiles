@@ -1,76 +1,62 @@
 <application>
   <component name="StatisticsApplicationUsages">
-    <group name="php-include-path">
-      <project id="bundle-entity-photoviewer" values="0" collectionTime="1442299246476" />
-      <project id="site-bo" values="0" collectionTime="1442304611811" />
-      <project id="workspace" values="0" collectionTime="0" />
-      <project id="service-deco" values="0" collectionTime="1442304613009" />
+    <group name="php-interpreter-version">
+      <project id="starter-php-component" values="5.5.9-1ubuntu4.11" collectionTime="1442577819992" />
     </group>
     <group name="vcs">
-      <project id="bundle-entity-photoviewer" values="Git" collectionTime="1442299246006" />
-      <project id="site-bo" values="Git" collectionTime="1442304611806" />
-      <project id="workspace" values="Git" collectionTime="0" />
-      <project id="service-deco" values="Git" collectionTime="1442304613005" />
+      <project id="starter-php-component" values="Git" collectionTime="1442577819788" />
     </group>
     <group name="JavaScript versions">
-      <project id="bundle-entity-photoviewer" values="ECMAScript 5.1" collectionTime="1442299246475" />
-      <project id="site-bo" values="ECMAScript 6" collectionTime="1442304611811" />
-      <project id="workspace" values="ECMAScript 5.1" collectionTime="0" />
-      <project id="service-deco" values="ECMAScript 5.1" collectionTime="1442304613009" />
+      <project id="starter-php-component" values="ECMAScript 5.1" collectionTime="1442577819957" />
     </group>
     <group name="php-debug-skipped-paths">
-      <project id="bundle-entity-photoviewer" values="0" collectionTime="1442299246489" />
-      <project id="site-bo" values="0" collectionTime="1442304611811" />
-      <project id="workspace" values="0" collectionTime="0" />
-      <project id="service-deco" values="0" collectionTime="1442304613009" />
+      <project id="starter-php-component" values="0" collectionTime="1442577820001" />
     </group>
-    <group name="php-servers">
-      <project id="bundle-entity-photoviewer" values="0" collectionTime="1442299246486" />
-      <project id="site-bo" values="0" collectionTime="1442304611811" />
-      <project id="workspace" values="0" collectionTime="0" />
-      <project id="service-deco" values="0" collectionTime="1442304613009" />
+    <group name="php-interpreter-debug-ext">
+      <project id="starter-php-component" values="xdebug" collectionTime="1442577819996" />
     </group>
     <group name="php-interpreters">
-      <project id="bundle-entity-photoviewer" values="0" collectionTime="1442299246486" />
-      <project id="site-bo" values="0" collectionTime="1442304611811" />
-      <project id="workspace" values="0" collectionTime="0" />
-      <project id="service-deco" values="0" collectionTime="1442304613009" />
+      <project id="starter-php-component" values="1" collectionTime="1442577819992" />
+    </group>
+    <group name="php-servers">
+      <project id="starter-php-component" values="0" collectionTime="1442577819962" />
     </group>
     <group name="javaScript Scope Usages">
-      <project id="bundle-entity-photoviewer" values="Project,Project" collectionTime="1442299246475" />
-      <project id="site-bo" values="Project,Project,Project" collectionTime="1442304611811" />
-      <project id="workspace" values="Project,Project" collectionTime="0" />
-      <project id="service-deco" values="Project,Project" collectionTime="1442304613009" />
+      <project id="starter-php-component" values="Project,Project" collectionTime="1442577819957" />
     </group>
     <group name="file-type">
-      <project id="bundle-entity-photoviewer" values="XML,PHAR,UNKNOWN,Twig,Images,JSP,Locale,HTML,Ini,C++,PHP,YAML,TypeScript,JSON,ReST,PLAIN_TEXT,SQL,CSS,Smarty" collectionTime="1442299246168" />
-      <project id="site-bo" values="SourceMap,Less,Sass,Smarty,CoffeeScript,JSON,JSHint,ReST,JSP,ARCHIVE,PLAIN_TEXT,PATCH,Cucumber,Images,SmartyConfig,JavaScript,htaccess,CSS,Ini,SQL,YAML,XML,JSCS,Twig,UNKNOWN,HTML,SQLite Database,PHP,Locale,SCSS,TypeScript,C++,ESLint,PHAR" collectionTime="1442304611809" />
-      <project id="workspace" values="Twig,PHP,SQL,Smarty,TypeScript,Images,Locale,YAML,LESS,C++,JavaScript,PLAIN_TEXT,HTML,SmartyConfig,ARCHIVE,Ini,SCSS,JSON,Native,htaccess,ReST,XML,UNKNOWN,PHAR,CSS" collectionTime="0" />
-      <project id="service-deco" values="JavaScript,Twig,JSON,DTD,C++,SQL,TypeScript,PLAIN_TEXT,SQLite Database,Smarty,HTML,PHAR,Cucumber,Ini,XML,Less,Locale,SCSS,PHP,Images,JSP,YAML,CSS,UNKNOWN,ReST,Sass" collectionTime="1442304613007" />
+      <project id="starter-php-component" values="PLAIN_TEXT,HTML,XML,UNKNOWN,Markdown,JSON,YAML,PHP,Bash,Git file" collectionTime="1442577819796" />
     </group>
     <group name="module type">
-      <project id="bundle-entity-photoviewer" values="WEB_MODULE" collectionTime="1442299246007" />
-      <project id="site-bo" values="WEB_MODULE" collectionTime="1442304611806" />
-      <project id="workspace" values="WEB_MODULE" collectionTime="0" />
-      <project id="service-deco" values="WEB_MODULE" collectionTime="1442304613005" />
+      <project id="starter-php-component" values="WEB_MODULE" collectionTime="1442577819789" />
     </group>
-    <group name="php-interpreter-version">
-      <project id="bundle-entity-photoviewer" values="not installed" collectionTime="1442299246486" />
-      <project id="site-bo" values="not installed" collectionTime="1442304611811" />
-      <project id="workspace" values="not installed" collectionTime="0" />
-      <project id="service-deco" values="not installed" collectionTime="1442304613009" />
+    <group name="php-include-path">
+      <project id="starter-php-component" values="0" collectionTime="1442577819957" />
     </group>
   </component>
   <component name="UsageTrigger">
     <counts>
-      <entry feature="CreateFile.CreateFileAction" count="2" />
-      <entry feature="ide.settings.Appearance" count="1" />
+      <entry feature="ide.settings.Appearance" count="3" />
       <entry feature="ide.settings.Code_Style" count="1" />
       <entry feature="ide.settings.Colors_&amp;_Fonts" count="1" />
-      <entry feature="ide.settings.Font" count="5" />
-      <entry feature="ide.settings.Keymap" count="1" />
-      <entry feature="ide.settings.PHP" count="1" />
-      <entry feature="ideaapp.started" count="8" />
+      <entry feature="ide.settings.Confirmation" count="1" />
+      <entry feature="ide.settings.ESLint" count="1" />
+      <entry feature="ide.settings.Editor_Tabs" count="1" />
+      <entry feature="ide.settings.File_Status" count="3" />
+      <entry feature="ide.settings.Font" count="1" />
+      <entry feature="ide.settings.General" count="1" />
+      <entry feature="ide.settings.Inspections" count="2" />
+      <entry feature="ide.settings.JavaScript" count="1" />
+      <entry feature="ide.settings.Keymap" count="4" />
+      <entry feature="ide.settings.Less" count="1" />
+      <entry feature="ide.settings.PHP" count="4" />
+      <entry feature="ide.settings.SCSS" count="1" />
+      <entry feature="ide.settings.Sass" count="1" />
+      <entry feature="ide.settings.Smart_Keys" count="1" />
+      <entry feature="ide.settings.System_Settings" count="1" />
+      <entry feature="ide.settings.Vagrant" count="1" />
+      <entry feature="ideaapp.started" count="6" />
+      <entry feature="welcome.screen.WelcomeScreen.Configure" count="1" />
       <entry feature="welcome.screen.WelcomeScreen.OpenDirectoryProject" count="1" />
     </counts>
   </component>
