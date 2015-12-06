@@ -1,0 +1,29 @@
+"*":
+  "exception-reporting":
+    userId: "7ae2a45f-bca0-f9f8-6c74-969dc34cdc17"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
+    projectHome: "F:\\workspace"
+    disabledPackages: [
+      "linter-markdown"
+    ]
+  editor:
+    invisibles: {}
+    fontSize: 18
+    showIndentGuide: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    tabType: "soft"
+    tabLength: 4
+  "linter-phpcs": {}
+  "linter-php": {}
+  "atom-autocomplete-php": {}
+  "go-plus": {}
+".ini.source":
+  editor:
+    preferredLineLength: 120
