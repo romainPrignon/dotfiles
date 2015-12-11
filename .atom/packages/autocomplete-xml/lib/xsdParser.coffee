@@ -51,20 +51,30 @@ module.exports =
     # Go to root node
     xml = xml.schema
 
+    # Check that there is a schema
+    if not xml
+      return
+
+    # Check that the schema follow the standard
+    xsdStandard = xml.$["xmlns:xs"]
+    if not xsdStandard or xsdStandard isnt "http://www.w3.org/2001/XMLSchema"
+      console.log "The schema doesn't follow the standard."
+      return
+
     # Process all ComplexTypes and SimpleTypes
     @parseType node for node in xml.$$
 
     # Process the root node (Element type).
     @parseRoot node for node in xml.element
 
+    # Copy root types into types since they could be used too.
+    @types[name] = value for name, value of @roots
+
     # Process all AttributeGroup (not regular types).
-    @parseAttributeGroup node for node in xml.attributeGroup
+    @parseAttributeGroup node for node in (xml.attributeGroup ? [])
 
     # Post parse the nodes and resolve links.
     @postParsing()
-
-    # Return calling the complete callback.
-    complete()
 
 
   ## Parse a node type.
@@ -117,13 +127,16 @@ module.exports =
 
     # Get the node that contains the children
     # TODO: Support list children.
-    # TODO: Support union children.
     # TODO: Support more restriction types.
     if node.restriction?[0].enumeration
       type.xsdChildrenMode = 'restriction'
       childrenNode = node.restriction[0]
       type.leftLabel = childrenNode.$.base
+    else if node.union
+      type.xsdChildrenMode = 'union'
+      type.leftLabel = node.union[0].$.memberTypes
 
+    if childrenNode
       group =
         childType: 'choice'
         description: ''
@@ -215,16 +228,18 @@ module.exports =
       description: @getDocumentation node
 
     # If the element type is defined inside.
-    if not child.xsdTypeName
+    if not child.xsdTypeName and node.$$
+      # Create a randome type name and parse the child.
+      # Iterate to skip "annotation", etc. It should ignore all except one.
       child.xsdTypeName = uuid()
-      @parseType node.$$[0], child.xsdTypeName
+      @parseType childNode, child.xsdTypeName for childNode in node.$$
 
     return child
 
   ## Parse attributes.
   parseAttribute: (node) ->
     nodeName = node["#name"]
-    if nodeName is "attribute"
+    if nodeName is "attribute" and node.$.use isnt "prohibited"
       return {
         name: node.$.name
         type: node.$.type
@@ -260,7 +275,7 @@ module.exports =
 
     # Now create a complex type.
     root = @initTypeObject null, rootElement.xsdTypeName
-    root.description = rootType.description
+    root.description = rootElement.description ? rootType.description
     root.text = rootTagName
     root.displayText = rootTagName
     root.type = 'class'
@@ -283,7 +298,8 @@ module.exports =
       # If the children type is extension, resolve the link.
       if type.xsdChildrenMode == 'extension'
         extenType = type.xsdChildren
-        extenAttr = (@parseAttribute n for n in extenType.$$).filter Boolean
+        extenAttr = (@parseAttribute n for n in (extenType.$$ or []))
+          .filter Boolean
 
         # Copy fields from base
         linkType = @types[extenType.$.base]
@@ -303,6 +319,14 @@ module.exports =
         linkType = @types[groupType.$.ref]
         type.xsdChildren = linkType.xsdChildren
         type.xsdChildrenMode = linkType.xsdChildrenMode
+
+      # If it's an union, merge the single types
+      else if type.xsdChildrenMode is 'union'
+        unionTypes = type.leftLabel.split(' ')
+        type.xsdChildrenMode = 'restriction'
+        for t in unionTypes
+          memberType = @types[t]
+          type.xsdChildren.push memberType.xsdChildren[0] if memberType
 
       # At the moment, I think it only makes sense if it replaces all the
       # elements. Consider a group that contains a sequence of choice elements.

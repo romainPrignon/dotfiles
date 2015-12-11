@@ -1,6 +1,7 @@
 xsd = require './xsd'
 utils = require './xml-utils'
 
+xmlValidation = /xmlns:xsi="http:\/\/www.w3.org\/2001\/XMLSchema-instance"/
 xsdPattern = /xsi:noNamespaceSchemaLocation="(.+)"/
 
 module.exports =
@@ -40,6 +41,8 @@ module.exports =
       @getTagNameCompletions options
     else if @isCloseTagName options
       @getCloseTagNameCompletion options
+    else if @isAttributeValue options
+      @getAttributeValueCompletions options
     else if @isAttribute options
       @getAttributeCompletions options
     else if @isTagValue options
@@ -50,9 +53,9 @@ module.exports =
 
   ## Get XSD URI
   getXsdUri: ({editor}) ->
-    # Get the XSD url
+    # Get the XSD url only if the XML ask for validation.
     txt = editor.getText()
-    uri = txt.match(xsdPattern)?[1]
+    if txt.match(xmlValidation) then uri = txt.match(xsdPattern)?[1] else null
 
 
   ## Filter the candidate completions by prefix.
@@ -136,7 +139,9 @@ module.exports =
     {row, column} = bufferPosition
     previousChar = editor.getTextInBufferRange([[row, column-1], [row, column]])
     scopes = scopeDescriptor.getScopesArray()
-    scopes.indexOf('meta.tag.xml') isnt -1 and previousChar isnt '>'
+    (scopes.indexOf('meta.tag.xml') isnt -1 or
+      scopes.indexOf('meta.tag.no-content.xml') isnt -1) and
+      previousChar isnt '>'
 
 
   ## Get the attributes for the current XPath tag.
@@ -147,3 +152,27 @@ module.exports =
 
     # Apply a filter with the current prefix and return.
     return @filterCompletions attributes, prefix
+
+  ## Check if the cursor is about complete the value of an attribute.
+  isAttributeValue: ({scopeDescriptor, prefix}) ->
+    scopes = scopeDescriptor.getScopesArray()
+    scopes.indexOf('string.quoted.double.xml') isnt -1
+
+  ## Get the attribute values.
+  getAttributeValueCompletions: ({editor, prefix, bufferPosition}) ->
+    {row, column} = bufferPosition
+
+    # Get the attribute name
+    line = editor.getTextInBufferRange([[row, 0], [row, column-prefix.length]])
+    attrNamePattern = /[\.\-:_a-zA-Z0-9]+=/g
+    attrName = matches = line.match(attrNamePattern)?.reverse()[0]
+    attrName = attrName.slice 0, -1
+
+    # Get the XPath
+    xpath = utils.getXPath(editor.getBuffer(), bufferPosition, '')
+
+    # Get the children of the XPath
+    children = xsd.getAttributeValues xpath, attrName
+
+    # Apply a filter with the current prefix and return.
+    return @filterCompletions children, prefix

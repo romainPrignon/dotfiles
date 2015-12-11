@@ -29,3 +29,6 @@
 '.platform-win32, .platform-linux':
   'ctrl-h': 'tree-view:toggle'
   'ctrl-y': 'tree-view:toggle-focus'
+
+'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+  'ctrl-e': 'core:redo'

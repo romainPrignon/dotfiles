@@ -1,3 +1,18 @@
+## 0.8.0
+* Add automatically required attributes when completing a tag.
+* New configuration to add automatically the closing tag too.
+* Parse XSD union SimpleType restriction.
+* Autocomplete attribute values.
+* Fix not autocompleting attributes for empty tags.
+* Ignore prohibited attributes.
+
+## 0.7.6
+* Only parse XSD documents that follows the W3C standard.
+* Show autocompletation only for XML that asks validation.
+* Fix elements with a self-definition with first element "annotation".
+* Fix several bugs assuming some tags were present.
+* Fix using root elements as root child.
+
 ## 0.7.5
 * Merge attributes from extension types.
 * Throw errors to console to not annoy the user.

@@ -1,7 +1,7 @@
 {
   "name": "atom-symfony2",
   "main": "./lib/atom-symfony2",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Symfony2 tools and completion",
   "keywords": [
     "php",
@@ -41,48 +41,48 @@
       }
     }
   },
-  "readme": "# Installation\n\nSymfony2 tools for atom editor.\nDepends on [atom-autocomplete-php](https://atom.io/packages/atom-autocomplete-php)\n\nNote : This package is in its early stage, feel free to help or to report issues\n\n# Features\n\n- Autocomplete on service names in .xml files and .yml files\n- Autocomplete on class names in .xml files and .yml files\n- More to come...\n\n# Configuration\n\nYou must have a fully working [atom-autocomplete-php](https://atom.io/packages/atom-autocomplete-php) configuration\n\n- Relative path to console : Insert here, a coma separated list of all your path to console in your projects. By default in Symfony2, it's ```app/console```\n\n![Example](http://i.imgur.com/l8ZGAoe.png)\n\n![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)\n",
+  "readme": "# Installation\n\nSymfony2 tools for atom editor.\nDepends on [atom-autocomplete-php](https://atom.io/packages/atom-autocomplete-php)\n\nNote : This package is in its early stage, feel free to help or to report issues\n\n# Features\n\n- Autocomplete on service names in .xml files and .yml files\n- Autocomplete on class names in .xml files and .yml files\n- Services completion in symfony2 controllers (or everywhere you're using the container)\n\n# Configuration\n\nYou must have a fully working [atom-autocomplete-php](https://atom.io/packages/atom-autocomplete-php) configuration\n\n- Relative path to console : Insert here, a coma separated list of all your path to console in your projects. By default in Symfony2, it's ```app/console```\n\n![Example](http://i.imgur.com/l8ZGAoe.png)\n\n![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)\n",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/peekmo/atom-symfony2/issues"
   },
   "homepage": "https://github.com/peekmo/atom-symfony2#readme",
-  "_id": "atom-symfony2@0.2.0",
-  "_shasum": "69f54aa8840bc8ad6e241ae91ae38d02490ac7ba",
-  "_resolved": "file:..\\d-115116-9324-1j7u926\\package.tgz",
-  "_from": "..\\d-115116-9324-1j7u926\\package.tgz",
+  "_id": "atom-symfony2@0.2.1",
+  "_shasum": "46259b1df3b9f4acdb52b7320a3ca41103a76868",
+  "_resolved": "file:../d-1151111-22516-9lk7le/package.tgz",
+  "_from": "../d-1151111-22516-9lk7le/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
         "name": "fuzzaldrin",
         "version": "2.1.0",
-        "path": "node_modules\\fuzzaldrin\\lib\\fuzzaldrin.js"
+        "path": "node_modules/fuzzaldrin/lib/fuzzaldrin.js"
       }
     ],
     "extensions": {
       ".coffee": [
-        "lib\\atom-symfony2.coffee",
-        "lib\\config.coffee",
-        "lib\\plugin.coffee",
-        "lib\\providers\\service-provider.coffee",
-        "lib\\providers\\services\\file-class-provider.coffee",
-        "lib\\providers\\services\\file-service-provider.coffee",
-        "lib\\providers\\services\\xml-class-provider.coffee",
-        "lib\\providers\\services\\xml-service-provider.coffee",
-        "lib\\providers\\services\\yaml-class-provider.coffee",
-        "lib\\providers\\services\\yaml-service-provider.coffee",
-        "lib\\services\\php-parser.coffee",
-        "lib\\services\\symfony2-proxy.coffee"
+        "lib/atom-symfony2.coffee",
+        "lib/config.coffee",
+        "lib/plugin.coffee",
+        "lib/providers/service-provider.coffee",
+        "lib/providers/services/file-class-provider.coffee",
+        "lib/providers/services/file-service-provider.coffee",
+        "lib/providers/services/xml-class-provider.coffee",
+        "lib/providers/services/xml-service-provider.coffee",
+        "lib/providers/services/yaml-class-provider.coffee",
+        "lib/providers/services/yaml-service-provider.coffee",
+        "lib/services/php-parser.coffee",
+        "lib/services/symfony2-proxy.coffee"
       ],
       ".js": [
-        "node_modules\\fuzzaldrin\\lib\\filter.js",
-        "node_modules\\fuzzaldrin\\lib\\fuzzaldrin.js",
-        "node_modules\\fuzzaldrin\\lib\\matcher.js",
-        "node_modules\\fuzzaldrin\\lib\\scorer.js"
+        "node_modules/fuzzaldrin/lib/filter.js",
+        "node_modules/fuzzaldrin/lib/fuzzaldrin.js",
+        "node_modules/fuzzaldrin/lib/matcher.js",
+        "node_modules/fuzzaldrin/lib/scorer.js"
       ],
       ".json": [
-        "node_modules\\fuzzaldrin\\package.json",
+        "node_modules/fuzzaldrin/package.json",
         "package.json"
       ]
     },
@@ -90,9 +90,9 @@
       {
         "paths": [
           "lib",
-          "lib\\providers",
-          "lib\\providers\\services",
-          "lib\\services",
+          "lib/providers",
+          "lib/providers/services",
+          "lib/services",
           "",
           "spec"
         ],

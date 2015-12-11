@@ -5,6 +5,9 @@ let Client;
 let Helper;
 let PackageConfig;
 let Config;
+let Type;
+let Reference;
+let Rename;
 let _ = require('underscore-plus');
 
 export default class Manager {
@@ -21,6 +24,8 @@ export default class Manager {
     this.client = undefined;
     this.servers = [];
     this.server = undefined;
+
+    this.editors = [];
 
     this.rename = undefined;
     this.type = undefined;
@@ -276,6 +281,17 @@ export default class Manager {
     return false;
   }
 
+  getEditor(editor) {
+
+    for (let _editor of this.editors) {
+
+      if (_editor.id === editor.id) {
+
+        return _editor;
+      }
+    }
+  }
+
   isValidEditor(editor) {
 
     if (!editor || !editor.getGrammar || editor.mini) {
@@ -323,6 +339,13 @@ export default class Manager {
 
         return;
       }
+
+      // Register valid editor
+      this.editors.push({
+
+        id: editor.id,
+        diffs: []
+      });
 
       if (!this.initCalled) {
 
@@ -389,8 +412,13 @@ export default class Manager {
 
         if (this.client) {
 
-          this.client.update(editor.getURI(), editor.getText());
+          this.client.update(editor);
         }
+      }));
+
+      this.disposables.push(editor.getBuffer().onDidChange((e) => {
+
+        this.getEditor(editor).diffs.push(e);
       }));
     }));
 

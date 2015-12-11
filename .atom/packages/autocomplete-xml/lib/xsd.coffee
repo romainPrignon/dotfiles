@@ -49,7 +49,8 @@ module.exports =
   ## Parse the the XML
   parseFromString: (data, complete) ->
     @types = xsdParser.types
-    xsdParser.parseFromString(data, complete)
+    xsdParser.parseFromString data
+    complete()
 
 
   ## Called when suggestion requested. Get all the possible node children.
@@ -98,13 +99,29 @@ module.exports =
     # The suggestion is a merge between the general type info and the
     # specific information from the child object.
     childType = @types[child.xsdTypeName]
+
+    # Create the snippet
+    snippet = child.tagName
+
+    # Add the must-be attributes
+    snippetId = 1
+    for attr in (childType?.xsdAttributes or []) when attr.use is 'required'
+      snippet += " #{attr.name}=\""
+      snippet += "${#{snippetId++}:#{(attr.fixed ? attr.default) ? ''}}\""
+    snippet += ">"
+
+    # Add the closing tag if so
+    closingConfig = atom.config.get 'autocomplete-xml.addClosingTag'
+    snippet += "${#{snippetId++}:}</" + child.tagName + '>' if closingConfig
+
+    # Create the suggestion
     sug =
-      text: child.tagName + '>'
+      snippet: snippet
       displayText: child.tagName
       description: child.description ? childType?.description
-      type: childType?.type
-      rightLabel: childType?.rightLabel
-      leftLabel: childType?.leftLabel
+      type: 'tag'
+      rightLabel: 'Tag'
+      leftLabel: childType?.leftLabel ? (child.xsdTypeName if not childType)
 
 
   ## Get the values from a tag.
@@ -118,6 +135,29 @@ module.exports =
     # TODO: Represent groups in autocompletion
     suggestions = []
     for group in type.xsdChildren
+      suggestions.push @createValueSuggestion el for el in group.elements
+
+    # Remove undefined elements (e.g.: non-supported yet types).
+    suggestions.filter (n) -> n != undefined
+
+
+  ## Get attribute value.
+  getAttributeValues: (xpath, attrName) ->
+    # Get the XSD type name of the tag name
+    type = @findTypeFromXPath xpath
+    if not type
+      return []
+
+    # Get the attribute type
+    attribute = (attr for attr in type.xsdAttributes when attr.name is attrName)
+    attrType = @types[attribute[0]?.type]
+    if not attrType
+      return []
+
+    # Create list of suggestions from childrens
+    # TODO: Represent groups in autocompletion
+    suggestions = []
+    for group in attrType.xsdChildren
       suggestions.push @createValueSuggestion el for el in group.elements
 
     # Remove undefined elements (e.g.: non-supported yet types).

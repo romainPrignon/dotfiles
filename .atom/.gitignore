@@ -5,4 +5,4 @@ dev
 .node-gyp
 nohup.out
 .apm
-!.apm/.apmrc
+.apm/.apmrc

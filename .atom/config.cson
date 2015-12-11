@@ -14,12 +14,14 @@
     ]
   editor:
     invisibles: {}
-    fontSize: 18
+    fontSize: 16
     showIndentGuide: true
     softWrap: true
     softWrapAtPreferredLineLength: true
     tabType: "soft"
     tabLength: 4
+    preferredLineLength: 120
+    zoomFontWhenCtrlScrolling: false
   "linter-phpcs": {}
   "linter-php": {}
   "atom-autocomplete-php": {}
