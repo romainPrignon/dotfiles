@@ -11,6 +11,7 @@
     projectHome: "F:\\workspace"
     disabledPackages: [
       "linter-markdown"
+      "atom-beautify"
     ]
   editor:
     invisibles: {}
@@ -26,6 +27,9 @@
   "linter-php": {}
   "atom-autocomplete-php": {}
   "go-plus": {}
+  "atom-beautify":
+    analytics: false
+  "linter-eslint": {}
 ".ini.source":
   editor:
     preferredLineLength: 120
