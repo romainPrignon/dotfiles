@@ -36,7 +36,8 @@ class Client
 
   update: (editor) ->
     _editor = @manager.getEditor(editor)
-    return Promise.resolve({}) if _editor.diffs.length is 0
+    return Promise.resolve() if _editor?.diffs.length is 0
+    _editor?.diffs = []
     # buffer = editor.getBuffer()
     # if buffer.getMaxCharacterIndex() > 5000
     #   doDiff = true
@@ -44,7 +45,6 @@ class Client
     #     start = Math.max(0, diff.oldRange.start.row - 50)
     #     end = Math.min(buffer.getLineCount(), diff.oldRange.end.row + 20)
     #   text = buffer.getTextInRange([[start, 0], [end, buffer.lineLengthForRow(end)]])
-    _editor.diffs = []
     # if (false)
       # @post(JSON.stringify
       #   files: [
@@ -114,6 +114,13 @@ class Client
         @manager.helper?.openFileAndGoTo(data.start, data.file)
     , (err) ->
       console.log err
+
+  files: ->
+    @post(JSON.stringify
+      query:
+        type: 'files'
+    ).then (data) =>
+      console.dir(data)
 
   post: (data) ->
     fetch("http://localhost:#{@port}",

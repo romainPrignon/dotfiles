@@ -1,7 +1,7 @@
 {
   "name": "linter-jsonlint",
   "main": "index.js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A plugin for Atom Linter providing an interface to jsonlint",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
     "atom": ">=1.0.0"
   },
   "dependencies": {
-    "atom-linter": "^4.0.1",
+    "atom-linter": "^4.1.1",
     "atom-package-deps": "^3.0.6",
     "jsonlint": "~1.6.2"
   },
@@ -32,10 +32,10 @@
     "url": "https://github.com/AtomLinter/linter-jsonlint/issues"
   },
   "homepage": "https://github.com/AtomLinter/linter-jsonlint#readme",
-  "_id": "linter-jsonlint@1.1.1",
-  "_shasum": "d9d6a6736f10e599f77a49782b19108ac21b9914",
-  "_resolved": "file:../d-1151111-23092-9wd9bl/package.tgz",
-  "_from": "../d-1151111-23092-9wd9bl/package.tgz",
+  "_id": "linter-jsonlint@1.1.2",
+  "_shasum": "caab66b9fc32b97c1cc292aeae8862b94b163aaa",
+  "_resolved": "file:../d-1151113-3271-1l04qas/package.tgz",
+  "_from": "../d-1151113-3271-1l04qas/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -231,7 +231,7 @@
           ""
         ],
         "dependencies": {
-          "atom-linter": "^4.0.1",
+          "atom-linter": "^4.1.1",
           "atom-package-deps": "^3.0.6",
           "jsonlint": "~1.6.2"
         }
