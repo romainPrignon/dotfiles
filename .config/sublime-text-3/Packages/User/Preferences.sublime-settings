@@ -1,9 +1,11 @@
 {
-	"default_line_ending": "unix",
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"default_encoding": "UTF-8",
-	"show_line_endings": true,
-    "show_encoding": true,
+	"default_line_ending": "unix",
 	"detect_indentation": false,
+	"detect_slow_plugins": false,
+	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
 		".DS_Store",
@@ -13,29 +15,36 @@
 		".Spotlight-V100",
 		".Trashes"
 	],
+	"flatland_sidebar_tree_xsmall": true,
+	"flatland_square_tabs": false,
 	"folder_exclude_patterns":
 	[
 	],
+	"font_face": "DejaVu Sans Mono",
 	"font_size": 12,
+	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_padding_bottom": 1,
 	"line_padding_top": 1,
-    "line_padding_bottom": 1,
+	"preview_on_click": false,
 	"remember_open_files": true,
+	"remember_open_folders": true,
 	"rulers":
 	[
 		120
 	],
-    "wrap_width": 120,
-	"tab_size": 4,
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true,
-	"bold_folder_labels": true,
-	"detect_slow_plugins": false,
-	"highlight_line": true,
-	"remember_open_folders": true,
 	"scroll_past_end": false,
 	"scroll_speed": 2,
-	"ensure_newline_at_eof_on_save": true
+	"show_encoding": true,
+	"show_line_endings": true,
+	"tab_size": 4,
+	"theme": "Flatland Dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"wrap_width": 120
 }
