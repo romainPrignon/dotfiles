@@ -10,3 +10,6 @@ cd dotfiles
 ```
 On windows :
 mklink /H C:\Users\Smith\.vimrc C:\Users\Smith\workspace\dotfiles\.vimrc
+
+**editorconfig**
+if you want to use a global editorconfig, rename .my_editorconfig into .editorconfig_
