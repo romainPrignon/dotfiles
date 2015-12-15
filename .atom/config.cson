@@ -22,6 +22,7 @@
     tabLength: 4
     preferredLineLength: 120
     zoomFontWhenCtrlScrolling: false
+    fontFamily: "DejaVu Sans Mono"
   "linter-phpcs": {}
   "linter-php": {}
   "atom-autocomplete-php": {}
