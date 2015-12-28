@@ -1,7 +1,7 @@
 {
   "name": "autocomplete-xml",
   "main": "./lib/main",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Autocomplete+ provider for XML via XSD",
   "keywords": [
     "xml",
@@ -41,10 +41,10 @@
     "url": "https://github.com/pleonex/atom-autocomplete-xml/issues"
   },
   "homepage": "https://github.com/pleonex/atom-autocomplete-xml#readme",
-  "_id": "autocomplete-xml@0.8.0",
-  "_shasum": "7511e936404115e9eebe42d32a3a3e29e4e408f1",
-  "_resolved": "file:../d-1151111-22894-uqujy/package.tgz",
-  "_from": "../d-1151111-22894-uqujy/package.tgz",
+  "_id": "autocomplete-xml@0.8.1",
+  "_shasum": "3cee9a7103d6d506250b012c022a371d271a50a7",
+  "_resolved": "file:../d-1151128-9505-1sixbua/package.tgz",
+  "_from": "../d-1151128-9505-1sixbua/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -65,7 +65,7 @@
       },
       {
         "name": "xmlbuilder",
-        "version": "4.1.0",
+        "version": "4.2.0",
         "path": "node_modules/xml2js/node_modules/xmlbuilder/lib/index.js"
       },
       {

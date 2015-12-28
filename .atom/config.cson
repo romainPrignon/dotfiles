@@ -30,6 +30,8 @@
   "atom-beautify":
     analytics: false
   "linter-eslint": {}
+  whitespace:
+    ensureSingleTrailingNewline: false
 ".ini.source":
   editor:
     preferredLineLength: 120

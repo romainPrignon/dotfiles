@@ -1,3 +1,7 @@
+## 0.8.1
+* Fix error detecting tag values as attributes.
+* Decrease load time from ~150 ms to less than 5 ms.
+
 ## 0.8.0
 * Add automatically required attributes when completing a tag.
 * New configuration to add automatically the closing tag too.
