@@ -32,3 +32,8 @@
 
 '.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
   'ctrl-e': 'core:redo'
+
+'atom-text-editor':
+  'ctrl-alt-d': 'unset!'
+  'ctrl-alt-d': 'git-diff-details:toggle-git-diff-details'
+  'ctrl-alt-u': 'git-diff-details:undo'

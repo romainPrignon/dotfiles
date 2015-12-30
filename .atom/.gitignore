@@ -7,3 +7,4 @@ nohup.out
 .apm
 .apm/.apmrc
 packages/atom-autocomplete-php/indexes/
+blob-store/

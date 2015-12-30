@@ -1,6 +1,6 @@
 {
   "name": "advanced-open-file",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "main": "./lib/advanced-open-file",
   "description": "Open and create files and directories easily. Type in a path (with autocomplete) and view directory contents.",
   "activationCommands": {
@@ -48,10 +48,10 @@
     "url": "https://github.com/Osmose/advanced-open-file/issues"
   },
   "homepage": "https://github.com/Osmose/advanced-open-file#readme",
-  "_id": "advanced-open-file@0.14.0",
-  "_shasum": "890af632f06fe226c09cba798a3322158475dcaf",
-  "_resolved": "file:../d-1151128-9471-1ukibfe/package.tgz",
-  "_from": "../d-1151128-9471-1ukibfe/package.tgz",
+  "_id": "advanced-open-file@0.14.1",
+  "_shasum": "67b7b0b930ad68565f7b499d5dec968e83feb63e",
+  "_resolved": "file:../d-1151130-16832-yhwlri/package.tgz",
+  "_from": "../d-1151130-16832-yhwlri/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [

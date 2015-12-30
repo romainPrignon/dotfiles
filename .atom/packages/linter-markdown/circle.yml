@@ -11,6 +11,9 @@ dependencies:
     - atom -v
     - apm -v
     - apm install
-# test:
-#   post:
-    #- apm test  # TODO: add specs (#13)
+test:
+  pre:
+    - npm run lint
+    - ./node_modules/.bin/eslint ./
+  override:
+    - apm test
