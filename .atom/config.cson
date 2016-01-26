@@ -32,6 +32,7 @@
   "linter-eslint": {}
   whitespace:
     ensureSingleTrailingNewline: false
+  linter: {}
 ".ini.source":
   editor:
     preferredLineLength: 120

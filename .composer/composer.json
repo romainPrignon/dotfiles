@@ -6,6 +6,7 @@
         "fabpot/php-cs-fixer": "@stable",
         "phpunit/phpunit": "@stable",
         "psecio/iniscan": "@stable",
-        "vinkla/climb": "@stable"
+        "vinkla/climb": "@stable",
+        "hirak/prestissimo": "@stable"
 	}
 }

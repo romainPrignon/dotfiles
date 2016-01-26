@@ -1,6 +1,7 @@
 [user]
     name = Romain Prignon
     email = pro.rprignon@gmail.com
+
 [alias]
     tags = tag -l
     branches = branch -a
@@ -84,11 +85,8 @@
     # find orphans
     orphans = git fsck --full
 
-[push]
-    default = simple
+[core]
+    excludesfile = ~/.gitignore
 
 [diff]
     mnemonicPrefix = true
-
-[gc]
-  auto=1
