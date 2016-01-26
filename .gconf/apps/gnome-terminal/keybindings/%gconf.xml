@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <gconf>
 	<entry name="paste" mtime="1441032761" type="string">
-		<stringvalue>&lt;Primary&gt;v</stringvalue>
+		<stringvalue>&lt;Primary&gt;b</stringvalue>
 	</entry>
 	<entry name="copy" mtime="1441032759" type="string">
-		<stringvalue>&lt;Primary&gt;c</stringvalue>
+		<stringvalue>&lt;Primary&gt;v</stringvalue>
 	</entry>
 	<entry name="close_tab" mtime="1441032751" type="string">
 		<stringvalue>&lt;Primary&gt;w</stringvalue>

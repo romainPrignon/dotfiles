@@ -8,7 +8,7 @@
       "one-dark-ui"
       "monokai"
     ]
-    projectHome: "F:\\workspace"
+    projectHome: "~/workspace"
     disabledPackages: [
       "linter-markdown"
     ]

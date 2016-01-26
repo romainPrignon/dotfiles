@@ -15,7 +15,7 @@ PATH="$HOME/app/phpstorm/bin:$PATH"
 PATH="$HOME/app/android-studio/bin:$PATH"
 
 # Make nano the default editor
-export EDITOR="nano";
+export EDITOR="vim";
 
 # proxy
 #export http_proxy=http://some.host:8080
