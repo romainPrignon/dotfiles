@@ -14,3 +14,8 @@ On windows :
 ```
 bootstrap.bat
 ```
+
+**Load gconf**
+```bash
+gconftool-2 --load=./exported-settings/gconf-gnome-terminal.xml
+```

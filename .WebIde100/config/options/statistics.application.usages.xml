@@ -1,0 +1,283 @@
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="javaScript Scope Usages">
+      <project id="component-monitoring" values="Project,Project,Project,Directory" collectionTime="1444051647106" />
+      <project id="starter-module-es5" values="Project,Project,Project" collectionTime="1443008579144" />
+      <project id="site-turbo" values="Project,Project,Project" collectionTime="1452096301971" />
+      <project id="deployer" values="Project,Project,Project" collectionTime="1448546658652" />
+      <project id="site-deco-react" values="Project,Project,Directory,Project" collectionTime="1453739163654" />
+      <project id="site-bo" values="Project,Project,Project" collectionTime="1452852641188" />
+      <project id="site-6play-v4" values="Project,Directory,Project,Project" collectionTime="1453393786232" />
+      <project id="react-iso-app-starter" values="Project,Directory,Project,Project" collectionTime="1443107624802" />
+      <project id="service-deco-jsonld" values="Project,Project,Project" collectionTime="1443096458017" />
+      <project id="site-deco" values="Project,Project,Project" collectionTime="1448456094252" />
+      <project id="site-clubic" values="Project,Project" collectionTime="1448464932587" />
+      <project id="component-coteauto" values="Directory,Project,Project,Project" collectionTime="1453912355374" />
+      <project id="service-deco" values="Project,Project,Project" collectionTime="1449244606928" />
+      <project id="react-redux-starter-kit" values="Project,Project,Directory,Project" collectionTime="1449851602052" />
+      <project id="service-api" values="Project,Project,Project" collectionTime="1449244597806" />
+      <project id="bundle-entity-advertising-box" values="Project,Project,Project" collectionTime="1449136698539" />
+      <project id="service-turbo" values="Project,Project,Project" collectionTime="1452787148777" />
+      <project id="starter-php-component" values="Project,Project" collectionTime="1442923190809" />
+    </group>
+    <group name="JavaScript versions">
+      <project id="component-monitoring" values="ECMAScript 6" collectionTime="1444051647106" />
+      <project id="starter-module-es5" values="ECMAScript 6" collectionTime="1443008579144" />
+      <project id="site-turbo" values="ECMAScript 6" collectionTime="1452096301971" />
+      <project id="deployer" values="ECMAScript 6" collectionTime="1448546658652" />
+      <project id="site-deco-react" values="JSX Harmony" collectionTime="1453739163654" />
+      <project id="site-bo" values="ECMAScript 6" collectionTime="1452852641188" />
+      <project id="site-6play-v4" values="ECMAScript 6" collectionTime="1453393786232" />
+      <project id="react-iso-app-starter" values="JSX Harmony" collectionTime="1443107624802" />
+      <project id="service-deco-jsonld" values="ECMAScript 6" collectionTime="1443096458017" />
+      <project id="site-deco" values="ECMAScript 6" collectionTime="1448456094252" />
+      <project id="site-clubic" values="ECMAScript 5.1" collectionTime="1448464932587" />
+      <project id="component-coteauto" values="JSX Harmony" collectionTime="1453912355374" />
+      <project id="service-deco" values="ECMAScript 6" collectionTime="1449244606928" />
+      <project id="react-redux-starter-kit" values="JSX Harmony" collectionTime="1449851602052" />
+      <project id="service-api" values="ECMAScript 6" collectionTime="1449244597806" />
+      <project id="bundle-entity-advertising-box" values="ECMAScript 6" collectionTime="1449136698539" />
+      <project id="service-turbo" values="ECMAScript 6" collectionTime="1452787148777" />
+      <project id="starter-php-component" values="ECMAScript 5.1" collectionTime="1442923190809" />
+    </group>
+    <group name="php-interpreter-version">
+      <project id="component-monitoring" values="5.5.9-1ubuntu4.11" collectionTime="1444051647106" />
+      <project id="starter-module-es5" values="5.5.9-1ubuntu4.11" collectionTime="1443008579178" />
+      <project id="site-turbo" values="5.5.9-1ubuntu4.11" collectionTime="1452096301971" />
+      <project id="deployer" values="5.5.9-1ubuntu4.11" collectionTime="1448546658774" />
+      <project id="site-deco-react" values="5.5.9-1ubuntu4.11" collectionTime="1453739163774" />
+      <project id="site-bo" values="5.5.9-1ubuntu4.11" collectionTime="1452852641188" />
+      <project id="site-6play-v4" values="5.5.9-1ubuntu4.11" collectionTime="1453393786232" />
+      <project id="react-iso-app-starter" values="5.5.9-1ubuntu4.11" collectionTime="1443107624802" />
+      <project id="service-deco-jsonld" values="5.5.9-1ubuntu4.11" collectionTime="1443096458041" />
+      <project id="site-deco" values="5.5.9-1ubuntu4.11" collectionTime="1448456094276" />
+      <project id="site-clubic" values="not installed" collectionTime="1448464932587" />
+      <project id="component-coteauto" values="5.5.9-1ubuntu4.11" collectionTime="1453912355514" />
+      <project id="service-deco" values="5.5.9-1ubuntu4.11" collectionTime="1449244606977" />
+      <project id="react-redux-starter-kit" values="5.5.9-1ubuntu4.11" collectionTime="1449851602131" />
+      <project id="service-api" values="5.5.9-1ubuntu4.11" collectionTime="1449244597826" />
+      <project id="bundle-entity-advertising-box" values="5.5.9-1ubuntu4.11" collectionTime="1449136698539" />
+      <project id="service-turbo" values="5.5.9-1ubuntu4.11" collectionTime="1452787148782" />
+      <project id="starter-php-component" values="5.5.9-1ubuntu4.11" collectionTime="1442923190822" />
+    </group>
+    <group name="vcs">
+      <project id="component-monitoring" values="Git" collectionTime="1444051647091" />
+      <project id="starter-module-es5" values="Git" collectionTime="1443008578949" />
+      <project id="site-turbo" values="Git" collectionTime="1452096301942" />
+      <project id="deployer" values="Git" collectionTime="1448546658116" />
+      <project id="site-deco-react" values="Git" collectionTime="1453739162808" />
+      <project id="site-bo" values="Git" collectionTime="1452852641071" />
+      <project id="site-6play-v4" values="Git" collectionTime="1453393786083" />
+      <project id="react-iso-app-starter" values="Git" collectionTime="1443107624742" />
+      <project id="site-deco" values="Git" collectionTime="1448456094076" />
+      <project id="site-clubic" values="Git" collectionTime="1448464932549" />
+      <project id="component-coteauto" values="Git" collectionTime="1453912354423" />
+      <project id="service-deco" values="Git" collectionTime="1449244606907" />
+      <project id="react-redux-starter-kit" values="Git" collectionTime="1449851601925" />
+      <project id="service-api" values="Git" collectionTime="1449244597404" />
+      <project id="bundle-entity-advertising-box" values="Git" collectionTime="1449136698535" />
+      <project id="service-turbo" values="Git" collectionTime="1452787148641" />
+      <project id="starter-php-component" values="Git" collectionTime="1442923190512" />
+    </group>
+    <group name="jdbc-driver">
+      <project id="site-clubic" values="org.sqlite.JDBC" collectionTime="1448464932587" />
+      <project id="site-bo" values="org.sqlite.JDBC,org.sqlite.JDBC" collectionTime="1452852641188" />
+      <project id="service-deco" values="org.sqlite.JDBC,org.sqlite.JDBC,org.sqlite.JDBC" collectionTime="1449244606928" />
+    </group>
+    <group name="file-type">
+      <project id="component-monitoring" values="Markdown,UNKNOWN,PLAIN_TEXT,JavaScript,JSON,XML,Git file" collectionTime="1444051647104" />
+      <project id="starter-module-es5" values="JSON,ESLint,Git file,UNKNOWN,Bash,PLAIN_TEXT,JavaScript,Markdown,XML" collectionTime="1443008578978" />
+      <project id="site-turbo" values="SCSS,C++,HTML,DTD,htaccess,ActionScript,PATCH,Bash,TypeScript,Smarty,UNKNOWN,XML,PHAR,PHP,ARCHIVE,Locale,CSS,Native,Cucumber,JavaScript,SQL,JSON,Perl,ReST,Cvs file,ASP,PLAIN_TEXT,Twig,Git file,Ini,SmartyConfig,JSP,YAML,Images,Less" collectionTime="1452096301970" />
+      <project id="deployer" values="Bash,YAML,PLAIN_TEXT,XML,UNKNOWN" collectionTime="1448546658183" />
+      <project id="site-deco-react" values="YAML,JSON,SCSS,Images,UNKNOWN,XML,Docker file,Less,Cucumber,PLAIN_TEXT,Npm file,JSHint,HTML,JSCS,SourceMap,JSX Harmony,JavaScript,Git file,ESLint,Bash,CSS" collectionTime="1453739162922" />
+      <project id="site-bo" values="UNKNOWN" collectionTime="1452852641101" />
+      <project id="site-6play-v4" values="JavaScript,Less,UNKNOWN,Cucumber,PLAIN_TEXT,CSS,JSX Harmony,Bash,Images,HTML,Git file,JSON,YAML,CoffeeScript,XML,ESLint" collectionTime="1453393786231" />
+      <project id="react-iso-app-starter" values="Markdown,Cucumber,Npm file,SourceMap,JSON,Images,JSCS,Git file,HTML,JavaScript,UNKNOWN,SCSS,ESLint,YAML,XML,JSHint,Bash,CSS,PLAIN_TEXT,Less" collectionTime="1443107624801" />
+      <project id="service-deco-jsonld" values="PLAIN_TEXT,Locale,JavaScript,Bash,Ini,ReST,C++,YAML,Cucumber,UNKNOWN,CSS,Git file,SQL,PHAR,Twig,htaccess,PHP,ARCHIVE,DTD,Markdown,TypeScript,JSON,XML,Images,Smarty,HTML" collectionTime="1443096457984" />
+      <project id="site-deco" values="SourceMap,Perl,Cucumber,JSON,SQL,htaccess,SmartyConfig,ActionScript,PLAIN_TEXT,C++,YAML,PHAR,Bash,Ini,ARCHIVE,JSHint,ASP,JavaScript,ReST,Smarty,Native,ESLint,SCSS,PATCH,XML,Less,JSP,Twig,Images,HTML,TypeScript,JSCS,DTD,PHP,CSS,Sass,UNKNOWN,Locale" collectionTime="1448456094228" />
+      <project id="site-clubic" values="Sass,JavaScript,TypeScript,UNKNOWN,htaccess,ReST,Twig,SQL,YAML,SCSS,Less,C++,CSS,PLAIN_TEXT,DATASOURCE_STORAGE,DTD,HTML,PATCH,Bash,Images,Native,Cucumber,Locale,Ini,Perl,SmartyConfig,PHAR,ESLint,PHP,JSHint,JSON,ASP,XML,Smarty,ARCHIVE,ActionScript,SourceMap" collectionTime="1448464932585" />
+      <project id="component-coteauto" values="Images,YAML,CSS,UNKNOWN,HTML,PLAIN_TEXT,ESLint,Git file,SCSS,SourceMap,JavaScript,Cucumber,Bash,XML,JSON" collectionTime="1453912354621" />
+      <project id="service-deco" values="Smarty,ReST,Bash,DATASOURCE_STORAGE,CSS,XML,PHP,YAML,Locale,JSON,JSP,Cucumber,SQLite Database,Twig,DTD,TypeScript,Images,SQL,PHAR,HTML,C++,Ini,JavaScript,PLAIN_TEXT,UNKNOWN" collectionTime="1449244606927" />
+      <project id="react-redux-starter-kit" values="JavaScript,SCSS,XML,Bash,SourceMap,PLAIN_TEXT,HTML,ESLint,JSON,YAML,UNKNOWN,Git file" collectionTime="1449851601966" />
+      <project id="service-api" values="JSHint,Twig,JSCS,Images,XML,ESLint,ARCHIVE,SQL,YAML,SQLite Database,Bash,PHP,ReST,JavaScript,TypeScript,JSP,Smarty,CSS,SourceMap,JSON,PLAIN_TEXT,Less,UNKNOWN,Locale,HTML,PHAR,CoffeeScript,Cucumber,Ini,C++,htaccess" collectionTime="1449244597458" />
+      <project id="bundle-entity-advertising-box" values="PLAIN_TEXT,PHP,XML,JSON,YAML,UNKNOWN" collectionTime="1449136698539" />
+      <project id="service-turbo" values="Git file,YAML,Bash,PLAIN_TEXT,Ini,XML,CSS,UNKNOWN,SQL,JSON,Twig,Cucumber,PHAR,ReST,C++,PHP,TypeScript,SQLite Database,Smarty,Locale,Images,HTML,JSP,DTD,JavaScript" collectionTime="1452787148674" />
+      <project id="starter-php-component" values="Git file,PLAIN_TEXT,JSON,PHP,UNKNOWN,XML,HTML,Markdown,Bash,YAML" collectionTime="1442923190520" />
+    </group>
+    <group name="php-debug-skipped-paths">
+      <project id="component-monitoring" values="0" collectionTime="1444051647106" />
+      <project id="starter-module-es5" values="0" collectionTime="1443008579184" />
+      <project id="site-turbo" values="0" collectionTime="1452096301971" />
+      <project id="deployer" values="0" collectionTime="1448546658785" />
+      <project id="site-deco-react" values="0" collectionTime="1453739163784" />
+      <project id="site-bo" values="0" collectionTime="1452852641188" />
+      <project id="site-6play-v4" values="0" collectionTime="1453393786232" />
+      <project id="react-iso-app-starter" values="0" collectionTime="1443107624802" />
+      <project id="service-deco-jsonld" values="0" collectionTime="1443096458046" />
+      <project id="site-deco" values="0" collectionTime="1448456094288" />
+      <project id="site-clubic" values="0" collectionTime="1448464932587" />
+      <project id="component-coteauto" values="0" collectionTime="1453912355532" />
+      <project id="service-deco" values="0" collectionTime="1449244606977" />
+      <project id="react-redux-starter-kit" values="0" collectionTime="1449851602135" />
+      <project id="service-api" values="0" collectionTime="1449244597836" />
+      <project id="bundle-entity-advertising-box" values="0" collectionTime="1449136698539" />
+      <project id="service-turbo" values="0" collectionTime="1452787148785" />
+      <project id="starter-php-component" values="0" collectionTime="1442923190833" />
+    </group>
+    <group name="jdbc-datasource">
+      <project id="site-clubic" values="SQLite/3.8.9" collectionTime="1448464932587" />
+      <project id="site-bo" values="SQLite/3.8.9,SQLite/3.8.9" collectionTime="1452852641188" />
+      <project id="service-deco" values="SQLite/3.8.9,SQLite/3.8.9,SQLite/3.8.9" collectionTime="1449244606928" />
+    </group>
+    <group name="php-interpreter-debug-ext">
+      <project id="component-monitoring" values="xdebug" collectionTime="1444051647106" />
+      <project id="starter-module-es5" values="xdebug" collectionTime="1443008579182" />
+      <project id="site-deco-react" values="xdebug" collectionTime="1453739163783" />
+      <project id="site-turbo" values="xdebug" collectionTime="1452096301971" />
+      <project id="site-6play-v4" values="xdebug" collectionTime="1453393786232" />
+      <project id="react-iso-app-starter" values="xdebug" collectionTime="1443107624802" />
+      <project id="service-deco-jsonld" values="xdebug" collectionTime="1443096458045" />
+      <project id="site-bo" values="xdebug" collectionTime="1452852641188" />
+      <project id="site-deco" values="xdebug" collectionTime="1448456094288" />
+      <project id="deployer" values="xdebug" collectionTime="1448546658784" />
+      <project id="component-coteauto" values="xdebug" collectionTime="1453912355531" />
+      <project id="service-deco" values="xdebug" collectionTime="1449244606977" />
+      <project id="react-redux-starter-kit" values="xdebug" collectionTime="1449851602133" />
+      <project id="service-api" values="xdebug" collectionTime="1449244597835" />
+      <project id="bundle-entity-advertising-box" values="xdebug" collectionTime="1449136698539" />
+      <project id="service-turbo" values="xdebug" collectionTime="1452787148784" />
+      <project id="starter-php-component" values="xdebug" collectionTime="1442923190832" />
+    </group>
+    <group name="module type">
+      <project id="component-monitoring" values="WEB_MODULE" collectionTime="1444051647091" />
+      <project id="starter-module-es5" values="WEB_MODULE" collectionTime="1443008578950" />
+      <project id="site-turbo" values="WEB_MODULE" collectionTime="1452096301942" />
+      <project id="deployer" values="WEB_MODULE" collectionTime="1448546658116" />
+      <project id="site-deco-react" values="WEB_MODULE" collectionTime="1453739162809" />
+      <project id="site-bo" values="WEB_MODULE" collectionTime="1452852641071" />
+      <project id="site-6play-v4" values="WEB_MODULE" collectionTime="1453393786084" />
+      <project id="react-iso-app-starter" values="WEB_MODULE" collectionTime="1443107624742" />
+      <project id="service-deco-jsonld" values="WEB_MODULE" collectionTime="1443096457975" />
+      <project id="site-deco" values="WEB_MODULE" collectionTime="1448456094076" />
+      <project id="site-clubic" values="WEB_MODULE" collectionTime="1448464932549" />
+      <project id="component-coteauto" values="WEB_MODULE" collectionTime="1453912354423" />
+      <project id="service-deco" values="WEB_MODULE" collectionTime="1449244606907" />
+      <project id="react-redux-starter-kit" values="WEB_MODULE" collectionTime="1449851601925" />
+      <project id="service-api" values="WEB_MODULE" collectionTime="1449244597404" />
+      <project id="bundle-entity-advertising-box" values="WEB_MODULE" collectionTime="1449136698535" />
+      <project id="service-turbo" values="WEB_MODULE" collectionTime="1452787148641" />
+      <project id="starter-php-component" values="WEB_MODULE" collectionTime="1442923190513" />
+    </group>
+    <group name="php-include-path">
+      <project id="component-monitoring" values="0" collectionTime="1444051647106" />
+      <project id="starter-module-es5" values="0" collectionTime="1443008579145" />
+      <project id="site-turbo" values="0" collectionTime="1452096301971" />
+      <project id="deployer" values="0" collectionTime="1448546658661" />
+      <project id="site-deco-react" values="0" collectionTime="1453739163655" />
+      <project id="site-bo" values="0" collectionTime="1452852641188" />
+      <project id="site-6play-v4" values="0" collectionTime="1453393786232" />
+      <project id="react-iso-app-starter" values="0" collectionTime="1443107624802" />
+      <project id="service-deco-jsonld" values="0" collectionTime="1443096458017" />
+      <project id="site-deco" values="0" collectionTime="1448456094252" />
+      <project id="site-clubic" values="0" collectionTime="1448464932587" />
+      <project id="component-coteauto" values="0" collectionTime="1453912355375" />
+      <project id="service-deco" values="0" collectionTime="1449244606928" />
+      <project id="react-redux-starter-kit" values="0" collectionTime="1449851602052" />
+      <project id="service-api" values="0" collectionTime="1449244597815" />
+      <project id="bundle-entity-advertising-box" values="0" collectionTime="1449136698539" />
+      <project id="service-turbo" values="0" collectionTime="1452787148778" />
+      <project id="starter-php-component" values="0" collectionTime="1442923190810" />
+    </group>
+    <group name="php-interpreters">
+      <project id="component-monitoring" values="1" collectionTime="1444051647106" />
+      <project id="starter-module-es5" values="1" collectionTime="1443008579178" />
+      <project id="site-turbo" values="1" collectionTime="1452096301971" />
+      <project id="deployer" values="1" collectionTime="1448546658774" />
+      <project id="site-deco-react" values="1" collectionTime="1453739163774" />
+      <project id="site-bo" values="1" collectionTime="1452852641188" />
+      <project id="site-6play-v4" values="1" collectionTime="1453393786232" />
+      <project id="react-iso-app-starter" values="1" collectionTime="1443107624802" />
+      <project id="service-deco-jsonld" values="1" collectionTime="1443096458041" />
+      <project id="site-deco" values="1" collectionTime="1448456094276" />
+      <project id="site-clubic" values="1" collectionTime="1448464932587" />
+      <project id="component-coteauto" values="1" collectionTime="1453912355514" />
+      <project id="service-deco" values="1" collectionTime="1449244606977" />
+      <project id="react-redux-starter-kit" values="1" collectionTime="1449851602131" />
+      <project id="service-api" values="1" collectionTime="1449244597827" />
+      <project id="bundle-entity-advertising-box" values="1" collectionTime="1449136698539" />
+      <project id="service-turbo" values="1" collectionTime="1452787148782" />
+      <project id="starter-php-component" values="1" collectionTime="1442923190822" />
+    </group>
+    <group name="javaScript Frameworks">
+      <project id="react-redux-starter-kit" values="node_modules" collectionTime="1449851602052" />
+      <project id="site-6play-v4" values="node_modules" collectionTime="1453393786232" />
+      <project id="component-monitoring" values="node_modules" collectionTime="1444051647106" />
+      <project id="component-coteauto" values="node_modules" collectionTime="1453912355374" />
+      <project id="site-deco-react" values="node_modules" collectionTime="1453739163653" />
+      <project id="react-iso-app-starter" values="node_modules" collectionTime="1443107624802" />
+    </group>
+    <group name="Git">
+      <project id="react-redux-starter-kit" values="config.warn.about.crlf.enabled,data.local.branches.count.5+,config.push.autoupdate.disabled,config.push.update.all.roots.enabled,config.repo.sync.NOT_DECIDED,config.ssh.enabled,config.save.policy.STASH,data.remotes.in.project.2+,config.update.type.BRANCH_DEFAULT,data.remote.branches.count.8+,config.warn.about.detached.enabled,config.cherry-pick.autocommit.disabled,config.force.push.enabled" collectionTime="1449851601970" />
+      <project id="site-6play-v4" values="config.cherry-pick.autocommit.disabled,config.push.update.all.roots.enabled,config.update.type.BRANCH_DEFAULT,config.force.push.enabled,data.remotes.in.project.1,config.warn.about.detached.enabled,config.repo.sync.NOT_DECIDED,config.save.policy.STASH,data.remote.branches.count.30+,data.local.branches.count.1,config.warn.about.crlf.enabled,config.push.autoupdate.disabled,config.ssh.enabled" collectionTime="1453393786232" />
+      <project id="site-bo" values="data.remotes.in.project.1,config.warn.about.detached.enabled,config.push.autoupdate.disabled,data.local.branches.count.15+,config.push.update.all.roots.enabled,data.remote.branches.count.30+,config.ssh.enabled,config.cherry-pick.autocommit.disabled,config.repo.sync.NOT_DECIDED,config.force.push.enabled,config.warn.about.crlf.enabled,config.save.policy.STASH,config.update.type.BRANCH_DEFAULT" collectionTime="1452852641102" />
+      <project id="component-coteauto" values="config.push.update.all.roots.enabled,data.remotes.in.project.1,config.save.policy.STASH,config.ssh.enabled,config.update.type.BRANCH_DEFAULT,config.warn.about.crlf.enabled,config.warn.about.detached.enabled,config.repo.sync.NOT_DECIDED,config.force.push.enabled,data.remote.branches.count.30+,data.local.branches.count.15+,config.cherry-pick.autocommit.disabled,config.push.autoupdate.disabled" collectionTime="1453912354722" />
+      <project id="site-deco-react" values="config.push.update.all.roots.enabled,config.warn.about.crlf.enabled,data.remotes.in.project.2+,config.ssh.enabled,config.warn.about.detached.enabled,config.push.autoupdate.disabled,config.cherry-pick.autocommit.disabled,data.local.branches.count.50+,config.repo.sync.NOT_DECIDED,config.force.push.enabled,config.save.policy.STASH,data.remote.branches.count.100+,config.update.type.BRANCH_DEFAULT" collectionTime="1453739163017" />
+      <project id="service-turbo" values="config.warn.about.detached.enabled,data.remote.branches.count.2+,config.repo.sync.NOT_DECIDED,config.push.update.all.roots.enabled,config.ssh.enabled,config.warn.about.crlf.enabled,config.cherry-pick.autocommit.disabled,config.update.type.BRANCH_DEFAULT,config.force.push.enabled,data.remotes.in.project.1,config.save.policy.STASH,data.local.branches.count.2+,config.push.autoupdate.disabled" collectionTime="1452787148677" />
+    </group>
+    <group name="php-servers">
+      <project id="component-monitoring" values="0" collectionTime="1444051647106" />
+      <project id="starter-module-es5" values="0" collectionTime="1443008579149" />
+      <project id="site-turbo" values="0" collectionTime="1452096301971" />
+      <project id="deployer" values="0" collectionTime="1448546658693" />
+      <project id="site-deco-react" values="0" collectionTime="1453739163680" />
+      <project id="site-bo" values="0" collectionTime="1452852641188" />
+      <project id="site-6play-v4" values="0" collectionTime="1453393786232" />
+      <project id="react-iso-app-starter" values="0" collectionTime="1443107624802" />
+      <project id="service-deco-jsonld" values="0" collectionTime="1443096458034" />
+      <project id="site-deco" values="0" collectionTime="1448456094253" />
+      <project id="site-clubic" values="0" collectionTime="1448464932587" />
+      <project id="component-coteauto" values="0" collectionTime="1453912355389" />
+      <project id="service-deco" values="0" collectionTime="1449244606977" />
+      <project id="react-redux-starter-kit" values="0" collectionTime="1449851602054" />
+      <project id="service-api" values="0" collectionTime="1449244597824" />
+      <project id="bundle-entity-advertising-box" values="0" collectionTime="1449136698539" />
+      <project id="service-turbo" values="0" collectionTime="1452787148779" />
+      <project id="starter-php-component" values="0" collectionTime="1442923190822" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="CreateFile.CreateFileAction" count="88" />
+      <entry feature="execute.PhpLocalRunConfigurationType.Run" count="1" />
+      <entry feature="ide.help.ideaInterface.editor" count="3" />
+      <entry feature="ide.help.viewingStructure.projectViews" count="1" />
+      <entry feature="ide.settings.Appearance" count="3" />
+      <entry feature="ide.settings.Code_Style" count="1" />
+      <entry feature="ide.settings.Colors_&amp;_Fonts" count="1" />
+      <entry feature="ide.settings.Confirmation" count="1" />
+      <entry feature="ide.settings.Directories" count="4" />
+      <entry feature="ide.settings.ESLint" count="27" />
+      <entry feature="ide.settings.Editor_Tabs" count="1" />
+      <entry feature="ide.settings.File_Status" count="3" />
+      <entry feature="ide.settings.Font" count="1" />
+      <entry feature="ide.settings.General" count="1" />
+      <entry feature="ide.settings.Inspections" count="15" />
+      <entry feature="ide.settings.JSCS" count="1" />
+      <entry feature="ide.settings.JavaScript" count="4" />
+      <entry feature="ide.settings.Keymap" count="11" />
+      <entry feature="ide.settings.Less" count="1" />
+      <entry feature="ide.settings.PHP" count="5" />
+      <entry feature="ide.settings.Plugins" count="2" />
+      <entry feature="ide.settings.SCSS" count="1" />
+      <entry feature="ide.settings.Sass" count="1" />
+      <entry feature="ide.settings.Smart_Keys" count="1" />
+      <entry feature="ide.settings.Symfony_Plugin" count="3" />
+      <entry feature="ide.settings.System_Settings" count="1" />
+      <entry feature="ide.settings.Vagrant" count="1" />
+      <entry feature="ide.settings.Version_Control" count="1" />
+      <entry feature="ideaapp.started" count="121" />
+      <entry feature="welcome.screen.WelcomeScreen.Configure" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.OpenDirectoryProject" count="1" />
+    </counts>
+  </component>
+</application>

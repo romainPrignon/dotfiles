@@ -1,0 +1,54 @@
+<application>
+  <component name="FindRecents">
+    <findStrings>
+      <find>DataFetchAction</find>
+      <find>ataFetchAction</find>
+      <find>device</find>
+      <find>pagination</find>
+      <find>getPhotosByFolder</find>
+      <find>getPhotosByFolderAction</find>
+      <find>menu</find>
+      <find>incrementFolderStats</find>
+      <find>commo</find>
+      <find>app</find>
+      <find>babel</find>
+      <find>moment</find>
+      <find>ln</find>
+      <find>simple</find>
+      <find>getroute</find>
+      <find>should</find>
+      <find>i should see</find>
+      <find>link t</find>
+      <find>visit</find>
+      <find>config</find>
+      <find>context</find>
+      <find>.Given</find>
+      <find>.When</find>
+      <find>.then</find>
+      <find>getdomse</find>
+      <find>visible</find>
+      <find>text</find>
+      <find>world</find>
+      <find>phantom</find>
+      <find>console</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$USER_HOME$/workspace/react-iso-app-starter/config/gulp</dir>
+      <dir>$USER_HOME$/sshfs/app54/site-bo/web/js</dir>
+      <dir>$USER_HOME$/sshfs/app54/site-bo/src/M6/Bundle</dir>
+      <dir>$USER_HOME$/workspace/site-deco-react/tests</dir>
+      <dir>$USER_HOME$/workspace/site-deco-react/src/app</dir>
+      <dir>$USER_HOME$/workspace/site-deco-react/node_modules</dir>
+      <dir>$USER_HOME$/sshfs/app54/site-clubic/src</dir>
+      <dir>$USER_HOME$/workspace/site-deco-react/config/gulp</dir>
+      <dir>$USER_HOME$/workspace/site-deco-react/src/app/views/blocks</dir>
+      <dir>$USER_HOME$/workspace/site-deco-react/config</dir>
+      <dir>$USER_HOME$/workspace/site-deco-react/node_modules/react</dir>
+      <dir>$USER_HOME$/workspace/site-deco-react/src</dir>
+      <dir>$USER_HOME$/workspace/component-coteauto</dir>
+      <dir>$USER_HOME$/workspace/component-coteauto/src</dir>
+      <dir>$USER_HOME$/workspace/component-coteauto/tests</dir>
+      <dir>$USER_HOME$/workspace/site-deco-react</dir>
+    </dirStrings>
+  </component>
+</application>
