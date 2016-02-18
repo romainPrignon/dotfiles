@@ -31,3 +31,4 @@ alias sf="php app/console"
 
 #scripts
 alias standup="sh ~/scripts/git-standup.sh"
+alias meteo="curl -4 wttr.in/Lyon"
