@@ -40,7 +40,7 @@ HIST_STAMPS="dd.mm.yyyy"
 
 # plugins in ~/.oh-my-zsh/plugins/
 # Custom plugins ~/.oh-my-zsh/custom/plugins/
-plugins=(git bower composer docker npm symfony2 z zsh-syntax-highlighting)
+plugins=(git-extras bower composer docker npm symfony2 zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

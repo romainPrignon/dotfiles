@@ -52,13 +52,13 @@ var AddClassMember = (function () {
         else if (parentOfParent.kind == ts.SyntaxKind.CallExpression) {
             var callExp = parentOfParent;
             var typeStringParts = ['('];
-            var args = [];
+            var args_1 = [];
             callExp.arguments.forEach(function (arg) {
                 var argName = (getLastNameAfterDot(arg.getText()));
                 var argType = getTypeStringForNode(arg, info.typeChecker);
-                args.push(argName + ": " + argType);
+                args_1.push(argName + ": " + argType);
             });
-            typeStringParts.push(args.join(', '));
+            typeStringParts.push(args_1.join(', '));
             typeStringParts.push(') => any');
             typeString = typeStringParts.join('');
         }
@@ -84,5 +84,5 @@ var AddClassMember = (function () {
         return [refactoring];
     };
     return AddClassMember;
-})();
+}());
 exports.AddClassMember = AddClassMember;

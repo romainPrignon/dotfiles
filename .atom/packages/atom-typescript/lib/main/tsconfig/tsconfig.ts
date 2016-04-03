@@ -46,6 +46,7 @@ interface CompilerOptions {
     noFallthroughCasesInSwitch?: boolean;
     noImplicitAny?: boolean;                          // Error on inferred `any` type
     noImplicitReturns?: boolean;
+    noImplicitUseStrict?: boolean;
     noLib?: boolean;
     noLibCheck?: boolean;
     noResolve?: boolean;
@@ -60,7 +61,7 @@ interface CompilerOptions {
     stripInternal?: boolean;
     suppressExcessPropertyErrors?: boolean;           // Optionally disable strict object literal assignment checking
     suppressImplicitAnyIndexErrors?: boolean;
-    target?: string;                                  // 'es3'|'es5' (default)|'es6'
+    target?: string;                                  // 'es3'|'es5' (default)|'es6'|'es2015'
     version?: boolean;
     watch?: boolean;
 }
@@ -95,6 +96,7 @@ var compilerOptionsValidation: simpleValidator.ValidationInfo = {
     noErrorTruncation: { type: types.boolean },
     noFallthroughCasesInSwitch: { type: types.boolean },
     noImplicitAny: { type: types.boolean },
+    noImplicitUseStrict: { type: types.boolean },
     noImplicitReturns: { type: types.boolean },
     noLib: { type: types.boolean },
     noLibCheck: { type: types.boolean },
@@ -110,7 +112,7 @@ var compilerOptionsValidation: simpleValidator.ValidationInfo = {
     stripInternal: { type: types.boolean },
     suppressExcessPropertyErrors: { type: types.boolean },
     suppressImplicitAnyIndexErrors: { type: types.boolean },
-    target: { type: types.string, validValues: ['es3', 'es5', 'es6'] },
+    target: { type: types.string, validValues: ['es3', 'es5', 'es6', 'es2015'] },
     version: { type: types.boolean },
     watch: { type: types.boolean },
 }
@@ -139,7 +141,7 @@ interface TypeScriptProjectRawSpecification {
     buildOnSave?: boolean;
     externalTranspiler?: string | { name: string; options?: any };
     scripts?: { postbuild?: string };
-    atom?: { rewriteTsconfig?: boolean };
+    atom?: { rewriteTsconfig?: boolean, formatOnSave?: boolean };
 }
 
 /**
@@ -157,7 +159,7 @@ export interface TypeScriptProjectSpecification {
     package?: UsefulFromPackageJson;
     externalTranspiler?: string | { name: string; options?: any };
     scripts: { postbuild?: string };
-    atom: { rewriteTsconfig: boolean };
+    atom: { rewriteTsconfig: boolean, formatOnSave: boolean };
 }
 
 ///////// FOR USE WITH THE API /////////////
@@ -212,6 +214,7 @@ import path = require('path');
 import tsconfig = require('tsconfig');
 import os = require('os');
 import detectIndent = require('detect-indent');
+import detectNewline = require('detect-newline');
 import extend = require('xtend');
 import formatting = require('./formatting');
 
@@ -240,6 +243,7 @@ export var defaults: ts.CompilerOptions = {
     emitDecoratorMetadata: true,
     declaration: false,
     noImplicitAny: false,
+    noImplicitUseStrict: false,
     removeComments: true,
     noLib: false,
     preserveConstEnums: true,
@@ -290,7 +294,7 @@ function mixin(target: any, source: any): any {
 
 function rawToTsCompilerOptions(jsonOptions: CompilerOptions, projectDir: string): ts.CompilerOptions {
     // Cannot use Object.create because the compiler checks hasOwnProperty
-    var compilerOptions = <ts.CompilerOptions> mixin({}, defaults);
+    var compilerOptions = <ts.CompilerOptions>mixin({}, defaults);
     for (var key in jsonOptions) {
         if (typescriptEnumMap[key]) {
             compilerOptions[key] = typescriptEnumMap[key][jsonOptions[key].toLowerCase()];
@@ -309,12 +313,12 @@ function rawToTsCompilerOptions(jsonOptions: CompilerOptions, projectDir: string
     }
 
     if (compilerOptions.out !== undefined) {
-        compilerOptions.out = path.resolve(projectDir, compilerOptions.out);
+        // Till out is removed. Support by just copying it to `outFile`
+        compilerOptions.outFile = path.resolve(projectDir, compilerOptions.out);
     }
 
     if (compilerOptions.outFile !== undefined) {
-        // Till out is removed. Support outFile by just copying it to `out`
-        compilerOptions.out = path.resolve(projectDir, compilerOptions.outFile);
+        compilerOptions.outFile = path.resolve(projectDir, compilerOptions.outFile);
     }
 
     return compilerOptions;
@@ -322,7 +326,7 @@ function rawToTsCompilerOptions(jsonOptions: CompilerOptions, projectDir: string
 
 function tsToRawCompilerOptions(compilerOptions: ts.CompilerOptions): CompilerOptions {
     // Cannot use Object.create because JSON.stringify will only serialize own properties
-    var jsonOptions = <CompilerOptions> mixin({}, compilerOptions);
+    var jsonOptions = <CompilerOptions>mixin({}, compilerOptions);
 
     Object.keys(compilerOptions).forEach((key) => {
         if (jsonEnumMap[key] && compilerOptions[key]) {
@@ -350,7 +354,7 @@ export function getDefaultInMemoryProject(srcFile: string): TypeScriptProjectFil
         compileOnSave: true,
         buildOnSave: false,
         scripts: {},
-        atom: { rewriteTsconfig: true },
+        atom: { rewriteTsconfig: true, formatOnSave: false },
     };
 
     return {
@@ -375,8 +379,8 @@ export function getProjectSync(pathOrSrcFile: string): TypeScriptProjectFileDeta
     var projectFile = tsconfig.resolveSync(dir);
 
     if (!projectFile) {
-      throw errorWithDetails<GET_PROJECT_NO_PROJECT_FOUND_Details>(
-          new Error(errors.GET_PROJECT_NO_PROJECT_FOUND), { projectFilePath: fsu.consistentPath(pathOrSrcFile), errorMessage: 'not found' });
+        throw errorWithDetails<GET_PROJECT_NO_PROJECT_FOUND_Details>(
+            new Error(errors.GET_PROJECT_NO_PROJECT_FOUND), { projectFilePath: fsu.consistentPath(pathOrSrcFile), errorMessage: 'not found' });
     }
 
     var projectFileDirectory = path.dirname(projectFile) + path.sep;
@@ -406,7 +410,7 @@ export function getProjectSync(pathOrSrcFile: string): TypeScriptProjectFileDeta
     }
 
     if (projectSpec.filesGlob) { // for filesGlob we keep the files in sync
-        var prettyJSONProjectSpec = prettyJSON(projectSpec, detectIndent(projectFileTextContent).indent);
+        var prettyJSONProjectSpec = prettyJSON(projectSpec, detectIndent(projectFileTextContent).indent, detectNewline(projectFileTextContent));
 
         if (prettyJSONProjectSpec !== projectFileTextContent && projectSpec.atom.rewriteTsconfig) {
             fs.writeFileSync(projectFile, prettyJSONProjectSpec);
@@ -442,7 +446,7 @@ export function getProjectSync(pathOrSrcFile: string): TypeScriptProjectFileDeta
         externalTranspiler: projectSpec.externalTranspiler == undefined ? undefined : projectSpec.externalTranspiler,
         scripts: projectSpec.scripts || {},
         buildOnSave: !!projectSpec.buildOnSave,
-        atom: { rewriteTsconfig: true }
+        atom: { rewriteTsconfig: true, formatOnSave: !!projectSpec.atom.formatOnSave }
     };
 
     // Validate the raw compiler options before converting them to TS compiler options
@@ -496,9 +500,12 @@ export function createProjectRootSync(srcFile: string, defaultOptions?: ts.Compi
     // We need to write the raw spec
     var projectSpec: TypeScriptProjectRawSpecification = {};
     projectSpec.compilerOptions = tsToRawCompilerOptions(defaultOptions || defaults);
-    projectSpec.filesGlob = defaultFilesGlob;
+    projectSpec.exclude = ["node_modules", "typings/browser", "typings/browser.d.ts"];
     projectSpec.compileOnSave = true;
     projectSpec.buildOnSave = false;
+    projectSpec.atom = {
+        rewriteTsconfig: false
+    };
 
     fs.writeFileSync(projectFilePath, prettyJSON(projectSpec));
     return getProjectSync(srcFile);
@@ -521,7 +528,7 @@ function increaseProjectForReferenceAndImports(files: string[]): string[] {
         }
     }
 
-    var getReferencedOrImportedFiles = (files: string[]): string[]=> {
+    var getReferencedOrImportedFiles = (files: string[]): string[] => {
         var referenced: string[][] = [];
 
         files.forEach(file => {
@@ -553,7 +560,7 @@ function increaseProjectForReferenceAndImports(files: string[]): string[] {
                         return file;
                     }
                     return getIfExists(file);
-                }).filter(file=> !!file)
+                }).filter(file => !!file)
                     .concat(
                     preProcessedFileInfo.importedFiles
                         .filter((fileReference) => pathIsRelative(fileReference.fileName))
@@ -564,7 +571,7 @@ function increaseProjectForReferenceAndImports(files: string[]): string[] {
                                 file = getIfExists(`${file}/index`);
                             }
                             return file;
-                        }).filter(file=> !!file)
+                        }).filter(file => !!file)
                     )
             );
         });
@@ -610,9 +617,9 @@ function getDefinitionsForNodeModules(projectDir: string, files: string[]): { ou
     // Find our `typings` (anything in a typings folder with extension `.d.ts` is considered a typing)
     // These are INF powerful
     var ourTypings = files
-        .filter(f=> path.basename(path.dirname(f)) == 'typings' && endsWith(f, '.d.ts')
+        .filter(f => path.basename(path.dirname(f)) == 'typings' && endsWith(f, '.d.ts')
             || path.basename(path.dirname(path.dirname(f))) == 'typings' && endsWith(f, '.d.ts'));
-    ourTypings.forEach(f=> typings[path.basename(f)] = { filePath: f, version: Infinity });
+    ourTypings.forEach(f => typings[path.basename(f)] = { filePath: f, version: Infinity });
     var existing = createMap(files.map(fsu.consistentPath));
 
     function addAllReferencedFilesWithMaxVersion(file: string) {
@@ -635,7 +642,7 @@ function getDefinitionsForNodeModules(projectDir: string, files: string[]): { ou
             if (fs.existsSync(file + '.d.ts')) {
                 return file + '.d.ts';
             }
-        }).filter(f=> !!f);
+        }).filter(f => !!f);
 
         // Only ones we don't have by name yet
         // TODO: replace INF with an actual version
@@ -644,7 +651,7 @@ function getDefinitionsForNodeModules(projectDir: string, files: string[]): { ou
         // Add these
         files.forEach(f => typings[path.basename(f)] = { filePath: f, version: Infinity });
         // Keep expanding
-        files.forEach(f=> addAllReferencedFilesWithMaxVersion(f));
+        files.forEach(f => addAllReferencedFilesWithMaxVersion(f));
     }
 
     // Keep going up till we find node_modules
@@ -691,16 +698,16 @@ function getDefinitionsForNodeModules(projectDir: string, files: string[]): { ou
 
     var all = Object.keys(typings)
         .map(typing => typings[typing].filePath)
-        .map(x=> fsu.consistentPath(x));
+        .map(x => fsu.consistentPath(x));
     var implicit = all
-        .filter(x=> !existing[x]);
+        .filter(x => !existing[x]);
     var ours = all
-        .filter(x=> existing[x]);
+        .filter(x => existing[x]);
 
     return { implicit, ours, packagejson };
 }
 
-export function prettyJSON(object: any, indent: string | number = 4): string {
+export function prettyJSON(object: any, indent: string | number = 4, newLine: string = os.EOL): string {
     var cache = [];
     var value = JSON.stringify(
         object,
@@ -718,7 +725,7 @@ export function prettyJSON(object: any, indent: string | number = 4): string {
         },
         indent
     );
-    value = value.split('\n').join(os.EOL) + os.EOL;
+    value = value.replace(/(?:\r\n|\r|\n)/g, newLine) + newLine;
     cache = null;
     return value;
 }

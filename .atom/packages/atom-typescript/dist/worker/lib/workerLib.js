@@ -30,12 +30,13 @@ var RequesterResponder = (function () {
             if (!_this.currentListeners[message])
                 _this.currentListeners[message] = {};
             var id = createId();
-            var defer = Promise.defer();
-            _this.currentListeners[message][id] = defer;
+            var promise = new Promise(function (resolve, reject) {
+                _this.currentListeners[message][id] = { resolve: resolve, reject: reject, promise: promise };
+            });
             _this.pendingRequests.push(message);
             _this.pendingRequestsChanged(_this.pendingRequests);
             _this.getProcess().send({ message: message, id: id, data: data, request: true });
-            return defer.promise;
+            return promise;
         };
         this.responders = {};
         this.processRequest = function (m) {
@@ -93,10 +94,10 @@ var RequesterResponder = (function () {
             }
             delete this.currentListeners[parsed.message][parsed.id];
             if (this.currentLastOfType[parsed.message]) {
-                var last = this.currentLastOfType[parsed.message];
+                var last_1 = this.currentLastOfType[parsed.message];
                 delete this.currentLastOfType[parsed.message];
-                var lastPromise = this.sendToIpcHeart(last.data, parsed.message);
-                lastPromise.then(function (res) { return last.defer.resolve(res); }, function (rej) { return last.defer.reject(rej); });
+                var lastPromise = this.sendToIpcHeart(last_1.data, parsed.message);
+                lastPromise.then(function (res) { return last_1.defer.resolve(res); }, function (rej) { return last_1.defer.reject(rej); });
             }
         }
     };
@@ -120,12 +121,13 @@ var RequesterResponder = (function () {
                 if (_this.currentLastOfType[message]) {
                     _this.currentLastOfType[message].defer.resolve(defaultResponse);
                 }
-                var defer = Promise.defer();
-                _this.currentLastOfType[message] = {
-                    data: data,
-                    defer: defer
-                };
-                return defer.promise;
+                var promise_1 = new Promise(function (resolve, reject) {
+                    _this.currentLastOfType[message] = {
+                        data: data,
+                        defer: { promise: promise_1, resolve: resolve, reject: reject }
+                    };
+                });
+                return promise_1;
             }
         };
     };
@@ -139,7 +141,7 @@ var RequesterResponder = (function () {
             .forEach(function (funcName) { return _this.addToResponders(aModule[funcName]); });
     };
     return RequesterResponder;
-})();
+}());
 var Parent = (function (_super) {
     __extends(Parent, _super);
     function Parent() {
@@ -213,7 +215,7 @@ var Parent = (function (_super) {
         this.child = null;
     };
     return Parent;
-})(RequesterResponder);
+}(RequesterResponder));
 exports.Parent = Parent;
 var Child = (function (_super) {
     __extends(Child, _super);
@@ -239,5 +241,5 @@ var Child = (function (_super) {
         }, 1000);
     };
     return Child;
-})(RequesterResponder);
+}(RequesterResponder));
 exports.Child = Child;

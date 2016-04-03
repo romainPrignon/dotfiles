@@ -5,9 +5,8 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="../note.xsd"
 >
-  <to id="">Tove</to>
+  <to>Tove</to>
   <from>Jani</from>
   <heading>Reminder</heading>
-  <body>Don't forget me this weekend!</body>
-  <footer/>
+  <body id="">Don't forget me this weekend!</body>
 </note>

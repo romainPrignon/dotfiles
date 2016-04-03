@@ -8,6 +8,28 @@ set ruler                       " show the cursor position all the time
 set wrap                        " Wrap lines
 set showmatch                   " automatically show matching brackets
 
+set ffs=unix
+set tw=120
+set wildmenu
+set autoread
+set lazyredraw
+set incsearch
+set ignorecase
+set smartcase
+
+:map <C-a> GVgg
+:map <C-n> :enew
+:map <C-s> :w <Enter>
+:map <C-c> y
+:map <C-v> p
+:map <C-x> d
+:map <C-z> u
+:map <C-t> :tabnew <Enter>
+:map <C-i> >>
+:map <C-w> :close <Enter>
+:map <C-W> :q! <Enter>
+:map <C-f> /
+
 set smartindent
 set tabstop=4
 set shiftwidth=4

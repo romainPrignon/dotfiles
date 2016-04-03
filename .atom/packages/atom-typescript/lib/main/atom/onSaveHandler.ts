@@ -31,7 +31,7 @@ export function handle(event: { filePath: string; editor: AtomCore.IEditor }) {
     // Compile on save
     parent.getProjectFileDetails({ filePath: event.filePath }).then(fileDetails => {
         if (fileDetails.project.compileOnSave
-            && !fileDetails.project.compilerOptions.out
+            && !fileDetails.project.compilerOptions.outFile
             && !fileDetails.project.buildOnSave) {
 
             textUpdated.then(() => parent.emitFile({ filePath: event.filePath }))
@@ -51,6 +51,13 @@ export function handle(event: { filePath: string; editor: AtomCore.IEditor }) {
             atom.commands.dispatch(
                 atom.views.getView(event.editor),
                 'typescript:build');
+        }
+
+        if (fileDetails.project.atom.formatOnSave) {
+            // Trigger a format
+            atom.commands.dispatch(
+                atom.views.getView(event.editor),
+                'typescript:format-code');
         }
 
     });

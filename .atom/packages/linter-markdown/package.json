@@ -1,7 +1,7 @@
 {
   "name": "linter-markdown",
   "main": "lib/index.js",
-  "version": "1.3.0",
+  "version": "1.5.0",
   "description": "Lint markdown on the fly, using remark-lint",
   "scripts": {
     "lint": "remark -u remark-lint README.md LICENSE.md"
@@ -17,14 +17,14 @@
     "atom": "^1.0.0"
   },
   "dependencies": {
-    "remark": "^3.0.0",
-    "remark-lint": "^2.0.0",
-    "atom-package-deps": "^3.0.6"
+    "remark": "^4.0.0",
+    "remark-lint": "^3.0.0",
+    "atom-package-deps": "^3.0.7"
   },
   "devDependencies": {
     "eslint": "^1.10.3",
     "babel-eslint": "^4.1.6",
-    "eslint-config-airbnb": "^2.1.1"
+    "eslint-config-airbnb": "^5.0.0"
   },
   "eslintConfig": {
     "rules": {
@@ -57,31 +57,36 @@
     "url": "https://github.com/AtomLinter/linter-markdown/issues"
   },
   "homepage": "https://github.com/AtomLinter/linter-markdown#readme",
-  "_id": "linter-markdown@1.3.0",
-  "_shasum": "78c4918872a900fe2baf891bfc4d7401aa8c1256",
-  "_resolved": "file:../d-1151130-16849-1agez8i/package.tgz",
-  "_from": "../d-1151130-16849-1agez8i/package.tgz",
+  "_id": "linter-markdown@1.5.0",
+  "_shasum": "11a210e7c5b5321f1e03d63e7fee508f5da7f44b",
+  "_resolved": "file:../d-116225-7053-5ncnbg/package.tgz",
+  "_from": "../d-116225-7053-5ncnbg/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
         "name": "atom-package-deps",
-        "version": "3.0.6",
+        "version": "3.0.9",
         "path": "node_modules/atom-package-deps/lib/main.js"
       },
       {
-        "name": "sb-callsite",
+        "name": "atom-package-path",
         "version": "1.1.0",
-        "path": "node_modules/atom-package-deps/node_modules/sb-callsite/lib/main.js"
+        "path": "node_modules/atom-package-deps/node_modules/atom-package-path/lib/index.js"
+      },
+      {
+        "name": "sb-callsite",
+        "version": "1.1.2",
+        "path": "node_modules/atom-package-deps/node_modules/atom-package-path/node_modules/sb-callsite/lib/main.js"
       },
       {
         "name": "remark",
-        "version": "3.0.1",
+        "version": "4.1.2",
         "path": "node_modules/remark/index.js"
       },
       {
         "name": "camelcase",
-        "version": "2.0.1",
+        "version": "2.1.1",
         "path": "node_modules/remark/node_modules/camelcase/index.js"
       },
       {
@@ -96,12 +101,17 @@
       },
       {
         "name": "ansi-styles",
-        "version": "2.1.0",
+        "version": "2.2.0",
         "path": "node_modules/remark/node_modules/chalk/node_modules/ansi-styles/index.js"
       },
       {
+        "name": "color-convert",
+        "version": "1.0.0",
+        "path": "node_modules/remark/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/index.js"
+      },
+      {
         "name": "escape-string-regexp",
-        "version": "1.0.4",
+        "version": "1.0.5",
         "path": "node_modules/remark/node_modules/chalk/node_modules/escape-string-regexp/index.js"
       },
       {
@@ -116,7 +126,7 @@
       },
       {
         "name": "strip-ansi",
-        "version": "3.0.0",
+        "version": "3.0.1",
         "path": "node_modules/remark/node_modules/chalk/node_modules/strip-ansi/index.js"
       },
       {
@@ -131,7 +141,7 @@
       },
       {
         "name": "chokidar",
-        "version": "1.4.1",
+        "version": "1.4.3",
         "path": "node_modules/remark/node_modules/chokidar/index.js"
       },
       {
@@ -216,23 +226,8 @@
       },
       {
         "name": "extglob",
-        "version": "0.3.1",
+        "version": "0.3.2",
         "path": "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/index.js"
-      },
-      {
-        "name": "ansi-green",
-        "version": "0.1.1",
-        "path": "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green/index.js"
-      },
-      {
-        "name": "ansi-wrap",
-        "version": "0.1.0",
-        "path": "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green/node_modules/ansi-wrap/index.js"
-      },
-      {
-        "name": "success-symbol",
-        "version": "0.1.0",
-        "path": "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/success-symbol/index.js"
       },
       {
         "name": "filename-regex",
@@ -251,7 +246,7 @@
       },
       {
         "name": "is-buffer",
-        "version": "1.1.0",
+        "version": "1.1.3",
         "path": "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/kind-of/node_modules/is-buffer/index.js"
       },
       {
@@ -311,7 +306,7 @@
       },
       {
         "name": "async-each",
-        "version": "0.1.6",
+        "version": "1.0.0",
         "path": "node_modules/remark/node_modules/chokidar/node_modules/async-each/index.js"
       },
       {
@@ -356,7 +351,7 @@
       },
       {
         "name": "graceful-fs",
-        "version": "4.1.2",
+        "version": "4.1.3",
         "path": "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/graceful-fs/graceful-fs.js"
       },
       {
@@ -366,7 +361,7 @@
       },
       {
         "name": "brace-expansion",
-        "version": "1.1.2",
+        "version": "1.1.3",
         "path": "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/minimatch/node_modules/brace-expansion/index.js"
       },
       {
@@ -381,7 +376,7 @@
       },
       {
         "name": "readable-stream",
-        "version": "2.0.5",
+        "version": "2.0.6",
         "path": "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/readable.js"
       },
       {
@@ -391,7 +386,7 @@
       },
       {
         "name": "isarray",
-        "version": "0.0.1",
+        "version": "1.0.0",
         "path": "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/index.js"
       },
       {
@@ -436,7 +431,7 @@
       },
       {
         "name": "readable-stream",
-        "version": "2.0.5",
+        "version": "2.0.6",
         "path": "node_modules/remark/node_modules/concat-stream/node_modules/readable-stream/readable.js"
       },
       {
@@ -446,7 +441,7 @@
       },
       {
         "name": "isarray",
-        "version": "0.0.1",
+        "version": "1.0.0",
         "path": "node_modules/remark/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/index.js"
       },
       {
@@ -485,13 +480,13 @@
         "path": "node_modules/remark/node_modules/elegant-spinner/index.js"
       },
       {
-        "name": "extend.js",
-        "version": "0.0.2",
-        "path": "node_modules/remark/node_modules/extend.js/index.js"
+        "name": "extend",
+        "version": "3.0.0",
+        "path": "node_modules/remark/node_modules/extend/index.js"
       },
       {
         "name": "glob",
-        "version": "6.0.3",
+        "version": "7.0.3",
         "path": "node_modules/remark/node_modules/glob/glob.js"
       },
       {
@@ -545,6 +540,41 @@
         "path": "node_modules/remark/node_modules/globby/node_modules/arrify/index.js"
       },
       {
+        "name": "glob",
+        "version": "6.0.4",
+        "path": "node_modules/remark/node_modules/globby/node_modules/glob/glob.js"
+      },
+      {
+        "name": "inflight",
+        "version": "1.0.4",
+        "path": "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inflight/inflight.js"
+      },
+      {
+        "name": "wrappy",
+        "version": "1.0.1",
+        "path": "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inflight/node_modules/wrappy/wrappy.js"
+      },
+      {
+        "name": "inherits",
+        "version": "2.0.1",
+        "path": "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inherits/inherits.js"
+      },
+      {
+        "name": "once",
+        "version": "1.3.3",
+        "path": "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/once/once.js"
+      },
+      {
+        "name": "wrappy",
+        "version": "1.0.1",
+        "path": "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/once/node_modules/wrappy/wrappy.js"
+      },
+      {
+        "name": "path-is-absolute",
+        "version": "1.0.0",
+        "path": "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/path-is-absolute/index.js"
+      },
+      {
         "name": "object-assign",
         "version": "4.0.1",
         "path": "node_modules/remark/node_modules/globby/node_modules/object-assign/index.js"
@@ -561,13 +591,8 @@
       },
       {
         "name": "pinkie",
-        "version": "2.0.1",
+        "version": "2.0.4",
         "path": "node_modules/remark/node_modules/globby/node_modules/pinkie-promise/node_modules/pinkie/index.js"
-      },
-      {
-        "name": "he",
-        "version": "0.5.0",
-        "path": "node_modules/remark/node_modules/he/he.js"
       },
       {
         "name": "log-update",
@@ -576,7 +601,7 @@
       },
       {
         "name": "ansi-escapes",
-        "version": "1.1.0",
+        "version": "1.3.0",
         "path": "node_modules/remark/node_modules/log-update/node_modules/ansi-escapes/index.js"
       },
       {
@@ -616,7 +641,7 @@
       },
       {
         "name": "brace-expansion",
-        "version": "1.1.2",
+        "version": "1.1.3",
         "path": "node_modules/remark/node_modules/minimatch/node_modules/brace-expansion/index.js"
       },
       {
@@ -631,7 +656,7 @@
       },
       {
         "name": "npm-prefix",
-        "version": "1.1.1",
+        "version": "1.2.0",
         "path": "node_modules/remark/node_modules/npm-prefix/index.js"
       },
       {
@@ -641,7 +666,7 @@
       },
       {
         "name": "deep-extend",
-        "version": "0.4.0",
+        "version": "0.4.1",
         "path": "node_modules/remark/node_modules/npm-prefix/node_modules/rc/node_modules/deep-extend/lib/deep-extend.js"
       },
       {
@@ -658,6 +683,11 @@
         "name": "strip-json-comments",
         "version": "1.0.4",
         "path": "node_modules/remark/node_modules/npm-prefix/node_modules/rc/node_modules/strip-json-comments/strip-json-comments.js"
+      },
+      {
+        "name": "shellsubstitute",
+        "version": "1.1.0",
+        "path": "node_modules/remark/node_modules/npm-prefix/node_modules/shellsubstitute/index.js"
       },
       {
         "name": "untildify",
@@ -691,7 +721,7 @@
       },
       {
         "name": "repeat-string",
-        "version": "1.5.2",
+        "version": "1.5.4",
         "path": "node_modules/remark/node_modules/repeat-string/index.js"
       },
       {
@@ -703,11 +733,6 @@
         "name": "character-entities-html4",
         "version": "1.0.0",
         "path": "node_modules/remark/node_modules/stringify-entities/node_modules/character-entities-html4/index.js"
-      },
-      {
-        "name": "text-table",
-        "version": "0.2.0",
-        "path": "node_modules/remark/node_modules/text-table/index.js"
       },
       {
         "name": "to-vfile",
@@ -726,23 +751,18 @@
       },
       {
         "name": "unified",
-        "version": "2.1.2",
+        "version": "3.0.0",
         "path": "node_modules/remark/node_modules/unified/index.js"
       },
       {
         "name": "attach-ware",
-        "version": "1.0.0",
+        "version": "2.0.0",
         "path": "node_modules/remark/node_modules/unified/node_modules/attach-ware/index.js"
       },
       {
         "name": "bail",
         "version": "1.0.0",
         "path": "node_modules/remark/node_modules/unified/node_modules/bail/index.js"
-      },
-      {
-        "name": "extend",
-        "version": "3.0.0",
-        "path": "node_modules/remark/node_modules/unified/node_modules/extend/index.js"
       },
       {
         "name": "unherit",
@@ -760,6 +780,16 @@
         "path": "node_modules/remark/node_modules/unified/node_modules/unherit/node_modules/inherits/inherits.js"
       },
       {
+        "name": "unist-util-remove-position",
+        "version": "1.0.0",
+        "path": "node_modules/remark/node_modules/unist-util-remove-position/index.js"
+      },
+      {
+        "name": "unist-util-visit",
+        "version": "1.1.0",
+        "path": "node_modules/remark/node_modules/unist-util-remove-position/node_modules/unist-util-visit/index.js"
+      },
+      {
         "name": "user-home",
         "version": "2.0.0",
         "path": "node_modules/remark/node_modules/user-home/index.js"
@@ -771,7 +801,7 @@
       },
       {
         "name": "vfile",
-        "version": "1.2.0",
+        "version": "1.3.1",
         "path": "node_modules/remark/node_modules/vfile/index.js"
       },
       {
@@ -783,6 +813,11 @@
         "name": "vfile-find-up",
         "version": "1.0.0",
         "path": "node_modules/remark/node_modules/vfile-find-up/index.js"
+      },
+      {
+        "name": "vfile-location",
+        "version": "2.0.0",
+        "path": "node_modules/remark/node_modules/vfile-location/index.js"
       },
       {
         "name": "vfile-reporter",
@@ -831,13 +866,18 @@
       },
       {
         "name": "strip-ansi",
-        "version": "3.0.0",
+        "version": "3.0.1",
         "path": "node_modules/remark/node_modules/vfile-reporter/node_modules/string-width/node_modules/strip-ansi/index.js"
       },
       {
         "name": "ansi-regex",
         "version": "2.0.0",
         "path": "node_modules/remark/node_modules/vfile-reporter/node_modules/string-width/node_modules/strip-ansi/node_modules/ansi-regex/index.js"
+      },
+      {
+        "name": "text-table",
+        "version": "0.2.0",
+        "path": "node_modules/remark/node_modules/vfile-reporter/node_modules/text-table/index.js"
       },
       {
         "name": "vfile-sort",
@@ -851,7 +891,7 @@
       },
       {
         "name": "wrap-fn",
-        "version": "0.1.4",
+        "version": "0.1.5",
         "path": "node_modules/remark/node_modules/ware/node_modules/wrap-fn/index.js"
       },
       {
@@ -861,38 +901,73 @@
       },
       {
         "name": "remark-lint",
-        "version": "2.0.2",
+        "version": "3.0.0",
         "path": "node_modules/remark-lint/index.js"
       },
       {
         "name": "decamelize",
-        "version": "1.1.2",
+        "version": "1.2.0",
         "path": "node_modules/remark-lint/node_modules/decamelize/index.js"
       },
       {
-        "name": "escape-string-regexp",
-        "version": "1.0.4",
-        "path": "node_modules/remark-lint/node_modules/decamelize/node_modules/escape-string-regexp/index.js"
-      },
-      {
         "name": "mdast-util-heading-style",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "path": "node_modules/remark-lint/node_modules/mdast-util-heading-style/index.js"
       },
       {
         "name": "mdast-util-position",
-        "version": "1.0.0",
+        "version": "1.0.2",
         "path": "node_modules/remark-lint/node_modules/mdast-util-position/index.js"
       },
       {
         "name": "mdast-util-to-string",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "path": "node_modules/remark-lint/node_modules/mdast-util-to-string/index.js"
       },
       {
-        "name": "mdast-zone",
-        "version": "2.0.0",
-        "path": "node_modules/remark-lint/node_modules/mdast-zone/index.js"
+        "name": "npm-prefix",
+        "version": "1.2.0",
+        "path": "node_modules/remark-lint/node_modules/npm-prefix/index.js"
+      },
+      {
+        "name": "rc",
+        "version": "1.1.6",
+        "path": "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/index.js"
+      },
+      {
+        "name": "deep-extend",
+        "version": "0.4.1",
+        "path": "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/deep-extend/lib/deep-extend.js"
+      },
+      {
+        "name": "ini",
+        "version": "1.3.4",
+        "path": "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/ini/ini.js"
+      },
+      {
+        "name": "minimist",
+        "version": "1.2.0",
+        "path": "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/minimist/index.js"
+      },
+      {
+        "name": "strip-json-comments",
+        "version": "1.0.4",
+        "path": "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/strip-json-comments/strip-json-comments.js"
+      },
+      {
+        "name": "shellsubstitute",
+        "version": "1.1.0",
+        "path": "node_modules/remark-lint/node_modules/npm-prefix/node_modules/shellsubstitute/index.js"
+      },
+      {
+        "name": "untildify",
+        "version": "2.1.0",
+        "path": "node_modules/remark-lint/node_modules/npm-prefix/node_modules/untildify/index.js"
+      },
+      {
+        "name": "os-homedir",
+        "version": "1.0.1",
+        "path": "node_modules/remark-lint/node_modules/npm-prefix/node_modules/untildify/node_modules/os-homedir/index.js"
       },
       {
         "name": "plur",
@@ -905,14 +980,29 @@
         "path": "node_modules/remark-lint/node_modules/plur/node_modules/irregular-plurals/irregular-plurals.json"
       },
       {
+        "name": "remark-message-control",
+        "version": "1.0.1",
+        "path": "node_modules/remark-lint/node_modules/remark-message-control/index.js"
+      },
+      {
+        "name": "mdast-comment-marker",
+        "version": "1.0.0",
+        "path": "node_modules/remark-lint/node_modules/remark-message-control/node_modules/mdast-comment-marker/index.js"
+      },
+      {
         "name": "remark-range",
         "version": "2.0.0",
-        "path": "node_modules/remark-lint/node_modules/remark-range/index.js"
+        "path": "node_modules/remark-lint/node_modules/remark-message-control/node_modules/remark-range/index.js"
       },
       {
         "name": "unist-util-visit",
-        "version": "1.0.0",
+        "version": "1.1.0",
         "path": "node_modules/remark-lint/node_modules/unist-util-visit/index.js"
+      },
+      {
+        "name": "vfile-location",
+        "version": "2.0.0",
+        "path": "node_modules/remark-lint/node_modules/vfile-location/index.js"
       },
       {
         "name": "vfile-sort",
@@ -926,7 +1016,8 @@
         "node_modules/atom-package-deps/lib/helpers.js",
         "node_modules/atom-package-deps/lib/main.js",
         "node_modules/atom-package-deps/lib/view.js",
-        "node_modules/atom-package-deps/node_modules/sb-callsite/lib/main.js",
+        "node_modules/atom-package-deps/node_modules/atom-package-path/lib/index.js",
+        "node_modules/atom-package-deps/node_modules/atom-package-path/node_modules/sb-callsite/lib/main.js",
         "node_modules/remark/index.js",
         "node_modules/remark/lib/cli/cli.js",
         "node_modules/remark/lib/cli/configuration.js",
@@ -960,6 +1051,10 @@
         "node_modules/remark/node_modules/ccount/index.js",
         "node_modules/remark/node_modules/chalk/index.js",
         "node_modules/remark/node_modules/chalk/node_modules/ansi-styles/index.js",
+        "node_modules/remark/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/conversions.js",
+        "node_modules/remark/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/css-keywords.js",
+        "node_modules/remark/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/index.js",
+        "node_modules/remark/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/route.js",
         "node_modules/remark/node_modules/chalk/node_modules/escape-string-regexp/index.js",
         "node_modules/remark/node_modules/chalk/node_modules/has-ansi/index.js",
         "node_modules/remark/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/index.js",
@@ -992,9 +1087,6 @@
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/braces/node_modules/repeat-element/index.js",
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/expand-brackets/index.js",
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/index.js",
-        "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green/index.js",
-        "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green/node_modules/ansi-wrap/index.js",
-        "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/success-symbol/index.js",
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/filename-regex/index.js",
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/is-extglob/index.js",
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/kind-of/index.js",
@@ -1011,6 +1103,7 @@
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/regex-cache/node_modules/is-equal-shallow/index.js",
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/regex-cache/node_modules/is-primitive/index.js",
         "node_modules/remark/node_modules/chokidar/node_modules/async-each/index.js",
+        "node_modules/remark/node_modules/chokidar/node_modules/async-each/test.js",
         "node_modules/remark/node_modules/chokidar/node_modules/glob-parent/index.js",
         "node_modules/remark/node_modules/chokidar/node_modules/glob-parent/test.js",
         "node_modules/remark/node_modules/chokidar/node_modules/inherits/inherits.js",
@@ -1044,8 +1137,8 @@
         "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/lib/_stream_writable.js",
         "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/core-util-is/lib/util.js",
         "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/core-util-is/test.js",
-        "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/build/build.js",
         "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/index.js",
+        "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/test.js",
         "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/index.js",
         "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/test.js",
         "node_modules/remark/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/string_decoder/index.js",
@@ -1072,8 +1165,8 @@
         "node_modules/remark/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_writable.js",
         "node_modules/remark/node_modules/concat-stream/node_modules/readable-stream/node_modules/core-util-is/lib/util.js",
         "node_modules/remark/node_modules/concat-stream/node_modules/readable-stream/node_modules/core-util-is/test.js",
-        "node_modules/remark/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/build/build.js",
         "node_modules/remark/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/index.js",
+        "node_modules/remark/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/test.js",
         "node_modules/remark/node_modules/concat-stream/node_modules/readable-stream/node_modules/process-nextick-args/index.js",
         "node_modules/remark/node_modules/concat-stream/node_modules/readable-stream/node_modules/process-nextick-args/test.js",
         "node_modules/remark/node_modules/concat-stream/node_modules/readable-stream/node_modules/string_decoder/index.js",
@@ -1090,7 +1183,7 @@
         "node_modules/remark/node_modules/debug/node.js",
         "node_modules/remark/node_modules/debug/node_modules/ms/index.js",
         "node_modules/remark/node_modules/elegant-spinner/index.js",
-        "node_modules/remark/node_modules/extend.js/index.js",
+        "node_modules/remark/node_modules/extend/index.js",
         "node_modules/remark/node_modules/glob/common.js",
         "node_modules/remark/node_modules/glob/glob.js",
         "node_modules/remark/node_modules/glob/node_modules/inflight/inflight.js",
@@ -1107,11 +1200,22 @@
         "node_modules/remark/node_modules/globby/node_modules/array-union/index.js",
         "node_modules/remark/node_modules/globby/node_modules/array-union/node_modules/array-uniq/index.js",
         "node_modules/remark/node_modules/globby/node_modules/arrify/index.js",
+        "node_modules/remark/node_modules/globby/node_modules/glob/common.js",
+        "node_modules/remark/node_modules/globby/node_modules/glob/glob.js",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inflight/inflight.js",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inflight/node_modules/wrappy/wrappy.js",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inflight/test.js",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inherits/inherits.js",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inherits/inherits_browser.js",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inherits/test.js",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/once/node_modules/wrappy/wrappy.js",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/once/once.js",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/path-is-absolute/index.js",
+        "node_modules/remark/node_modules/globby/node_modules/glob/sync.js",
         "node_modules/remark/node_modules/globby/node_modules/object-assign/index.js",
         "node_modules/remark/node_modules/globby/node_modules/pify/index.js",
         "node_modules/remark/node_modules/globby/node_modules/pinkie-promise/index.js",
         "node_modules/remark/node_modules/globby/node_modules/pinkie-promise/node_modules/pinkie/index.js",
-        "node_modules/remark/node_modules/he/he.js",
         "node_modules/remark/node_modules/log-update/index.js",
         "node_modules/remark/node_modules/log-update/node_modules/ansi-escapes/index.js",
         "node_modules/remark/node_modules/log-update/node_modules/cli-cursor/index.js",
@@ -1138,6 +1242,7 @@
         "node_modules/remark/node_modules/npm-prefix/node_modules/rc/node_modules/minimist/index.js",
         "node_modules/remark/node_modules/npm-prefix/node_modules/rc/node_modules/strip-json-comments/cli.js",
         "node_modules/remark/node_modules/npm-prefix/node_modules/rc/node_modules/strip-json-comments/strip-json-comments.js",
+        "node_modules/remark/node_modules/npm-prefix/node_modules/shellsubstitute/index.js",
         "node_modules/remark/node_modules/npm-prefix/node_modules/untildify/index.js",
         "node_modules/remark/node_modules/npm-prefix/node_modules/untildify/node_modules/os-homedir/index.js",
         "node_modules/remark/node_modules/parse-entities/index.js",
@@ -1148,12 +1253,6 @@
         "node_modules/remark/node_modules/stringify-entities/index.js",
         "node_modules/remark/node_modules/stringify-entities/lib/expression.js",
         "node_modules/remark/node_modules/stringify-entities/node_modules/character-entities-html4/index.js",
-        "node_modules/remark/node_modules/text-table/example/align.js",
-        "node_modules/remark/node_modules/text-table/example/center.js",
-        "node_modules/remark/node_modules/text-table/example/dotalign.js",
-        "node_modules/remark/node_modules/text-table/example/doubledot.js",
-        "node_modules/remark/node_modules/text-table/example/table.js",
-        "node_modules/remark/node_modules/text-table/index.js",
         "node_modules/remark/node_modules/to-vfile/index.js",
         "node_modules/remark/node_modules/to-vfile/lib/to-vfile.js",
         "node_modules/remark/node_modules/trim/index.js",
@@ -1161,18 +1260,20 @@
         "node_modules/remark/node_modules/unified/index.js",
         "node_modules/remark/node_modules/unified/node_modules/attach-ware/index.js",
         "node_modules/remark/node_modules/unified/node_modules/bail/index.js",
-        "node_modules/remark/node_modules/unified/node_modules/extend/index.js",
         "node_modules/remark/node_modules/unified/node_modules/unherit/index.js",
         "node_modules/remark/node_modules/unified/node_modules/unherit/node_modules/clone/clone.js",
         "node_modules/remark/node_modules/unified/node_modules/unherit/node_modules/clone/test.js",
         "node_modules/remark/node_modules/unified/node_modules/unherit/node_modules/inherits/inherits.js",
         "node_modules/remark/node_modules/unified/node_modules/unherit/node_modules/inherits/inherits_browser.js",
         "node_modules/remark/node_modules/unified/node_modules/unherit/node_modules/inherits/test.js",
+        "node_modules/remark/node_modules/unist-util-remove-position/index.js",
+        "node_modules/remark/node_modules/unist-util-remove-position/node_modules/unist-util-visit/index.js",
         "node_modules/remark/node_modules/user-home/index.js",
         "node_modules/remark/node_modules/user-home/node_modules/os-homedir/index.js",
         "node_modules/remark/node_modules/vfile/index.js",
         "node_modules/remark/node_modules/vfile-find-down/index.js",
         "node_modules/remark/node_modules/vfile-find-up/index.js",
+        "node_modules/remark/node_modules/vfile-location/index.js",
         "node_modules/remark/node_modules/vfile-reporter/index.js",
         "node_modules/remark/node_modules/vfile-reporter/node_modules/log-symbols/index.js",
         "node_modules/remark/node_modules/vfile-reporter/node_modules/plur/index.js",
@@ -1183,12 +1284,17 @@
         "node_modules/remark/node_modules/vfile-reporter/node_modules/string-width/node_modules/is-fullwidth-code-point/node_modules/number-is-nan/index.js",
         "node_modules/remark/node_modules/vfile-reporter/node_modules/string-width/node_modules/strip-ansi/index.js",
         "node_modules/remark/node_modules/vfile-reporter/node_modules/string-width/node_modules/strip-ansi/node_modules/ansi-regex/index.js",
+        "node_modules/remark/node_modules/vfile-reporter/node_modules/text-table/example/align.js",
+        "node_modules/remark/node_modules/vfile-reporter/node_modules/text-table/example/center.js",
+        "node_modules/remark/node_modules/vfile-reporter/node_modules/text-table/example/dotalign.js",
+        "node_modules/remark/node_modules/vfile-reporter/node_modules/text-table/example/doubledot.js",
+        "node_modules/remark/node_modules/vfile-reporter/node_modules/text-table/example/table.js",
+        "node_modules/remark/node_modules/vfile-reporter/node_modules/text-table/index.js",
         "node_modules/remark/node_modules/vfile-reporter/node_modules/vfile-sort/index.js",
         "node_modules/remark/node_modules/ware/lib/index.js",
         "node_modules/remark/node_modules/ware/node_modules/wrap-fn/index.js",
         "node_modules/remark/node_modules/ware/node_modules/wrap-fn/node_modules/co/index.js",
         "node_modules/remark-lint/index.js",
-        "node_modules/remark-lint/lib/filter.js",
         "node_modules/remark-lint/lib/index.js",
         "node_modules/remark-lint/lib/rules/blockquote-indentation.js",
         "node_modules/remark-lint/lib/rules/checkbox-character-style.js",
@@ -1238,6 +1344,8 @@
         "node_modules/remark-lint/lib/rules/no-shortcut-reference-link.js",
         "node_modules/remark-lint/lib/rules/no-table-indentation.js",
         "node_modules/remark-lint/lib/rules/no-tabs.js",
+        "node_modules/remark-lint/lib/rules/no-undefined-references.js",
+        "node_modules/remark-lint/lib/rules/no-unused-definitions.js",
         "node_modules/remark-lint/lib/rules/ordered-list-marker-style.js",
         "node_modules/remark-lint/lib/rules/ordered-list-marker-value.js",
         "node_modules/remark-lint/lib/rules/rule-style.js",
@@ -1247,23 +1355,40 @@
         "node_modules/remark-lint/lib/rules/table-pipes.js",
         "node_modules/remark-lint/lib/rules/unordered-list-marker-style.js",
         "node_modules/remark-lint/node_modules/decamelize/index.js",
-        "node_modules/remark-lint/node_modules/decamelize/node_modules/escape-string-regexp/index.js",
         "node_modules/remark-lint/node_modules/mdast-util-heading-style/index.js",
         "node_modules/remark-lint/node_modules/mdast-util-position/index.js",
         "node_modules/remark-lint/node_modules/mdast-util-to-string/index.js",
-        "node_modules/remark-lint/node_modules/mdast-zone/index.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/index.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/browser.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/index.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/lib/utils.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/deep-extend/index.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/deep-extend/lib/deep-extend.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/ini/ini.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/minimist/example/parse.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/minimist/index.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/strip-json-comments/cli.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/strip-json-comments/strip-json-comments.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/shellsubstitute/index.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/untildify/index.js",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/untildify/node_modules/os-homedir/index.js",
         "node_modules/remark-lint/node_modules/plur/index.js",
-        "node_modules/remark-lint/node_modules/remark-range/index.js",
+        "node_modules/remark-lint/node_modules/remark-message-control/index.js",
+        "node_modules/remark-lint/node_modules/remark-message-control/node_modules/mdast-comment-marker/index.js",
+        "node_modules/remark-lint/node_modules/remark-message-control/node_modules/remark-range/index.js",
         "node_modules/remark-lint/node_modules/unist-util-visit/index.js",
+        "node_modules/remark-lint/node_modules/vfile-location/index.js",
         "node_modules/remark-lint/node_modules/vfile-sort/index.js"
       ],
       ".json": [
-        "node_modules/atom-package-deps/node_modules/sb-callsite/package.json",
+        "node_modules/atom-package-deps/node_modules/atom-package-path/node_modules/sb-callsite/package.json",
+        "node_modules/atom-package-deps/node_modules/atom-package-path/package.json",
         "node_modules/atom-package-deps/package.json",
         "node_modules/remark/lib/block-elements.json",
         "node_modules/remark/lib/escape.json",
         "node_modules/remark/node_modules/camelcase/package.json",
         "node_modules/remark/node_modules/ccount/package.json",
+        "node_modules/remark/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/package.json",
         "node_modules/remark/node_modules/chalk/node_modules/ansi-styles/package.json",
         "node_modules/remark/node_modules/chalk/node_modules/escape-string-regexp/package.json",
         "node_modules/remark/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/package.json",
@@ -1287,9 +1412,6 @@
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/braces/node_modules/repeat-element/package.json",
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/braces/package.json",
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/expand-brackets/package.json",
-        "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green/node_modules/ansi-wrap/package.json",
-        "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green/package.json",
-        "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/success-symbol/package.json",
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/package.json",
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/filename-regex/package.json",
         "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/is-extglob/package.json",
@@ -1352,8 +1474,9 @@
         "node_modules/remark/node_modules/debug/node_modules/ms/package.json",
         "node_modules/remark/node_modules/debug/package.json",
         "node_modules/remark/node_modules/elegant-spinner/package.json",
-        "node_modules/remark/node_modules/extend.js/component.json",
-        "node_modules/remark/node_modules/extend.js/package.json",
+        "node_modules/remark/node_modules/extend/.jscs.json",
+        "node_modules/remark/node_modules/extend/component.json",
+        "node_modules/remark/node_modules/extend/package.json",
         "node_modules/remark/node_modules/glob/node_modules/inflight/node_modules/wrappy/package.json",
         "node_modules/remark/node_modules/glob/node_modules/inflight/package.json",
         "node_modules/remark/node_modules/glob/node_modules/inherits/package.json",
@@ -1364,12 +1487,18 @@
         "node_modules/remark/node_modules/globby/node_modules/array-union/node_modules/array-uniq/package.json",
         "node_modules/remark/node_modules/globby/node_modules/array-union/package.json",
         "node_modules/remark/node_modules/globby/node_modules/arrify/package.json",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inflight/node_modules/wrappy/package.json",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inflight/package.json",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inherits/package.json",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/once/node_modules/wrappy/package.json",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/once/package.json",
+        "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/path-is-absolute/package.json",
+        "node_modules/remark/node_modules/globby/node_modules/glob/package.json",
         "node_modules/remark/node_modules/globby/node_modules/object-assign/package.json",
         "node_modules/remark/node_modules/globby/node_modules/pify/package.json",
         "node_modules/remark/node_modules/globby/node_modules/pinkie-promise/node_modules/pinkie/package.json",
         "node_modules/remark/node_modules/globby/node_modules/pinkie-promise/package.json",
         "node_modules/remark/node_modules/globby/package.json",
-        "node_modules/remark/node_modules/he/package.json",
         "node_modules/remark/node_modules/log-update/node_modules/ansi-escapes/package.json",
         "node_modules/remark/node_modules/log-update/node_modules/cli-cursor/node_modules/restore-cursor/node_modules/exit-hook/package.json",
         "node_modules/remark/node_modules/log-update/node_modules/cli-cursor/node_modules/restore-cursor/node_modules/onetime/package.json",
@@ -1387,6 +1516,7 @@
         "node_modules/remark/node_modules/npm-prefix/node_modules/rc/node_modules/minimist/package.json",
         "node_modules/remark/node_modules/npm-prefix/node_modules/rc/node_modules/strip-json-comments/package.json",
         "node_modules/remark/node_modules/npm-prefix/node_modules/rc/package.json",
+        "node_modules/remark/node_modules/npm-prefix/node_modules/shellsubstitute/package.json",
         "node_modules/remark/node_modules/npm-prefix/node_modules/untildify/node_modules/os-homedir/package.json",
         "node_modules/remark/node_modules/npm-prefix/node_modules/untildify/package.json",
         "node_modules/remark/node_modules/npm-prefix/package.json",
@@ -1401,25 +1531,24 @@
         "node_modules/remark/node_modules/stringify-entities/node_modules/character-entities-html4/index.json",
         "node_modules/remark/node_modules/stringify-entities/node_modules/character-entities-html4/package.json",
         "node_modules/remark/node_modules/stringify-entities/package.json",
-        "node_modules/remark/node_modules/text-table/package.json",
         "node_modules/remark/node_modules/to-vfile/package.json",
         "node_modules/remark/node_modules/trim/component.json",
         "node_modules/remark/node_modules/trim/package.json",
         "node_modules/remark/node_modules/trim-trailing-lines/package.json",
         "node_modules/remark/node_modules/unified/node_modules/attach-ware/package.json",
         "node_modules/remark/node_modules/unified/node_modules/bail/package.json",
-        "node_modules/remark/node_modules/unified/node_modules/extend/.jscs.json",
-        "node_modules/remark/node_modules/unified/node_modules/extend/component.json",
-        "node_modules/remark/node_modules/unified/node_modules/extend/package.json",
         "node_modules/remark/node_modules/unified/node_modules/unherit/node_modules/clone/package.json",
         "node_modules/remark/node_modules/unified/node_modules/unherit/node_modules/inherits/package.json",
         "node_modules/remark/node_modules/unified/node_modules/unherit/package.json",
         "node_modules/remark/node_modules/unified/package.json",
+        "node_modules/remark/node_modules/unist-util-remove-position/node_modules/unist-util-visit/package.json",
+        "node_modules/remark/node_modules/unist-util-remove-position/package.json",
         "node_modules/remark/node_modules/user-home/node_modules/os-homedir/package.json",
         "node_modules/remark/node_modules/user-home/package.json",
         "node_modules/remark/node_modules/vfile/package.json",
         "node_modules/remark/node_modules/vfile-find-down/package.json",
         "node_modules/remark/node_modules/vfile-find-up/package.json",
+        "node_modules/remark/node_modules/vfile-location/package.json",
         "node_modules/remark/node_modules/vfile-reporter/node_modules/log-symbols/package.json",
         "node_modules/remark/node_modules/vfile-reporter/node_modules/plur/node_modules/irregular-plurals/irregular-plurals.json",
         "node_modules/remark/node_modules/vfile-reporter/node_modules/plur/node_modules/irregular-plurals/package.json",
@@ -1431,23 +1560,34 @@
         "node_modules/remark/node_modules/vfile-reporter/node_modules/string-width/node_modules/strip-ansi/node_modules/ansi-regex/package.json",
         "node_modules/remark/node_modules/vfile-reporter/node_modules/string-width/node_modules/strip-ansi/package.json",
         "node_modules/remark/node_modules/vfile-reporter/node_modules/string-width/package.json",
+        "node_modules/remark/node_modules/vfile-reporter/node_modules/text-table/package.json",
         "node_modules/remark/node_modules/vfile-reporter/node_modules/vfile-sort/package.json",
         "node_modules/remark/node_modules/vfile-reporter/package.json",
         "node_modules/remark/node_modules/ware/node_modules/wrap-fn/node_modules/co/package.json",
         "node_modules/remark/node_modules/ware/node_modules/wrap-fn/package.json",
         "node_modules/remark/node_modules/ware/package.json",
         "node_modules/remark/package.json",
-        "node_modules/remark-lint/node_modules/decamelize/node_modules/escape-string-regexp/package.json",
         "node_modules/remark-lint/node_modules/decamelize/package.json",
         "node_modules/remark-lint/node_modules/mdast-util-heading-style/package.json",
         "node_modules/remark-lint/node_modules/mdast-util-position/package.json",
         "node_modules/remark-lint/node_modules/mdast-util-to-string/package.json",
-        "node_modules/remark-lint/node_modules/mdast-zone/package.json",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/deep-extend/package.json",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/ini/package.json",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/minimist/package.json",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/node_modules/strip-json-comments/package.json",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/package.json",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/shellsubstitute/package.json",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/untildify/node_modules/os-homedir/package.json",
+        "node_modules/remark-lint/node_modules/npm-prefix/node_modules/untildify/package.json",
+        "node_modules/remark-lint/node_modules/npm-prefix/package.json",
         "node_modules/remark-lint/node_modules/plur/node_modules/irregular-plurals/irregular-plurals.json",
         "node_modules/remark-lint/node_modules/plur/node_modules/irregular-plurals/package.json",
         "node_modules/remark-lint/node_modules/plur/package.json",
-        "node_modules/remark-lint/node_modules/remark-range/package.json",
+        "node_modules/remark-lint/node_modules/remark-message-control/node_modules/mdast-comment-marker/package.json",
+        "node_modules/remark-lint/node_modules/remark-message-control/node_modules/remark-range/package.json",
+        "node_modules/remark-lint/node_modules/remark-message-control/package.json",
         "node_modules/remark-lint/node_modules/unist-util-visit/package.json",
+        "node_modules/remark-lint/node_modules/vfile-location/package.json",
         "node_modules/remark-lint/node_modules/vfile-sort/package.json",
         "node_modules/remark-lint/package.json",
         "package.json"
@@ -1461,9 +1601,9 @@
           "spec"
         ],
         "dependencies": {
-          "remark": "^3.0.0",
-          "remark-lint": "^2.0.0",
-          "atom-package-deps": "^3.0.6"
+          "remark": "^4.0.0",
+          "remark-lint": "^3.0.0",
+          "atom-package-deps": "^3.0.7"
         }
       },
       {
@@ -1472,7 +1612,17 @@
           "node_modules/atom-package-deps"
         ],
         "dependencies": {
-          "sb-callsite": "^1.0.0"
+          "atom-package-path": "^1.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/atom-package-deps/node_modules/atom-package-path/lib",
+          "node_modules/atom-package-deps/node_modules/atom-package-path",
+          "node_modules/atom-package-deps/node_modules/atom-package-path/spec"
+        ],
+        "dependencies": {
+          "sb-callsite": "^1.1.2"
         }
       },
       {
@@ -1493,10 +1643,9 @@
           "concat-stream": "^1.0.0",
           "debug": "^2.0.0",
           "elegant-spinner": "^1.0.0",
-          "extend.js": "0.0.2",
-          "glob": "^6.0.1",
+          "extend": "^3.0.0",
+          "glob": "^7.0.0",
           "globby": "^4.0.0",
-          "he": "^0.5.0",
           "log-update": "^1.0.1",
           "longest-streak": "^1.0.0",
           "markdown-table": "^0.4.0",
@@ -1505,15 +1654,16 @@
           "parse-entities": "^1.0.0",
           "repeat-string": "^1.5.0",
           "stringify-entities": "^1.0.0",
-          "text-table": "^0.2.0",
           "to-vfile": "^1.0.0",
           "trim": "^0.0.1",
           "trim-trailing-lines": "^1.0.0",
-          "unified": "^2.0.0",
+          "unified": "^3.0.0",
+          "unist-util-remove-position": "^1.0.0",
           "user-home": "^2.0.0",
           "vfile": "^1.1.0",
           "vfile-find-down": "^1.0.0",
           "vfile-find-up": "^1.0.0",
+          "vfile-location": "^2.0.0",
           "vfile-reporter": "^1.5.0",
           "ware": "^1.3.0"
         }
@@ -1528,6 +1678,14 @@
           "has-ansi": "^2.0.0",
           "strip-ansi": "^3.0.0",
           "supports-color": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/remark/node_modules/chalk/node_modules/ansi-styles"
+        ],
+        "dependencies": {
+          "color-convert": "^1.0.0"
         }
       },
       {
@@ -1553,7 +1711,7 @@
         ],
         "dependencies": {
           "anymatch": "^1.3.0",
-          "async-each": "^0.1.6",
+          "async-each": "^1.0.0",
           "glob-parent": "^2.0.0",
           "inherits": "^2.0.1",
           "is-binary-path": "^1.0.0",
@@ -1661,17 +1819,7 @@
           "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob"
         ],
         "dependencies": {
-          "ansi-green": "^0.1.1",
-          "is-extglob": "^1.0.0",
-          "success-symbol": "^0.1.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/remark/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green"
-        ],
-        "dependencies": {
-          "ansi-wrap": "0.1.0"
+          "is-extglob": "^1.0.0"
         }
       },
       {
@@ -1797,7 +1945,7 @@
         "dependencies": {
           "core-util-is": "~1.0.0",
           "inherits": "~2.0.1",
-          "isarray": "0.0.1",
+          "isarray": "~1.0.0",
           "process-nextick-args": "~1.0.6",
           "string_decoder": "~0.10.x",
           "util-deprecate": "~1.0.1"
@@ -1829,7 +1977,7 @@
         "dependencies": {
           "core-util-is": "~1.0.0",
           "inherits": "~2.0.1",
-          "isarray": "0.0.1",
+          "isarray": "~1.0.0",
           "process-nextick-args": "~1.0.6",
           "string_decoder": "~0.10.x",
           "util-deprecate": "~1.0.1"
@@ -1895,6 +2043,35 @@
       },
       {
         "paths": [
+          "node_modules/remark/node_modules/globby/node_modules/glob"
+        ],
+        "dependencies": {
+          "inflight": "^1.0.4",
+          "inherits": "2",
+          "minimatch": "2 || 3",
+          "once": "^1.3.0",
+          "path-is-absolute": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/inflight"
+        ],
+        "dependencies": {
+          "once": "^1.3.0",
+          "wrappy": "1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/remark/node_modules/globby/node_modules/glob/node_modules/once"
+        ],
+        "dependencies": {
+          "wrappy": "1"
+        }
+      },
+      {
+        "paths": [
           "node_modules/remark/node_modules/globby/node_modules/pinkie-promise"
         ],
         "dependencies": {
@@ -1950,6 +2127,7 @@
         ],
         "dependencies": {
           "rc": "^1.1.0",
+          "shellsubstitute": "^1.1.0",
           "untildify": "^2.1.0"
         }
       },
@@ -2007,7 +2185,7 @@
           "node_modules/remark/node_modules/unified"
         ],
         "dependencies": {
-          "attach-ware": "^1.0.0",
+          "attach-ware": "^2.0.0",
           "bail": "^1.0.0",
           "extend": "^3.0.0",
           "unherit": "^1.0.4",
@@ -2030,6 +2208,14 @@
         "dependencies": {
           "clone": "^1.0.1",
           "inherits": "^2.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/remark/node_modules/unist-util-remove-position"
+        ],
+        "dependencies": {
+          "unist-util-visit": "^1.0.0"
         }
       },
       {
@@ -2145,30 +2331,46 @@
         ],
         "dependencies": {
           "decamelize": "^1.0.0",
-          "remark-range": "^2.0.0",
           "mdast-util-heading-style": "^1.0.0",
           "mdast-util-position": "^1.0.0",
           "mdast-util-to-string": "^1.0.0",
-          "mdast-zone": "^2.0.0",
+          "npm-prefix": "^1.1.1",
           "plur": "^2.0.0",
+          "remark-message-control": "^1.0.1",
           "unist-util-visit": "^1.0.0",
+          "vfile-location": "^2.0.0",
           "vfile-sort": "^1.0.0"
         }
       },
       {
         "paths": [
-          "node_modules/remark-lint/node_modules/decamelize"
+          "node_modules/remark-lint/node_modules/npm-prefix"
         ],
         "dependencies": {
-          "escape-string-regexp": "^1.0.4"
+          "rc": "^1.1.0",
+          "shellsubstitute": "^1.1.0",
+          "untildify": "^2.1.0"
         }
       },
       {
         "paths": [
-          "node_modules/remark-lint/node_modules/mdast-zone"
+          "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc",
+          "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/lib",
+          "node_modules/remark-lint/node_modules/npm-prefix/node_modules/rc/test"
         ],
         "dependencies": {
-          "unist-util-visit": "^1.0.0"
+          "deep-extend": "~0.4.0",
+          "ini": "~1.3.0",
+          "minimist": "^1.2.0",
+          "strip-json-comments": "~1.0.4"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/remark-lint/node_modules/npm-prefix/node_modules/untildify"
+        ],
+        "dependencies": {
+          "os-homedir": "^1.0.0"
         }
       },
       {
@@ -2181,7 +2383,17 @@
       },
       {
         "paths": [
-          "node_modules/remark-lint/node_modules/remark-range"
+          "node_modules/remark-lint/node_modules/remark-message-control"
+        ],
+        "dependencies": {
+          "mdast-comment-marker": "^1.0.0",
+          "remark-range": "^2.0.0",
+          "unist-util-visit": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/remark-lint/node_modules/remark-message-control/node_modules/remark-range"
         ],
         "dependencies": {
           "unist-util-visit": "^1.0.0"

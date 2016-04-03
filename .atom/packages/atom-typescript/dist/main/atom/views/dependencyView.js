@@ -42,7 +42,7 @@ var DependencyView = (function (_super) {
         });
     };
     return DependencyView;
-})(sp.ScrollView);
+}(sp.ScrollView));
 exports.DependencyView = DependencyView;
 var prefixes = {
     circle: 'circle'
@@ -88,17 +88,17 @@ function renderGraph(dependencies, mainContent, display) {
     if (d3Graph.cycles().length) {
         var cycles = d3Graph.cycles();
         var message = '';
-        var textContent = '';
+        var textContent_1 = '';
         for (var _i = 0, cycles_1 = cycles; _i < cycles_1.length; _i++) {
             var cycle = cycles_1[_i];
             message += '<h3>Cycle Found: </h3>';
             message += cycle.join(' <br/> ') + '<br/>';
-            textContent += '---Cycle Found---' + os.EOL;
-            textContent += cycle.join(os.EOL) + os.EOL;
+            textContent_1 += '---Cycle Found---' + os.EOL;
+            textContent_1 += cycle.join(os.EOL) + os.EOL;
         }
         messagesElement.html(message);
         copyDisplay.show().on('click', function () {
-            atom.clipboard.write(textContent);
+            atom.clipboard.write(textContent_1);
             atom.notifications.addInfo('Copied!');
         });
     }
@@ -369,7 +369,7 @@ var D3Graph = (function () {
         return this.circularPaths;
     };
     return D3Graph;
-})();
+}());
 function linkArc(d) {
     var targetX = d.target.x;
     var targetY = d.target.y;

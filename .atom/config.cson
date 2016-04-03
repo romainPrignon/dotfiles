@@ -1,38 +1,38 @@
 "*":
-  "exception-reporting":
-    userId: "7ae2a45f-bca0-f9f8-6c74-969dc34cdc17"
-  welcome:
-    showOnStartup: false
+  "atom-autocomplete-php": {}
+  "atom-beautify":
+    analytics: false
   core:
+    disabledPackages: [
+      "linter-markdown"
+    ]
+    projectHome: "~/workspace"
     themes: [
       "one-dark-ui"
       "monokai"
     ]
-    projectHome: "~/workspace"
-    disabledPackages: [
-      "linter-markdown"
-    ]
   editor:
-    invisibles: {}
+    fontFamily: "DejaVu Sans Mono"
     fontSize: 16
+    invisibles: {}
+    preferredLineLength: 120
     showIndentGuide: true
     softWrap: true
     softWrapAtPreferredLineLength: true
-    tabType: "soft"
     tabLength: 4
-    preferredLineLength: 120
+    tabType: "soft"
     zoomFontWhenCtrlScrolling: false
-    fontFamily: "DejaVu Sans Mono"
-  "linter-phpcs": {}
-  "linter-php": {}
-  "atom-autocomplete-php": {}
+  "exception-reporting":
+    userId: "7ae2a45f-bca0-f9f8-6c74-969dc34cdc17"
   "go-plus": {}
-  "atom-beautify":
-    analytics: false
+  linter: {}
   "linter-eslint": {}
+  "linter-php": {}
+  "linter-phpcs": {}
+  welcome:
+    showOnStartup: false
   whitespace:
     ensureSingleTrailingNewline: false
-  linter: {}
 ".ini.source":
   editor:
     preferredLineLength: 120

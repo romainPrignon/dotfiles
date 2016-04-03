@@ -32,6 +32,7 @@ var compilerOptionsValidation = {
     noErrorTruncation: { type: types.boolean },
     noFallthroughCasesInSwitch: { type: types.boolean },
     noImplicitAny: { type: types.boolean },
+    noImplicitUseStrict: { type: types.boolean },
     noImplicitReturns: { type: types.boolean },
     noLib: { type: types.boolean },
     noLibCheck: { type: types.boolean },
@@ -47,7 +48,7 @@ var compilerOptionsValidation = {
     stripInternal: { type: types.boolean },
     suppressExcessPropertyErrors: { type: types.boolean },
     suppressImplicitAnyIndexErrors: { type: types.boolean },
-    target: { type: types.string, validValues: ['es3', 'es5', 'es6'] },
+    target: { type: types.string, validValues: ['es3', 'es5', 'es6', 'es2015'] },
     version: { type: types.boolean },
     watch: { type: types.boolean },
 };
@@ -71,6 +72,7 @@ var path = require('path');
 var tsconfig = require('tsconfig');
 var os = require('os');
 var detectIndent = require('detect-indent');
+var detectNewline = require('detect-newline');
 var formatting = require('./formatting');
 var projectFileName = 'tsconfig.json';
 var defaultFilesGlob = [
@@ -89,6 +91,7 @@ exports.defaults = {
     emitDecoratorMetadata: true,
     declaration: false,
     noImplicitAny: false,
+    noImplicitUseStrict: false,
     removeComments: true,
     noLib: false,
     preserveConstEnums: true,
@@ -150,10 +153,10 @@ function rawToTsCompilerOptions(jsonOptions, projectDir) {
         compilerOptions.rootDir = path.resolve(projectDir, compilerOptions.rootDir);
     }
     if (compilerOptions.out !== undefined) {
-        compilerOptions.out = path.resolve(projectDir, compilerOptions.out);
+        compilerOptions.outFile = path.resolve(projectDir, compilerOptions.out);
     }
     if (compilerOptions.outFile !== undefined) {
-        compilerOptions.out = path.resolve(projectDir, compilerOptions.outFile);
+        compilerOptions.outFile = path.resolve(projectDir, compilerOptions.outFile);
     }
     return compilerOptions;
 }
@@ -181,7 +184,7 @@ function getDefaultInMemoryProject(srcFile) {
         compileOnSave: true,
         buildOnSave: false,
         scripts: {},
-        atom: { rewriteTsconfig: true },
+        atom: { rewriteTsconfig: true, formatOnSave: false },
     };
     return {
         projectFileDirectory: dir,
@@ -221,7 +224,7 @@ function getProjectSync(pathOrSrcFile) {
         };
     }
     if (projectSpec.filesGlob) {
-        var prettyJSONProjectSpec = prettyJSON(projectSpec, detectIndent(projectFileTextContent).indent);
+        var prettyJSONProjectSpec = prettyJSON(projectSpec, detectIndent(projectFileTextContent).indent, detectNewline(projectFileTextContent));
         if (prettyJSONProjectSpec !== projectFileTextContent && projectSpec.atom.rewriteTsconfig) {
             fs.writeFileSync(projectFile, prettyJSONProjectSpec);
         }
@@ -253,7 +256,7 @@ function getProjectSync(pathOrSrcFile) {
         externalTranspiler: projectSpec.externalTranspiler == undefined ? undefined : projectSpec.externalTranspiler,
         scripts: projectSpec.scripts || {},
         buildOnSave: !!projectSpec.buildOnSave,
-        atom: { rewriteTsconfig: true }
+        atom: { rewriteTsconfig: true, formatOnSave: !!projectSpec.atom.formatOnSave }
     };
     var validationResult = validator.validate(projectSpec.compilerOptions);
     if (validationResult.errorMessage) {
@@ -285,9 +288,12 @@ function createProjectRootSync(srcFile, defaultOptions) {
         throw new Error(exports.errors.CREATE_PROJECT_ALREADY_EXISTS);
     var projectSpec = {};
     projectSpec.compilerOptions = tsToRawCompilerOptions(defaultOptions || exports.defaults);
-    projectSpec.filesGlob = defaultFilesGlob;
+    projectSpec.exclude = ["node_modules", "typings/browser", "typings/browser.d.ts"];
     projectSpec.compileOnSave = true;
     projectSpec.buildOnSave = false;
+    projectSpec.atom = {
+        rewriteTsconfig: false
+    };
     fs.writeFileSync(projectFilePath, prettyJSON(projectSpec));
     return getProjectSync(srcFile);
 }
@@ -424,8 +430,9 @@ function getDefinitionsForNodeModules(projectDir, files) {
         .filter(function (x) { return existing[x]; });
     return { implicit: implicit, ours: ours, packagejson: packagejson };
 }
-function prettyJSON(object, indent) {
+function prettyJSON(object, indent, newLine) {
     if (indent === void 0) { indent = 4; }
+    if (newLine === void 0) { newLine = os.EOL; }
     var cache = [];
     var value = JSON.stringify(object, function (key, value) {
         if (typeof value === 'object' && value !== null) {
@@ -436,7 +443,7 @@ function prettyJSON(object, indent) {
         }
         return value;
     }, indent);
-    value = value.split('\n').join(os.EOL) + os.EOL;
+    value = value.replace(/(?:\r\n|\r|\n)/g, newLine) + newLine;
     cache = null;
     return value;
 }

@@ -1,6 +1,6 @@
 {
   "name": "atom-typescript",
-  "version": "7.14.3",
+  "version": "8.4.0",
   "main": "./dist/main/atomts",
   "bin": {
     "atbuild": "./dist/main/bin/atbuild"
@@ -9,6 +9,7 @@
   "description": "The only TypeScript plugin you will ever need.",
   "scripts": {
     "test": "ntsc -p ./lib",
+    "build": "node scripts/grammar.js",
     "prepublish": "typings install"
   },
   "engines": {
@@ -50,6 +51,7 @@
     "basarat-text-buffer": "6.0.0",
     "d3": "^3.5.5",
     "detect-indent": "^4.0.0",
+    "detect-newline": "^2.1.0",
     "emissary": "^1.3.3",
     "escape-html": "^1.0.1",
     "findup": "^0.1.5",
@@ -59,14 +61,18 @@
     "immutable": "^3.7.3",
     "json2dts": "0.0.1",
     "mkdirp": "^0.5.0",
-    "ntypescript": "1.201512030612.1",
+    "ntypescript": "1.201602232306.1",
     "react": "^0.13.3",
     "season": "^5.1.4",
     "tsconfig": "^2.2.0",
     "xtend": "^4.0.0"
   },
   "devDependencies": {
-    "typings": "^0.2.3"
+    "cson": "^3.0.2",
+    "js-yaml": "^3.5.2",
+    "mz": "^2.1.0",
+    "popsicle": "^3.0.1",
+    "typings": "0.7.9"
   },
   "package-deps": [
     "linter"
@@ -76,12 +82,12 @@
     "javascript",
     "html"
   ],
-  "readme": "# Atom TypeScript\n\n[![Join the chat at https://gitter.im/TypeStrong/atom-typescript](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/TypeStrong/atom-typescript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\nJavaScript developers can now just open a `.ts` file and start hacking away like they are used to. No `grunt` no `Visual Studio`. Just pure coding.\n\n## Installation\n\n1. Install [atom](https://atom.io).\n2. `apm install atom-typescript` (`apm` needs `git` in your path)\n3. Fire up atom. Open a TypeScript file. Potentially wait for further installs (just `apm install linter` if its not there already).\n\n**Additional Notes**: [Some packages we love](https://github.com/TypeStrong/atom-typescript/blob/master/docs/packages.md).\n\n## Reviews\n*Featured on the TypeScript home page under tools http://www.typescriptlang.org/* and [demoed by **Anders Hejlsberg**](https://twitter.com/schwarty/status/593858817894404096).\n\n\"I was shocked at how good it felt to poke around on the compiler with it.\" [Jonathan Turner](https://twitter.com/jntrnr)  \n\"And guess what, it worked perfectly. Like everything else! Faster than Visual Studio!\" [Daniel Earwicker](http://stackoverflow.com/users/27423/daniel-earwicker)  \n\"It's a thing of beauty - they had me at '*Type information on hover*'. Discovering  `tsconfig.json` support as well was just an enormous bonus.\" [John Reilly](https://twitter.com/johnny_reilly)  \n\"This may be your best option for editing TypeScript at the moment - very nice!\" [Rasmus Schultz](https://twitter.com/mindplaydk)\n\n[*Add yours!*](https://github.com/TypeStrong/atom-typescript/issues/66)\n\n# Features\n* Autocomplete\n* Live error analysis\n* Type information on hover\n* Compile on save\n* Project Context Support (`tsconfig.json`)\n* Project Build Support\n* `package.json` Support\n* React Support\n* Format code\n* Goto Declaration\n* Find References\n* Block comment and uncomment\n* Goto history (goto next/previous error in open files, goto next/previous build)\n* Auto indent for new lines\n* TypeScript context menu\n* Symbols in Project\n* Symbols in File\n* Semantic View\n* Rename refactoring\n* Quick Fix\n* Toggle Breakpoint\n* Common Snippets\n* `import` / `/// <reference` relative path resolution\n* Output Toggle\n* AST visualizer\n* Dependency View\n* Sync\n\n# FAQ\nLocated online : https://github.com/TypeStrong/atom-typescript/blob/master/docs/faq.md\n\n----\n\n# Feature Details\n## Auto Complete\nInternally using AutoComplete+. Just start typing and hints will show up. Or you can explicitly trigger it using `ctrl+space` or `cmd+space`. Press `tab` to make a selection.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/fastErrorCheckingAndAutoComplete2.gif)\n\n\n## Type information on hover\nJust hover\n\n![you definitely get the point](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/hover.png)\n\n## Compile on save\nTypeScript files will be compiled on save. Different notifications are given if `emit` was successful or not. [Configuration driven by `tsconfig.json`](https://github.com/TypeStrong/atom-typescript/blob/master/docs/tsconfig.md)\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/compile%20success.png)\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/compile%20error.png)\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/emit%20error.png)\n\n## Project Support\nSupported via `tsconfig.json` ([read more](https://github.com/TypeStrong/atom-typescript/blob/master/docs/tsconfig.md)) which is going to be the defacto Project file format for the next versions of TypeScript.\n\nIt also supports `filesGlob` which will expand `files` for you based on `minmatch|glob|regex` (similar to grunt).\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/proj.png)\n\n### Project Build Support\nShortcut: `F6`. If there are any errors they are shown as well.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/build%20success.png)\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/build%20errors.png)\n\n## NPM Module Support\nWe have a sample NPM module : https://github.com/basarat/ts-npm-module  (trick : in tsconfig have `\"declaration\" : true` an in package.json have a `typings` field pointing to the `main` file) and its usage is demoed in https://github.com/basarat/ts-npm-module-consume.\n\n## React Support\n\n### Configuration tips\n\nCovered here : http://basarat.gitbooks.io/typescript/content/docs/jsx/tsx.html\n\n### Html to TSX\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/htmltotsx.gif)\n\n## Format Code\nShortcut : `ctrl+alt+l` or `cmd+alt+l`. Will format just the selection if you have something selected otherwise it will format the entire file.\n\n## Go to Declaration\nShortcut : `F12`. Will open the *first* declaration of the said item for now. (Note: some people call it Go to Definition)\n\n## Find References\nShortcut `shift+F12`. Also called *find usages*.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/findReferences.png)\n\n## Block Comment and Uncomment\n`ctrl+/` or `cmd+/`. Does a block comment / uncomment of code.\n\n## Go to Next / Go to Previous\n`f8` and `shift+f8` respectively. This will go to next/previous *errors in open files* OR *build error* OR *references* based on which tab you have selected.\n\n## Context menu\nQuickly toggle the TypeScript panel OR select active TypeScript panel tab and other stuff using the context menu. `ctrl+;` or `cmd+;`.\n\n## Symbols View\nIntegrates with atom's symbols view (`ctrl+r` or `cmd+r`) to provide you with a list of searchable symbols in the current file.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/symbolsView.gif)\n\n## Semantic View\nA bird's eye view of the current file. Use command `toggle semantic view`. The view updates while you edit the code. You can also click to jump to any portion of the file.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/semanticView.png)\n\n## Project Symbols View\nAlso called Go To Type in other IDEs. Integrates with atom's project level symbols (`ctrl+shift+r` or `cmd+shift+r`) to provide you with a list of searchable symbols in the *entire typescript project*.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/projectSymbolView.png)\n\n## Refactoring\n\n### Rename\n`f2` to initiate rename. `enter` to commit and `esc` to cancel.\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/renameRefactoring.png)\n\n## Quick Fix\nPress the `TypeScript: Quick Fix` shortcut `alt+enter` at an error location to trigger quick fixes. Select the quick fix you want and press `enter` to commit e.g\n\n### Add class members\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/addClassMember.gif)\n\n### More Quick fixes\nWe are actively adding quick fixes so [**go here for an up to date list**](https://github.com/TypeStrong/atom-typescript/blob/master/docs/quickfix.md).\n\n## Toggle Breakpoint\nUse command `TypeScript: Toggle Breakpoint` shortcut `f9`:\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/toggleBreakpoint.gif)\n\n## tsconfig validation\nWe will validate it and help you to fix it :)\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/errorcases/invalidProjectOptions/invalidProjectOptions.gif)\n\n## Snippets\n### Relative Paths\nRelative paths have traditionally been a pain, not anymore. Use `import` or `ref` and press `tab` to trigger snippet.\n\n`ref`\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/ref%20snippet.gif)\n\n`import`\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/import%20snippet.gif)\n\nNote that within the path string you get autocomplete (`ctrl+space`/`cmd+space`) for all the files in the project by filename (works for both `ref` and `import`).\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/pathChange.gif)\n\n## Output Toggle\n`ctrl+shift+m` to toggle the output co**m**piled JS file for a give TypeScript file. The keyboard shortcut is consistent with atom's markdown preview.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/outputToggle.gif)\n\n## AST Visualizer\nCommand : `Typescript: Ast`. Useful when authoring new features.\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/astVisualizer.gif)\n\nAlso command : `TypeScript: Ast Full` that includes the `trivia` (punctuation, comments etc. received from `ts.Node.getChildren()`) as well.\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/astFull.png)\n\n## Dependency View\nCommand : `Typescript: Dependency View`. A dependency viewer for insight into the project if you use external modules. You can zoom, pan, drag points around and hover over nodes. ([more details](https://github.com/TypeStrong/atom-typescript/blob/master/docs/dependency-view.md))\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/dependencyView/teaser.png)\n\n## Sync\nWe try to keep as much of the stuff in sync while you edit code. However *in dire circumstances*:\n\n* a soft sync is done when you save a file `ctrl+s` and we will completely reprocess the *active* file. This might not fix stuff if the error is because of *some other file on the file system*.\n* `ctrl+'` or `cmd+'` : If you deleted files in the background or renamed them or jumped git branches or *something weird just happened* then sync. No need to restart your IDE :).\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/sync.gif)\n\n## Contributing\n\nLook at [CONTRIBUTING.md](https://github.com/TypeStrong/atom-typescript/blob/master/CONTRIBUTING.md) for curiosity. We work hard to keep the code as approachable as possible and are highly keen on helping you help us.\n\n## Changelog\nBreaking changes [available online](https://github.com/TypeStrong/atom-typescript/blob/master/docs/CHANGELOG.md).\n",
+  "readme": "# Atom TypeScript\n\n[![Join the chat at https://gitter.im/TypeStrong/atom-typescript](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/TypeStrong/atom-typescript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\nJavaScript developers can now just open a `.ts` file and start hacking away like they are used to. No `grunt` no `Visual Studio`. Just pure coding.\n\n## Installation\n\n1. Install [atom](https://atom.io).\n2. `apm install atom-typescript` (`apm` needs `git` in your path)\n3. Fire up atom. Open a TypeScript file. Potentially wait for further installs (just `apm install linter` if its not there already).\n\n**Additional Notes**: [Some packages we love](https://github.com/TypeStrong/atom-typescript/blob/master/docs/packages.md).\n\n## Reviews\n*Featured on the TypeScript home page under tools http://www.typescriptlang.org/* and [demoed by **Anders Hejlsberg**](https://twitter.com/schwarty/status/593858817894404096).\n\n\"I was shocked at how good it felt to poke around on the compiler with it.\" [Jonathan Turner](https://twitter.com/jntrnr)  \n\"And guess what, it worked perfectly. Like everything else! Faster than Visual Studio!\" [Daniel Earwicker](http://stackoverflow.com/users/27423/daniel-earwicker)  \n\"It's a thing of beauty - they had me at '*Type information on hover*'. Discovering  `tsconfig.json` support as well was just an enormous bonus.\" [John Reilly](https://twitter.com/johnny_reilly)  \n\"This may be your best option for editing TypeScript at the moment - very nice!\" [Rasmus Schultz](https://twitter.com/mindplaydk)\n\n[*Add yours!*](https://github.com/TypeStrong/atom-typescript/issues/66)\n\n# Features\n* Autocomplete\n* Live error analysis\n* Type information on hover\n* Compile on save\n* Project Context Support (`tsconfig.json`)\n* Project Build Support\n* `package.json` Support\n* React Support\n* Format code (configurable to be on save)\n* Goto Declaration\n* Find References\n* Block comment and uncomment\n* Goto history (goto next/previous error in open files, goto next/previous build)\n* Auto indent for new lines\n* TypeScript context menu\n* Symbols in Project\n* Symbols in File\n* Semantic View\n* Rename refactoring\n* Quick Fix\n* Toggle Breakpoint\n* Common Snippets\n* `import` / `/// <reference` relative path resolution\n* Output Toggle\n* AST visualizer\n* Dependency View\n* Sync\n\n# FAQ\nLocated online : https://github.com/TypeStrong/atom-typescript/blob/master/docs/faq.md\n\n----\n\n# Feature Details\n## Auto Complete\nInternally using AutoComplete+. Just start typing and hints will show up. Or you can explicitly trigger it using `ctrl+space` or `cmd+space`. Press `tab` to make a selection.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/fastErrorCheckingAndAutoComplete2.gif)\n\n\n## Type information on hover\nJust hover\n\n![you definitely get the point](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/hover.png)\n\n## Compile on save\nTypeScript files will be compiled on save automatically. Different notifications are given if `emit` was successful or not. If you need to disable this feature, add `\"compileOnSave\": false` in your [`tsconfig.json`](https://github.com/TypeStrong/atom-typescript/blob/master/docs/tsconfig.md#compileonsave).\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/compile%20success.png)\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/compile%20error.png)\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/emit%20error.png)\n\n## Project Support\nSupported via [`tsconfig.json`](https://github.com/TypeStrong/atom-typescript/blob/master/docs/tsconfig.md) which is going to be the defacto Project file format for the next versions of TypeScript.\n\nIt also supports `filesGlob` which will expand `files` for you based on `minmatch|glob|regex` (similar to grunt).\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/proj.png)\n\n### Project Build Support\nShortcut: `F6`. If there are any errors they are shown as well.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/build%20success.png)\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/build%20errors.png)\n\n## NPM Module Support\nWe have a sample NPM module : https://github.com/basarat/ts-npm-module  (trick : in tsconfig have `\"declaration\" : true` an in package.json have a `typings` field pointing to the `main` file) and its usage is demoed in https://github.com/basarat/ts-npm-module-consume.\n\n## React Support\n\n### Configuration tips\n\nCovered here : http://basarat.gitbooks.io/typescript/content/docs/jsx/tsx.html\n\n### Html to TSX\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/htmltotsx.gif)\n\n## Format Code\nShortcut : `ctrl+alt+l` or `cmd+alt+l`. Will format just the selection if you have something selected otherwise it will format the entire file.\n\nFormat on save is covered [here](https://github.com/TypeStrong/atom-typescript/blob/master/docs/tsconfig.md#formatOnSave)\n\n## Go to Declaration\nShortcut : `F12`. Will open the *first* declaration of the said item for now. (Note: some people call it Go to Definition)\n\n## Find References\nShortcut `shift+F12`. Also called *find usages*.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/findReferences.png)\n\n## Block Comment and Uncomment\n`ctrl+/` or `cmd+/`. Does a block comment / uncomment of code.\n\n## Go to Next / Go to Previous\n`f8` and `shift+f8` respectively. This will go to next/previous *errors in open files* OR *build error* OR *references* based on which tab you have selected.\n\n## Context menu\nQuickly toggle the TypeScript panel OR select active TypeScript panel tab and other stuff using the context menu. `ctrl+;` or `cmd+;`.\n\n## Symbols View\nIntegrates with atom's symbols view (`ctrl+r` or `cmd+r`) to provide you with a list of searchable symbols in the current file.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/symbolsView.gif)\n\n## Semantic View\nA bird's eye view of the current file. Use command `toggle semantic view`. The view updates while you edit the code. You can also click to jump to any portion of the file.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/semanticView.png)\n\n## Project Symbols View\nAlso called Go To Type in other IDEs. Integrates with atom's project level symbols (`ctrl+shift+r` or `cmd+shift+r`) to provide you with a list of searchable symbols in the *entire typescript project*.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/projectSymbolView.png)\n\n## Refactoring\n\n### Rename\n`f2` to initiate rename. `enter` to commit and `esc` to cancel.\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/renameRefactoring.png)\n\n## Quick Fix\nPress the `TypeScript: Quick Fix` shortcut `alt+enter` at an error location to trigger quick fixes. Select the quick fix you want and press `enter` to commit e.g\n\n### Add class members\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/addClassMember.gif)\n\n### More Quick fixes\nWe are actively adding quick fixes so [**go here for an up to date list**](https://github.com/TypeStrong/atom-typescript/blob/master/docs/quickfix.md).\n\n## Toggle Breakpoint\nUse command `TypeScript: Toggle Breakpoint` shortcut `f9`:\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/toggleBreakpoint.gif)\n\n## tsconfig validation\nWe will validate it and help you to fix it :)\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/errorcases/invalidProjectOptions/invalidProjectOptions.gif)\n\n## Snippets\n### Relative Paths\nRelative paths have traditionally been a pain, not anymore. Use `import` or `ref` and press `tab` to trigger snippet.\n\n`ref`\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/ref%20snippet.gif)\n\n`import`\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/import%20snippet.gif)\n\nNote that within the path string you get autocomplete (`ctrl+space`/`cmd+space`) for all the files in the project by filename (works for both `ref` and `import`).\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/pathChange.gif)\n\n## Output Toggle\n`ctrl+shift+m` to toggle the output co**m**piled JS file for a give TypeScript file. The keyboard shortcut is consistent with atom's markdown preview.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/outputToggle.gif)\n\n## AST Visualizer\nCommand : `Typescript: Ast`. Useful when authoring new features.\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/astVisualizer.gif)\n\nAlso command : `TypeScript: Ast Full` that includes the `trivia` (punctuation, comments etc. received from `ts.Node.getChildren()`) as well.\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/astFull.png)\n\n## Dependency View\nCommand : `Typescript: Dependency View`. A dependency viewer for insight into the project if you use external modules. You can zoom, pan, drag points around and hover over nodes. ([more details](https://github.com/TypeStrong/atom-typescript/blob/master/docs/dependency-view.md))\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/dependencyView/teaser.png)\n\n## Sync\nWe try to keep as much of the stuff in sync while you edit code. However *in dire circumstances*:\n\n* a soft sync is done when you save a file `ctrl+s` and we will completely reprocess the *active* file. This might not fix stuff if the error is because of *some other file on the file system*.\n* `ctrl+'` or `cmd+'` : If you deleted files in the background or renamed them or jumped git branches or *something weird just happened* then sync. No need to restart your IDE :).\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/sync.gif)\n\n## Contributing\n\nLook at [CONTRIBUTING.md](https://github.com/TypeStrong/atom-typescript/blob/master/CONTRIBUTING.md) for curiosity. We work hard to keep the code as approachable as possible and are highly keen on helping you help us.\n\n## Changelog\nBreaking changes [available online](https://github.com/TypeStrong/atom-typescript/blob/master/docs/CHANGELOG.md).\n",
   "readmeFilename": "README.md",
-  "_id": "atom-typescript@7.14.3",
-  "_shasum": "e95bbcc003f83c90442d39fce95b47cf99a01dc3",
-  "_resolved": "file:../d-1151128-9499-tok0tz/package.tgz",
-  "_from": "../d-1151128-9499-tok0tz/package.tgz",
+  "_id": "atom-typescript@8.4.0",
+  "_shasum": "998f199f7a711428330516a99ddfa375ed697729",
+  "_resolved": "file:../d-116225-7097-ylb5u5/package.tgz",
+  "_from": "../d-116225-7097-ylb5u5/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -92,12 +98,12 @@
       },
       {
         "name": "atom-space-pen-views",
-        "version": "2.1.0",
+        "version": "2.2.0",
         "path": "node_modules/atom-space-pen-views/lib/main.js"
       },
       {
         "name": "space-pen",
-        "version": "5.1.1",
+        "version": "5.1.2",
         "path": "node_modules/atom-space-pen-views/node_modules/space-pen/lib/space-pen.js"
       },
       {
@@ -122,12 +128,12 @@
       },
       {
         "name": "babel",
-        "version": "5.8.34",
+        "version": "5.8.38",
         "path": "node_modules/babel/index.js"
       },
       {
         "name": "babel-core",
-        "version": "5.8.34",
+        "version": "5.8.38",
         "path": "node_modules/babel/node_modules/babel-core/index.js"
       },
       {
@@ -212,7 +218,7 @@
       },
       {
         "name": "babylon",
-        "version": "5.8.34",
+        "version": "5.8.38",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/babylon/lib/index.js"
       },
       {
@@ -227,12 +233,17 @@
       },
       {
         "name": "ansi-styles",
-        "version": "2.1.0",
+        "version": "2.2.0",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/ansi-styles/index.js"
       },
       {
+        "name": "color-convert",
+        "version": "1.0.0",
+        "path": "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/index.js"
+      },
+      {
         "name": "escape-string-regexp",
-        "version": "1.0.4",
+        "version": "1.0.5",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/escape-string-regexp/index.js"
       },
       {
@@ -247,7 +258,7 @@
       },
       {
         "name": "strip-ansi",
-        "version": "3.0.0",
+        "version": "3.0.1",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/strip-ansi/index.js"
       },
       {
@@ -341,23 +352,13 @@
         "path": "node_modules/babel/node_modules/babel-core/node_modules/json5/lib/json5.js"
       },
       {
-        "name": "line-numbers",
-        "version": "0.2.0",
-        "path": "node_modules/babel/node_modules/babel-core/node_modules/line-numbers/index.js"
-      },
-      {
-        "name": "left-pad",
-        "version": "0.0.3",
-        "path": "node_modules/babel/node_modules/babel-core/node_modules/line-numbers/node_modules/left-pad/index.js"
-      },
-      {
         "name": "minimatch",
         "version": "2.0.10",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/minimatch/minimatch.js"
       },
       {
         "name": "brace-expansion",
-        "version": "1.1.2",
+        "version": "1.1.3",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/index.js"
       },
       {
@@ -402,7 +403,7 @@
       },
       {
         "name": "graceful-fs",
-        "version": "4.1.2",
+        "version": "4.1.3",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/commoner/node_modules/graceful-fs/graceful-fs.js"
       },
       {
@@ -482,22 +483,22 @@
       },
       {
         "name": "center-align",
-        "version": "0.1.2",
+        "version": "0.1.3",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/center-align/index.js"
       },
       {
         "name": "align-text",
-        "version": "0.1.3",
+        "version": "0.1.4",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/center-align/node_modules/align-text/index.js"
       },
       {
         "name": "kind-of",
-        "version": "2.0.1",
+        "version": "3.0.2",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/center-align/node_modules/align-text/node_modules/kind-of/index.js"
       },
       {
         "name": "is-buffer",
-        "version": "1.1.0",
+        "version": "1.1.3",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/center-align/node_modules/align-text/node_modules/kind-of/node_modules/is-buffer/index.js"
       },
       {
@@ -507,12 +508,12 @@
       },
       {
         "name": "repeat-string",
-        "version": "1.5.2",
+        "version": "1.5.4",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/center-align/node_modules/align-text/node_modules/repeat-string/index.js"
       },
       {
         "name": "lazy-cache",
-        "version": "0.2.7",
+        "version": "1.0.3",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/center-align/node_modules/lazy-cache/index.js"
       },
       {
@@ -522,17 +523,17 @@
       },
       {
         "name": "align-text",
-        "version": "0.1.3",
+        "version": "0.1.4",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/right-align/node_modules/align-text/index.js"
       },
       {
         "name": "kind-of",
-        "version": "2.0.1",
+        "version": "3.0.2",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/right-align/node_modules/align-text/node_modules/kind-of/index.js"
       },
       {
         "name": "is-buffer",
-        "version": "1.1.0",
+        "version": "1.1.3",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/right-align/node_modules/align-text/node_modules/kind-of/node_modules/is-buffer/index.js"
       },
       {
@@ -542,7 +543,7 @@
       },
       {
         "name": "repeat-string",
-        "version": "1.5.2",
+        "version": "1.5.4",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/right-align/node_modules/align-text/node_modules/repeat-string/index.js"
       },
       {
@@ -552,13 +553,8 @@
       },
       {
         "name": "decamelize",
-        "version": "1.1.2",
+        "version": "1.2.0",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/index.js"
-      },
-      {
-        "name": "escape-string-regexp",
-        "version": "1.0.4",
-        "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/index.js"
       },
       {
         "name": "os-locale",
@@ -582,7 +578,7 @@
       },
       {
         "name": "y18n",
-        "version": "3.2.0",
+        "version": "3.2.1",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/y18n/index.js"
       },
       {
@@ -612,17 +608,17 @@
       },
       {
         "name": "esprima",
-        "version": "2.7.1",
+        "version": "2.7.2",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regexpu/node_modules/esprima/esprima.js"
       },
       {
         "name": "recast",
-        "version": "0.10.39",
+        "version": "0.10.43",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regexpu/node_modules/recast/main.js"
       },
       {
         "name": "ast-types",
-        "version": "0.8.12",
+        "version": "0.8.15",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/regexpu/node_modules/recast/node_modules/ast-types/main.js"
       },
       {
@@ -667,7 +663,7 @@
       },
       {
         "name": "resolve",
-        "version": "1.1.6",
+        "version": "1.1.7",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/resolve/index.js"
       },
       {
@@ -692,7 +688,7 @@
       },
       {
         "name": "to-fast-properties",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "path": "node_modules/babel/node_modules/babel-core/node_modules/to-fast-properties/index.js"
       },
       {
@@ -707,7 +703,7 @@
       },
       {
         "name": "chokidar",
-        "version": "1.4.1",
+        "version": "1.4.3",
         "path": "node_modules/babel/node_modules/chokidar/index.js"
       },
       {
@@ -777,7 +773,7 @@
       },
       {
         "name": "repeat-string",
-        "version": "1.5.2",
+        "version": "1.5.4",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/braces/node_modules/expand-range/node_modules/fill-range/node_modules/repeat-string/index.js"
       },
       {
@@ -797,23 +793,8 @@
       },
       {
         "name": "extglob",
-        "version": "0.3.1",
+        "version": "0.3.2",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/index.js"
-      },
-      {
-        "name": "ansi-green",
-        "version": "0.1.1",
-        "path": "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green/index.js"
-      },
-      {
-        "name": "ansi-wrap",
-        "version": "0.1.0",
-        "path": "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green/node_modules/ansi-wrap/index.js"
-      },
-      {
-        "name": "success-symbol",
-        "version": "0.1.0",
-        "path": "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/success-symbol/index.js"
       },
       {
         "name": "filename-regex",
@@ -832,7 +813,7 @@
       },
       {
         "name": "is-buffer",
-        "version": "1.1.0",
+        "version": "1.1.3",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/kind-of/node_modules/is-buffer/index.js"
       },
       {
@@ -892,7 +873,7 @@
       },
       {
         "name": "async-each",
-        "version": "0.1.6",
+        "version": "1.0.0",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/async-each/index.js"
       },
       {
@@ -932,7 +913,7 @@
       },
       {
         "name": "graceful-fs",
-        "version": "4.1.2",
+        "version": "4.1.3",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/graceful-fs/graceful-fs.js"
       },
       {
@@ -942,7 +923,7 @@
       },
       {
         "name": "brace-expansion",
-        "version": "1.1.2",
+        "version": "1.1.3",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/minimatch/node_modules/brace-expansion/index.js"
       },
       {
@@ -957,7 +938,7 @@
       },
       {
         "name": "readable-stream",
-        "version": "2.0.5",
+        "version": "2.0.6",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/readable.js"
       },
       {
@@ -967,7 +948,7 @@
       },
       {
         "name": "isarray",
-        "version": "0.0.1",
+        "version": "1.0.0",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/index.js"
       },
       {
@@ -997,7 +978,7 @@
       },
       {
         "name": "convert-source-map",
-        "version": "1.1.2",
+        "version": "1.2.0",
         "path": "node_modules/babel/node_modules/convert-source-map/index.js"
       },
       {
@@ -1127,7 +1108,7 @@
       },
       {
         "name": "d3",
-        "version": "3.5.12",
+        "version": "3.5.16",
         "path": "node_modules/d3/d3.js"
       },
       {
@@ -1149,6 +1130,11 @@
         "name": "number-is-nan",
         "version": "1.0.0",
         "path": "node_modules/detect-indent/node_modules/repeating/node_modules/is-finite/node_modules/number-is-nan/index.js"
+      },
+      {
+        "name": "detect-newline",
+        "version": "2.1.0",
+        "path": "node_modules/detect-newline/index.js"
       },
       {
         "name": "emissary",
@@ -1262,7 +1248,7 @@
       },
       {
         "name": "brace-expansion",
-        "version": "1.1.2",
+        "version": "1.1.3",
         "path": "node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/index.js"
       },
       {
@@ -1307,12 +1293,12 @@
       },
       {
         "name": "cssom",
-        "version": "0.3.0",
+        "version": "0.3.1",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/cssom/lib/index.js"
       },
       {
         "name": "cssstyle",
-        "version": "0.2.30",
+        "version": "0.2.34",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/cssstyle/lib/CSSStyleDeclaration.js"
       },
       {
@@ -1352,7 +1338,7 @@
       },
       {
         "name": "readable-stream",
-        "version": "2.0.5",
+        "version": "2.0.6",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/readable.js"
       },
       {
@@ -1367,7 +1353,7 @@
       },
       {
         "name": "isarray",
-        "version": "0.0.1",
+        "version": "1.0.0",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/isarray/index.js"
       },
       {
@@ -1397,7 +1383,7 @@
       },
       {
         "name": "request",
-        "version": "2.67.0",
+        "version": "2.69.0",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/index.js"
       },
       {
@@ -1406,13 +1392,33 @@
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws-sign2/index.js"
       },
       {
+        "name": "aws4",
+        "version": "1.3.2",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/aws4.js"
+      },
+      {
+        "name": "lru-cache",
+        "version": "4.0.1",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/node_modules/lru-cache/lib/lru-cache.js"
+      },
+      {
+        "name": "pseudomap",
+        "version": "1.0.2",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/node_modules/lru-cache/node_modules/pseudomap/map.js"
+      },
+      {
+        "name": "yallist",
+        "version": "2.0.0",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/node_modules/lru-cache/node_modules/yallist/yallist.js"
+      },
+      {
         "name": "bl",
-        "version": "1.0.0",
+        "version": "1.0.3",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/bl.js"
       },
       {
         "name": "readable-stream",
-        "version": "2.0.5",
+        "version": "2.0.6",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/readable.js"
       },
       {
@@ -1427,7 +1433,7 @@
       },
       {
         "name": "isarray",
-        "version": "0.0.1",
+        "version": "1.0.0",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/index.js"
       },
       {
@@ -1472,17 +1478,17 @@
       },
       {
         "name": "form-data",
-        "version": "1.0.0-rc3",
+        "version": "1.0.0-rc4",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/form-data/lib/form_data.js"
       },
       {
         "name": "async",
-        "version": "1.5.0",
+        "version": "1.5.2",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/form-data/node_modules/async/lib/async.js"
       },
       {
         "name": "har-validator",
-        "version": "2.0.3",
+        "version": "2.0.6",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/lib/index.js"
       },
       {
@@ -1492,12 +1498,17 @@
       },
       {
         "name": "ansi-styles",
-        "version": "2.1.0",
+        "version": "2.2.0",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/ansi-styles/index.js"
       },
       {
+        "name": "color-convert",
+        "version": "1.0.0",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/index.js"
+      },
+      {
         "name": "escape-string-regexp",
-        "version": "1.0.4",
+        "version": "1.0.5",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/escape-string-regexp/index.js"
       },
       {
@@ -1512,7 +1523,7 @@
       },
       {
         "name": "strip-ansi",
-        "version": "3.0.0",
+        "version": "3.0.1",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/strip-ansi/index.js"
       },
       {
@@ -1537,7 +1548,7 @@
       },
       {
         "name": "is-my-json-valid",
-        "version": "2.12.3",
+        "version": "2.13.1",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/is-my-json-valid/index.js"
       },
       {
@@ -1567,12 +1578,12 @@
       },
       {
         "name": "pinkie",
-        "version": "2.0.1",
+        "version": "2.0.4",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/pinkie-promise/node_modules/pinkie/index.js"
       },
       {
         "name": "hawk",
-        "version": "3.1.2",
+        "version": "3.1.3",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/hawk/lib/index.js"
       },
       {
@@ -1597,12 +1608,12 @@
       },
       {
         "name": "http-signature",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/lib/index.js"
       },
       {
         "name": "assert-plus",
-        "version": "0.1.5",
+        "version": "0.2.0",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/assert-plus/assert.js"
       },
       {
@@ -1627,7 +1638,7 @@
       },
       {
         "name": "sshpk",
-        "version": "1.7.1",
+        "version": "1.7.4",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/lib/index.js"
       },
       {
@@ -1636,18 +1647,13 @@
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/asn1/lib/index.js"
       },
       {
-        "name": "assert-plus",
-        "version": "0.2.0",
-        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/assert-plus/assert.js"
-      },
-      {
         "name": "dashdash",
-        "version": "1.10.1",
+        "version": "1.13.0",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash/lib/dashdash.js"
       },
       {
         "name": "assert-plus",
-        "version": "0.1.5",
+        "version": "1.0.0",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash/node_modules/assert-plus/assert.js"
       },
       {
@@ -1667,7 +1673,7 @@
       },
       {
         "name": "tweetnacl",
-        "version": "0.13.2",
+        "version": "0.14.1",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/tweetnacl/nacl-fast.js"
       },
       {
@@ -1687,12 +1693,12 @@
       },
       {
         "name": "mime-types",
-        "version": "2.1.8",
+        "version": "2.1.10",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/mime-types/index.js"
       },
       {
         "name": "mime-db",
-        "version": "1.20.0",
+        "version": "1.22.0",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/mime-types/node_modules/mime-db/index.js"
       },
       {
@@ -1702,12 +1708,12 @@
       },
       {
         "name": "oauth-sign",
-        "version": "0.8.0",
+        "version": "0.8.1",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/oauth-sign/index.js"
       },
       {
         "name": "qs",
-        "version": "5.2.0",
+        "version": "6.0.2",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/qs/lib/index.js"
       },
       {
@@ -1717,7 +1723,7 @@
       },
       {
         "name": "tough-cookie",
-        "version": "2.2.1",
+        "version": "2.2.2",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/tough-cookie/lib/cookie.js"
       },
       {
@@ -1752,22 +1758,22 @@
       },
       {
         "name": "yargs",
-        "version": "3.31.0",
+        "version": "3.32.0",
         "path": "node_modules/json2dts/node_modules/yargs/index.js"
       },
       {
         "name": "camelcase",
-        "version": "2.0.1",
+        "version": "2.1.1",
         "path": "node_modules/json2dts/node_modules/yargs/node_modules/camelcase/index.js"
       },
       {
         "name": "cliui",
-        "version": "3.1.0",
+        "version": "3.1.1",
         "path": "node_modules/json2dts/node_modules/yargs/node_modules/cliui/index.js"
       },
       {
         "name": "strip-ansi",
-        "version": "3.0.0",
+        "version": "3.0.1",
         "path": "node_modules/json2dts/node_modules/yargs/node_modules/cliui/node_modules/strip-ansi/index.js"
       },
       {
@@ -1777,18 +1783,13 @@
       },
       {
         "name": "wrap-ansi",
-        "version": "1.0.0",
+        "version": "2.0.0",
         "path": "node_modules/json2dts/node_modules/yargs/node_modules/cliui/node_modules/wrap-ansi/index.js"
       },
       {
         "name": "decamelize",
-        "version": "1.1.2",
+        "version": "1.2.0",
         "path": "node_modules/json2dts/node_modules/yargs/node_modules/decamelize/index.js"
-      },
-      {
-        "name": "escape-string-regexp",
-        "version": "1.0.4",
-        "path": "node_modules/json2dts/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/index.js"
       },
       {
         "name": "os-locale",
@@ -1832,7 +1833,7 @@
       },
       {
         "name": "strip-ansi",
-        "version": "3.0.0",
+        "version": "3.0.1",
         "path": "node_modules/json2dts/node_modules/yargs/node_modules/string-width/node_modules/strip-ansi/index.js"
       },
       {
@@ -1847,7 +1848,7 @@
       },
       {
         "name": "y18n",
-        "version": "3.2.0",
+        "version": "3.2.1",
         "path": "node_modules/json2dts/node_modules/yargs/node_modules/y18n/index.js"
       },
       {
@@ -1862,7 +1863,7 @@
       },
       {
         "name": "ntypescript",
-        "version": "1.201512030612.1",
+        "version": "1.201602232306.1",
         "path": "node_modules/ntypescript/bin/ntypescript.js"
       },
       {
@@ -1987,7 +1988,7 @@
       },
       {
         "name": "glob",
-        "version": "6.0.2",
+        "version": "6.0.4",
         "path": "node_modules/tsconfig/node_modules/globby/node_modules/glob/glob.js"
       },
       {
@@ -2012,7 +2013,7 @@
       },
       {
         "name": "brace-expansion",
-        "version": "1.1.2",
+        "version": "1.1.3",
         "path": "node_modules/tsconfig/node_modules/globby/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/index.js"
       },
       {
@@ -2072,7 +2073,7 @@
       },
       {
         "name": "pinkie",
-        "version": "2.0.1",
+        "version": "2.0.4",
         "path": "node_modules/tsconfig/node_modules/pinkie-promise/node_modules/pinkie/index.js"
       },
       {
@@ -2087,7 +2088,7 @@
       },
       {
         "name": "strip-json-comments",
-        "version": "2.0.0",
+        "version": "2.0.1",
         "path": "node_modules/tsconfig/node_modules/strip-json-comments/index.js"
       },
       {
@@ -2466,6 +2467,10 @@
         "node_modules/babel/node_modules/babel-core/node_modules/bluebird/js/main/util.js",
         "node_modules/babel/node_modules/babel-core/node_modules/chalk/index.js",
         "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/ansi-styles/index.js",
+        "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/conversions.js",
+        "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/css-keywords.js",
+        "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/index.js",
+        "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/route.js",
         "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/escape-string-regexp/index.js",
         "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/has-ansi/index.js",
         "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/index.js",
@@ -3353,8 +3358,6 @@
         "node_modules/babel/node_modules/babel-core/node_modules/json5/lib/cli.js",
         "node_modules/babel/node_modules/babel-core/node_modules/json5/lib/json5.js",
         "node_modules/babel/node_modules/babel-core/node_modules/json5/lib/require.js",
-        "node_modules/babel/node_modules/babel-core/node_modules/line-numbers/index.js",
-        "node_modules/babel/node_modules/babel-core/node_modules/line-numbers/node_modules/left-pad/index.js",
         "node_modules/babel/node_modules/babel-core/node_modules/minimatch/browser.js",
         "node_modules/babel/node_modules/babel-core/node_modules/minimatch/minimatch.js",
         "node_modules/babel/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/example.js",
@@ -3488,7 +3491,6 @@
         "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/wordwrap/example/meat.js",
         "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/wordwrap/index.js",
         "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/index.js",
-        "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/index.js",
         "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/os-locale/index.js",
         "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/os-locale/node_modules/lcid/index.js",
         "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/os-locale/node_modules/lcid/node_modules/invert-kv/index.js",
@@ -3651,9 +3653,6 @@
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/braces/node_modules/repeat-element/index.js",
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/expand-brackets/index.js",
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/index.js",
-        "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green/index.js",
-        "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green/node_modules/ansi-wrap/index.js",
-        "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/success-symbol/index.js",
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/filename-regex/index.js",
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/is-extglob/index.js",
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/kind-of/index.js",
@@ -3670,6 +3669,7 @@
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/regex-cache/node_modules/is-equal-shallow/index.js",
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/regex-cache/node_modules/is-primitive/index.js",
         "node_modules/babel/node_modules/chokidar/node_modules/async-each/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/async-each/test.js",
         "node_modules/babel/node_modules/chokidar/node_modules/glob-parent/index.js",
         "node_modules/babel/node_modules/chokidar/node_modules/glob-parent/test.js",
         "node_modules/babel/node_modules/chokidar/node_modules/inherits/inherits.js",
@@ -3702,8 +3702,8 @@
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/lib/_stream_writable.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/core-util-is/lib/util.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/core-util-is/test.js",
-        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/build/build.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/test.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/index.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/test.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/string_decoder/index.js",
@@ -4505,6 +4505,7 @@
         "node_modules/detect-indent/node_modules/repeating/index.js",
         "node_modules/detect-indent/node_modules/repeating/node_modules/is-finite/index.js",
         "node_modules/detect-indent/node_modules/repeating/node_modules/is-finite/node_modules/number-is-nan/index.js",
+        "node_modules/detect-newline/index.js",
         "node_modules/emissary/lib/behavior.js",
         "node_modules/emissary/lib/emissary.js",
         "node_modules/emissary/lib/emitter.js",
@@ -5457,8 +5458,8 @@
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits/inherits.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits/inherits_browser.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits/test.js",
-        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/isarray/build/build.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/isarray/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/isarray/test.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/process-nextick-args/index.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/process-nextick-args/test.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/string_decoder/index.js",
@@ -5510,6 +5511,11 @@
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/lib/redirect.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/lib/tunnel.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws-sign2/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/aws4.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/node_modules/lru-cache/lib/lru-cache.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/node_modules/lru-cache/node_modules/pseudomap/map.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/node_modules/lru-cache/node_modules/pseudomap/pseudomap.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/node_modules/lru-cache/node_modules/yallist/yallist.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/bl.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/duplex.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/lib/_stream_duplex.js",
@@ -5522,8 +5528,8 @@
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/inherits/inherits.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/inherits/inherits_browser.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/inherits/test.js",
-        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/build/build.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/test.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/process-nextick-args/index.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/process-nextick-args/test.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/string_decoder/index.js",
@@ -5541,6 +5547,7 @@
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/forever-agent/index.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/form-data/lib/browser.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/form-data/lib/form_data.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/form-data/lib/populate.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/form-data/node_modules/async/dist/async.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/form-data/node_modules/async/dist/async.min.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/form-data/node_modules/async/lib/async.js",
@@ -5551,6 +5558,10 @@
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/lib/schemas/index.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/index.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/ansi-styles/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/conversions.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/css-keywords.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/route.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/escape-string-regexp/index.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/has-ansi/index.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/index.js",
@@ -5632,7 +5643,6 @@
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/asn1/lib/index.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/asn1/tst/ber/reader.test.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/asn1/tst/ber/writer.test.js",
-        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/assert-plus/assert.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash/lib/dashdash.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash/node_modules/assert-plus/assert.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/ecc-jsbn/index.js",
@@ -5716,6 +5726,7 @@
         "node_modules/json2dts/node_modules/yargs/index.js",
         "node_modules/json2dts/node_modules/yargs/lib/completion.js",
         "node_modules/json2dts/node_modules/yargs/lib/parser.js",
+        "node_modules/json2dts/node_modules/yargs/lib/tokenize-arg-string.js",
         "node_modules/json2dts/node_modules/yargs/lib/usage.js",
         "node_modules/json2dts/node_modules/yargs/lib/validation.js",
         "node_modules/json2dts/node_modules/yargs/node_modules/camelcase/index.js",
@@ -5724,7 +5735,6 @@
         "node_modules/json2dts/node_modules/yargs/node_modules/cliui/node_modules/strip-ansi/node_modules/ansi-regex/index.js",
         "node_modules/json2dts/node_modules/yargs/node_modules/cliui/node_modules/wrap-ansi/index.js",
         "node_modules/json2dts/node_modules/yargs/node_modules/decamelize/index.js",
-        "node_modules/json2dts/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/index.js",
         "node_modules/json2dts/node_modules/yargs/node_modules/os-locale/index.js",
         "node_modules/json2dts/node_modules/yargs/node_modules/os-locale/node_modules/lcid/index.js",
         "node_modules/json2dts/node_modules/yargs/node_modules/os-locale/node_modules/lcid/node_modules/invert-kv/index.js",
@@ -5750,7 +5760,6 @@
         "node_modules/ntypescript/extensions/preBuild.js",
         "node_modules/ntypescript/register.js",
         "node_modules/ntypescript/tasks/ntypescript.js",
-        "node_modules/ntypescript/tse.js",
         "node_modules/react/addons.js",
         "node_modules/react/dist/JSXTransformer.js",
         "node_modules/react/dist/react-with-addons.js",
@@ -6123,6 +6132,7 @@
         "node_modules/babel/node_modules/babel-core/node_modules/babel-plugin-undefined-to-void/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/babylon/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/bluebird/package.json",
+        "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/ansi-styles/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/escape-string-regexp/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/package.json",
@@ -6151,8 +6161,6 @@
         "node_modules/babel/node_modules/babel-core/node_modules/is-integer/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/js-tokens/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/json5/package.json",
-        "node_modules/babel/node_modules/babel-core/node_modules/line-numbers/node_modules/left-pad/package.json",
-        "node_modules/babel/node_modules/babel-core/node_modules/line-numbers/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/package.json",
@@ -6209,7 +6217,6 @@
         "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/right-align/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/wordwrap/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/package.json",
-        "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/package.json",
         "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/os-locale/node_modules/lcid/lcid.json",
         "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/os-locale/node_modules/lcid/node_modules/invert-kv/package.json",
@@ -6264,9 +6271,6 @@
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/braces/node_modules/repeat-element/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/braces/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/expand-brackets/package.json",
-        "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green/node_modules/ansi-wrap/package.json",
-        "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green/package.json",
-        "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/success-symbol/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/filename-regex/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/is-extglob/package.json",
@@ -6342,14 +6346,13 @@
         "node_modules/basarat-text-buffer/node_modules/underscore-plus/node_modules/underscore/package.json",
         "node_modules/basarat-text-buffer/node_modules/underscore-plus/package.json",
         "node_modules/basarat-text-buffer/package.json",
-        "node_modules/d3/bower.json",
-        "node_modules/d3/component.json",
         "node_modules/d3/composer.json",
         "node_modules/d3/package.json",
         "node_modules/detect-indent/node_modules/repeating/node_modules/is-finite/node_modules/number-is-nan/package.json",
         "node_modules/detect-indent/node_modules/repeating/node_modules/is-finite/package.json",
         "node_modules/detect-indent/node_modules/repeating/package.json",
         "node_modules/detect-indent/package.json",
+        "node_modules/detect-newline/package.json",
         "node_modules/emissary/node_modules/es6-weak-map/node_modules/d/package.json",
         "node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/package.json",
         "node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/package.json",
@@ -6403,6 +6406,10 @@
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/nwmatcher/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/parse5/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws-sign2/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/node_modules/lru-cache/node_modules/pseudomap/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/node_modules/lru-cache/node_modules/yallist/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/node_modules/lru-cache/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/core-util-is/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/inherits/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/component.json",
@@ -6436,6 +6443,7 @@
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/lib/schemas/request.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/lib/schemas/response.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/lib/schemas/timings.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/ansi-styles/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/escape-string-regexp/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/package.json",
@@ -6467,7 +6475,6 @@
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/verror/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/jsprim/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/asn1/package.json",
-        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/assert-plus/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash/node_modules/assert-plus/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/ecc-jsbn/package.json",
@@ -6519,7 +6526,6 @@
         "node_modules/json2dts/node_modules/yargs/node_modules/cliui/node_modules/strip-ansi/package.json",
         "node_modules/json2dts/node_modules/yargs/node_modules/cliui/node_modules/wrap-ansi/package.json",
         "node_modules/json2dts/node_modules/yargs/node_modules/cliui/package.json",
-        "node_modules/json2dts/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/package.json",
         "node_modules/json2dts/node_modules/yargs/node_modules/decamelize/package.json",
         "node_modules/json2dts/node_modules/yargs/node_modules/os-locale/node_modules/lcid/lcid.json",
         "node_modules/json2dts/node_modules/yargs/node_modules/os-locale/node_modules/lcid/node_modules/invert-kv/package.json",
@@ -6631,6 +6637,7 @@
           "dist/worker/lib",
           "",
           "lib",
+          "scripts",
           "views"
         ],
         "dependencies": {
@@ -6640,6 +6647,7 @@
           "basarat-text-buffer": "6.0.0",
           "d3": "^3.5.5",
           "detect-indent": "^4.0.0",
+          "detect-newline": "^2.1.0",
           "emissary": "^1.3.3",
           "escape-html": "^1.0.1",
           "findup": "^0.1.5",
@@ -6649,7 +6657,7 @@
           "immutable": "^3.7.3",
           "json2dts": "0.0.1",
           "mkdirp": "^0.5.0",
-          "ntypescript": "1.201512030612.1",
+          "ntypescript": "1.201602232306.1",
           "react": "^0.13.3",
           "season": "^5.1.4",
           "tsconfig": "^2.2.0",
@@ -6663,7 +6671,7 @@
         ],
         "dependencies": {
           "fuzzaldrin": "^2.1.0",
-          "space-pen": "^5.0.1"
+          "space-pen": "^5.1.2"
         }
       },
       {
@@ -6673,7 +6681,7 @@
         ],
         "dependencies": {
           "grim": "^1.0.0",
-          "jquery": "^2.1.3",
+          "jquery": "2.1.4",
           "underscore-plus": "1.x"
         }
       },
@@ -6837,7 +6845,7 @@
           "babel-plugin-runtime": "^1.0.7",
           "babel-plugin-undeclared-variables-check": "^1.0.2",
           "babel-plugin-undefined-to-void": "^1.1.6",
-          "babylon": "^5.8.34",
+          "babylon": "^5.8.38",
           "bluebird": "^2.9.33",
           "chalk": "^1.0.0",
           "convert-source-map": "^1.1.0",
@@ -6851,7 +6859,6 @@
           "is-integer": "^1.0.4",
           "js-tokens": "1.0.1",
           "json5": "^0.4.0",
-          "line-numbers": "0.2.0",
           "lodash": "^3.10.0",
           "minimatch": "^2.0.3",
           "output-file-sync": "^1.1.0",
@@ -6899,6 +6906,14 @@
           "has-ansi": "^2.0.0",
           "strip-ansi": "^3.0.0",
           "supports-color": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/babel/node_modules/babel-core/node_modules/chalk/node_modules/ansi-styles"
+        ],
+        "dependencies": {
+          "color-convert": "^1.0.0"
         }
       },
       {
@@ -6958,15 +6973,6 @@
         ],
         "dependencies": {
           "number-is-nan": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/babel/node_modules/babel-core/node_modules/line-numbers",
-          "node_modules/babel/node_modules/babel-core/node_modules/line-numbers/test"
-        ],
-        "dependencies": {
-          "left-pad": "0.0.3"
         }
       },
       {
@@ -7093,8 +7099,8 @@
           "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/center-align"
         ],
         "dependencies": {
-          "align-text": "^0.1.0",
-          "lazy-cache": "^0.2.4"
+          "align-text": "^0.1.3",
+          "lazy-cache": "^1.0.3"
         }
       },
       {
@@ -7102,7 +7108,7 @@
           "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/center-align/node_modules/align-text"
         ],
         "dependencies": {
-          "kind-of": "^2.0.0",
+          "kind-of": "^3.0.2",
           "longest": "^1.0.1",
           "repeat-string": "^1.5.2"
         }
@@ -7128,7 +7134,7 @@
           "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/node_modules/right-align/node_modules/align-text"
         ],
         "dependencies": {
-          "kind-of": "^2.0.0",
+          "kind-of": "^3.0.2",
           "longest": "^1.0.1",
           "repeat-string": "^1.5.2"
         }
@@ -7139,14 +7145,6 @@
         ],
         "dependencies": {
           "is-buffer": "^1.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/babel/node_modules/babel-core/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize"
-        ],
-        "dependencies": {
-          "escape-string-regexp": "^1.0.4"
         }
       },
       {
@@ -7199,7 +7197,7 @@
           "esprima-fb": "~15001.1001.0-dev-harmony-fb",
           "source-map": "~0.5.0",
           "private": "~0.1.5",
-          "ast-types": "0.8.12"
+          "ast-types": "0.8.15"
         }
       },
       {
@@ -7257,7 +7255,7 @@
         ],
         "dependencies": {
           "anymatch": "^1.3.0",
-          "async-each": "^0.1.6",
+          "async-each": "^1.0.0",
           "glob-parent": "^2.0.0",
           "inherits": "^2.0.1",
           "is-binary-path": "^1.0.0",
@@ -7365,17 +7363,7 @@
           "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob"
         ],
         "dependencies": {
-          "ansi-green": "^0.1.1",
-          "is-extglob": "^1.0.0",
-          "success-symbol": "^0.1.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/extglob/node_modules/ansi-green"
-        ],
-        "dependencies": {
-          "ansi-wrap": "0.1.0"
+          "is-extglob": "^1.0.0"
         }
       },
       {
@@ -7501,7 +7489,7 @@
         "dependencies": {
           "core-util-is": "~1.0.0",
           "inherits": "~2.0.1",
-          "isarray": "0.0.1",
+          "isarray": "~1.0.0",
           "process-nextick-args": "~1.0.6",
           "string_decoder": "~0.10.x",
           "util-deprecate": "~1.0.1"
@@ -8056,7 +8044,7 @@
         "dependencies": {
           "core-util-is": "~1.0.0",
           "inherits": "~2.0.1",
-          "isarray": "0.0.1",
+          "isarray": "~1.0.0",
           "process-nextick-args": "~1.0.6",
           "string_decoder": "~0.10.x",
           "util-deprecate": "~1.0.1"
@@ -8068,26 +8056,45 @@
           "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/lib"
         ],
         "dependencies": {
+          "aws-sign2": "~0.6.0",
+          "aws4": "^1.2.1",
           "bl": "~1.0.0",
           "caseless": "~0.11.0",
+          "combined-stream": "~1.0.5",
           "extend": "~3.0.0",
           "forever-agent": "~0.6.1",
           "form-data": "~1.0.0-rc3",
+          "har-validator": "~2.0.6",
+          "hawk": "~3.1.0",
+          "http-signature": "~1.1.0",
+          "is-typedarray": "~1.0.0",
+          "isstream": "~0.1.2",
           "json-stringify-safe": "~5.0.1",
           "mime-types": "~2.1.7",
           "node-uuid": "~1.4.7",
-          "qs": "~5.2.0",
-          "tunnel-agent": "~0.4.1",
-          "tough-cookie": "~2.2.0",
-          "http-signature": "~1.1.0",
           "oauth-sign": "~0.8.0",
-          "hawk": "~3.1.0",
-          "aws-sign2": "~0.6.0",
+          "qs": "~6.0.2",
           "stringstream": "~0.0.4",
-          "combined-stream": "~1.0.5",
-          "isstream": "~0.1.2",
-          "is-typedarray": "~1.0.0",
-          "har-validator": "~2.0.2"
+          "tough-cookie": "~2.2.0",
+          "tunnel-agent": "~0.4.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4"
+        ],
+        "dependencies": {
+          "lru-cache": "^4.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/node_modules/lru-cache/lib",
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/aws4/node_modules/lru-cache"
+        ],
+        "dependencies": {
+          "pseudomap": "^1.0.1",
+          "yallist": "^2.0.0"
         }
       },
       {
@@ -8096,7 +8103,7 @@
           "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/test"
         ],
         "dependencies": {
-          "readable-stream": "~2.0.0"
+          "readable-stream": "~2.0.5"
         }
       },
       {
@@ -8107,7 +8114,7 @@
         "dependencies": {
           "core-util-is": "~1.0.0",
           "inherits": "~2.0.1",
-          "isarray": "0.0.1",
+          "isarray": "~1.0.0",
           "process-nextick-args": "~1.0.6",
           "string_decoder": "~0.10.x",
           "util-deprecate": "~1.0.1"
@@ -8128,9 +8135,9 @@
           "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/form-data"
         ],
         "dependencies": {
-          "async": "^1.4.0",
+          "async": "^1.5.2",
           "combined-stream": "^1.0.5",
-          "mime-types": "^2.1.3"
+          "mime-types": "^2.1.10"
         }
       },
       {
@@ -8142,7 +8149,7 @@
         "dependencies": {
           "chalk": "^1.1.1",
           "commander": "^2.9.0",
-          "is-my-json-valid": "^2.12.3",
+          "is-my-json-valid": "^2.12.4",
           "pinkie-promise": "^2.0.0"
         }
       },
@@ -8156,6 +8163,14 @@
           "has-ansi": "^2.0.0",
           "strip-ansi": "^3.0.0",
           "supports-color": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/ansi-styles"
+        ],
+        "dependencies": {
+          "color-convert": "^1.0.0"
         }
       },
       {
@@ -8264,7 +8279,7 @@
           "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature"
         ],
         "dependencies": {
-          "assert-plus": "^0.1.5",
+          "assert-plus": "^0.2.0",
           "jsprim": "^1.2.2",
           "sshpk": "^1.7.0"
         }
@@ -8313,7 +8328,7 @@
           "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash"
         ],
         "dependencies": {
-          "assert-plus": "0.1.x"
+          "assert-plus": "^1.0.0"
         }
       },
       {
@@ -8339,7 +8354,7 @@
           "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/mime-types"
         ],
         "dependencies": {
-          "mime-db": "~1.20.0"
+          "mime-db": "~1.22.0"
         }
       },
       {
@@ -8374,8 +8389,8 @@
         ],
         "dependencies": {
           "string-width": "^1.0.1",
-          "strip-ansi": "^3.0.0",
-          "wrap-ansi": "^1.0.0"
+          "strip-ansi": "^3.0.1",
+          "wrap-ansi": "^2.0.0"
         }
       },
       {
@@ -8392,14 +8407,6 @@
         ],
         "dependencies": {
           "string-width": "^1.0.1"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/json2dts/node_modules/yargs/node_modules/decamelize"
-        ],
-        "dependencies": {
-          "escape-string-regexp": "^1.0.4"
         }
       },
       {

@@ -63,9 +63,11 @@ function linter() {
    * @return {Object} - Linter error.
    */
   function transform(message) {
+    const reason = toHTML(message.reason);
+
     return {
       type: 'Error',
-      html: toHTML(message.reason),
+      html: `<span class="badge badge-flexible">${message.ruleId}</span> ${reason}`,
       filePath: this.getPath(),
       range: toRange(message.location)
     };
@@ -101,6 +103,8 @@ function linter() {
       config = new Configuration({ detectRC: true });
 
       config.getConfiguration(filePath, (err, conf) => {
+        let plugins;
+
         if (err) {
           return resolve([{
             type: 'Error',
@@ -110,10 +114,13 @@ function linter() {
           }]);
         }
 
+        plugins = conf.plugins || {};
+        plugins = plugins['remark-lint'] || plugins.lint;
+
         /* Load processor for current path */
 
         remark()
-          .use(lint, conf.plugins.lint)
+          .use(lint, plugins)
           .process(editor.getText(), conf.settings, (err2, file) => {
             if (err2) {
               reject(err2);
@@ -138,7 +145,7 @@ function linter() {
  * Run package activation tasks.
  */
 function activate() {
-  require('atom-package-deps').install();
+  require('atom-package-deps').install('linter-markdown');
 }
 
 /*

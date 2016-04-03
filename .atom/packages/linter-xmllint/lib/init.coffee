@@ -1,10 +1,10 @@
 {CompositeDisposable} = require 'atom'
-helpers = require 'atom-linter'
-path = require('path')
-sax = require('sax')
+helpers = null
+path = null
 Readable = require('stream').Readable
-xmldoc = require('xmldoc')
-XRegExp = require('xregexp').XRegExp
+sax = null
+xmldoc = null
+XRegExp = null
 
 class ReadableString extends Readable
 
@@ -27,7 +27,7 @@ module.exports =
       default: 'xmllint'
 
   activate: ->
-    require('atom-package-deps').install()
+    require('atom-package-deps').install('linter-xmllint')
 
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.config.observe 'linter-xmllint.executablePath',
@@ -57,6 +57,7 @@ module.exports =
     return promise_well_formed.then validateIfWellFormed
 
   checkWellFormed: (textEditor) ->
+    helpers ?= require 'atom-linter'
     params = ['--noout', '-']
     options = {
       stdin: textEditor.getText()
@@ -74,9 +75,10 @@ module.exports =
     linter = this
     firstOpenTag = true
     hasDtd = false
-    schemaUrl = undefined
+    schemas = []
 
     promiseValidation = new Promise (resolve, reject) ->
+      sax ?= require 'sax'
       strict = true
       parser = sax.createStream(strict)
       # use a low value for the highWaterMark
@@ -86,10 +88,8 @@ module.exports =
       parser.onprocessinginstruction = (procInst) ->
         if procInst.name isnt 'xml-model'
           return
-        # only use first schema
-        if schemaUrl
-          return
 
+        xmldoc ?= require 'xmldoc'
         # parse attributes from body
         try
           xmlDoc = new xmldoc.XmlDocument('<body ' + procInst.body + '/>')
@@ -105,7 +105,20 @@ module.exports =
 
         if 'schematypens' of attributes and 'href' of attributes
           if attributes['schematypens'] is 'http://www.w3.org/2001/XMLSchema'
-            schemaUrl = attributes['href']
+            schemas.push({
+              arg: '--schema'
+              url: attributes['href']
+            })
+          if attributes['schematypens'] is 'http://relaxng.org/ns/structure/1.0'
+            schemas.push({
+              arg: '--relaxng'
+              url: attributes['href']
+            })
+          if attributes['schematypens'] is 'http://purl.oclc.org/dsdl/schematron'
+            schemas.push({
+              arg: '--schematron'
+              url: attributes['href']
+            })
 
       parser.ondoctype = (doctype) ->
         hasDtd = true
@@ -120,39 +133,47 @@ module.exports =
         stream.unpipe()
         stream.content = ''
 
-        # only check for attributes if not already specified as xml-model
-        if not schemaUrl
-          # try to extract schema url from attributes
-          if 'xsi:noNamespaceSchemaLocation' of node.attributes
-            schemaUrl= node.attributes['xsi:noNamespaceSchemaLocation']
-          else if 'xsi:schemaLocation' of node.attributes
-            schemaLocation = node.attributes['xsi:schemaLocation']
-            parts = schemaLocation.split /\s+/
-            if parts.length is 2
-              schemaUrl = parts[1]
+        # try to extract schema url from attributes
+        if 'xsi:noNamespaceSchemaLocation' of node.attributes
+          schemas.push({
+            arg: '--schema'
+            url: node.attributes['xsi:noNamespaceSchemaLocation']
+          })
+        else if 'xsi:schemaLocation' of node.attributes
+          schemaLocation = node.attributes['xsi:schemaLocation']
+          parts = schemaLocation.split /\s+/
+          if parts.length is 2
+            schemas.push({
+              arg: '--schema'
+              url: parts[1]
+            })
 
         # trigger validation
-        if not hasDtd and not schemaUrl
+        if not hasDtd and schemas.length is 0
           resolve([])
-        if hasDtd and not schemaUrl
-          resolve(linter.validateDtd(textEditor))
-        if not hasDtd and schemaUrl
-          resolve(linter.validateSchema(textEditor, schemaUrl))
-        if hasDtd and schemaUrl
-          promise = new Promise (resolve2, reject2) ->
-            linter.validateSchema(textEditor, schemaUrl).then (result) ->
-              if result.length > 0
-                resolve2(result)
-              else
-                resolve2(linter.validateDtd(textEditor))
-          promise.then (result) ->
-            resolve(result)
+        else
+          promises = []
+
+          if hasDtd
+            promises.push(linter.validateDtd(textEditor))
+
+          for schema in schemas
+            promises.push(linter.validateSchema(textEditor, schema.arg, schema.url))
+
+          Promise.all(promises).then (results) ->
+            messages = []
+            for result in results
+              for message in result
+                messages.push(message)
+            resolve(messages)
 
       stream.pipe(parser)
 
     return promiseValidation
 
   validateDtd: (textEditor) ->
+    helpers ?= require 'atom-linter'
+    path ?= require('path')
     params = ['--noout', '--valid', '-']
     options = {
       # since the schema might be relative exec in the directory of the xml file
@@ -164,12 +185,18 @@ module.exports =
       .then (output) =>
         messages = @parseMessages(output)
         for message in messages
+          message.text += ' (DTD)'
           message.filePath = textEditor.getPath()
         return messages
 
-  validateSchema: (textEditor, schemaUrl) ->
-    filePath = textEditor.getPath()
-    params = ['--noout', '--schema', schemaUrl, '-']
+  validateSchema: (textEditor, argSchemaType, schemaUrl) ->
+    helpers ?= require 'atom-linter'
+    path ?= require('path')
+    params = []
+    # --noout results in no error messages to be printed for schematron
+    if argSchemaType is not '--schematron'
+      params.push('--noout')
+    params = params.concat([argSchemaType, schemaUrl, '-'])
     options = {
       # since the schema might be relative exec in the directory of the xml file
       cwd: path.dirname(textEditor.getPath())
@@ -177,24 +204,26 @@ module.exports =
       stream: 'stderr'
     }
     return helpers.exec(@executablePath, params, options)
-      .then (output) ->
-        regex = '(?<file>.+):(?<line>\\d+): .*: .* : (?<message>.+)'
-        helpers.parse(output, regex).map (error) ->
-          error.type = 'Error'
-          error.filePath = textEditor.getPath()
-          # make range the full line
-          error.range = helpers.rangeFromLineNumber(
-            textEditor, error.range[0][0], error.range[0][1])
-          return error
+      .then (output) =>
+        if argSchemaType is '--schematron'
+          messages = @parseSchematronMessages(textEditor, output)
+        else
+          messages = @parseSchemaMessages(textEditor, output)
+        for message in messages
+          message.type = 'Error'
+          message.text = message.text + ' (' + schemaUrl + ')'
+          message.filePath = textEditor.getPath()
+        return messages
 
   parseMessages: (output) ->
+    XRegExp ?= require('xregexp')
     messages = []
     regex = XRegExp(
       '^(?<file>.+):' +
       '(?<line>\\d+): ' +
       '(?<type>.+) : ' +
-      '(?<message>.+)[\\r?\\n]' +
-      '(?<source_line>.*)[\\r?\\n]' +
+      '(?<message>.+)\\r?\\n' +
+      '(?<source_line>.*)\\r?\\n' +
       '(?<marker>.*)\\^$', 'm')
     XRegExp.forEach output, regex, (match, i) ->
       line = parseInt(match.line) - 1
@@ -204,5 +233,28 @@ module.exports =
         text: match.message
         filePath: match.file
         range: [[line, column], [line, column]]
+      })
+    return messages
+
+  parseSchemaMessages: (textEditor, output) ->
+    helpers ?= require 'atom-linter'
+    regex = '(?<file>.+):(?<line>\\d+): .*: .* : (?<message>.+)'
+    messages = helpers.parse(output, regex)
+    for message in messages
+      message.range = helpers.rangeFromLineNumber(textEditor, message.range[0][0])
+    return messages
+
+  parseSchematronMessages: (textEditor, output) ->
+    XRegExp ?= require('xregexp')
+    messages = []
+    regex = XRegExp(
+      '^(?<rule>.+) ' +
+      'line (?<line>\\d+): ' +
+      '(?<message>.+)$', 'm')
+    XRegExp.forEach output, regex, (match, i) ->
+      line = parseInt(match.line) - 1
+      messages.push({
+        text: match.rule + ': ' + match.message
+        range: helpers.rangeFromLineNumber(textEditor, line)
       })
     return messages

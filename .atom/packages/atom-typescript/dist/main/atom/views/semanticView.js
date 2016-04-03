@@ -76,7 +76,10 @@ var MyComponent = (function (_super) {
     };
     MyComponent.prototype.renderNode = function (node, indent) {
         var _this = this;
-        return React.createElement("div", {className: "node", onClick: function (event) { _this.gotoNode(node); event.stopPropagation(); }, "data-start": node.start.line, "data-end": node.end.line}, rts.indent(indent), React.createElement("span", {className: this.getIconForKind(node.kind) + ' ' + this.isSelected(node)}, node.text), node.subNodes.map(function (sn) { return _this.renderNode(sn, indent + 1); }));
+        return React.createElement("div", {className: "node", onClick: function (event) { _this.gotoNode(node); event.stopPropagation(); }, "data-start": node.start.line, "data-end": node.end.line}, 
+            rts.indent(indent), 
+            React.createElement("span", {className: this.getIconForKind(node.kind) + ' ' + this.isSelected(node)}, node.text), 
+            node.subNodes.map(function (sn) { return _this.renderNode(sn, indent + 1); }));
     };
     MyComponent.prototype.getIconForKind = function (kind) {
         return "icon icon-" + kind;
@@ -96,7 +99,7 @@ var MyComponent = (function (_super) {
         this.state.editor.setCursorBufferPosition([gotoLine, 0]);
     };
     return MyComponent;
-})(React.Component);
+}(React.Component));
 var SemanticView = (function (_super) {
     __extends(SemanticView, _super);
     function SemanticView(config) {
@@ -124,7 +127,7 @@ var SemanticView = (function (_super) {
         React.render(React.createElement(MyComponent, {}), this.rootDomElement);
     };
     return SemanticView;
-})(sp.ScrollView);
+}(sp.ScrollView));
 exports.SemanticView = SemanticView;
 var panel;
 function attach() {

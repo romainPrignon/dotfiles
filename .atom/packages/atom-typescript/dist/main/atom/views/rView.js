@@ -24,11 +24,13 @@ var MyComponent = (function (_super) {
         });
     };
     MyComponent.prototype.render = function () {
-        return React.createElement("div", {onClick: this.stop}, "This is a test: ", this.state.count);
+        return React.createElement("div", {onClick: this.stop}, 
+            "This is a test: ", 
+            this.state.count);
     };
     MyComponent.defaultProps = { count: 0 };
     return MyComponent;
-})(React.Component);
+}(React.Component));
 var RView = (function (_super) {
     __extends(RView, _super);
     function RView(config) {
@@ -60,5 +62,5 @@ var RView = (function (_super) {
     });
     RView.protocol = 'atomtsview:';
     return RView;
-})(sp.ScrollView);
+}(sp.ScrollView));
 exports.RView = RView;

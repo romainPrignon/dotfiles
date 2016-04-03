@@ -1,5 +1,27 @@
 # Changelog linter-xmllint
 
+## 1.3.4 (Feb 24 2016)
+
+* Update to XRegExp 3.1.0 ([#52](https://github.com/AtomLinter/linter-xmllint/pull/52))
+
+## 1.3.3 (Feb 17 2016)
+
+* Fix regex to work on Windows ([#49](https://github.com/AtomLinter/linter-xmllint/pull/49))
+
+## 1.3.2 (Feb 13 2016)
+
+* Fix marker text for DTD errors (regression in 1.3.0) ([#43](https://github.com/AtomLinter/linter-xmllint/pull/43))
+* Improve marker position and text for schemas and schematron ([#44](https://github.com/AtomLinter/linter-xmllint/pull/44))
+
+## 1.3.1 (Feb 10 2016)
+
+* Improve startup time ([#41](https://github.com/AtomLinter/linter-xmllint/pull/41))
+
+## 1.3.0 (Jan 8 2016)
+
+* Add support for Relax NG and Schematron schemas ([#29](https://github.com/AtomLinter/linter-xmllint/issues/29))
+* Validate against all specified schemas ([#37](https://github.com/AtomLinter/linter-xmllint/pull/37))
+
 ## 1.2.0 (Dec 14 2015)
 
 * Add support for *lintOnFlyAdd* option ([#32](https://github.com/AtomLinter/linter-xmllint/pull/32))
