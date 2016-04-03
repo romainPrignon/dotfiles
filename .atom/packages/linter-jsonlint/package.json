@@ -1,6 +1,6 @@
 {
   "name": "linter-jsonlint",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": true,
   "description": "A plugin for Atom Linter providing an interface to jsonlint",
   "main": "lib/index.js",
@@ -30,8 +30,9 @@
     "jsonlint": "~1.6.2"
   },
   "devDependencies": {
-    "eslint": "^2.4.0",
-    "eslint-config-airbnb": "^6.1.0"
+    "eslint": "^2.5.1",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.2.3"
   },
   "eslintConfig": {
     "rules": {
@@ -62,10 +63,10 @@
   },
   "readme": "# linter-jsonlint [![Dependency Status](https://david-dm.org/AtomLinter/linter-jsonlint.svg)](https://david-dm.org/AtomLinter/linter-jsonlint)\n\nA plugin for [Atom Linter](https://github.com/AtomLinter/atom-linter) providing\nan interface to [jsonlint](https://github.com/zaach/jsonlint). It will be used\nwith files that have the **JSON** syntax.\n\n![demo](https://cloud.githubusercontent.com/assets/427137/12154907/2d6cd53c-b477-11e5-94bb-74f7effbff25.png)\n\n## Installation\n\n```ShellSession\n$ apm install linter-jsonlint\n```\n",
   "readmeFilename": "README.md",
-  "_id": "linter-jsonlint@1.2.1",
-  "_shasum": "61c3bcfda1fd7d65b3cccd9ee9d49ea3d16277d5",
-  "_resolved": "file:../d-116225-6410-13fd5h0/package.tgz",
-  "_from": "../d-116225-6410-13fd5h0/package.tgz",
+  "_id": "linter-jsonlint@1.2.2",
+  "_shasum": "256a88282cd5e2c23c5aef76a9c91d737c58efa1",
+  "_resolved": "file:../d-11633-9018-1jnxfcy/package.tgz",
+  "_from": "../d-11633-9018-1jnxfcy/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -86,7 +87,7 @@
       },
       {
         "name": "sb-promisify",
-        "version": "1.1.1",
+        "version": "1.3.0",
         "path": "node_modules/atom-linter/node_modules/sb-promisify/lib/index.js"
       },
       {

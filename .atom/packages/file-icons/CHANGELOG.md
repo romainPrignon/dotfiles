@@ -4,10 +4,47 @@ All notable changes to the project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+[1.7.0] - 2016-04-02
+--------------------
+### Added
+- **New icons:** Broccoli, Flow
+- **Support:** Ruby gems
+
+### Changed
+- Webpack icon now used for all filenames containing `webpack.config.`
+- Size/alignment tweaked for Kivy, SQL, Scala, OS X and Smarty icons
+
+### Fixed
+- Binary files now respect value of user's "Colourless Icons" setting
+- Bright colours and faint icons now adjust for users of light-coloured themes
+- Dark red/maroon are brightened for users of darker themes
+
+
+
+[1.6.21] - 2016-04-01
+---------------------
+### Added
+- **New icons:** Babel, Marko, Webpack
+- **Support:** `.pug` files (Jade)
+
+
+
+[1.6.20] - 2016-03-31
+---------------------
+### Added
+- **Support:** TrueType Collections (`.ttc`), Perl 6 (`.pl6`), generic
+               audio formats, `.geojson`, `.phtml`, uppercased SQL extensions
+
+### Fixed
+- Colour is now applied to Ruby manifests and Git/NPM-related config files
+
+
+
 [1.6.19] - 2016-03-26
 ---------------------
 ### Added
 - **New icons:** LLVM assembly (`.ll`)
+
 ### Fixed
 - [[`#271`](https://github.com/DanBrooker/file-icons/issues/271)]
             Tab icons misaligned in files opened by Remote-Edit
@@ -458,7 +495,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Stylesheet to remove package colours
 - Updated Font Awesome to
   [4.1](https://github.com/FortAwesome/Font-Awesome/releases/tag/4.1.0)
-  
+
 ### Removed
 - Go icon (too faint)
 
@@ -597,7 +634,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/DanBrooker/file-icons/compare/v1.6.19...HEAD
+[Unreleased]: https://github.com/DanBrooker/file-icons/compare/v1.7.0...HEAD
+[1.7.0]:  https://github.com/DanBrooker/file-icons/compare/v1.6.21...v1.7.0
+[1.6.21]: https://github.com/DanBrooker/file-icons/compare/v1.6.20...v1.6.21
+[1.6.20]: https://github.com/DanBrooker/file-icons/compare/v1.6.19...v1.6.20
 [1.6.19]: https://github.com/DanBrooker/file-icons/compare/v1.6.18...v1.6.19
 [1.6.18]: https://github.com/DanBrooker/file-icons/compare/v1.6.17...v1.6.18
 [1.6.17]: https://github.com/DanBrooker/file-icons/compare/v1.6.16...v1.6.17
