@@ -10,15 +10,12 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/workspace/go
 export GOBIN=$HOME/workspace/go/bin
 
+export EDITOR="vim";
+
 PATH="$HOME/.composer/vendor/bin:$PATH"
 PATH="$GOROOT/bin:$PATH"
 
-PATH="/usr/local/packer:$PATH"
-PATH="/usr/local/terraform:$PATH"
-
 PATH="$HOME/app/phpstorm/bin:$PATH"
-
-export EDITOR="vim";
 
 # proxy
 #export http_proxy=http://some.host:8080
