@@ -13,16 +13,28 @@ if [ -f "$HOME/.bash_prompt" ]; then
     . "$HOME/.bash_prompt"
 fi
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
+#######################################
+
+# Avoid duplicate entries
+HISTCONTROL="erasedups:ignoreboth"
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
-HISTFILESIZE=20000
+HISTSIZE=500000
+HISTFILESIZE=100000
+
+# Useful timestamp format
+HISTTIMEFORMAT='%F %T '
+
+# Don't record some commands
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+
+#######################################
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+
+# Save multi-line commands as one command
+shopt -s cmdhist
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -33,6 +45,25 @@ shopt -s nocaseglob
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
+
+# Correct spelling errors during tab-completion
+shopt -s dirspell
+
+# Prepend cd to directory names automatically
+shopt -s autocd
+
+# This defines where cd looks for targets
+# Add the directories you want to have fast access to, separated by colon
+# Ex: CDPATH=".:~:~/projects" will look for targets in the current working directory, in home and in the ~/projects folder
+CDPATH=".:~:~/workspace"
+
+# Turn on recursive globbing (enables ** to recurse all directories)
+shopt -s globstar 2> /dev/null
+
+# Prevent file overwrite on stdout redirection
+set -o noclobber
+
+#######################################
 
 # starting command
 if [ -z "$SSH_AUTH_SOCK" ] ; then
