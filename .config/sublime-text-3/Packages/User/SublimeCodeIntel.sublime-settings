@@ -1,7 +1,0 @@
-{
-    "codeintel_max_recursive_dir_depth": 25,
-    "PHP": {
-        "codeintel_max_recursive_dir_depth": 25
-    },
-    "codeintel_snippets": true
-}

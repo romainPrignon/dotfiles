@@ -1,4 +1,3 @@
-mklink /H [home-dir-absolute-path]\.WebIde100 [dotfile-dir-absolute-path]\.WebIde100
 mklink /H [home-dir-absolute-path]\.atom [dotfile-dir-absolute-path]\.atom
 mklink /H [home-dir-absolute-path]\.composer [dotfile-dir-absolute-path]\.composer
 mklink /H [home-dir-absolute-path]\.config [dotfile-dir-absolute-path]\.config
@@ -8,7 +7,6 @@ mklink /H [home-dir-absolute-path]\scripts [dotfile-dir-absolute-path]\scripts
 mklink /H [home-dir-absolute-path]\.aliases [dotfile-dir-absolute-path]\.aliases
 mklink /H [home-dir-absolute-path]\.bash_prompt [dotfile-dir-absolute-path]\.bash_prompt
 mklink /H [home-dir-absolute-path]\.bashrc [dotfile-dir-absolute-path]\.bashrc
-mklink /H [home-dir-absolute-path]\.eslintrc [dotfile-dir-absolute-path]\.eslintrc
 mklink /H [home-dir-absolute-path]\.exports [dotfile-dir-absolute-path]\.exports
 mklink /H [home-dir-absolute-path]\.functions [dotfile-dir-absolute-path]\.functions
 mklink /H [home-dir-absolute-path]\.git_prompt [dotfile-dir-absolute-path]\.git_prompt

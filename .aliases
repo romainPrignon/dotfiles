@@ -8,7 +8,6 @@ fi
 
 # some more ls aliases
 alias ll='ls -alF'
-alias la='ls -A'
 alias l='ls -CF'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -21,7 +20,7 @@ alias .....="cd ../../../.."
 
 # Shortcuts
 alias d="cd ~/Documents"
-alias dl="cd ~/Téléchargements"
+alias dl="cd ~/Download"
 alias w="cd ~/workspace"
 alias g="LANGUAGE=en_US.UTF-8 git"
 alias h="history"
