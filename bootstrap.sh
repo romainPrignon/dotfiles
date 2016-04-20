@@ -12,6 +12,7 @@ ln -sf /home/romainprignon/workspace/romainprignon/dotfiles/.bashrc /home/romain
 ln -sf /home/romainprignon/workspace/romainprignon/dotfiles/.exports /home/romainprignon/.exports
 ln -sf /home/romainprignon/workspace/romainprignon/dotfiles/.functions /home/romainprignon/.functions
 ln -sf /home/romainprignon/workspace/romainprignon/dotfiles/.git_prompt /home/romainprignon/.git_prompt
+ln -sf /home/romainprignon/workspace/romainprignon/dotfiles/.git-prompt /home/romainprignon/.git-prompt
 ln -sf /home/romainprignon/workspace/romainprignon/dotfiles/.bash_prompt /home/romainprignon/.bash_prompt
 ln -sf /home/romainprignon/workspace/romainprignon/dotfiles/.inputrc /home/romainprignon/.inputrc
 ln -sf /home/romainprignon/workspace/romainprignon/dotfiles/.profile /home/romainprignon/.profile
