@@ -4,6 +4,65 @@ All notable changes to the project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+[1.7.5] - 2016-04-20
+--------------------
+### Added
+- New selector variable to override tab-icons in user stylesheets
+- **New icons:** AMPL, Ceylon, Chapel, Cirru, Clarion, Dogescript, Fabric, IDL, Jakefile, JSON-LD, LFE, MediaWiki, Nmap, Nunjucks, Tcl, OWL, Phalcon, PostScript, SAS, SPARQL, Verilog, YANG
+- **Support:** [Over +150](https://github.com/DanBrooker/file-icons/releases/tag/v1.7.5#support) new extensions and filenames added
+
+### Changed
+- Font Awesome updated to [4.6.1](https://github.com/FortAwesome/Font-Awesome/releases/tag/v4.6.1)
+- Devicons, Icomoon, and Mfizz fonts converted to WOFF2 for better compression
+
+### Fixed
+- Height of `.meteor` folders
+
+
+[1.7.4] - 2016-04-18
+--------------------
+### Added
+- **New icons:** Ant Build System, Bluespec, Boo, Brainfuck, Bro, ChucK, CLIPS, CMake, Component Pascal, Glade, GNU, Isabelle, Jinja, Mapbox, Stylelint
+- **Support:** AGS, ApacheConf (`.apacheconf`, `.vhost`), Befunge, BitBake, BlitzMax, Brightscript, C2hs, Cap'n Proto, COBOL, `.csx`, Extra extensions for C, C++ and Erlang, Haskell `.hsc` files, HTTP, Jenkins, JSONLD, TeX `.aux` files, TopoJSON
+
+### Fixed
+- [[`#296`](https://github.com/DanBrooker/file-icons/issues/296)] Material UI resets size adjustments applied to icons
+
+
+[1.7.3] - 2016-04-17
+--------------------
+### Added
+- **New icons:** ABAP, ActionScript, Alloy, ANTLR, API Blueprint, Arc, Arduino, ATS, Augeas, AutoHotkey, AutoIt, ColdFusion, J, Manual pages, Pascal
+- **Support:** Agda, ASP.net, AspectJ, AWK-scripts, Extra assembly extensions, `.pcss`
+
+### Fixed
+- `_osc` and `PKGBUILD` icons now show icons correctly
+
+
+[1.7.2] - 2016-04-14
+--------------------
+### Added
+- **New icons:** Doxygen
+- **Support:** `.ad`, `.am`, `Brewfile`, `.desktop`, `.directory`, `.ebuild`, `.github`, `.install`, `.m4`, `.menu`, `.msi`, `_osc`, `PKGBUILD`, `.sed`, `_service`, `.spacemacs`
+- Support for numerous GNU Automake/Autoconf files
+
+### Fixed
+- [[`#193`](https://github.com/DanBrooker/file-icons/issues/193)] Tab icons now update when changing file extensions
+- [[`#316`](https://github.com/DanBrooker/file-icons/issues/316)] Newly-saved files now display icons in tab
+
+
+[1.7.1] - 2016-04-05
+--------------------
+### Added
+- **New icons:** AppleScript, Appveyor, Cakefile, Emacs Lisp, Illustrator, Photoshop, Sketch
+- **Support:** `.jsbeautifyrc`, `.coffeelintignore`, additional Makefile names (`mkfile`, `Kbuild`, `GNUmakefile`), `.Rmd`
+
+### Fixed
+- [[`#310`](https://github.com/DanBrooker/file-icons/issues/310)] Go icon replaced with something clearer
+- [[`#311`](https://github.com/DanBrooker/file-icons/issues/311)] Lowercase `makefile` no longer matches any filename
+- Changelog now displays properly in Atom's Markdown preview
+
+
 [1.7.0] - 2016-04-02
 --------------------
 ### Added
@@ -32,8 +91,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.6.20] - 2016-03-31
 ---------------------
 ### Added
-- **Support:** TrueType Collections (`.ttc`), Perl 6 (`.pl6`), generic
-               audio formats, `.geojson`, `.phtml`, uppercased SQL extensions
+- **Support:** TrueType Collections (`.ttc`), Perl 6 (`.pl6`), generic audio formats, `.geojson`, `.phtml`, uppercased SQL extensions
 
 ### Fixed
 - Colour is now applied to Ruby manifests and Git/NPM-related config files
@@ -46,15 +104,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - **New icons:** LLVM assembly (`.ll`)
 
 ### Fixed
-- [[`#271`](https://github.com/DanBrooker/file-icons/issues/271)]
-            Tab icons misaligned in files opened by Remote-Edit
+- [[`#271`](https://github.com/DanBrooker/file-icons/issues/271)] Tab icons misaligned in files opened by Remote-Edit
 
 
 [1.6.18] - 2016-03-06
 ---------------------
 ### Fixed
-- [[`#296`](https://github.com/DanBrooker/file-icons/issues/296)]
-            Riot tag too large in Atom Material theme's tree view
+- [[`#296`](https://github.com/DanBrooker/file-icons/issues/296)] Riot tag too large in Atom Material theme's tree view
 
 
 [1.6.17] - 2016-03-01
@@ -64,10 +120,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - NPM icon changed to use block-shaped "n" used by npmjs.com
 
 ### Fixed
-- [[`#284`](https://github.com/DanBrooker/file-icons/issues/284)]
-            Pattern matching used for task runner config files
-- [[`#246`](https://github.com/DanBrooker/file-icons/issues/246)]
-            Text-file icons not showing in Flatland Dark UI theme
+- [[`#284`](https://github.com/DanBrooker/file-icons/issues/284)] Pattern matching used for task runner config files
+- [[`#246`](https://github.com/DanBrooker/file-icons/issues/246)] Text-file icons not showing in Flatland Dark UI theme
 
 
 [1.6.16] - 2016-02-27
@@ -76,8 +130,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - **New icons:** OCaml, Lua
 
 ### Fixed
-- Icons now display properly with the
-  [Seti UI](https://github.com/jesseweed/seti-ui) theme
+- Icons now display properly with the [Seti UI](https://github.com/jesseweed/seti-ui) theme
 
 ### Changed
 - Composer and Haml icons replaced with silhouetted versions
@@ -90,8 +143,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - This changelog
 - **New icons:** AsciiDoc, LiveScript, OrgMode, RAML, Riot, SaltStack, Terraform
-- **Support:** Video files, `.dockerignore`, `.json5`, `.lesshintrc`, `.hxml`,
-              `.ko`, `bash_profile`, `bash_login`, `bashrc`, VimL
+- **Support:** Video files, `.dockerignore`, `.json5`, `.lesshintrc`, `.hxml`, `.ko`, `bash_profile`, `bash_login`, `bashrc`, VimL
 
 ### Changed
 - JSX/TSX files use JSX icon instead of React's
@@ -107,22 +159,18 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - **New icons:** Jade, ESLint, Fonts, TypeScript, PostCSS, OpenSCAD
 - **Support:** `.htaccess`, `.htpasswd`
-- Font Awesome updated to
-  [4.4](https://github.com/FortAwesome/Font-Awesome/releases/tag/v4.4.0)
+- Font Awesome updated to [4.4](https://github.com/FortAwesome/Font-Awesome/releases/tag/v4.4.0)
 
 ### Fixed
-- [[`#239`](https://github.com/DanBrooker/file-icons/issues/239)]
-            Bottom border of inactive tabs hidden/incomplete
-- [[`#248`](https://github.com/DanBrooker/file-icons/issues/248)]
-            Incorrect alignment/centring of React/JSX icon
+- [[`#239`](https://github.com/DanBrooker/file-icons/issues/239)] Bottom border of inactive tabs hidden/incomplete
+- [[`#248`](https://github.com/DanBrooker/file-icons/issues/248)] Incorrect alignment/centring of React/JSX icon
 
 
 
 [1.6.13] - 2015-12-01
 ---------------------
 ### Added
-- **New icons:** Ada, APL, Crystal, FORTRAN, Gradle, Groovy, Haxe, Kivy, Lisp,
-                 MAXScript, R, Vue
+- **New icons:** Ada, APL, Crystal, FORTRAN, Gradle, Groovy, Haxe, Kivy, Lisp, MAXScript, R, Vue
 - **Support:** Gnuplot scripts
 - [CONTRIBUTING.md](CONTRIBUTING.md) file explaining how to add new icons
 - Optimised version of preview image
@@ -250,8 +298,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 --------------------
 ### Added
 - **New icons:** D lang, Elixir, Erlang
-- Updated Devicons to
-  [1.8.0](https://github.com/vorillaz/devicons/releases/tag/1.8.0)
+- Updated Devicons to [1.8.0](https://github.com/vorillaz/devicons/releases/tag/1.8.0)
 
 ### Fixed
 - Prevent theme styling from italicising icons
@@ -272,8 +319,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 --------------------
 ### Added
 - **New fonts:** `latex` (for LaTeX/BibTeX icons)
-- **New icons:** TemplateToolkit TT, SQL, LaTeX, BibTeX,
-                 Windows-specific files (BAT, CMD, EXE, COM, REG)
+- **New icons:** TemplateToolkit TT, SQL, LaTeX, BibTeX, Windows-specific files (BAT, CMD, EXE, COM, REG)
 - **Support:** `.ndjson`, Babel Gulpfiles
 
 
@@ -329,16 +375,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - **Support:** Nodemon
 
 ### Fixed
-- [[`#103`](https://github.com/DanBrooker/file-icons/issues/103)]
-            Tab icons for Settings and Release Notes disappearing
+- [[`#103`](https://github.com/DanBrooker/file-icons/issues/103)] Tab icons for Settings and Release Notes disappearing
 
 
 
 [1.4.8] - 2015-01-19
 --------------------
 ### Added
-- **Support:** D lang, Makefiles, `.config`, `.manifest`,
-               `.psd1`, `.ps1m`, `.ps1xml`
+- **Support:** D lang, Makefiles, `.config`, `.manifest`, `.psd1`, `.ps1m`, `.ps1xml`
 
 
 
@@ -355,8 +399,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.4.6] - 2015-01-15
 --------------------
 ### Fixed
-- [[`#104`](https://github.com/DanBrooker/file-icons/issues/104)]
-            Updated core selectors to use new custom elements
+- [[`#104`](https://github.com/DanBrooker/file-icons/issues/104)] Updated core selectors to use new custom elements
 
 ### Changed
 - Updated minimum compatible Atom version to 0.171.0
@@ -463,8 +506,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.3.2] - 2014-08-01
 --------------------
 ### Fixed
-- [[`#57`](https://github.com/DanBrooker/file-icons/issues/57)]
-           Console error causing dev tools to open when reloading window
+- [[`#57`](https://github.com/DanBrooker/file-icons/issues/57)] Console error causing dev tools to open when reloading window
 
 
 
@@ -479,8 +521,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Font smoothing to improve icon appearance on Mac OS
 
 ### Changed
-- [[`#54`](https://github.com/DanBrooker/file-icons/issues/54)]
-           Reverted CoffeeScript to use pre-1.3.0 icon
+- [[`#54`](https://github.com/DanBrooker/file-icons/issues/54)] Reverted CoffeeScript to use pre-1.3.0 icon
 - Reverted C and C++ files to use generic icons
 
 
@@ -493,8 +534,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - **Support:** `.handlebars`, `.pp`
 - Stylesheet to override Unity theme's icon removal
 - Stylesheet to remove package colours
-- Updated Font Awesome to
-  [4.1](https://github.com/FortAwesome/Font-Awesome/releases/tag/4.1.0)
+- Updated Font Awesome to [4.1](https://github.com/FortAwesome/Font-Awesome/releases/tag/4.1.0)
 
 ### Removed
 - Go icon (too faint)
@@ -528,8 +568,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.2.4] - 2014-06-29
 --------------------
 ### Fixed
-- [[`#30`](https://github.com/DanBrooker/file-icons/issues/30)]
-           Text of active tab vertically misaligned
+- [[`#30`](https://github.com/DanBrooker/file-icons/issues/30)] Text of active tab vertically misaligned
 
 
 
@@ -585,8 +624,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.0.2] - 2014-05-28
 --------------------
 ### Fixed
-- [[`#7`](https://github.com/DanBrooker/file-icons/issues/7)]:
-          Incorrectly-centred icons
+- [[`#7`](https://github.com/DanBrooker/file-icons/issues/7)] Incorrectly-centred icons
 
 
 
@@ -601,10 +639,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.0.0] - 2014-05-24
 --------------------
 ### Added
-- **New fonts:** [FontAwesome](http://fortawesome.github.io/Font-Awesome/),
-                 [Mfizz](http://fizzed.com/oss/font-mfizz)
-- **New icons:** Checklists, Code, CoffeeScript, Comments, CSS3, Dashboard,
-                 Database, Gear, Git, HTML5, JSX, Package, Python, Secret
+- **New fonts:** [FontAwesome](http://fortawesome.github.io/Font-Awesome/), [Mfizz](http://fizzed.com/oss/font-mfizz)
+- **New icons:** Checklists, Code, CoffeeScript, Comments, CSS3, Dashboard, Database, Gear, Git, HTML5, JSX, Package, Python, Secret
 
 ### Changed
 - Moved colour and icon properties to different stylesheets
@@ -634,64 +670,69 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/DanBrooker/file-icons/compare/v1.7.0...HEAD
-[1.7.0]:  https://github.com/DanBrooker/file-icons/compare/v1.6.21...v1.7.0
-[1.6.21]: https://github.com/DanBrooker/file-icons/compare/v1.6.20...v1.6.21
-[1.6.20]: https://github.com/DanBrooker/file-icons/compare/v1.6.19...v1.6.20
-[1.6.19]: https://github.com/DanBrooker/file-icons/compare/v1.6.18...v1.6.19
-[1.6.18]: https://github.com/DanBrooker/file-icons/compare/v1.6.17...v1.6.18
-[1.6.17]: https://github.com/DanBrooker/file-icons/compare/v1.6.16...v1.6.17
-[1.6.16]: https://github.com/DanBrooker/file-icons/compare/v1.6.15...v1.6.16
-[1.6.15]: https://github.com/DanBrooker/file-icons/compare/v1.6.14...v1.6.15
-[1.6.14]: https://github.com/DanBrooker/file-icons/compare/v1.6.13...v1.6.14
-[1.6.13]: https://github.com/DanBrooker/file-icons/compare/v1.6.12...v1.6.13
-[1.6.12]: https://github.com/DanBrooker/file-icons/compare/v1.6.11...v1.6.12
-[1.6.11]: https://github.com/DanBrooker/file-icons/compare/v1.6.10...v1.6.11
-[1.6.10]: https://github.com/DanBrooker/file-icons/compare/v1.6.8...v1.6.10
-[1.6.8]: https://github.com/DanBrooker/file-icons/compare/v1.6.7...v1.6.8
-[1.6.7]: https://github.com/DanBrooker/file-icons/compare/v1.6.6...v1.6.7
-[1.6.6]: https://github.com/DanBrooker/file-icons/compare/v1.6.5...v1.6.6
-[1.6.5]: https://github.com/DanBrooker/file-icons/compare/v1.6.3...v1.6.5
-[1.6.3]: https://github.com/DanBrooker/file-icons/compare/v1.6.1...v1.6.3
-[1.6.1]: https://github.com/DanBrooker/file-icons/compare/v1.5.8...v1.6.1
-[1.5.8]: https://github.com/DanBrooker/file-icons/compare/v1.5.7...v1.5.8
-[1.5.7]: https://github.com/DanBrooker/file-icons/compare/v1.5.6...v1.5.7
-[1.5.6]: https://github.com/DanBrooker/file-icons/compare/v1.5.5...v1.5.6
-[1.5.5]: https://github.com/DanBrooker/file-icons/compare/v1.5.4...v1.5.5
-[1.5.4]: https://github.com/DanBrooker/file-icons/compare/v1.5.3...v1.5.4
-[1.5.3]: https://github.com/DanBrooker/file-icons/compare/v1.5.2...v1.5.3
-[1.5.2]: https://github.com/DanBrooker/file-icons/compare/v1.5.1...v1.5.2
-[1.5.1]: https://github.com/DanBrooker/file-icons/compare/v1.5.0...v1.5.1
-[1.5.0]: https://github.com/DanBrooker/file-icons/compare/v1.4.11...v1.5.0
-[1.4.11]: https://github.com/DanBrooker/file-icons/compare/v1.4.10...v1.4.11
-[1.4.10]: https://github.com/DanBrooker/file-icons/compare/v1.4.9...v1.4.10
-[1.4.9]: https://github.com/DanBrooker/file-icons/compare/v1.4.8...v1.4.9
-[1.4.8]: https://github.com/DanBrooker/file-icons/compare/v1.4.7...v1.4.8
-[1.4.7]: https://github.com/DanBrooker/file-icons/compare/v1.4.6...v1.4.7
-[1.4.6]: https://github.com/DanBrooker/file-icons/compare/v1.4.5...v1.4.6
-[1.4.5]: https://github.com/DanBrooker/file-icons/compare/v1.4.4...v1.4.5
-[1.4.4]: https://github.com/DanBrooker/file-icons/compare/v1.4.3...v1.4.4
-[1.4.3]: https://github.com/DanBrooker/file-icons/compare/v1.4.2...v1.4.3
-[1.4.2]: https://github.com/DanBrooker/file-icons/compare/v1.4.1...v1.4.2
-[1.4.1]: https://github.com/DanBrooker/file-icons/compare/v1.4.0...v1.4.1
-[1.4.0]: https://github.com/DanBrooker/file-icons/compare/v1.3.6...v1.4.0
-[1.3.6]: https://github.com/DanBrooker/file-icons/compare/v1.3.5...v1.3.6
-[1.3.5]: https://github.com/DanBrooker/file-icons/compare/v1.3.4...v1.3.5
-[1.3.4]: https://github.com/DanBrooker/file-icons/compare/v1.3.3...v1.3.4
-[1.3.3]: https://github.com/DanBrooker/file-icons/compare/v1.3.2...v1.3.3
-[1.3.2]: https://github.com/DanBrooker/file-icons/compare/v1.3.1...v1.3.2
-[1.3.1]: https://github.com/DanBrooker/file-icons/compare/v1.3.0...v1.3.1
-[1.3.0]: https://github.com/DanBrooker/file-icons/compare/v1.2.6...v1.3.0
-[1.2.6]: https://github.com/DanBrooker/file-icons/compare/v1.2.5...v1.2.6
-[1.2.5]: https://github.com/DanBrooker/file-icons/compare/v1.2.4...v1.2.5
-[1.2.4]: https://github.com/DanBrooker/file-icons/compare/v1.2.3...v1.2.4
-[1.2.3]: https://github.com/DanBrooker/file-icons/compare/v1.2.2...v1.2.3
-[1.2.2]: https://github.com/DanBrooker/file-icons/compare/v1.2.1...v1.2.2
-[1.2.1]: https://github.com/DanBrooker/file-icons/compare/v1.2.0...v1.2.1
-[1.2.0]: https://github.com/DanBrooker/file-icons/compare/v1.1.0...v1.2.0
-[1.1.0]: https://github.com/DanBrooker/file-icons/compare/v1.0.2...v1.1.0
-[1.0.2]: https://github.com/DanBrooker/file-icons/compare/v1.0.1...v1.0.2
-[1.0.1]: https://github.com/DanBrooker/file-icons/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/DanBrooker/file-icons/compare/v0.3.0...v1.0.0
-[0.3.0]: https://github.com/DanBrooker/file-icons/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/DanBrooker/file-icons/compare/v0.1.0...v0.2.0
+[Unreleased]: https://github.com/DanBrooker/file-icons/compare/v1.7.5...HEAD
+[1.7.5]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.7.5
+[1.7.4]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.7.4
+[1.7.3]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.7.3
+[1.7.2]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.7.2
+[1.7.1]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.7.1
+[1.7.0]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.7.0
+[1.6.21]: https://github.com/DanBrooker/file-icons/releases/tag/v1.6.21
+[1.6.20]: https://github.com/DanBrooker/file-icons/releases/tag/v1.6.20
+[1.6.19]: https://github.com/DanBrooker/file-icons/releases/tag/v1.6.19
+[1.6.18]: https://github.com/DanBrooker/file-icons/releases/tag/v1.6.18
+[1.6.17]: https://github.com/DanBrooker/file-icons/releases/tag/v1.6.17
+[1.6.16]: https://github.com/DanBrooker/file-icons/releases/tag/v1.6.16
+[1.6.15]: https://github.com/DanBrooker/file-icons/releases/tag/v1.6.15
+[1.6.14]: https://github.com/DanBrooker/file-icons/releases/tag/v1.6.14
+[1.6.13]: https://github.com/DanBrooker/file-icons/releases/tag/v1.6.13
+[1.6.12]: https://github.com/DanBrooker/file-icons/releases/tag/v1.6.12
+[1.6.11]: https://github.com/DanBrooker/file-icons/releases/tag/v1.6.11
+[1.6.10]: https://github.com/DanBrooker/file-icons/releases/tag/v1.6.10
+[1.6.8]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.6.8
+[1.6.7]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.6.7
+[1.6.6]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.6.6
+[1.6.5]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.6.5
+[1.6.3]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.6.3
+[1.6.1]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.6.1
+[1.5.8]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.5.8
+[1.5.7]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.5.7
+[1.5.6]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.5.6
+[1.5.5]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.5.5
+[1.5.4]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.5.4
+[1.5.3]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.5.3
+[1.5.2]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.5.2
+[1.5.1]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.5.1
+[1.5.0]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.5.0
+[1.4.11]: https://github.com/DanBrooker/file-icons/releases/tag/v1.4.11
+[1.4.10]: https://github.com/DanBrooker/file-icons/releases/tag/v1.4.10
+[1.4.9]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.4.9
+[1.4.8]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.4.8
+[1.4.7]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.4.7
+[1.4.6]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.4.6
+[1.4.5]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.4.5
+[1.4.4]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.4.4
+[1.4.3]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.4.3
+[1.4.2]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.4.2
+[1.4.1]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.4.1
+[1.4.0]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.4.0
+[1.3.6]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.3.6
+[1.3.5]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.3.5
+[1.3.4]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.3.4
+[1.3.3]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.3.3
+[1.3.2]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.3.2
+[1.3.1]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.3.1
+[1.3.0]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.3.0
+[1.2.6]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.2.6
+[1.2.5]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.2.5
+[1.2.4]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.2.4
+[1.2.3]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.2.3
+[1.2.2]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.2.2
+[1.2.1]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.2.1
+[1.2.0]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.2.0
+[1.1.0]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.1.0
+[1.0.2]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.0.2
+[1.0.1]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.0.1
+[1.0.0]:  https://github.com/DanBrooker/file-icons/releases/tag/v1.0.0
+[0.3.0]:  https://github.com/DanBrooker/file-icons/releases/tag/v0.3.0
+[0.2.0]:  https://github.com/DanBrooker/file-icons/releases/tag/v0.2.0

@@ -3,6 +3,7 @@ var fsu = require("../utils/fsUtil");
 var simpleValidator = require('./simpleValidator');
 var types = simpleValidator.types;
 var compilerOptionsValidation = {
+    allowJs: { type: types.boolean },
     allowNonTsExtensions: { type: types.boolean },
     allowSyntheticDefaultImports: { type: types.boolean },
     allowUnreachableCode: { type: types.boolean },
@@ -43,6 +44,7 @@ var compilerOptionsValidation = {
     preserveConstEnums: { type: types.boolean },
     removeComments: { type: types.boolean },
     rootDir: { type: types.string },
+    skipDefaultLibCheck: { type: types.boolean },
     sourceMap: { type: types.boolean },
     sourceRoot: { type: types.string },
     stripInternal: { type: types.boolean },
@@ -140,7 +142,9 @@ function rawToTsCompilerOptions(jsonOptions, projectDir) {
     var compilerOptions = mixin({}, exports.defaults);
     for (var key in jsonOptions) {
         if (typescriptEnumMap[key]) {
-            compilerOptions[key] = typescriptEnumMap[key][jsonOptions[key].toLowerCase()];
+            var name_1 = jsonOptions[key];
+            var map = typescriptEnumMap[key];
+            compilerOptions[key] = map[name_1.toLowerCase()] || map[name_1.toUpperCase()];
         }
         else {
             compilerOptions[key] = jsonOptions[key];

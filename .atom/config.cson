@@ -3,8 +3,19 @@
   "atom-beautify":
     analytics: false
   core:
+    allowPendingPaneItems: false
     disabledPackages: [
       "linter-markdown"
+      "autocomplete-go"
+      "go-config"
+      "go-get"
+      "gofmt"
+      "gorename"
+      "navigator-godef"
+      "tester-go"
+      "builder-go"
+      "go-plus"
+      "gometalinter-linter"
     ]
     projectHome: "~/workspace"
     themes: [

@@ -16,6 +16,7 @@ var types = simpleValidator.types;
  * 	3 If its a path : Update the `make relative` code
  */
 interface CompilerOptions {
+    allowJs?: boolean;
     allowNonTsExtensions?: boolean;
     allowSyntheticDefaultImports?: boolean;
     allowUnreachableCode?: boolean;
@@ -56,6 +57,7 @@ interface CompilerOptions {
     preserveConstEnums?: boolean;
     removeComments?: boolean;                         // Do not emit comments in output
     rootDir?: string;
+    skipDefaultLibCheck?: boolean;
     sourceMap?: boolean;                              // Generates SourceMaps (.map files)
     sourceRoot?: string;                              // Optionally specifies the location where debugger should locate TypeScript source files after deployment
     stripInternal?: boolean;
@@ -67,6 +69,7 @@ interface CompilerOptions {
 }
 
 var compilerOptionsValidation: simpleValidator.ValidationInfo = {
+    allowJs: { type: types.boolean },
     allowNonTsExtensions: { type: types.boolean },
     allowSyntheticDefaultImports: { type: types.boolean },
     allowUnreachableCode: { type: types.boolean },
@@ -107,6 +110,7 @@ var compilerOptionsValidation: simpleValidator.ValidationInfo = {
     preserveConstEnums: { type: types.boolean },
     removeComments: { type: types.boolean },
     rootDir: { type: types.string },
+    skipDefaultLibCheck: { type: types.boolean },
     sourceMap: { type: types.boolean },
     sourceRoot: { type: types.string },
     stripInternal: { type: types.boolean },
@@ -297,7 +301,9 @@ function rawToTsCompilerOptions(jsonOptions: CompilerOptions, projectDir: string
     var compilerOptions = <ts.CompilerOptions>mixin({}, defaults);
     for (var key in jsonOptions) {
         if (typescriptEnumMap[key]) {
-            compilerOptions[key] = typescriptEnumMap[key][jsonOptions[key].toLowerCase()];
+            let name = jsonOptions[key];
+            let map = typescriptEnumMap[key];
+            compilerOptions[key] = map[name.toLowerCase()] || map[name.toUpperCase()];
         }
         else {
             compilerOptions[key] = jsonOptions[key];

@@ -1,6 +1,6 @@
 {
   "name": "atom-typescript",
-  "version": "8.5.0",
+  "version": "8.8.1",
   "main": "./dist/main/atomts",
   "bin": {
     "atbuild": "./dist/main/bin/atbuild"
@@ -61,7 +61,7 @@
     "immutable": "^3.7.3",
     "json2dts": "0.0.1",
     "mkdirp": "^0.5.0",
-    "ntypescript": "1.201603290104.1",
+    "ntypescript": "1.201604080019.1",
     "react": "^0.13.3",
     "season": "^5.1.4",
     "tsconfig": "^2.2.0",
@@ -84,10 +84,10 @@
   ],
   "readme": "# Atom TypeScript\n\n[![Join the chat at https://gitter.im/TypeStrong/atom-typescript](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/TypeStrong/atom-typescript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\nJavaScript developers can now just open a `.ts` file and start hacking away like they are used to. No `grunt` no `Visual Studio`. Just pure coding.\n\n## Installation\n\n1. Install [atom](https://atom.io).\n2. `apm install atom-typescript` (`apm` needs `git` in your path)\n3. Fire up atom. Open a TypeScript file. Potentially wait for further installs (just `apm install linter` if its not there already).\n\n**Additional Notes**: [Some packages we love](https://github.com/TypeStrong/atom-typescript/blob/master/docs/packages.md).\n\n## Reviews\n*Featured on the TypeScript home page under tools http://www.typescriptlang.org/* and [demoed by **Anders Hejlsberg**](https://twitter.com/schwarty/status/593858817894404096).\n\n\"I was shocked at how good it felt to poke around on the compiler with it.\" [Jonathan Turner](https://twitter.com/jntrnr)  \n\"And guess what, it worked perfectly. Like everything else! Faster than Visual Studio!\" [Daniel Earwicker](http://stackoverflow.com/users/27423/daniel-earwicker)  \n\"It's a thing of beauty - they had me at '*Type information on hover*'. Discovering  `tsconfig.json` support as well was just an enormous bonus.\" [John Reilly](https://twitter.com/johnny_reilly)  \n\"This may be your best option for editing TypeScript at the moment - very nice!\" [Rasmus Schultz](https://twitter.com/mindplaydk)\n\n[*Add yours!*](https://github.com/TypeStrong/atom-typescript/issues/66)\n\n# Features\n* Autocomplete\n* Live error analysis\n* Type information on hover\n* Compile on save\n* Project Context Support (`tsconfig.json`)\n* Project Build Support\n* `package.json` Support\n* React Support\n* Format code (configurable to be on save)\n* Goto Declaration\n* Find References\n* Block comment and uncomment\n* Goto history (goto next/previous error in open files, goto next/previous build)\n* Auto indent for new lines\n* TypeScript context menu\n* Symbols in Project\n* Symbols in File\n* Semantic View\n* Rename refactoring\n* Quick Fix\n* Toggle Breakpoint\n* Common Snippets\n* `import` / `/// <reference` relative path resolution\n* Output Toggle\n* AST visualizer\n* Dependency View\n* Sync\n\n# FAQ\nLocated online : https://github.com/TypeStrong/atom-typescript/blob/master/docs/faq.md\n\n----\n\n# Feature Details\n## Auto Complete\nInternally using AutoComplete+. Just start typing and hints will show up. Or you can explicitly trigger it using `ctrl+space` or `cmd+space`. Press `tab` to make a selection.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/fastErrorCheckingAndAutoComplete2.gif)\n\n\n## Type information on hover\nJust hover\n\n![you definitely get the point](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/hover.png)\n\n## Compile on save\nTypeScript files will be compiled on save automatically. Different notifications are given if `emit` was successful or not. If you need to disable this feature, add `\"compileOnSave\": false` in your [`tsconfig.json`](https://github.com/TypeStrong/atom-typescript/blob/master/docs/tsconfig.md#compileonsave).\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/compile%20success.png)\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/compile%20error.png)\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/emit%20error.png)\n\n## Project Support\nSupported via [`tsconfig.json`](https://github.com/TypeStrong/atom-typescript/blob/master/docs/tsconfig.md) which is going to be the defacto Project file format for the next versions of TypeScript.\n\nIt also supports `filesGlob` which will expand `files` for you based on `minmatch|glob|regex` (similar to grunt).\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/proj.png)\n\n### Project Build Support\nShortcut: `F6`. If there are any errors they are shown as well.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/build%20success.png)\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/build%20errors.png)\n\n## NPM Module Support\nWe have a sample NPM module : https://github.com/basarat/ts-npm-module  (trick : in tsconfig have `\"declaration\" : true` an in package.json have a `typings` field pointing to the `main` file) and its usage is demoed in https://github.com/basarat/ts-npm-module-consume.\n\n## React Support\n\n### Configuration tips\n\nCovered here : http://basarat.gitbooks.io/typescript/content/docs/jsx/tsx.html\n\n### Html to TSX\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/htmltotsx.gif)\n\n## Format Code\nShortcut : `ctrl+alt+l` or `cmd+alt+l`. Will format just the selection if you have something selected otherwise it will format the entire file.\n\nFormat on save is covered [here](https://github.com/TypeStrong/atom-typescript/blob/master/docs/tsconfig.md#formatOnSave)\n\n## Go to Declaration\nShortcut : `F12`. Will open the *first* declaration of the said item for now. (Note: some people call it Go to Definition)\n\n## Find References\nShortcut `shift+F12`. Also called *find usages*.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/findReferences.png)\n\n## Block Comment and Uncomment\n`ctrl+/` or `cmd+/`. Does a block comment / uncomment of code.\n\n## Go to Next / Go to Previous\n`f8` and `shift+f8` respectively. This will go to next/previous *errors in open files* OR *build error* OR *references* based on which tab you have selected.\n\n## Context menu\nQuickly toggle the TypeScript panel OR select active TypeScript panel tab and other stuff using the context menu. `ctrl+;` or `cmd+;`.\n\n## Symbols View\nIntegrates with atom's symbols view (`ctrl+r` or `cmd+r`) to provide you with a list of searchable symbols in the current file.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/symbolsView.gif)\n\n## Semantic View\nA bird's eye view of the current file. Use command `toggle semantic view`. The view updates while you edit the code. You can also click to jump to any portion of the file.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/semanticView.png)\n\n## Project Symbols View\nAlso called Go To Type in other IDEs. Integrates with atom's project level symbols (`ctrl+shift+r` or `cmd+shift+r`) to provide you with a list of searchable symbols in the *entire typescript project*.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/projectSymbolView.png)\n\n## Refactoring\n\n### Rename\n`f2` to initiate rename. `enter` to commit and `esc` to cancel.\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript/master/docs/screens/renameRefactoring.png)\n\n## Quick Fix\nPress the `TypeScript: Quick Fix` shortcut `alt+enter` at an error location to trigger quick fixes. Select the quick fix you want and press `enter` to commit e.g\n\n### Add class members\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/addClassMember.gif)\n\n### More Quick fixes\nWe are actively adding quick fixes so [**go here for an up to date list**](https://github.com/TypeStrong/atom-typescript/blob/master/docs/quickfix.md).\n\n## Toggle Breakpoint\nUse command `TypeScript: Toggle Breakpoint` shortcut `f9`:\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/toggleBreakpoint.gif)\n\n## tsconfig validation\nWe will validate it and help you to fix it :)\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/errorcases/invalidProjectOptions/invalidProjectOptions.gif)\n\n## Snippets\n### Relative Paths\nRelative paths have traditionally been a pain, not anymore. Use `import` or `ref` and press `tab` to trigger snippet.\n\n`ref`\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/ref%20snippet.gif)\n\n`import`\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/import%20snippet.gif)\n\nNote that within the path string you get autocomplete (`ctrl+space`/`cmd+space`) for all the files in the project by filename (works for both `ref` and `import`).\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/pathChange.gif)\n\n## Output Toggle\n`ctrl+shift+m` to toggle the output co**m**piled JS file for a give TypeScript file. The keyboard shortcut is consistent with atom's markdown preview.\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/outputToggle.gif)\n\n## AST Visualizer\nCommand : `Typescript: Ast`. Useful when authoring new features.\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/astVisualizer.gif)\n\nAlso command : `TypeScript: Ast Full` that includes the `trivia` (punctuation, comments etc. received from `ts.Node.getChildren()`) as well.\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/astFull.png)\n\n## Dependency View\nCommand : `Typescript: Dependency View`. A dependency viewer for insight into the project if you use external modules. You can zoom, pan, drag points around and hover over nodes. ([more details](https://github.com/TypeStrong/atom-typescript/blob/master/docs/dependency-view.md))\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/dependencyView/teaser.png)\n\n## Sync\nWe try to keep as much of the stuff in sync while you edit code. However *in dire circumstances*:\n\n* a soft sync is done when you save a file `ctrl+s` and we will completely reprocess the *active* file. This might not fix stuff if the error is because of *some other file on the file system*.\n* `ctrl+'` or `cmd+'` : If you deleted files in the background or renamed them or jumped git branches or *something weird just happened* then sync. No need to restart your IDE :).\n\n![](https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/sync.gif)\n\n## Contributing\n\nLook at [CONTRIBUTING.md](https://github.com/TypeStrong/atom-typescript/blob/master/CONTRIBUTING.md) for curiosity. We work hard to keep the code as approachable as possible and are highly keen on helping you help us.\n\n## Changelog\nBreaking changes [available online](https://github.com/TypeStrong/atom-typescript/blob/master/docs/CHANGELOG.md).\n",
   "readmeFilename": "README.md",
-  "_id": "atom-typescript@8.5.0",
-  "_shasum": "066b910132d434458f403dd61602d017d7adb36b",
-  "_resolved": "file:../d-11633-8986-dr4at0/package.tgz",
-  "_from": "../d-11633-8986-dr4at0/package.tgz",
+  "_id": "atom-typescript@8.8.1",
+  "_shasum": "97379d7487eb1fbd66ea993e34e72776c69563f1",
+  "_resolved": "file:../d-116321-2701-rgefzn/package.tgz",
+  "_from": "../d-116321-2701-rgefzn/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -733,7 +733,7 @@
       },
       {
         "name": "braces",
-        "version": "1.8.3",
+        "version": "1.8.4",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/braces/index.js"
       },
       {
@@ -788,7 +788,7 @@
       },
       {
         "name": "is-posix-bracket",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/anymatch/node_modules/micromatch/node_modules/expand-brackets/node_modules/is-posix-bracket/index.js"
       },
       {
@@ -938,13 +938,58 @@
       },
       {
         "name": "readable-stream",
-        "version": "2.0.6",
+        "version": "2.1.0",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/readable.js"
       },
       {
         "name": "core-util-is",
         "version": "1.0.2",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/core-util-is/lib/util.js"
+      },
+      {
+        "name": "inline-process-browser",
+        "version": "2.0.1",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/index.js"
+      },
+      {
+        "name": "falafel",
+        "version": "1.2.0",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/index.js"
+      },
+      {
+        "name": "acorn",
+        "version": "1.2.2",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/dist/acorn.js"
+      },
+      {
+        "name": "foreach",
+        "version": "2.0.5",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/foreach/index.js"
+      },
+      {
+        "name": "isarray",
+        "version": "0.0.1",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/isarray/index.js"
+      },
+      {
+        "name": "object-keys",
+        "version": "1.0.9",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/object-keys/index.js"
+      },
+      {
+        "name": "through2",
+        "version": "0.6.5",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/through2.js"
+      },
+      {
+        "name": "readable-stream",
+        "version": "1.0.34",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/readable.js"
+      },
+      {
+        "name": "isarray",
+        "version": "0.0.1",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/node_modules/isarray/index.js"
       },
       {
         "name": "isarray",
@@ -960,6 +1005,36 @@
         "name": "string_decoder",
         "version": "0.10.31",
         "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/string_decoder/index.js"
+      },
+      {
+        "name": "unreachable-branch-transform",
+        "version": "0.5.1",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/index.js"
+      },
+      {
+        "name": "esmangle-evaluator",
+        "version": "1.0.0",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/esmangle-evaluator/evaluator.js"
+      },
+      {
+        "name": "recast",
+        "version": "0.11.5",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/main.js"
+      },
+      {
+        "name": "ast-types",
+        "version": "0.8.16",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/main.js"
+      },
+      {
+        "name": "esprima",
+        "version": "2.7.2",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/esprima/esprima.js"
+      },
+      {
+        "name": "private",
+        "version": "0.1.6",
+        "path": "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/private/private.js"
       },
       {
         "name": "util-deprecate",
@@ -1043,7 +1118,7 @@
       },
       {
         "name": "fs-plus",
-        "version": "2.8.1",
+        "version": "2.8.2",
         "path": "node_modules/basarat-text-buffer/node_modules/fs-plus/lib/fs-plus.js"
       },
       {
@@ -1118,7 +1193,7 @@
       },
       {
         "name": "repeating",
-        "version": "2.0.0",
+        "version": "2.0.1",
         "path": "node_modules/detect-indent/node_modules/repeating/index.js"
       },
       {
@@ -1338,7 +1413,7 @@
       },
       {
         "name": "readable-stream",
-        "version": "2.0.6",
+        "version": "2.1.0",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/readable.js"
       },
       {
@@ -1350,6 +1425,51 @@
         "name": "inherits",
         "version": "2.0.1",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits/inherits.js"
+      },
+      {
+        "name": "inline-process-browser",
+        "version": "2.0.1",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/index.js"
+      },
+      {
+        "name": "falafel",
+        "version": "1.2.0",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/index.js"
+      },
+      {
+        "name": "acorn",
+        "version": "1.2.2",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/dist/acorn.js"
+      },
+      {
+        "name": "foreach",
+        "version": "2.0.5",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/foreach/index.js"
+      },
+      {
+        "name": "isarray",
+        "version": "0.0.1",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/isarray/index.js"
+      },
+      {
+        "name": "object-keys",
+        "version": "1.0.9",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/object-keys/index.js"
+      },
+      {
+        "name": "through2",
+        "version": "0.6.5",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/through2.js"
+      },
+      {
+        "name": "readable-stream",
+        "version": "1.0.34",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/readable.js"
+      },
+      {
+        "name": "isarray",
+        "version": "0.0.1",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/node_modules/isarray/index.js"
       },
       {
         "name": "isarray",
@@ -1365,6 +1485,41 @@
         "name": "string_decoder",
         "version": "0.10.31",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/string_decoder/index.js"
+      },
+      {
+        "name": "unreachable-branch-transform",
+        "version": "0.5.1",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/index.js"
+      },
+      {
+        "name": "esmangle-evaluator",
+        "version": "1.0.0",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/esmangle-evaluator/evaluator.js"
+      },
+      {
+        "name": "recast",
+        "version": "0.11.5",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/main.js"
+      },
+      {
+        "name": "ast-types",
+        "version": "0.8.16",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/main.js"
+      },
+      {
+        "name": "esprima",
+        "version": "2.7.2",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/esprima/esprima.js"
+      },
+      {
+        "name": "private",
+        "version": "0.1.6",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/private/private.js"
+      },
+      {
+        "name": "source-map",
+        "version": "0.5.3",
+        "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/source-map.js"
       },
       {
         "name": "util-deprecate",
@@ -1383,7 +1538,7 @@
       },
       {
         "name": "request",
-        "version": "2.69.0",
+        "version": "2.72.0",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/index.js"
       },
       {
@@ -1413,7 +1568,7 @@
       },
       {
         "name": "bl",
-        "version": "1.0.3",
+        "version": "1.1.2",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/bl/bl.js"
       },
       {
@@ -1568,7 +1723,7 @@
       },
       {
         "name": "pinkie-promise",
-        "version": "2.0.0",
+        "version": "2.0.1",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/har-validator/node_modules/pinkie-promise/index.js"
       },
       {
@@ -1708,7 +1863,7 @@
       },
       {
         "name": "qs",
-        "version": "6.0.2",
+        "version": "6.1.0",
         "path": "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/request/node_modules/qs/lib/index.js"
       },
       {
@@ -1743,7 +1898,7 @@
       },
       {
         "name": "immutable",
-        "version": "3.7.6",
+        "version": "3.8.1",
         "path": "node_modules/immutable/dist/immutable.js"
       },
       {
@@ -1763,7 +1918,7 @@
       },
       {
         "name": "cliui",
-        "version": "3.1.2",
+        "version": "3.2.0",
         "path": "node_modules/json2dts/node_modules/yargs/node_modules/cliui/index.js"
       },
       {
@@ -1858,7 +2013,7 @@
       },
       {
         "name": "ntypescript",
-        "version": "1.201603290104.1",
+        "version": "1.201604080019.1",
         "path": "node_modules/ntypescript/bin/ntypescript.js"
       },
       {
@@ -1918,7 +2073,7 @@
       },
       {
         "name": "fs-plus",
-        "version": "2.8.1",
+        "version": "2.8.2",
         "path": "node_modules/season/node_modules/fs-plus/lib/fs-plus.js"
       },
       {
@@ -2063,7 +2218,7 @@
       },
       {
         "name": "pinkie-promise",
-        "version": "2.0.0",
+        "version": "2.0.1",
         "path": "node_modules/tsconfig/node_modules/pinkie-promise/index.js"
       },
       {
@@ -3694,11 +3849,100 @@
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/lib/_stream_writable.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/core-util-is/lib/util.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/core-util-is/test.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/example/array.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/example/keyword.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/example/prompt.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/bin/build-acorn.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/bin/generate-identifier-regex.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/dist/acorn.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/dist/acorn_csp.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/dist/acorn_loose.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/dist/walk.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/expression.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/identifier.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/location.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/acorn_loose.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/expression.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/parseutil.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/state.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/statement.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/tokenize.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/lval.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/node.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/options.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/parseutil.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/state.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/statement.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/tokencontext.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/tokenize.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/tokentype.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/util.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/walk/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/whitespace.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/foreach/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/foreach/test.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/isarray/build/build.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/isarray/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/object-keys/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/object-keys/isArguments.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/duplex.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_passthrough.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_readable.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_transform.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_writable.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/node_modules/isarray/build/build.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/node_modules/isarray/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/passthrough.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/readable.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/transform.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/writable.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/through2.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/index.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/test.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/index.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/test.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/string_decoder/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/index.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/esmangle-evaluator/common.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/esmangle-evaluator/evaluator.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/comments.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/fast-path.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/lines.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/mapping.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/options.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/parser.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/patcher.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/printer.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/types.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/util.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/main.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/babel.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/core.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/e4x.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/es6.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/es7.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/esprima.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/flow.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/jsx.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/mozilla.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/equiv.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/node-path.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/path-visitor.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/path.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/scope.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/shared.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/types.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/main.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/esprima/bin/esparse.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/esprima/bin/esvalidate.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/esprima/esprima.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/private/private.js",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/unreachableBranchTransformer.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/util-deprecate/browser.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/util-deprecate/node.js",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/passthrough.js",
@@ -5450,11 +5694,114 @@
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits/inherits.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits/inherits_browser.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits/test.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/example/array.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/example/keyword.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/example/prompt.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/bin/build-acorn.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/bin/generate-identifier-regex.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/dist/acorn.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/dist/acorn_csp.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/dist/acorn_loose.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/dist/walk.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/expression.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/identifier.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/location.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/acorn_loose.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/expression.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/parseutil.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/state.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/statement.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/loose/tokenize.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/lval.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/node.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/options.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/parseutil.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/state.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/statement.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/tokencontext.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/tokenize.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/tokentype.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/util.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/walk/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/src/whitespace.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/foreach/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/foreach/test.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/isarray/build/build.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/isarray/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/object-keys/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/object-keys/isArguments.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/duplex.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_passthrough.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_readable.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_transform.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_writable.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/node_modules/isarray/build/build.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/node_modules/isarray/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/passthrough.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/readable.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/transform.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/writable.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/through2.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/isarray/index.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/isarray/test.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/process-nextick-args/index.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/process-nextick-args/test.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/string_decoder/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/index.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/esmangle-evaluator/common.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/esmangle-evaluator/evaluator.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/comments.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/fast-path.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/lines.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/mapping.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/options.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/parser.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/patcher.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/printer.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/types.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib/util.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/main.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/babel.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/core.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/e4x.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/es6.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/es7.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/esprima.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/flow.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/jsx.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/def/mozilla.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/equiv.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/node-path.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/path-visitor.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/path.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/scope.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/shared.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/lib/types.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/main.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/esprima/bin/esparse.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/esprima/bin/esvalidate.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/esprima/esprima.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/private/private.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/dist/source-map.debug.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/dist/source-map.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/dist/source-map.min.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/lib/array-set.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/lib/base64-vlq.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/lib/base64.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/lib/binary-search.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/lib/mapping-list.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/lib/quick-sort.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/lib/source-map-consumer.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/lib/source-map-generator.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/lib/source-node.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/lib/util.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/source-map.js",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/unreachableBranchTransformer.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/util-deprecate/browser.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/util-deprecate/node.js",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/passthrough.js",
@@ -6294,10 +6641,29 @@
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/minimatch/node_modules/brace-expansion/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/minimatch/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/core-util-is/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/foreach/component.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/foreach/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/isarray/component.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/isarray/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/object-keys/.jscs.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/object-keys/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/node_modules/isarray/component.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/node_modules/isarray/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/component.json",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/string_decoder/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/esmangle-evaluator/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/esprima/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/private/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/package.json",
+        "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/util-deprecate/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/package.json",
         "node_modules/babel/node_modules/chokidar/node_modules/readdirp/package.json",
@@ -6384,10 +6750,30 @@
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/entities/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/core-util-is/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/acorn/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/foreach/component.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/foreach/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/isarray/component.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/isarray/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/object-keys/.jscs.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/node_modules/object-keys/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/node_modules/isarray/component.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/node_modules/isarray/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/isarray/component.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/isarray/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/process-nextick-args/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/string_decoder/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/esmangle-evaluator/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/ast-types/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/esprima/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/private/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/node_modules/source-map/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/package.json",
+        "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/util-deprecate/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/package.json",
         "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/package.json",
@@ -6644,7 +7030,7 @@
           "immutable": "^3.7.3",
           "json2dts": "0.0.1",
           "mkdirp": "^0.5.0",
-          "ntypescript": "1.201603290104.1",
+          "ntypescript": "1.201604080019.1",
           "react": "^0.13.3",
           "season": "^5.1.4",
           "tsconfig": "^2.2.0",
@@ -7476,10 +7862,77 @@
         "dependencies": {
           "core-util-is": "~1.0.0",
           "inherits": "~2.0.1",
+          "inline-process-browser": "~2.0.1",
           "isarray": "~1.0.0",
           "process-nextick-args": "~1.0.6",
           "string_decoder": "~0.10.x",
+          "unreachable-branch-transform": "~0.5.0",
           "util-deprecate": "~1.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser"
+        ],
+        "dependencies": {
+          "falafel": "^1.0.1",
+          "through2": "^0.6.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/example",
+          "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel",
+          "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/test",
+          "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/test/bin"
+        ],
+        "dependencies": {
+          "acorn": "^1.0.3",
+          "foreach": "^2.0.5",
+          "isarray": "0.0.1",
+          "object-keys": "^1.0.6"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2"
+        ],
+        "dependencies": {
+          "readable-stream": ">=1.0.33-1 <1.1.0-0",
+          "xtend": ">=4.0.0 <4.1.0-0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream",
+          "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/lib"
+        ],
+        "dependencies": {
+          "core-util-is": "~1.0.0",
+          "isarray": "0.0.1",
+          "string_decoder": "~0.10.x",
+          "inherits": "~2.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform"
+        ],
+        "dependencies": {
+          "esmangle-evaluator": "^1.0.0",
+          "recast": "^0.11.4"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib",
+          "node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast"
+        ],
+        "dependencies": {
+          "ast-types": "0.8.16",
+          "esprima": "~2.7.1",
+          "private": "~0.1.5",
+          "source-map": "~0.5.0"
         }
       },
       {
@@ -8031,10 +8484,77 @@
         "dependencies": {
           "core-util-is": "~1.0.0",
           "inherits": "~2.0.1",
+          "inline-process-browser": "~2.0.1",
           "isarray": "~1.0.0",
           "process-nextick-args": "~1.0.6",
           "string_decoder": "~0.10.x",
+          "unreachable-branch-transform": "~0.5.0",
           "util-deprecate": "~1.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser"
+        ],
+        "dependencies": {
+          "falafel": "^1.0.1",
+          "through2": "^0.6.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/example",
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel",
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/test",
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/falafel/test/bin"
+        ],
+        "dependencies": {
+          "acorn": "^1.0.3",
+          "foreach": "^2.0.5",
+          "isarray": "0.0.1",
+          "object-keys": "^1.0.6"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2"
+        ],
+        "dependencies": {
+          "readable-stream": ">=1.0.33-1 <1.1.0-0",
+          "xtend": ">=4.0.0 <4.1.0-0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream",
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inline-process-browser/node_modules/through2/node_modules/readable-stream/lib"
+        ],
+        "dependencies": {
+          "core-util-is": "~1.0.0",
+          "isarray": "0.0.1",
+          "string_decoder": "~0.10.x",
+          "inherits": "~2.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform"
+        ],
+        "dependencies": {
+          "esmangle-evaluator": "^1.0.0",
+          "recast": "^0.11.4"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast/lib",
+          "node_modules/htmltojsx/node_modules/jsdom-no-contextify/node_modules/htmlparser2/node_modules/readable-stream/node_modules/unreachable-branch-transform/node_modules/recast"
+        ],
+        "dependencies": {
+          "ast-types": "0.8.16",
+          "esprima": "~2.7.1",
+          "private": "~0.1.5",
+          "source-map": "~0.5.0"
         }
       },
       {
@@ -8045,22 +8565,22 @@
         "dependencies": {
           "aws-sign2": "~0.6.0",
           "aws4": "^1.2.1",
-          "bl": "~1.0.0",
+          "bl": "~1.1.2",
           "caseless": "~0.11.0",
           "combined-stream": "~1.0.5",
           "extend": "~3.0.0",
           "forever-agent": "~0.6.1",
           "form-data": "~1.0.0-rc3",
           "har-validator": "~2.0.6",
-          "hawk": "~3.1.0",
+          "hawk": "~3.1.3",
           "http-signature": "~1.1.0",
           "is-typedarray": "~1.0.0",
           "isstream": "~0.1.2",
           "json-stringify-safe": "~5.0.1",
           "mime-types": "~2.1.7",
           "node-uuid": "~1.4.7",
-          "oauth-sign": "~0.8.0",
-          "qs": "~6.0.2",
+          "oauth-sign": "~0.8.1",
+          "qs": "~6.1.0",
           "stringstream": "~0.0.4",
           "tough-cookie": "~2.2.0",
           "tunnel-agent": "~0.4.1"
@@ -8363,8 +8883,7 @@
       },
       {
         "paths": [
-          "node_modules/json2dts/node_modules/yargs/node_modules/cliui",
-          "node_modules/json2dts/node_modules/yargs/node_modules/cliui/test"
+          "node_modules/json2dts/node_modules/yargs/node_modules/cliui"
         ],
         "dependencies": {
           "string-width": "^1.0.1",

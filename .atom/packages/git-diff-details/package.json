@@ -1,7 +1,7 @@
 {
   "name": "git-diff-details",
   "main": "./lib/main",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "View git diffs directly in atom.",
   "keywords": [
     "git",
@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "engines": {
-    "atom": ">=1.6.0"
+    "atom": ">=1.7.0"
   },
   "dependencies": {
     "atom-space-pen-views": "^2.0.3",
@@ -24,16 +24,16 @@
     "mixto": "1.x",
     "underscore-plus": "^1.6.6"
   },
-  "readme": "# git-diff-details package\n\nView git diffs directly in atom.\n\nKeybindings:\n  * `alt-g alt-d` to toggle the diff view\n  * `escape` to close the diff view\n  * `alt-u` for undo\n  * `alt-c` for copy\n\n![git-diff-details](https://github.com/samu/git-diff-details/blob/master/demo.png?raw=true)\n",
+  "readme": "# git-diff-details package\n\nView git diffs directly in atom.\n\nKeybindings:\n  * `alt-g alt-d` to toggle the diff view\n  * `escape` to close the diff view\n  * `alt-u` for undo\n  * `alt-c` for copy\n\nYou can choose whether the diff should be highlighted or not:\n\n![git-diff-details](https://github.com/samu/git-diff-details/blob/master/flat.png?raw=true)\n\n![git-diff-details](https://github.com/samu/git-diff-details/blob/master/highlighted.png?raw=true)\n",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/samu/git-diff-details/issues"
   },
   "homepage": "https://github.com/samu/git-diff-details#readme",
-  "_id": "git-diff-details@1.1.0",
-  "_shasum": "3de89847d63ba5839db3f3686d8a0773cef61052",
-  "_resolved": "file:../d-11633-9003-1d0inwr/package.tgz",
-  "_from": "../d-11633-9003-1d0inwr/package.tgz",
+  "_id": "git-diff-details@1.2.0",
+  "_shasum": "45f5ffa85c35a72d42df5a7e7818b09fa9c3ab7c",
+  "_resolved": "file:../d-116321-2739-9qnywe/package.tgz",
+  "_from": "../d-116321-2739-9qnywe/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -109,7 +109,7 @@
       },
       {
         "name": "fs-plus",
-        "version": "2.8.1",
+        "version": "2.8.2",
         "path": "node_modules/fs-plus/lib/fs-plus.js"
       },
       {
