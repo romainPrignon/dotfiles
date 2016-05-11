@@ -26,7 +26,8 @@ alias g="LANGUAGE=en_US.UTF-8 git"
 alias h="history"
 
 #symfony
-alias sf="php app/console"
+alias sf2="php app/console"
+alias sf3="php bin/console"
 
 #scripts
 alias standup="sh ~/scripts/git-standup.sh"
