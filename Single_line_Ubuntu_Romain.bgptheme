@@ -10,7 +10,7 @@ override_git_prompt_colors() {
     Host="";
   fi
 
-  GIT_PROMPT_BRANCH="${White}"
+  GIT_PROMPT_BRANCH="${BoldWhite}"
 
   GIT_PROMPT_PREFIX="["
   GIT_PROMPT_SUFFIX="]"
