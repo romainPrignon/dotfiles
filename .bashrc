@@ -14,9 +14,8 @@ if [ -f "$HOME/.functions" ]; then
 fi
 
 # include prompt
-if [ -f "$HOME/.bash_prompt" ]; then
-    . "$HOME/.bash_prompt"
-fi
+GIT_PROMPT_THEME=Single_line_Ubuntu_Romain
+source ~/.bash-git-prompt/gitprompt.sh
 
 #######################################
 
