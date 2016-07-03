@@ -20,6 +20,7 @@ ln -sf $dotfile_dir_absolute_path/.vimrc $home_dir_absolute_path/.vimrc
 ln -sf $dotfile_dir_absolute_path/.aliases $home_dir_absolute_path/.aliases
 ln -sf $dotfile_dir_absolute_path/.bashrc $home_dir_absolute_path/.bashrc
 ln -sf $dotfile_dir_absolute_path/.exports $home_dir_absolute_path/.exports
+ln -sf $dotfile_dir_absolute_path/.exports_linux $home_dir_absolute_path/.exports_linux
 ln -sf $dotfile_dir_absolute_path/.functions $home_dir_absolute_path/.functions
 ln -sf $dotfile_dir_absolute_path/Single_line_Ubuntu_Romain.bgptheme $home_dir_absolute_path/.bash-git-prompt/themes/Single_line_Ubuntu_Romain.bgptheme
 ln -sf $dotfile_dir_absolute_path/.inputrc $home_dir_absolute_path/.inputrc

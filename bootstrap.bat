@@ -18,6 +18,7 @@ mklink /H %home_dir_absolute_path%\.vimrc %dotfile_dir_absolute_path%\.vimrc
 mklink /H %home_dir_absolute_path%\.aliases %dotfile_dir_absolute_path%\.aliases
 mklink /H %home_dir_absolute_path%\.bashrc %dotfile_dir_absolute_path%\.bashrc
 mklink /H %home_dir_absolute_path%\.exports %dotfile_dir_absolute_path%\.exports
+mklink /H %home_dir_absolute_path%\.exports_windows %dotfile_dir_absolute_path%\.exports_windows
 mklink /H %home_dir_absolute_path%\.functions %dotfile_dir_absolute_path%\.functions
 mklink /H %home_dir_absolute_path%\.bash-git-prompt\themes\Single_line_Ubuntu_Romain.bgptheme %dotfile_dir_absolute_path%\Single_line_Ubuntu_Romain.bgptheme
 mklink /H %home_dir_absolute_path%\.inputrc %dotfile_dir_absolute_path%\.inputrc
