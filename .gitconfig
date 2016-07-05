@@ -1,6 +1,6 @@
-[user]
-    name = Romain Prignon
-    email = pro.rprignon@gmail.com
+#[user]
+#    name = Romain Prignon
+#    email = pro.rprignon@gmail.com
 
 [alias]
     tags = tag -l

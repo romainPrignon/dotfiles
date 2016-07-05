@@ -19,3 +19,9 @@ function docker_rm_image()
       docker rmi $IMAGE_IDS > /dev/null 2>&1
     fi
 }
+
+function set-git-user()
+{
+    git config user.name "Romain Prignon"
+    git config user.email "pro.rprignon@gmail.com"
+}
