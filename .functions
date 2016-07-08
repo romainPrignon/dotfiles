@@ -20,6 +20,12 @@ function docker_rm_image()
     fi
 }
 
+fucntion clean-docker()
+{
+    docker rmi $(docker images -q -f dangling=true)
+    docker volume rm $(docker volume ls -qf dangling=true)
+}
+
 function set-git-user()
 {
     git config user.name "Romain Prignon"
