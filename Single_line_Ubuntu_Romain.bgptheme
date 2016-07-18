@@ -10,6 +10,11 @@ override_git_prompt_colors() {
     Host="";
   fi
 
+  function prompt_callback {
+    local TITLE="$(gp_truncate_pwd)"
+    gp_set_window_title "$TITLE"
+  }
+
   GIT_PROMPT_BRANCH="${White}"
 
   GIT_PROMPT_PREFIX="["
