@@ -18,16 +18,12 @@ set ignorecase
 set smartcase
 
 :map <C-a> GVgg
-:map <C-n> :enew
-:map <C-s> :w <Enter>
-:map <C-c> y
-:map <C-v> p
-:map <C-x> d
+:map <C-N> :enew
+:map <C-x> dd
 :map <C-z> u
-:map <C-t> :tabnew <Enter>
+:map <C-T> :tabnew <Enter>
 :map <C-i> >>
-:map <C-w> :close <Enter>
-:map <C-W> :q! <Enter>
+:map <C-W> :close <Enter>
 :map <C-f> /
 
 set smartindent
