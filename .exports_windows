@@ -1,0 +1,7 @@
+function subl() {
+	/c/Program\ Files/Sublime\ Text\ 3/subl.exe $1
+}
+
+function atom() {
+	/c/Users/Romain/AppData/Local/atom/bin/atom.cmd $1
+}
