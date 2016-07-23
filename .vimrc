@@ -8,6 +8,7 @@ set ruler                       " show the cursor position all the time
 set wrap                        " Wrap lines
 set showmatch                   " automatically show matching brackets
 
+set encoding=utf8
 set ffs=unix
 set tw=120
 set wildmenu

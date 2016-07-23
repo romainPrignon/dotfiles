@@ -1,0 +1,46 @@
+
+{
+    "bold_folder_labels": true,
+    "default_encoding": "UTF-8",
+    "default_line_ending": "unix",
+    "detect_indentation": false,
+    "detect_slow_plugins": false,
+    "ensure_newline_at_eof_on_save": true,
+    "file_exclude_patterns":
+    [
+        ".DS_Store",
+        "Desktop.ini",
+        "*.pyc",
+        "Thumbs.db",
+        ".Spotlight-V100",
+        ".Trashes"
+    ],
+    "folder_exclude_patterns":
+    [
+    ],
+    "font_size": 12,
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "hot_exit": false,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "line_padding_bottom": 1,
+    "line_padding_top": 1,
+    "preview_on_click": false,
+    "remember_open_files": true,
+    "remember_open_folders": true,
+    "rulers":
+    [
+        120
+    ],
+    "scroll_past_end": false,
+    "scroll_speed": 2,
+    "show_encoding": true,
+    "show_line_endings": true,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "wrap_width": 120
+}
