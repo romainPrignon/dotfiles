@@ -87,6 +87,7 @@
 
 [core]
     excludesfile = ~/.gitignore
+    autocrlf = input
 
 [push]
     default = simple
