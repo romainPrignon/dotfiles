@@ -16,6 +16,7 @@
       "builder-go"
       "go-plus"
       "gometalinter-linter"
+      "line-ending-selector"
     ]
     projectHome: "~/workspace"
     themes: [
@@ -24,9 +25,10 @@
     ]
   editor:
     fontFamily: "DejaVu Sans Mono"
-    fontSize: 16
+    fontSize: 15
     invisibles: {}
     preferredLineLength: 120
+    scrollPastEnd: true
     showIndentGuide: true
     softWrap: true
     softWrapAtPreferredLineLength: true
@@ -47,3 +49,4 @@
 ".ini.source":
   editor:
     preferredLineLength: 120
+    tabLength: 4
