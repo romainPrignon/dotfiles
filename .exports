@@ -25,11 +25,3 @@ PATH="$HOME/app/phpstorm/bin:$PATH"
 #export HTTP_PROXY=$http_proxy
 #export HTTP_PROXY_REQUEST_FULLURI=true
 #export HTTPS_PROXY_REQUEST_FULLURI=false
-
-if [ -f "$HOME/.exports_linux" ]; then
-    . "$HOME/.exports_linux"
-fi
-
-if [ -f "$HOME/.exports_windows" ]; then
-    . "$HOME/.exports_windows"
-fi
