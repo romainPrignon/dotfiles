@@ -6,12 +6,12 @@ function sublime()
     #rm ~/$$.txt
 }
 
-function docker_rm_container()
+function docker-rm-container()
 {
     docker rm $(docker ps -a -q)
 }
 
-function docker_rm_image()
+function docker-rm-image()
 {
     IMAGE_IDS=$(docker images | grep "^<none>" | awk "{print $3}")
 
@@ -20,7 +20,7 @@ function docker_rm_image()
     fi
 }
 
-function clean_docker()
+function clean-docker()
 {
     docker rmi $(docker images -q -f dangling=true)
     docker volume rm $(docker volume ls -qf dangling=true)
@@ -30,4 +30,13 @@ function set-git-user()
 {
     git config user.name "Romain Prignon"
     git config user.email "pro.rprignon@gmail.com"
+}
+
+function install-atom-package()
+{
+    apm install --packages-file $HOME/backup/atom/package-list.txt
+}
+
+function webm-to-gif() {
+    ffmpeg -i $1 -pix_fmt rgb8 $2
 }
