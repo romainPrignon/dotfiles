@@ -11,6 +11,7 @@ mkdir .ssh
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
 
 ln -sf $dotfile_dir_absolute_path/.atom $home_dir_absolute_path/.atom
+ln -sf $dotfile_dir_absolute_path/bash_completion.d $home_dir_absolute_path/bash_completion.d
 ln -sf $dotfile_dir_absolute_path/.composer/composer.json $home_dir_absolute_path/.composer/composer.json
 ln -sf $dotfile_dir_absolute_path/scripts $home_dir_absolute_path/scripts
 ln -sf $dotfile_dir_absolute_path/.gitattributes $home_dir_absolute_path/.gitattributes

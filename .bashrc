@@ -21,6 +21,11 @@ if [ -f "$HOME/.exports_windows" ]; then
     . "$HOME/.exports_windows"
 fi
 
+# include completion
+if [ -f "$HOME/bash_completion.d/npm" ]; then
+    . "$HOME/bash_completion.d/npm"
+fi
+
 # include prompt
 GIT_PROMPT_THEME=Single_line_Ubuntu_Romain
 GIT_PROMPT_FETCH_REMOTE_STATUS=0
