@@ -26,12 +26,6 @@ if [ -f "$HOME/bash_completion.d/npm" ]; then
     . "$HOME/bash_completion.d/npm"
 fi
 
-# include prompt
-GIT_PROMPT_THEME=Single_line_Ubuntu_Romain
-GIT_PROMPT_FETCH_REMOTE_STATUS=0
-GIT_PROMPT_IGNORE_STASH=1
-source ~/.bash-git-prompt/gitprompt.sh
-
 #######################################
 
 # Avoid duplicate entries
@@ -46,6 +40,16 @@ HISTTIMEFORMAT='%F %T '
 
 # Don't record some commands
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+
+export PROMPT_COMMAND='history -a'
+
+#######################################
+
+# include prompt
+GIT_PROMPT_THEME=Single_line_Ubuntu_Romain
+GIT_PROMPT_FETCH_REMOTE_STATUS=0
+GIT_PROMPT_IGNORE_STASH=1
+source ~/.bash-git-prompt/gitprompt.sh
 
 #######################################
 
