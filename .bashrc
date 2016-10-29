@@ -95,6 +95,7 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
 fi
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+[[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh" # Added by qfc (see https://github.com/pindexis/qfc)
 
 ###############################################################################
 
