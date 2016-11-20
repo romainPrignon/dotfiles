@@ -19,6 +19,7 @@
       "line-ending-selector"
     ]
     projectHome: "~/workspace"
+    telemetryConsent: "no"
     themes: [
       "one-dark-ui"
       "monokai"

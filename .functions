@@ -69,7 +69,7 @@ function backup() {
                     /home/romainprignon/Music \
                     /home/romainprignon/Pictures \
                     /home/romainprignon/Videos \
-                    /home/romainprignon/.PhpStorm2016.1 \
+                    /home/romainprignon/.PhpStorm2016.2 \
                     /home/romainprignon/.ssh \
                     /home/romainprignon/.local/share/gnome-shell/extensions \
                     /etc/apt/sources.list.d"
