@@ -41,6 +41,7 @@ mklink /H %home_dir_absolute_path%\.bash-git-prompt\themes\Single_line_Ubuntu_Ro
 mklink /H %home_dir_absolute_path%\.inputrc %dotfile_dir_absolute_path%\.inputrc
 mklink /H %home_dir_absolute_path%\.profile %dotfile_dir_absolute_path%\.profile
 mklink /H %home_dir_absolute_path%\.ssh\config %dotfile_dir_absolute_path%\.ssh\config
+mklink /H %home_dir_absolute_path%\.npmrc %dotfile_dir_absolute_path%\.npmrc
 
 mklink /H "%home_dir_absolute_path%\AppData\Roaming\Sublime Text 3\Packages\User\Default (Windows).sublime-keymap" "%dotfile_dir_absolute_path%\subl\Default (Windows).sublime-keymap"
 mklink /H "%home_dir_absolute_path%\AppData\Roaming\Sublime Text 3\Packages\User\Preferences.sublime-settings" "%dotfile_dir_absolute_path%\subl\Preferences.sublime-settings"
