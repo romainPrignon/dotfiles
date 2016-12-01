@@ -43,6 +43,10 @@ mklink /H %home_dir_absolute_path%\.profile %dotfile_dir_absolute_path%\.profile
 mklink /H %home_dir_absolute_path%\.ssh\config %dotfile_dir_absolute_path%\.ssh\config
 mklink /H %home_dir_absolute_path%\.npmrc %dotfile_dir_absolute_path%\.npmrc
 
+REM Launch it manually
+REM mklink /H %home_dir_absolute_path%\.gdfuse\pro\config %dotfile_dir_absolute_path%\.gdfuse\pro\config
+REM mklink /H %home_dir_absolute_path%\.gdfuse\peaks\config %dotfile_dir_absolute_path%\.gdfuse\peaks\config
+
 mklink /H "%home_dir_absolute_path%\AppData\Roaming\Sublime Text 3\Packages\User\Default (Windows).sublime-keymap" "%dotfile_dir_absolute_path%\subl\Default (Windows).sublime-keymap"
 mklink /H "%home_dir_absolute_path%\AppData\Roaming\Sublime Text 3\Packages\User\Preferences.sublime-settings" "%dotfile_dir_absolute_path%\subl\Preferences.sublime-settings"
 mklink /H "%home_dir_absolute_path%\AppData\Roaming\Sublime Text 3\Packages\User\Package Control.sublime-settings" "%dotfile_dir_absolute_path%\subl\Package Control.sublime-settings"
