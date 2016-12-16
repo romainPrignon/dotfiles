@@ -3,10 +3,10 @@
         "pdepend/pdepend": "@stable",
         "phpmd/phpmd" : "@stable",
         "squizlabs/php_codesniffer": "@stable",
-        "fabpot/php-cs-fixer": "@stable",
+        "friendsofphp/php-cs-fixer": "@stable",
         "phpunit/phpunit": "@stable",
         "psecio/iniscan": "@stable",
-        "vinkla/climb": "@stable",
-        "hirak/prestissimo": "@stable"
+        "hirak/prestissimo": "@stable",
+        "phpmetrics/phpmetrics": "@stable"
 	}
 }
