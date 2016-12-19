@@ -41,6 +41,10 @@ function webm-to-gif() {
     ffmpeg -i $1 -pix_fmt rgb8 $2
 }
 
+function record-terminal() {
+    ttystudio --interval=150 --delay=150 --no-palette ~/Downloads/$1
+}
+
 function kill-on-port() {
     sudo kill `sudo lsof -t -i:$1`
 }
