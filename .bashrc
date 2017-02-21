@@ -29,7 +29,7 @@ fi
 #######################################
 
 # Avoid duplicate entries
-HISTCONTROL="erasedups:ignoreboth"
+HISTCONTROL="erasedups:ignoreboth:ignorespace"
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=500000
@@ -41,7 +41,7 @@ HISTTIMEFORMAT='%F %T '
 # Don't record some commands
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 
-export PROMPT_COMMAND='history -a'
+export PROMPT_COMMAND='history -a; history -n'
 
 #######################################
 
@@ -94,8 +94,15 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
+# n
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+# qfc
 [[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh" # Added by qfc (see https://github.com/pindexis/qfc)
+
+# hstr
+export HH_CONFIG=hicolor
+if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
 
 ###############################################################################
 
