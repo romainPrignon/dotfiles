@@ -90,7 +90,7 @@
     autocrlf = input
 
 [push]
-    default = current
+    default = simple
 
 [diff]
     mnemonicPrefix = true
