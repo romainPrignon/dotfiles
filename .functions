@@ -49,6 +49,11 @@ function kill-on-port() {
     sudo kill `sudo lsof -t -i:$1`
 }
 
+function supertouch() {
+    for f in "$@"; do mkdir -p "$(dirname "$f")"; done
+    touch "$@"
+}
+
 # backup to $1 with name backup-<hostname>-<date>.tgz
 function backup() {
     # clean
