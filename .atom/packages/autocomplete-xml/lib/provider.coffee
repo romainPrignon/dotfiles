@@ -1,8 +1,9 @@
 xsd = require './xsd'
 utils = require './xml-utils'
 
-xmlValidation = /xmlns:xsi="http:\/\/www.w3.org\/2001\/XMLSchema-instance"/
-xsdPattern = /xsi:noNamespaceSchemaLocation="(.+)"/
+xmlValidation = /xmlns:xsi="http:\/\/www\.w3\.org\/2001\/XMLSchema-instance"/
+xsdPattern = /xsi:noNamespaceSchemaLocation="(.+?)"/
+xsdWithNamespacePattern = /xsi:schemaLocation="\S+\s+(.+?)"/
 
 module.exports =
   # Enable for XML but not for XML comments.
@@ -55,8 +56,15 @@ module.exports =
   getXsdUri: ({editor}) ->
     # Get the XSD url only if the XML ask for validation.
     txt = editor.getText()
-    if txt.match(xmlValidation) then uri = txt.match(xsdPattern)?[1] else null
+    return null if not txt.match(xmlValidation)
 
+    # Try with noNamespaceSchemaLocation
+    xsdMatch = txt.match(xsdPattern)
+    return xsdMatch?[1] if xsdMatch
+
+    # Try with schemaLocation
+    xsdWithNamespaceMatch = txt.match(xsdWithNamespacePattern)
+    return xsdWithNamespaceMatch?[1] if xsdWithNamespaceMatch
 
   ## Filter the candidate completions by prefix.
   filterCompletions: (sugs, pref) ->
@@ -91,7 +99,7 @@ module.exports =
   getTagNameCompletions: ({editor, bufferPosition, prefix}) ->
     # Get the children of the current XPath tag.
     children = xsd.getChildren(
-      utils.getXPath(editor.getBuffer(), bufferPosition, prefix))
+      utils.getXPathWithPrefix(editor.getBuffer(), bufferPosition, prefix))
 
     # Apply a filter with the current prefix and return.
     return @filterCompletions children, (if prefix is '<' then '' else prefix)
@@ -108,7 +116,8 @@ module.exports =
 
   ## Get the tag name that close the current one.
   getCloseTagNameCompletion: ({editor, bufferPosition, prefix}) ->
-    parentTag = utils.getXPath(editor.getBuffer(),bufferPosition,prefix,1)
+    buffer = editor.getBuffer()
+    parentTag = utils.getXPathWithPrefix(buffer, bufferPosition, prefix, 1)
     parentTag = parentTag[parentTag.length - 1]
     return [{
       text: parentTag + '>'
@@ -128,7 +137,7 @@ module.exports =
   getValuesCompletions: ({editor, bufferPosition, prefix}) ->
     # Get the children of the current XPath tag.
     children = xsd.getValues(
-      utils.getXPath(editor.getBuffer(), bufferPosition, ''))
+      utils.getXPathWithPrefix(editor.getBuffer(), bufferPosition, ''))
 
     # Apply a filter with the current prefix and return.
     return @filterCompletions children, prefix
@@ -142,14 +151,14 @@ module.exports =
     scopes = scopeDescriptor.getScopesArray()
     (scopes.indexOf('meta.tag.xml') isnt -1 or
       scopes.indexOf('meta.tag.no-content.xml') isnt -1) and
-      previousChar isnt '>'  # This avoid false-positives with values.
+      previousChar isnt '>' and previousChar isnt '.'  # Avoid false-positives
 
 
   ## Get the attributes for the current XPath tag.
   getAttributeCompletions: ({editor, bufferPosition, prefix}) ->
     # Get the attributes of the current XPath tag.
     attributes = xsd.getAttributes(
-      utils.getXPath(editor.getBuffer(), bufferPosition, ''))
+      utils.getXPathWithPrefix(editor.getBuffer(), bufferPosition, ''))
 
     # Apply a filter with the current prefix and return.
     return @filterCompletions attributes, prefix
@@ -170,7 +179,7 @@ module.exports =
     attrName = attrName.slice 0, -1
 
     # Get the XPath
-    xpath = utils.getXPath(editor.getBuffer(), bufferPosition, '')
+    xpath = utils.getXPathWithPrefix(editor.getBuffer(), bufferPosition, '')
 
     # Get the children of the XPath
     children = xsd.getAttributeValues xpath, attrName

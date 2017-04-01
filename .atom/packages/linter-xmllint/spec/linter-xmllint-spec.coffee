@@ -89,7 +89,8 @@ describe 'The xmllint provider for Linter', ->
         return lint(editor).then (messages) ->
           expect(messages.length).toEqual 1
           expect(messages[0].range).toEqual [[6, 2], [6, 21]]
-          expect(messages[0].text).toEqual "Element '{http://www.w3schools.com}to', attribute 'id': The attribute 'id' is not allowed. (../note.xsd)"
+          expect(messages[0].text).toEqual "Element '{http://www.w3schools.com}to', " +
+            "attribute 'id': The attribute 'id' is not allowed. (../note.xsd)"
     waitsForPromise ->
       return atom.workspace.open(__dirname + '/fixtures/invalid/not-well-formed.xml').then (editor) ->
         return lint(editor).then (messages) ->
@@ -112,6 +113,12 @@ describe 'The xmllint provider for Linter', ->
         return lint(editor).then (messages) ->
           expect(messages.length).toEqual 1
           expect(messages[0].range).toEqual [[3, 2], [3, 21]]
+    waitsForPromise ->
+      return atom.workspace.open(__dirname + '/fixtures/invalid/xml-model-unavailable.xml').then (editor) ->
+        return lint(editor).then (messages) ->
+          expect(messages.length).toEqual 1
+          expect(messages[0].range).toEqual undefined
+          expect(messages[0].text).toContain 'unavailable.xsd'
     waitsForPromise ->
       return atom.workspace.open(__dirname + '/fixtures/invalid/relax-errors.xml').then (editor) ->
         return lint(editor).then (messages) ->

@@ -5,7 +5,6 @@
   core:
     allowPendingPaneItems: false
     disabledPackages: [
-      "linter-markdown"
       "autocomplete-go"
       "go-config"
       "go-get"
@@ -17,6 +16,7 @@
       "go-plus"
       "gometalinter-linter"
       "line-ending-selector"
+      "linter-markdown"
     ]
     projectHome: "~/workspace"
     telemetryConsent: "no"
@@ -43,6 +43,8 @@
   "linter-eslint": {}
   "linter-php": {}
   "linter-phpcs": {}
+  "linter-ui-default":
+    showPanel: true
   welcome:
     showOnStartup: false
   whitespace:

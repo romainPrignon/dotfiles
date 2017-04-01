@@ -25,6 +25,27 @@ module.exports =
       type: 'string'
       title: 'xmllint Executable Path'
       default: 'xmllint'
+      order: 1
+    skipDtd:
+      type: 'boolean'
+      title: 'Skip validation against DTDs'
+      default: false
+      order: 2
+    skipSchema:
+      type: 'boolean'
+      title: 'Skip validation against W3C XML Schemas'
+      default: false
+      order: 3
+    skipRelaxng:
+      type: 'boolean'
+      title: 'Skip validation against Relax NGs'
+      default: false
+      order: 4
+    skipSchematron:
+      type: 'boolean'
+      title: 'Skip validation against Schematrons'
+      default: false
+      order: 5
 
   activate: ->
     require('atom-package-deps').install('linter-xmllint')
@@ -33,6 +54,18 @@ module.exports =
     @subscriptions.add atom.config.observe 'linter-xmllint.executablePath',
       (executablePath) =>
         @executablePath = executablePath
+    @subscriptions.add atom.config.observe 'linter-xmllint.skipDtd',
+      (skipDtd) =>
+        @skipDtd = skipDtd
+    @subscriptions.add atom.config.observe 'linter-xmllint.skipSchema',
+      (skipSchema) =>
+        @skipSchema = skipSchema
+    @subscriptions.add atom.config.observe 'linter-xmllint.skipRelaxng',
+      (skipRelaxng) =>
+        @skipRelaxng = skipRelaxng
+    @subscriptions.add atom.config.observe 'linter-xmllint.skipSchematron',
+      (skipSchematron) =>
+        @skipSchematron = skipSchematron
 
   deactivate: ->
     @subscriptions.dispose()
@@ -40,7 +73,7 @@ module.exports =
   provideLinter: ->
     provider =
       name: 'xmllint'
-      grammarScopes: ['text.xml']
+      grammarScopes: ['text.xml', 'text.xml.xsl']
       scope: 'file'
       lintOnFly: true
       lint: (textEditor) =>
@@ -62,6 +95,7 @@ module.exports =
     options = {
       stdin: textEditor.getText()
       stream: 'stderr'
+      allowEmptyStderr: true
     }
     return helpers.exec(@executablePath, params, options)
       .then (output) =>
@@ -105,23 +139,27 @@ module.exports =
 
         if 'schematypens' of attributes and 'href' of attributes
           if attributes['schematypens'] is 'http://www.w3.org/2001/XMLSchema'
-            schemas.push({
-              arg: '--schema'
-              url: attributes['href']
-            })
+            if not linter.skipSchema
+              schemas.push({
+                arg: '--schema'
+                url: attributes['href']
+              })
           if attributes['schematypens'] is 'http://relaxng.org/ns/structure/1.0'
-            schemas.push({
-              arg: '--relaxng'
-              url: attributes['href']
-            })
+            if not linter.skipRelaxng
+              schemas.push({
+                arg: '--relaxng'
+                url: attributes['href']
+              })
           if attributes['schematypens'] is 'http://purl.oclc.org/dsdl/schematron'
-            schemas.push({
-              arg: '--schematron'
-              url: attributes['href']
-            })
+            if not linter.skipSchematron
+              schemas.push({
+                arg: '--schematron'
+                url: attributes['href']
+              })
 
       parser.ondoctype = (doctype) ->
-        hasDtd = true
+        if not linter.skipDtd
+          hasDtd = true
 
       parser.onopentag = (node) ->
         # only handle first open tag
@@ -135,18 +173,20 @@ module.exports =
 
         # try to extract schema url from attributes
         if 'xsi:noNamespaceSchemaLocation' of node.attributes
-          schemas.push({
-            arg: '--schema'
-            url: node.attributes['xsi:noNamespaceSchemaLocation']
-          })
-        else if 'xsi:schemaLocation' of node.attributes
-          schemaLocation = node.attributes['xsi:schemaLocation']
-          parts = schemaLocation.split /\s+/
-          if parts.length is 2
+          if not linter.skipSchema
             schemas.push({
               arg: '--schema'
-              url: parts[1]
+              url: node.attributes['xsi:noNamespaceSchemaLocation']
             })
+        else if 'xsi:schemaLocation' of node.attributes
+          if not linter.skipSchema
+            schemaLocation = node.attributes['xsi:schemaLocation']
+            parts = schemaLocation.split /\s+/
+            if parts.length is 2
+              schemas.push({
+                arg: '--schema'
+                url: parts[1]
+              })
 
         # trigger validation
         if not hasDtd and schemas.length is 0
@@ -180,6 +220,7 @@ module.exports =
       cwd: path.dirname(textEditor.getPath())
       stdin: textEditor.getText()
       stream: 'stderr'
+      allowEmptyStderr: true
     }
     return helpers.exec(@executablePath, params, options)
       .then (output) =>
@@ -209,10 +250,17 @@ module.exports =
           messages = @parseSchematronMessages(textEditor, output)
         else
           messages = @parseSchemaMessages(textEditor, output)
-        for message in messages
-          message.type = 'Error'
-          message.text = message.text + ' (' + schemaUrl + ')'
-          message.filePath = textEditor.getPath()
+        if messages.length
+          for message in messages
+            message.type = 'Error'
+            message.text = message.text + ' (' + schemaUrl + ')'
+            message.filePath = textEditor.getPath()
+        else if output.indexOf('- validates') is -1
+          messages.push({
+            type: 'Error'
+            text: output
+            filePath: textEditor.getPath()
+          })
         return messages
 
   parseMessages: (output) ->
@@ -241,7 +289,7 @@ module.exports =
     regex = '(?<file>.+):(?<line>\\d+): .*: .* : (?<message>.+)'
     messages = helpers.parse(output, regex)
     for message in messages
-      message.range = helpers.rangeFromLineNumber(textEditor, message.range[0][0])
+      message.range = helpers.generateRange(textEditor, message.range[0][0])
     return messages
 
   parseSchematronMessages: (textEditor, output) ->
@@ -255,6 +303,6 @@ module.exports =
       line = parseInt(match.line) - 1
       messages.push({
         text: match.rule + ': ' + match.message
-        range: helpers.rangeFromLineNumber(textEditor, line)
+        range: helpers.generateRange(textEditor, line)
       })
     return messages

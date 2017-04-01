@@ -33,15 +33,24 @@ module.exports =
     else
       path = require 'path'
       # Get the base path. In absolute path nothing, in relative the file dir.
-      if xsdUri[0] == '/' or xsdUri.substr(1, 2) == ':\\'
+      winRoot = if xsdUri.length > 3 then xsdUri.substr(1, 2) else ''
+      if xsdUri[0] == '/' or [':/', ':\\'].includes(winRoot)
         basePath = ''
+      else if xsdUri.startsWith 'file:///'
+        basePath = ''
+        xsdUri = xsdUri.slice 8
       else
         basePath = path.dirname xmlPath
 
       # Read the file from disk
       fs = require 'fs'
       fs.readFile path.join(basePath, xsdUri), (err, data) =>
-        if err then console.error err else @parseFromString(data, complete)
+        if err
+          console.error err
+        else if not data
+          console.error 'Cannot get content from XSD file'
+        else
+          @parseFromString(data, complete)
 
 
   ## Parse the the XML

@@ -31,7 +31,7 @@ class XPathStatusBarView extends HTMLDivElement
     @activeItemSubscription = null
 
     # Destroy the configuration change subscription.
-    @configurationSubscription?.destroy()
+    @configurationSubscription?.dispose()
     @configurationSubscription = null
 
     # Destroy the tile StatusBar object.
@@ -92,7 +92,7 @@ class XPathStatusBarView extends HTMLDivElement
     if editor
       buffer = editor.getBuffer()
       bufferPosition = editor.getCursorBufferPosition()
-      xpath = utils.getXPath buffer, bufferPosition, ''
+      xpath = utils.getXPathCompleteWord buffer, bufferPosition
       @xpathLabel.textContent = xpath.join '/'
     else
       @xpathLabel.textCotent = ''

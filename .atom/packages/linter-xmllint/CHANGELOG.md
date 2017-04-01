@@ -1,5 +1,25 @@
 # Changelog linter-xmllint
 
+## 1.4.1 (Mar 03 2017)
+
+* Update `xmldoc` to v1.0.0 ([#72](https://github.com/AtomLinter/linter-xmllint/pull/72))
+* Update `atom-linter` to v9.0.0 ([#73](https://github.com/AtomLinter/linter-xmllint/pull/73))
+
+## 1.4.0 (Dec 6 2016)
+
+* Add configuration options to disable specific validator types ([#70](https://github.com/AtomLinter/linter-xmllint/pull/70))
+
+## 1.3.6 (Sep 1 2016)
+
+* Fix regression to support .xsl files again ([#67](https://github.com/AtomLinter/linter-xmllint/pull/67))
+* Update to AtomLinter 8.0.0 ([#65](https://github.com/AtomLinter/linter-xmllint/pull/65))
+
+## 1.3.5 (Jun 30 2016)
+
+* Make warnings from the linter available rather then ignoring them ([#62](https://github.com/AtomLinter/linter-xmllint/pull/62))
+* Update to AtomLinter 5.0.1 ([#59](https://github.com/AtomLinter/linter-xmllint/pull/59))
+* Update to xmldoc 0.5.0 ([#57](https://github.com/AtomLinter/linter-xmllint/pull/57))
+
 ## 1.3.4 (Feb 24 2016)
 
 * Update to XRegExp 3.1.0 ([#52](https://github.com/AtomLinter/linter-xmllint/pull/52))

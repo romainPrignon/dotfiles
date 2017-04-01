@@ -1,3 +1,28 @@
+## 0.9.4
+* Fix XSD Windows paths starting with C:/
+
+## 0.9.3
+* Fix regex for schema location when there were attributes adjacent (#27 by @PRGfx)
+
+## 0.9.2
+* Fix #12 - XSD paths starting with file:/// weren't load.
+* Additional fix for #13 - Root elements with built-in types.
+
+## 0.9.1
+* Add robustness for corner cases of reading XSD files.
+* Fix #17 - Corner case where the XML schema is empty.
+* Fix #13 - Root elements without type.
+
+## 0.9.0
+* Fix #23 - XPath when cursor is inside tag name.
+* Fix #26 - Error trying to dispose the status bar.
+* Add keymap to copy the current XPath into the clipboard.
+* Fix tag value completion for fields with dots.
+* Read XSD if starts with schemaLocation (namespaces aren't supported yet).
+
+## 0.8.3
+* Fix #15 - Don't force xmlns to "xs".
+
 ## 0.8.2
 * Fix crash when there are tags without the name attribute.
 * Fix crash when the documentation tag is empty.

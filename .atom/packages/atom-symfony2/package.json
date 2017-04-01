@@ -1,27 +1,72 @@
 {
-  "name": "atom-symfony2",
-  "main": "./lib/atom-symfony2",
-  "version": "0.2.1",
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11731-4660-10tftnz/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11731-4660-10tftnz/package.tgz",
+        "spec": "/tmp/d-11731-4660-10tftnz/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11731-4660-xv887c"
+    ]
+  ],
+  "_from": "../d-11731-4660-10tftnz/package.tgz",
+  "_id": "atom-symfony2@0.2.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/atom-symfony2",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-11731-4660-10tftnz/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11731-4660-10tftnz/package.tgz",
+    "spec": "/tmp/d-11731-4660-10tftnz/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11731-4660-10tftnz/package.tgz",
+  "_shasum": "7be053a8aeb631f02a088c3e772bf87578e9f5af",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11731-4660-10tftnz/package.tgz",
+  "_where": "/tmp/apm-install-dir-11731-4660-xv887c",
+  "bugs": {
+    "url": "https://github.com/peekmo/atom-symfony2/issues"
+  },
+  "consumedServices": {
+    "php.autocomplete.tools": {
+      "versions": {
+        "0.16.0": "getAutocompleteTools"
+      }
+    }
+  },
+  "dependencies": {
+    "fuzzaldrin": "^2.1.0"
+  },
   "description": "Symfony2 tools and completion",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/peekmo/atom-symfony2#readme",
   "keywords": [
     "php",
     "symfony2",
     "autocomplete"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/peekmo/atom-symfony2.git"
-  },
   "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
-  },
+  "main": "./lib/atom-symfony2",
+  "name": "atom-symfony2",
+  "optionalDependencies": {},
   "package-deps": [
     "atom-autocomplete-php"
   ],
-  "dependencies": {
-    "fuzzaldrin": "^2.1.0"
-  },
   "providedServices": {
     "autocomplete.provider": {
       "versions": {
@@ -34,72 +79,11 @@
       }
     }
   },
-  "consumedServices": {
-    "php.autocomplete.tools": {
-      "versions": {
-        "0.16.0": "getAutocompleteTools"
-      }
-    }
-  },
   "readme": "# Installation\n\nSymfony2 tools for atom editor.\nDepends on [atom-autocomplete-php](https://atom.io/packages/atom-autocomplete-php)\n\nNote : This package is in its early stage, feel free to help or to report issues\n\n# Features\n\n- Autocomplete on service names in .xml files and .yml files\n- Autocomplete on class names in .xml files and .yml files\n- Services completion in symfony2 controllers (or everywhere you're using the container)\n\n# Configuration\n\nYou must have a fully working [atom-autocomplete-php](https://atom.io/packages/atom-autocomplete-php) configuration\n\n- Relative path to console : Insert here, a coma separated list of all your path to console in your projects. By default in Symfony2, it's ```app/console```\n\n![Example](http://i.imgur.com/l8ZGAoe.png)\n\n![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)\n",
   "readmeFilename": "README.md",
-  "bugs": {
-    "url": "https://github.com/peekmo/atom-symfony2/issues"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peekmo/atom-symfony2.git"
   },
-  "homepage": "https://github.com/peekmo/atom-symfony2#readme",
-  "_id": "atom-symfony2@0.2.1",
-  "_shasum": "46259b1df3b9f4acdb52b7320a3ca41103a76868",
-  "_resolved": "file:../d-1151111-22516-9lk7le/package.tgz",
-  "_from": "../d-1151111-22516-9lk7le/package.tgz",
-  "_atomModuleCache": {
-    "version": 1,
-    "dependencies": [
-      {
-        "name": "fuzzaldrin",
-        "version": "2.1.0",
-        "path": "node_modules/fuzzaldrin/lib/fuzzaldrin.js"
-      }
-    ],
-    "extensions": {
-      ".coffee": [
-        "lib/atom-symfony2.coffee",
-        "lib/config.coffee",
-        "lib/plugin.coffee",
-        "lib/providers/service-provider.coffee",
-        "lib/providers/services/file-class-provider.coffee",
-        "lib/providers/services/file-service-provider.coffee",
-        "lib/providers/services/xml-class-provider.coffee",
-        "lib/providers/services/xml-service-provider.coffee",
-        "lib/providers/services/yaml-class-provider.coffee",
-        "lib/providers/services/yaml-service-provider.coffee",
-        "lib/services/php-parser.coffee",
-        "lib/services/symfony2-proxy.coffee"
-      ],
-      ".js": [
-        "node_modules/fuzzaldrin/lib/filter.js",
-        "node_modules/fuzzaldrin/lib/fuzzaldrin.js",
-        "node_modules/fuzzaldrin/lib/matcher.js",
-        "node_modules/fuzzaldrin/lib/scorer.js"
-      ],
-      ".json": [
-        "node_modules/fuzzaldrin/package.json",
-        "package.json"
-      ]
-    },
-    "folders": [
-      {
-        "paths": [
-          "lib",
-          "lib/providers",
-          "lib/providers/services",
-          "lib/services",
-          "",
-          "spec"
-        ],
-        "dependencies": {
-          "fuzzaldrin": "^2.1.0"
-        }
-      }
-    ]
-  }
+  "version": "0.2.2"
 }

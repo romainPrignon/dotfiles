@@ -41,7 +41,12 @@ module.exports =
       preserveChildrenOrder: true
       explicitChildren: true
       }, (err, result) =>
-        if err then console.error err else @parse(result, complete)
+        if err
+          console.error err
+        else if not result
+          console.error "Empty XSD definition"
+        else
+          @parse(result, complete)
 
 
   ## Parrse the XSD file. Prepare types and children.
@@ -57,10 +62,14 @@ module.exports =
     for name, value of xml.$
       if value is "http://www.w3.org/2001/XMLSchema"
         schemaFound = true
-        console.log "Found XMLSchema at namespace " + name
 
     if not schemaFound
       console.log "The schema doesn't follow the standard."
+      return
+
+    # Check if there is at least one node in the schema definition
+    if not xml.$$
+      console.log "The schema is empty."
       return
 
     # Process all ComplexTypes and SimpleTypes
@@ -111,7 +120,7 @@ module.exports =
     type =
       # XSD params
       xsdType: ''
-      xsdTypeName: typeName ? node.$?.name
+      xsdTypeName: typeName ? node?.$?.name
       xsdAttributes: []
       xsdChildrenMode: ''
       xsdChildren: []
@@ -287,7 +296,7 @@ module.exports =
 
     # Now create a complex type.
     root = @initTypeObject null, rootElement.xsdTypeName
-    root.description = rootElement.description ? rootType.description
+    root.description = rootElement.description ? rootType?.description
     root.text = rootTagName
     root.displayText = rootTagName
     root.type = 'class'
@@ -295,9 +304,10 @@ module.exports =
     root.xsdType = 'complex'
 
     # Copy the type into the root object.
-    root.xsdAttributes = rootType.xsdAttributes
-    root.xsdChildrenMode = rootType.xsdChildrenMode
-    root.xsdChildren = rootType.xsdChildren
+    if rootType
+      root.xsdAttributes = rootType.xsdAttributes
+      root.xsdChildrenMode = rootType.xsdChildrenMode
+      root.xsdChildren = rootType.xsdChildren
 
     @roots[rootTagName] = root
     return root
@@ -315,6 +325,10 @@ module.exports =
 
         # Copy fields from base
         linkType = @types[extenType.$.base]
+        if not linkType
+          atom.notifications.addError "can't find base type " + extenType.$.base
+          continue
+
         type.xsdTypeName = linkType.xsdTypeName
         type.xsdChildrenMode = linkType.xsdChildrenMode
         type.xsdChildren = linkType.xsdChildren
