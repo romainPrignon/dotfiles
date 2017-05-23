@@ -1,6 +1,6 @@
-
 {
     "bold_folder_labels": true,
+    "color_scheme": "Packages/Solarized Color Scheme/Solarized (light).tmTheme",
     "default_encoding": "UTF-8",
     "default_line_ending": "unix",
     "detect_indentation": false,
@@ -15,6 +15,8 @@
         ".Spotlight-V100",
         ".Trashes"
     ],
+    "flatland_sidebar_tree_small": true,
+    "flatland_square_tabs": false,
     "folder_exclude_patterns":
     [
     ],
@@ -40,6 +42,8 @@
     "show_encoding": true,
     "show_line_endings": true,
     "tab_size": 4,
+    // "theme": "Flatland Dark.sublime-theme",
+    "theme": "Solarized Space Light.sublime-theme",
     "translate_tabs_to_spaces": true,
     "trim_trailing_white_space_on_save": true,
     "wrap_width": 120
