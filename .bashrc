@@ -126,3 +126,7 @@ fi
 if [ -f "$HOME/.m6rc" ]; then
     . "$HOME/.m6rc"
 fi
+
+if [ -f "$HOME/.llsrc" ]; then
+    . "$HOME/.llsrc"
+fi
