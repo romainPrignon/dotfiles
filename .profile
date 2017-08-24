@@ -12,5 +12,7 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # enable google-drive
-#google-drive-ocamlfuse -label pro /home/romainprignon/drive-pro
-google-drive-ocamlfuse -label peaks /home/romainprignon/drive-peaks
+if [ -x "$(command -v google-drive-ocamlfuse)" ]; then
+    google-drive-ocamlfuse -label pro /home/romainprignon/drive-pro
+    google-drive-ocamlfuse -label peaks /home/romainprignon/drive-peaks
+fi

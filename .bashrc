@@ -130,3 +130,7 @@ fi
 if [ -f "$HOME/.llsrc" ]; then
     . "$HOME/.llsrc"
 fi
+
+if [ -f "$HOME/.yproxrc" ]; then
+    . "$HOME/.yproxrc"
+fi
