@@ -19,3 +19,7 @@ bootstrap.bat
 ```bash
 gconftool-2 --load=./exported-settings/gconf-gnome-terminal.xml
 ```
+
+## TODO
+- [ ] clean desktp settings (compiz, dconf, gconf,...)
+- [ ] faire un script install.sh
