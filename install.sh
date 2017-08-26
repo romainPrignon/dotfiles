@@ -10,6 +10,7 @@ export LANG=en_US.UTF-8
 apt update
 
 apt install -y \
+    apt-transport-https \
     build-essential \
     language-pack-en-base \
     software-properties-common
@@ -88,19 +89,52 @@ npm install -g \
 # install: desktop
 
 ## FIXME: when gnome replace unity
-# apt install -y \
-#     lightdm \
-#     gnome-core \
-#     xfonts-base \
-#     xserver-xorg
+apt install -y \
+    lightdm \
+    # gdm \
+    gnome-core \
+    xfonts-base \
+    xserver-xorg
 
-# apt install -y \
-#     firefox \
-#     ffmpeg
-#     gnome-terminal \
-#     gnome-tweak \
-#     sublime-text \
-#     ttf-dejavu
+## install: desktop-app
+add-apt-repository ppa:ravefinity-project/ppa
+add-apt-repository ppa:alessandro-strada/ppa
+
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
+
+apt update
+
+apt install -y \
+    firefox \
+    ffmpeg \
+    gnome-paint \
+    gnome-terminal \
+    gnome-tweak-tool \
+    google-drive-ocamlfuse \
+    sublime-text \
+    synaptic \
+    vibrancy-colors
+
+## install: font
+apt install -y \
+    font-manager \
+    fonts-inconsolata \
+    fonts-droid-fallback \
+    ttf-dejavu \
+    ttf-ancient-fonts \
+    ttf-ubuntu-font-family
+
+## install: microsoft font
+apt install -y ttf-mscorefonts-installer
+apt install --reinstall ttf-mscorefonts-installer
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+dpkg -i google-chrome-stable_current_amd64.deb
+apt -f -y install
+
+wget https://atom.io/download/deb -0 atom.deb
+dpkg -i atom.deb
+apt -f -y install
 
 # post-install
-# dpkg-reconfigure keyboard-configuration
