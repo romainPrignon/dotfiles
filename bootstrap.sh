@@ -35,3 +35,6 @@ ln -sf "$dotfile_dir_absolute_path/subl/Package Control.sublime-settings" "$home
 # ln -sf $dotfile_dir_absolute_path/.gdfuse/pro/config $home_dir_absolute_path/.gdfuse/pro/config
 # ln -sf $dotfile_dir_absolute_path/.gdfuse/peaks/config $home_dir_absolute_path/.gdfuse/peaks/config
 # ln -sf $dotfile_dir_absolute_path/preferences /etc/apt/preferences
+
+composer global install
+symfony-autocomplete composer | sudo tee /etc/bash_completion.d/composer

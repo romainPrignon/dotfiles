@@ -11,6 +11,8 @@ export GOBIN=$HOME/workspace/go/bin
 
 export EDITOR="vim";
 
+export JAVA_OPTIONS=-Xmx512M
+
 PATH="$HOME/.composer/vendor/bin:$PATH"
 PATH="$GOROOT/bin:$PATH"
 

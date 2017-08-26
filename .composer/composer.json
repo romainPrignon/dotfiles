@@ -1,5 +1,6 @@
 {
 	"require": {
+        "bamarni/symfony-console-autocomplete": "@stable",
         "pdepend/pdepend": "@stable",
         "phpmd/phpmd" : "@stable",
         "squizlabs/php_codesniffer": "@stable",
