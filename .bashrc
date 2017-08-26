@@ -104,6 +104,10 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 export HH_CONFIG=hicolor
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/romainprignon/.sdkman"
+[[ -s "/home/romainprignon/.sdkman/bin/sdkman-init.sh" ]] && source "/home/romainprignon/.sdkman/bin/sdkman-init.sh"
+
 ###############################################################################
 
 # make less more friendly for non-text input files, see lesspipe(1)
@@ -134,3 +138,4 @@ fi
 if [ -f "$HOME/.yproxrc" ]; then
     . "$HOME/.yproxrc"
 fi
+
