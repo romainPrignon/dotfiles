@@ -5,14 +5,20 @@ home_dir_absolute_path="/home/romainprignon"
 
 cd $home_dir_absolute_path
 
+mkdir app
+mkdir backup
 mkdir .composer
-mkdir .ssh
 mkdir drive-pro
 mkdir drive-peaks
+mkdir .ssh
+mkdir workspace
 
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
 
-ln -sf $dotfile_dir_absolute_path/.atom $home_dir_absolute_path/.atom
+ln -sf $dotfile_dir_absolute_path/.atom/config.cson $home_dir_absolute_path/.atom/config.cson
+ln -sf $dotfile_dir_absolute_path/.atom/keymap.cson $home_dir_absolute_path/.atom/keymap.cson
+ln -sf $dotfile_dir_absolute_path/.atom/snippets.cson $home_dir_absolute_path/.atom/snippets.cson
+ln -sf $dotfile_dir_absolute_path/.atom/styles.less $home_dir_absolute_path/.atom/styles.less
 ln -sf $dotfile_dir_absolute_path/.composer/composer.json $home_dir_absolute_path/.composer/composer.json
 ln -sf $dotfile_dir_absolute_path/scripts $home_dir_absolute_path/scripts
 ln -sf $dotfile_dir_absolute_path/.gitattributes $home_dir_absolute_path/.gitattributes
