@@ -1,0 +1,34 @@
+[/]
+app-picker-view=uint32 1
+enabled-extensions=['alternate-tab@gnome-shell-extensions.gcampax.github.com', 'hide-dash@xenatt.github.com', 'pixel-saver@deadalnix.me', 'TaskBar@zpydr', 'hide-workspace@xenatt.github.com', 'bottompanel@tmoer93']
+favorite-apps=['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'gnome-terminal.desktop', 'sublime_text.desktop', 'atom.desktop', 'jetbrains-phpstorm.desktop', 'chrome-hgmloofddffdnphfgcellkdfbfbjeloo-Default.desktop', 'chrome-odeapdcanbpaonefjnimpmdkpkcnojlo-Default.desktop', 'chrome-mnfehgbmkapmjnhcnbodoamcioleeooe-Default.desktop']
+
+[extensions/TaskBar]
+position-favorites=1
+display-favorites=true
+appview-button-icon='/home/romainprignon/.local/share/gnome-shell/extensions/TaskBar@zpydr/images/appview-button-default.svg'
+position-appview-button=0
+activities-button=false
+display-showapps-button=true
+bottom-panel-original-background-color='rgba(0, 0, 0, 255)'
+display-tasks=false
+extension-path='/home/romainprignon/.local/share/gnome-shell/extensions/TaskBar@zpydr'
+desktop-button-icon='/home/romainprignon/.local/share/gnome-shell/extensions/TaskBar@zpydr/images/desktop-button-default.png'
+display-desktop-button=false
+display-workspace-button=false
+hover-event=0
+tray-button-icon='/home/romainprignon/.local/share/gnome-shell/extensions/TaskBar@zpydr/images/bottom-panel-tray-button.svg'
+position-max-right=2
+appearance-selection='favorites'
+position-changed=false
+top-panel-original-background-color='rgba(0, 0, 0, 255)'
+first-start=false
+
+[keybindings]
+toggle-overview=@as []
+
+[calendar]
+show-weekdate=false
+
+[window-switcher]
+app-icon-mode='both'

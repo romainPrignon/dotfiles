@@ -1,0 +1,22 @@
+[plugins/power]
+sleep-inactive-battery-type='nothing'
+button-power='interactive'
+lid-close-suspend-with-external-monitor=true
+sleep-inactive-ac-timeout=3600
+sleep-inactive-ac-type='nothing'
+sleep-inactive-battery-timeout=1800
+
+[plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>s'
+command='systemctl suspend'
+name='suspend'
+
+[plugins/xsettings]
+antialiasing='rgba'
+hinting='slight'
+
+[peripherals/keyboard]
+numlock-state='off'

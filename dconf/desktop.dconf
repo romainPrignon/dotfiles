@@ -1,0 +1,48 @@
+[interface]
+clock-show-date=true
+font-name='Ubuntu 11'
+gtk-im-module='gtk-im-context-simple'
+enable-animations=false
+icon-theme='Vibrancy-Colors'
+monospace-font-name='Ubuntu Mono 13'
+toolkit-accessibility=false
+
+[notifications]
+application-children=['org-gnome-nautilus', 'gnome-network-panel']
+
+[notifications/application/gnome-network-panel]
+application-id='gnome-network-panel.desktop'
+
+[notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[screensaver]
+picture-uri='file:///usr/share/backgrounds/gnome/adwaita-lock.jpg'
+lock-delay=uint32 300
+
+[peripherals/touchpad]
+natural-scroll=true
+tap-to-click=true
+
+[peripherals/mouse]
+speed=0.0
+
+[wm/preferences]
+titlebar-font='Ubuntu Medium 11'
+
+[wm/keybindings]
+panel-main-menu=@as []
+
+[datetime]
+automatic-timezone=true
+
+[background]
+picture-uri='file:///home/romainprignon/Pictures/Wallpapers/01.jpg'
+color-shading-type='solid'
+primary-color='#000000'
+picture-options='zoom'
+secondary-color='#000000'
+
+[input-sources]
+sources=[('xkb', 'fr'), ('xkb', 'us')]
+xkb-options=@as []
