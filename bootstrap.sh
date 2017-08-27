@@ -7,6 +7,8 @@ cd $home_dir_absolute_path
 
 mkdir .composer
 mkdir .ssh
+mkdir drive-pro
+mkdir drive-peaks
 
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
 
@@ -35,6 +37,8 @@ ln -sf "$dotfile_dir_absolute_path/subl/Package Control.sublime-settings" "$home
 # ln -sf $dotfile_dir_absolute_path/.gdfuse/pro/config $home_dir_absolute_path/.gdfuse/pro/config
 # ln -sf $dotfile_dir_absolute_path/.gdfuse/peaks/config $home_dir_absolute_path/.gdfuse/peaks/config
 # ln -sf $dotfile_dir_absolute_path/preferences /etc/apt/preferences
+
+. "$HOME/.profile"
 
 composer global install
 symfony-autocomplete composer | sudo tee /etc/bash_completion.d/composer
