@@ -6,6 +6,7 @@ home_dir_absolute_path="/home/romainprignon"
 cd $home_dir_absolute_path
 
 mkdir app
+mkdir .atom
 mkdir backup
 mkdir .composer
 mkdir drive-pro
