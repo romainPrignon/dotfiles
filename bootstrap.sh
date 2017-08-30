@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
 
-dotfile_dir_absolute_path="/home/romainprignon/workspace/romainprignon/dotfiles"
-home_dir_absolute_path="/home/romainprignon"
+$user="romainprignon"
+dotfile_dir_absolute_path="/home/$user/workspace/romainprignon/dotfiles"
+home_dir_absolute_path="/home/$user"
 
 cd $home_dir_absolute_path
 
 mkdir app
 mkdir .atom
-mkdir backup
+
 mkdir .composer
+sudo chown -R $user:$user $home_dir_absolute_path/.composer
+
 mkdir drive-pro
 mkdir drive-peaks
 mkdir .ssh
-mkdir workspace
 
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
 
@@ -41,11 +43,26 @@ ln -sf "$dotfile_dir_absolute_path/subl/Preferences.sublime-settings" "$home_dir
 ln -sf "$dotfile_dir_absolute_path/subl/Package Control.sublime-settings" "$home_dir_absolute_path/.config/sublime-text-3/Packages/User/Package Control.sublime-settings"
 
 # Launch it manually
-# ln -sf $dotfile_dir_absolute_path/.gdfuse/pro/config $home_dir_absolute_path/.gdfuse/pro/config
-# ln -sf $dotfile_dir_absolute_path/.gdfuse/peaks/config $home_dir_absolute_path/.gdfuse/peaks/config
+ln -sf $dotfile_dir_absolute_path/.gdfuse/pro/config $home_dir_absolute_path/.gdfuse/pro/config
+ln -sf $dotfile_dir_absolute_path/.gdfuse/peaks/config $home_dir_absolute_path/.gdfuse/peaks/config
 # ln -sf $dotfile_dir_absolute_path/preferences /etc/apt/preferences
 
 . "$HOME/.profile"
 
+# PHP
 composer global install
 symfony-autocomplete composer | sudo tee /etc/bash_completion.d/composer
+
+# nodejs
+n latest
+npm completion > npm
+sudo mv npm /etc/bash_completion.d/npm
+
+npm install -g \
+    babel-cli \
+    http-server \
+    node-inspector \
+    npm-check \
+    nsp \
+    pkgcount \
+    ttystudio

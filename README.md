@@ -1,7 +1,7 @@
 ## Installation
 
 **Usage**
- - install machine first: curl -sSL https://git.io/v5cB8 | sudo bash
+ - install machine first: curl -sSL https://git.io/v5Ccu | sudo bash 2>&1 | tee install.log
  - copy bootstrap.sh.dist or bootstrap.bat.dist into bootstrap.sh and modify [home-dir-absolute-path] and [dotfile-dir-absolute-path]
  - Change name and email in .gitonfig
 
