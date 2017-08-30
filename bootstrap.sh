@@ -52,7 +52,7 @@ dconf load /org/gnome/shell/ < dconf/shell.dconf
 dconf load /org/gnome/terminal/ < dconf/terminal.dconf
 dconf load /org/gnome/desktop/ < dconf/desktop.dconf
 
-#. "$HOME/.profile"
+. "$HOME/.profile"
 
 # PHP
 composer global install
@@ -66,8 +66,8 @@ sudo mv npm /etc/bash_completion.d/npm
 npm install -g \
     babel-cli \
     http-server \
-    node-inspector \
     npm-check \
     nsp \
     pkgcount \
     ttystudio
+    #node-inspector
