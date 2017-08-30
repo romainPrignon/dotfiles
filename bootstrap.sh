@@ -41,13 +41,18 @@ ln -sf $dotfile_dir_absolute_path/.npmrc $home_dir_absolute_path/.npmrc
 ln -sf "$dotfile_dir_absolute_path/subl/Default (Linux).sublime-keymap" "$home_dir_absolute_path/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap"
 ln -sf "$dotfile_dir_absolute_path/subl/Preferences.sublime-settings" "$home_dir_absolute_path/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
 ln -sf "$dotfile_dir_absolute_path/subl/Package Control.sublime-settings" "$home_dir_absolute_path/.config/sublime-text-3/Packages/User/Package Control.sublime-settings"
-
-# Launch it manually
 ln -sf $dotfile_dir_absolute_path/.gdfuse/pro/config $home_dir_absolute_path/.gdfuse/pro/config
 ln -sf $dotfile_dir_absolute_path/.gdfuse/peaks/config $home_dir_absolute_path/.gdfuse/peaks/config
 # ln -sf $dotfile_dir_absolute_path/preferences /etc/apt/preferences
 
-. "$HOME/.profile"
+dconf load /org/gnome/nautilus/ < dconf/nautilus.dconf
+dconf load /org/gnome/power-manager/ < dconf/power-manager.dconf
+dconf load /org/gnome/settings-daemon/ < dconf/settings-daemon.dconf
+dconf load /org/gnome/shell/ < dconf/shell.dconf
+dconf load /org/gnome/terminal/ < dconf/terminal.dconf
+dconf load /org/gnome/desktop/ < dconf/desktop.dconf
+
+#. "$HOME/.profile"
 
 # PHP
 composer global install

@@ -1,20 +1,24 @@
-## Installation
+# Usage
 
-**Usage**
- - install machine first: curl -sSL https://git.io/v5Ccu | sudo bash 2>&1 | tee install.log
- - copy bootstrap.sh.dist or bootstrap.bat.dist into bootstrap.sh and modify [home-dir-absolute-path] and [dotfile-dir-absolute-path]
- - Change name and email in .gitonfig
+## dependencies
+ - git
 
-On linux:
+## Linux
 ```bash
 git clone https://github.com/romainprignon/dotfiles.git
 cd dotfiles
+sudo ./install.sh 2>&1 | tee /tmp/install.log
+sudo reboot
 ./bootstrap.sh
+sudo reboot
 ```
-On windows :
+
+## Windows
 ```
 bootstrap.bat
 ```
+
+# Reminder
 
 **Dump conf**
 ```bash
