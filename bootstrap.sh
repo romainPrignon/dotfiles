@@ -8,8 +8,12 @@ cd $home_dir_absolute_path
 
 mkdir app
 mkdir .atom
+mkdir -p $home_dir_absolute_path/.config/dconf
+mkdir -p $home_dir_absolute_path/.config/sublime-text-3/Packages/User
 mkdir drive-pro
 mkdir drive-peaks
+mkdir -p $home_dir_absolute_path/.gdfuse/pro
+mkdir -p $home_dir_absolute_path/.gdfuse/peaks
 mkdir .ssh
 
 sudo chown -R $user:$user $home_dir_absolute_path/.composer
@@ -23,7 +27,7 @@ ln -sf $dotfile_dir_absolute_path/.atom/keymap.cson $home_dir_absolute_path/.ato
 ln -sf $dotfile_dir_absolute_path/.atom/snippets.cson $home_dir_absolute_path/.atom/snippets.cson
 ln -sf $dotfile_dir_absolute_path/.atom/styles.less $home_dir_absolute_path/.atom/styles.less
 ln -sf $dotfile_dir_absolute_path/.composer/composer.json $home_dir_absolute_path/.composer/composer.json
-ln -sf $dotfile_dir_absolute_path/scripts $home_dir_absolute_path/scripts
+#ln -sf $dotfile_dir_absolute_path/scripts $home_dir_absolute_path/scripts @FIXME
 ln -sf $dotfile_dir_absolute_path/.gitattributes $home_dir_absolute_path/.gitattributes
 ln -sf $dotfile_dir_absolute_path/.gitconfig $home_dir_absolute_path/.gitconfig
 ln -sf $dotfile_dir_absolute_path/.gitignore $home_dir_absolute_path/.gitignore
