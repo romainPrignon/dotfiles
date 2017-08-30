@@ -65,7 +65,7 @@ echo 'zend_extension=xdebug.so' | tee --append /etc/php/7.1/mods-available/xdebu
 ln -sf /etc/php/7.1/mods-available/xdebug.ini /etc/php/7.1/cli/conf.d/20-xdebug.ini
 
 ## go
-wget https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz
+wget -q https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz
 
 ## python
@@ -128,15 +128,15 @@ apt install -y \
 #apt install -y ttf-mscorefonts-installer
 #apt install --reinstall ttf-mscorefonts-installer
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
 apt -f -y install
 
-wget -O atom.deb https://atom.io/download/deb
+wget -qO atom.deb https://atom.io/download/deb
 dpkg -i atom.deb
 apt -f -y install
 
-wget -O vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
+wget -qO vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
 dpkg -i vscode.deb
 apt -f -y install
 

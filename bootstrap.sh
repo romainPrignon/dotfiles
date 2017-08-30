@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-$user="romainprignon"
+user="romainprignon"
 dotfile_dir_absolute_path="/home/$user/workspace/romainprignon/dotfiles"
 home_dir_absolute_path="/home/$user"
 
@@ -8,13 +8,13 @@ cd $home_dir_absolute_path
 
 mkdir app
 mkdir .atom
-
-mkdir .composer
-sudo chown -R $user:$user $home_dir_absolute_path/.composer
-
 mkdir drive-pro
 mkdir drive-peaks
 mkdir .ssh
+
+sudo chown -R $user:$user $home_dir_absolute_path/.composer
+sudo chown -R $user:$user $home_dir_absolute_path/n
+sudo chown -R $user:$user $home_dir_absolute_path/.qfc
 
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
 

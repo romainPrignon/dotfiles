@@ -7,7 +7,7 @@
 ```bash
 git clone https://github.com/romainprignon/dotfiles.git
 cd dotfiles
-sudo ./install.sh 2>&1 | tee /tmp/install.log
+sudo bash ./install.sh 2>&1 | tee ~/install.log
 sudo reboot
 ./bootstrap.sh
 sudo reboot
