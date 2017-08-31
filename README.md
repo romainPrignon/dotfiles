@@ -54,5 +54,5 @@ apm install --packages-file atom-package.txt
 - [ ] clean desktp settings (compiz, dconf, gconf,...)
 - [ ] redump dconf
 - [ ] clean ide
-- [ ] dconf load error
-- [ ] go and java error
+- [x] dconf load error
+- [x] go and java error

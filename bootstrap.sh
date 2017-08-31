@@ -49,12 +49,12 @@ ln -sf $dotfile_dir_absolute_path/.gdfuse/pro/config $home_dir_absolute_path/.gd
 ln -sf $dotfile_dir_absolute_path/.gdfuse/peaks/config $home_dir_absolute_path/.gdfuse/peaks/config
 # ln -sf $dotfile_dir_absolute_path/preferences /etc/apt/preferences
 
-dconf load /org/gnome/nautilus/ < dconf/nautilus.dconf
-dconf load /org/gnome/power-manager/ < dconf/power-manager.dconf
-dconf load /org/gnome/settings-daemon/ < dconf/settings-daemon.dconf
-dconf load /org/gnome/shell/ < dconf/shell.dconf
-dconf load /org/gnome/terminal/ < dconf/terminal.dconf
-dconf load /org/gnome/desktop/ < dconf/desktop.dconf
+dconf load /org/gnome/nautilus/ < $dotfile_dir_absolute_path/dconf/nautilus.dconf
+dconf load /org/gnome/power-manager/ < $dotfile_dir_absolute_path/dconf/power-manager.dconf
+dconf load /org/gnome/settings-daemon/ < $dotfile_dir_absolute_path/dconf/settings-daemon.dconf
+dconf load /org/gnome/shell/ < $dotfile_dir_absolute_path/dconf/shell.dconf
+dconf load /org/gnome/terminal/ < $dotfile_dir_absolute_path/dconf/terminal.dconf
+dconf load /org/gnome/desktop/ < $dotfile_dir_absolute_path/dconf/desktop.dconf
 
 . "$HOME/.profile"
 
@@ -76,4 +76,4 @@ npm install -g \
     ttystudio
     #node-inspector
 
-apm install --packages-file .atom/atom-package.txt
+apm install --packages-file $dotfile_dir_absolute_path/.atom/atom-package.txt
