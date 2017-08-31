@@ -75,3 +75,5 @@ npm install -g \
     pkgcount \
     ttystudio
     #node-inspector
+
+apm install --packages-file .atom/atom-package.txt
