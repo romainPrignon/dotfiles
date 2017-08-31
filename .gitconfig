@@ -83,7 +83,7 @@
     standup = log --since '1 day ago' --oneline --author pro.rprignon@gmail.com
 
     # find orphans
-    orphans = git fsck --full
+    orphans = fsck --full
 
 [core]
     excludesfile = ~/.gitignore

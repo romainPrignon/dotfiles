@@ -1,16 +1,11 @@
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
 export INPUTRC="$HOME/.inputrc"
+export EDITOR="vim";
+
 export COMPOSER_HOME="$HOME/.composer"
 
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/workspace/go
 export GOBIN=$HOME/workspace/go/bin
-
-export EDITOR="vim";
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export JAVA_OPTIONS=-Xmx512M

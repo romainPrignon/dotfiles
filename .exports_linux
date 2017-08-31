@@ -1,5 +1,3 @@
-export GOROOT=/usr/local/go
-
 function cnine() {
     google-chrome --app="https://ide.c9.io/romainprignon/$1"
 }

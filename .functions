@@ -1,9 +1,9 @@
 # open the result of a command in sublime
 function sublime()
 {
-    "$@" > ~/$$.txt
-    subl ~/$$.txt
-    #rm ~/$$.txt
+    "$@" > /tmp/$$.txt
+    subl /tmp/$$.txt
+    # rm /tmp/$$.txt;
 }
 
 function docker-rm-container()
@@ -24,17 +24,6 @@ function clean-docker()
 {
     docker rmi $(docker images -q -f dangling=true)
     docker volume rm $(docker volume ls -qf dangling=true)
-}
-
-function set-git-user()
-{
-    git config user.name "Romain Prignon"
-    git config user.email "pro.rprignon@gmail.com"
-}
-
-function install-atom-package()
-{
-    apm install --packages-file $HOME/backup/atom/package-list.txt
 }
 
 function webm-to-gif() {

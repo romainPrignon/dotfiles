@@ -22,6 +22,7 @@ apt install -y \
     git-extras \
     hh \
     htop \
+    python-pygments \
     shellcheck \
     sqlite3 \
     ssh \
