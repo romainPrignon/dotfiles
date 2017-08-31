@@ -27,13 +27,20 @@
 # https://atom.io/docs/latest/using-atom-basic-customization#cson
 
 '.platform-win32, .platform-linux':
-  'ctrl-h': 'tree-view:toggle'
-  'ctrl-y': 'tree-view:toggle-focus'
+  'ctrl-j': 'tree-view:toggle'
+  'ctrl-k': 'tree-view:toggle-focus'
 
-'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
-  'ctrl-e': 'core:redo'
+'body':
+  'alt-left': 'pane:show-previous-item'
+  'alt-right': 'pane:show-next-item'
+
+'atom-workspace atom-text-editor':
+  'alt-left': 'unset!'
+  'alt-right': 'unset!'
+
+'atom-workspace atom-text-editor:not([mini])':
+  'ctrl-j': 'unset!'
 
 'atom-text-editor':
-  'ctrl-alt-d': 'unset!'
   'ctrl-alt-d': 'git-diff-details:toggle-git-diff-details'
   'ctrl-alt-u': 'git-diff-details:undo'

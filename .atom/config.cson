@@ -1,9 +1,16 @@
 "*":
+  "advanced-open-file":
+    createDirectories: true
   "atom-autocomplete-php": {}
   "atom-beautify":
     analytics: false
+  "atom-symfony2":
+    console: [
+      "bin/console"
+    ]
   core:
     allowPendingPaneItems: false
+    closeDeletedFileTabs: true
     disabledPackages: [
       "autocomplete-go"
       "go-config"
@@ -26,10 +33,11 @@
     ]
   editor:
     fontFamily: "DejaVu Sans Mono"
-    fontSize: 15
+    fontSize: 16
     invisibles: {}
     preferredLineLength: 120
     scrollPastEnd: true
+    scrollSensitivity: 80
     showIndentGuide: true
     softWrap: true
     softWrapAtPreferredLineLength: true
