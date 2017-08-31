@@ -18,6 +18,13 @@ sudo reboot
 bootstrap.bat
 ```
 
+# manual install
+```bash
+apt install -y google-drive-ocamlfuse
+apt install -y ttf-mscorefonts-installer
+apt install --reinstall ttf-mscorefonts-installer
+```
+
 # Reminder
 
 **Dump conf**
@@ -54,5 +61,3 @@ apm install --packages-file atom-package.txt
 - [ ] clean desktp settings (compiz, dconf, gconf,...)
 - [ ] redump dconf
 - [ ] clean ide
-- [x] dconf load error
-- [x] go and java error

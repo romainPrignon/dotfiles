@@ -109,7 +109,6 @@ apt install -y \
     gnome-system-log \
     gnome-terminal \
     gnome-tweak-tool \
-    google-drive-ocamlfuse \
     nautilus \
     sublime-text \
     synaptic \
@@ -123,10 +122,6 @@ apt install -y \
     ttf-dejavu \
     ttf-ancient-fonts \
     ttf-ubuntu-font-family
-
-## install: microsoft font
-#apt install -y ttf-mscorefonts-installer
-#apt install --reinstall ttf-mscorefonts-installer
 
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
