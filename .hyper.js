@@ -152,7 +152,7 @@ module.exports = {
     "tab:prev": "alt+left",
     "pane:next": "",
     "pane:prev": "",
-    "pane:splitVertical": "ctrl+v",
+    "pane:splitVertical": "ctrl+o",
     "pane:splitHorizontal": "ctrl+h",
     "pane:close": "ctrl+w",
     "editor:undo": "ctrl+z",
