@@ -50,5 +50,9 @@
         "key": "escape",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "!editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+z",
+        "command": "workbench.action.files.revert"
     }
 ]

@@ -9,6 +9,7 @@
     "editor.wordWrapColumn": 120,
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.startupEditor": "none",
     "diffEditor.renderSideBySide": true,
     "files.trimTrailingWhitespace": true,
     "files.watcherExclude": {
