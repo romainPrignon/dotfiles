@@ -1,0 +1,31 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "editor.fontSize": 16,
+    "editor.fontFamily": "'DejaVu Sans Mono', monospace, 'Droid Sans Mono'",
+    "editor.wordWrap": "on",
+    "editor.lineHeight": 24,
+    "editor.rulers": [120],
+    "editor.minimap.enabled": false,
+    "editor.wordWrapColumn": 120,
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "diffEditor.renderSideBySide": true,
+    "files.trimTrailingWhitespace": true,
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/vendor/**": true
+    },
+    "explorer.openEditors.visible": 0,
+    "search.exclude": {
+        // "**/node_modules": true,
+        // "**/bower_components": true,
+        // "**/vendor": true
+    },
+    "typescript.implementationsCodeLens.enabled": true,
+    "typescript.useCodeSnippetsOnMethodSuggest": true,
+    "telemetry.enableTelemetry": false,
+    "phpcs.standard": "PSR2",
+    "javascript.implicitProjectConfig.checkJs": true
+}
