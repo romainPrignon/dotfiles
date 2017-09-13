@@ -7,6 +7,7 @@
     "editor.rulers": [120],
     "editor.minimap.enabled": false,
     "editor.wordWrapColumn": 120,
+    "window.openFoldersInNewWindow": "on",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.startupEditor": "none",

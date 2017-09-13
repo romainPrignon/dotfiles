@@ -1,6 +1,19 @@
 EXTENSIONS=(
   "EditorConfig.EditorConfig" \
+  "HvyIndustries.crane" \
+  "PeterJausovec.vscode-docker" \
+  "christian-kohler.npm-intellisense" \
+  "christian-kohler.path-intellisense" \
   "dbaeumer.vscode-eslint" \
+  "donjayamanne.githistory" \
+  "eg2.vscode-npm-script" \
+  "felixfbecker.php-debug" \
+  "felixfbecker.php-intellisense" \
+  "formulahendry.code-runner" \
+  "ikappas.phpcs" \
+  "ms-vscode.typescript-javascript-grammar" \
+  "msjsdiag.debugger-for-chrome" \
+  "pmneo.tsimporter" \
   "whatwedo.twig"
 )
 
