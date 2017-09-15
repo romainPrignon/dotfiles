@@ -65,6 +65,10 @@ make && make install
 echo 'zend_extension=xdebug.so' | tee --append /etc/php/7.1/mods-available/xdebug.ini
 ln -sf /etc/php/7.1/mods-available/xdebug.ini /etc/php/7.1/cli/conf.d/20-xdebug.ini
 
+echo '[XDebug]' | tee --append /etc/php/7.1/cli/php.ini
+echo 'xdebug.remote_enable = 1' | tee --append /etc/php/7.1/cli/php.ini
+echo 'xdebug.remote_autostart = 1' | tee --append /etc/php/7.1/cli/php.ini
+
 ## go
 wget -q https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz

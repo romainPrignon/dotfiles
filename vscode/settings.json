@@ -6,8 +6,14 @@
     "editor.lineHeight": 24,
     "editor.rulers": [120],
     "editor.minimap.enabled": false,
+    "editor.renderIndentGuides": false,
+    "editor.tokenColorCustomizations": {
+    },
     "editor.wordWrapColumn": 120,
     "window.openFoldersInNewWindow": "on",
+    "workbench.colorCustomizations": {
+        "tab.activeBorder": "#EEEEEE"
+    },
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.startupEditor": "none",
@@ -25,6 +31,12 @@
         // "**/bower_components": true,
         // "**/vendor": true
     },
+    "guides.indent.showFirstIndentGuides": false,
+    "guides.active.color.dark": "rgba(60, 60, 60, 0.75)",
+    "guides.active.color.light": "rgba(220, 220, 220, 0.75)",
+    "guides.stack.color.dark": "rgba(60, 60, 60, 0.75)",
+    "guides.stack.color.light": "rgba(220, 220, 220, 0.75)",
+    "guides.sendUsagesAndStats": false,
     "typescript.implementationsCodeLens.enabled": true,
     "typescript.useCodeSnippetsOnMethodSuggest": true,
     "telemetry.enableTelemetry": false,
