@@ -7,7 +7,41 @@
     "editor.rulers": [120],
     "editor.minimap.enabled": false,
     "editor.renderIndentGuides": false,
+    "editor.smoothScrolling": true,
+    "editor.mouseWheelScrollSensitivity": 3,
     "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "name": "this.self",
+                "scope": "variable.language",
+                "settings": {
+                    "foreground": "#F92672"
+                }
+            },
+            {
+                "name": "class property",
+                "scope":"variable.other.property",
+                "settings": {
+                    "foreground": "#A6E22E96"
+                }
+            },
+            {
+                "name": "Class name",
+                "scope": "entity.name.type",
+                "settings": {
+                    "fontStyle": "italic",
+                    "foreground": "#A6E22E"
+                }
+            },
+            {
+                "name": "Class extends",
+                "scope": "entity.other.inherited-class",
+                "settings": {
+                    "fontStyle": "italic",
+                    "foreground": "#A6E22E"
+                }
+            }
+        ]
     },
     "editor.wordWrapColumn": 120,
     "window.openFoldersInNewWindow": "on",
@@ -36,10 +70,14 @@
     "guides.active.color.light": "rgba(220, 220, 220, 0.75)",
     "guides.stack.color.dark": "rgba(60, 60, 60, 0.75)",
     "guides.stack.color.light": "rgba(220, 220, 220, 0.75)",
+    "guides.stack.enabled": false,
+    "guides.updateDelay": 0.01,
     "guides.sendUsagesAndStats": false,
     "typescript.implementationsCodeLens.enabled": true,
     "typescript.useCodeSnippetsOnMethodSuggest": true,
     "telemetry.enableTelemetry": false,
+    "php.suggest.basic": false,
+    "php.validate.run": "onType",
     "phpcs.standard": "PSR2",
     "javascript.implicitProjectConfig.checkJs": true
 }
