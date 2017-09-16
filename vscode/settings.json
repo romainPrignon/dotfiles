@@ -61,6 +61,20 @@
                 "settings": {
                     "foreground": "#A6E22E"
                 }
+            },
+            {
+                "name": "JS dot",
+                "scope": "punctuation.accessor.js",
+                "settings": {
+                    "foreground": "#F92672"
+                }
+            },
+            {
+                "name": "support.type",
+                "scope": "support.type",
+                "settings": {
+                    "foreground": "#F8F8F2"
+                }
             }
         ]
     },
