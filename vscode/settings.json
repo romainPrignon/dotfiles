@@ -22,7 +22,7 @@
                 "name": "class property",
                 "scope":"variable.other.property",
                 "settings": {
-                    "foreground": "#A6E22E96"
+                    "foreground": "#66D9EF"
                 }
             },
             {
@@ -30,7 +30,7 @@
                 "scope": "entity.name.type",
                 "settings": {
                     "fontStyle": "italic",
-                    "foreground": "#A6E22E"
+                    "foreground": "#F8F8F2"
                 }
             },
             {
@@ -38,6 +38,27 @@
                 "scope": "entity.other.inherited-class",
                 "settings": {
                     "fontStyle": "italic",
+                    "foreground": "#F8F8F2"
+                }
+            },
+            {
+                "name": "storage.type",
+                "scope": "storage.type",
+                "settings": {
+                    "foreground": "#F92672"
+                }
+            },
+            {
+                "name": "support.class",
+                "scope": "support.class",
+                "settings": {
+                    "foreground": "#F8F8F2"
+                }
+            },
+            {
+                "name": "support.function",
+                "scope": "support.function",
+                "settings": {
                     "foreground": "#A6E22E"
                 }
             }

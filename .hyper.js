@@ -126,7 +126,7 @@ module.exports = {
     'hyperlinks',
     'hyper-search',
     //'hyper-solarized-light',
-    // 'hyperterm-monokai'
+    'hyperterm-monokai'
   ],
 
   // in development, you can create a directory under
