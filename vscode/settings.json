@@ -100,6 +100,32 @@
         // "**/bower_components": true,
         // "**/vendor": true
     },
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "type": "node",
+                "request": "attach",
+                "protocol": "inspector",
+                "timeout": 60000,
+                "name": "debug"
+            },
+            {
+                "name": "XDebug listen",
+                "type": "php",
+                "request": "launch",
+                "port": 9000
+            },
+            {
+                "name": "xdebug launch current",
+                "type": "php",
+                "request": "launch",
+                "program": "${file}",
+                "cwd": "${fileDirname}",
+                "port": 9000
+            }
+        ]
+    },
     "guides.indent.showFirstIndentGuides": false,
     "guides.active.color.dark": "rgba(60, 60, 60, 0.75)",
     "guides.active.color.light": "rgba(220, 220, 220, 0.75)",
