@@ -73,10 +73,12 @@ sudo mv npm /etc/bash_completion.d/npm
 
 npm install -g \
     babel-cli \
+    eslint \
     http-server \
     npm-check \
     nsp \
     pkgcount \
+    stylelint \
     ttystudio
     #node-inspector
 
