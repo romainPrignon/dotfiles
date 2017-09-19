@@ -5,6 +5,7 @@ EXTENSIONS=(
   "christian-kohler.npm-intellisense" \
   "christian-kohler.path-intellisense" \
   "dbaeumer.vscode-eslint" \
+  "devtanc.tab-hero" \
   "donjayamanne.githistory" \
   "eg2.vscode-npm-script" \
   "felixfbecker.php-debug" \
