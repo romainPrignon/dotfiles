@@ -87,6 +87,7 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.startupEditor": "none",
     "diffEditor.renderSideBySide": true,
+    "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
     "files.watcherExclude": {
         "**/.git/objects/**": true,

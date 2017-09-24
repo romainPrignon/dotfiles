@@ -17,11 +17,6 @@
         "command": "-workbench.action.nextEditor"
     },
     {
-        "key": "ctrl+l",
-        "command": "expandLineSelection",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "ctrl+i",
         "command": "-expandLineSelection",
         "when": "editorTextFocus"
@@ -29,11 +24,6 @@
     {
         "key": "ctrl+k",
         "command": "editor.action.deleteLines",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+k",
-        "command": "-editor.action.deleteLines",
         "when": "editorTextFocus && !editorReadonly"
     },
     {
@@ -84,14 +74,6 @@
         "key": "alt+b",
         "command": "workbench.action.tasks.build"
     },
-    { "key": "ctrl+shift+z",
-        "command": "-redo",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+z",
-        "command": "workbench.action.files.revert"
-    },
     {
         "key": "ctrl+shift+d",
         "command": "editor.action.changeAll",
@@ -103,26 +85,44 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+alt+d",
+        "key": "ctrl+b",
         "command": "editor.action.goToDeclaration",
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-        "key": "ctrl+alt+i",
+        "key": "ctrl+i",
         "command": "editor.action.goToImplementation",
         "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-        "key": "ctrl+alt+g",
-        "command": "workbench.action.gotoLine"
-    },
-    {
-        "key": "ctrl+alt+s",
+        "key": "ctrl+s",
         "command": "workbench.action.gotoSymbol"
     },
     {
         "key": "ctrl+shift+alt+s",
         "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "editor.action.smartSelect.grow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+[KeyM]",
+        "command": "editor.debug.action.toggleBreakpoint",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+h",
+        "command": "git.viewFileHistory"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "alt+z",
+        "command": "git.clean"
     }
 ]
 
