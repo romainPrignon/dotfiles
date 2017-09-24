@@ -19,6 +19,7 @@ default-size-columns=160
 default-size-rows=45
 cursor-shape='ibeam'
 use-system-font=true
+use-theme-colors=true
 use-theme-transparency=false
 font='Monospace 12'
 

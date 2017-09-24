@@ -31,7 +31,22 @@ speed=0.0
 titlebar-font='Ubuntu Medium 11'
 
 [wm/keybindings]
+move-to-workspace-last=@as []
+move-to-workspace-up=@as []
+move-to-workspace-1=@as []
+switch-to-workspace-left=@as []
 panel-main-menu=@as []
+switch-to-workspace-down=@as []
+move-to-workspace-right=@as []
+switch-to-workspace-right=@as []
+move-to-monitor-left=@as []
+switch-to-workspace-last=@as []
+move-to-monitor-down=@as []
+move-to-workspace-left=@as []
+move-to-monitor-right=@as []
+move-to-workspace-down=@as []
+move-to-monitor-up=@as []
+switch-to-workspace-up=@as []
 
 [datetime]
 automatic-timezone=true

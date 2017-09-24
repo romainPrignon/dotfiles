@@ -1,7 +1,13 @@
 [/]
 app-picker-view=uint32 1
-enabled-extensions=['alternate-tab@gnome-shell-extensions.gcampax.github.com', 'hide-dash@xenatt.github.com', 'pixel-saver@deadalnix.me', 'TaskBar@zpydr', 'hide-workspace@xenatt.github.com', 'bottompanel@tmoer93']
+enabled-extensions=['hide-dash@xenatt.github.com', 'pixel-saver@deadalnix.me', 'TaskBar@zpydr', 'hide-workspace@xenatt.github.com', 'bottompanel@tmoer93', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'pomodoro@arun.codito.in']
 favorite-apps=['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'gnome-terminal.desktop', 'sublime_text.desktop', 'atom.desktop', 'jetbrains-phpstorm.desktop', 'chrome-hgmloofddffdnphfgcellkdfbfbjeloo-Default.desktop', 'chrome-odeapdcanbpaonefjnimpmdkpkcnojlo-Default.desktop', 'chrome-mnfehgbmkapmjnhcnbodoamcioleeooe-Default.desktop']
+
+[extensions/timer]
+manual-hours=1
+manual-minutes=0
+ui-notification=true
+manual-seconds=0
 
 [extensions/TaskBar]
 position-favorites=1
