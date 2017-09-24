@@ -1,0 +1,22 @@
+asp
+blade support
+coffeescript
+CVS integration
+docker integration
+drupal support
+file watchers
+gnu getText
+google app engine
+haml
+hg4idea
+joomla
+perforce
+phing
+php docker
+phpstorm workshop
+rest client
+restructuredtext
+subversion
+time tracking
+vagrant
+wordpress
