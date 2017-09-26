@@ -140,4 +140,8 @@ wget -qO vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
 dpkg -i vscode.deb
 apt -f -y install
 
+wget -qO kraken.deb https://release.gitkraken.com/linux/gitkraken-amd64.deb
+dpkg -i kraken.deb
+apt -f -y install
+
 # post-install

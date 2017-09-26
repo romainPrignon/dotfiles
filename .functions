@@ -43,6 +43,10 @@ function supertouch() {
     touch "$@"
 }
 
+function browserreload() {
+    browser-sync start --port 5000 --proxy "$1" --files "src/*"
+}
+
 # backup to $1 with name backup-<hostname>-<date>.tgz
 function backup() {
     # clean

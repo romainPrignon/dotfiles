@@ -73,13 +73,15 @@ sudo mv npm /etc/bash_completion.d/npm
 
 npm install -g \
     babel-cli \
+    browser-sync \
     eslint \
     http-server \
     npm-check \
     nsp \
     pkgcount \
     stylelint \
-    ttystudio
+    ttystudio \
+    types-checker \
     #node-inspector
 
 apm install --packages-file $dotfile_dir_absolute_path/.atom/atom-package.txt
