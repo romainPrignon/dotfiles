@@ -103,6 +103,7 @@
     "workbench.startupEditor": "none",
     "diffEditor.renderSideBySide": true,
     "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "files.watcherExclude": {
         "**/.git/objects/**": true,

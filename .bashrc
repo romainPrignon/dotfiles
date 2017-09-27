@@ -41,7 +41,7 @@ HISTTIMEFORMAT='%F %T '
 # Don't record some commands
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 
-export PROMPT_COMMAND='history -a; history -n'
+export PROMPT_COMMAND='history -a'
 
 #######################################
 

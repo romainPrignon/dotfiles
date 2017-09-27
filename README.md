@@ -57,7 +57,10 @@ apm list --installed --bare > atom-package.txt
 apm install --packages-file atom-package.txt
 ```
 
+**vscode**
+subl $(locate workbench.main.css)
+append this file => https://gist.github.com/jakewtaylor/e92acd697409e53a73ebf8e0145d4c28
+
+
 ## TODO
-- [ ] clean desktp settings (compiz, dconf, gconf,...)
-- [ ] redump dconf
-- [ ] clean ide
+- [ ] !
