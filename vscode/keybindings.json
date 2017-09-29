@@ -22,7 +22,7 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+k",
+        "key": "ctrl+q",
         "command": "editor.action.deleteLines",
         "when": "editorTextFocus && !editorReadonly"
     },
@@ -67,7 +67,7 @@
         "command": "workbench.view.debug"
     },
     {
-        "key": "alt+w",
+        "key": "ctrl+k",
         "command": "workbench.action.toggleSidebarVisibility"
     },
     {
@@ -95,11 +95,11 @@
         "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-        "key": "ctrl+s",
+        "key": "ctrl+t",
         "command": "workbench.action.gotoSymbol"
     },
     {
-        "key": "ctrl+shift+alt+s",
+        "key": "ctrl+shift+alt+n",
         "command": "workbench.action.showAllSymbols"
     },
     {
@@ -123,6 +123,14 @@
     {
         "key": "alt+z",
         "command": "git.clean"
+    },
+    {
+        "key": "ctrl+alt+q",
+        "command": "workbench.action.quit"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quit"
     }
 ]
 

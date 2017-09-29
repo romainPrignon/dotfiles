@@ -143,7 +143,7 @@
             }
         ]
     },
-    "guides.indent.showFirstIndentGuides": false,
+    "guides.indent.showFirstIndentGuides": true,
     "guides.active.color.dark": "rgba(60, 60, 60, 0.75)",
     "guides.active.color.light": "rgba(220, 220, 220, 0.75)",
     "guides.stack.color.dark": "rgba(60, 60, 60, 0.75)",
@@ -157,5 +157,6 @@
     "php.suggest.basic": false,
     "php.validate.run": "onType",
     "phpcs.standard": "PSR2",
-    "javascript.implicitProjectConfig.checkJs": true
+    "javascript.implicitProjectConfig.checkJs": true,
+    "workbench.iconTheme": "vscode-icons"
 }
