@@ -71,10 +71,6 @@
         "command": "workbench.action.toggleSidebarVisibility"
     },
     {
-        "key": "alt+b",
-        "command": "workbench.action.tasks.build"
-    },
-    {
         "key": "ctrl+shift+d",
         "command": "editor.action.changeAll",
         "when": "editorTextFocus && !editorReadonly"
@@ -131,6 +127,18 @@
     {
         "key": "ctrl+q",
         "command": "-workbench.action.quit"
+    },
+    {
+        "key": "alt+b",
+        "command": "git.checkout"
+    },
+    {
+        "key": "alt+c",
+        "command": "git.commit"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.files.openFolder"
     }
 ]
 

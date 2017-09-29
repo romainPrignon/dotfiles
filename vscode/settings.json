@@ -96,7 +96,12 @@
     "editor.wordWrapColumn": 120,
     "window.openFoldersInNewWindow": "on",
     "workbench.colorCustomizations": {
-        "tab.activeBorder": "#EEEEEE"
+        "activityBar.background": "#313437",
+        "sideBar.background": "#313437",
+        "sideBar.border": "#313437",
+        "tab.activeBorder": "#EEEEEE",
+        "tab.activeBackground": "#4C4F53",
+        "tab.inactiveBackground": "#313437"
     },
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
