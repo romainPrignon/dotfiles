@@ -45,6 +45,8 @@ export PROMPT_COMMAND='history -a'
 
 #######################################
 
+PROMPT_DIRTRIM=2
+
 # include prompt
 GIT_PROMPT_THEME=Single_line_Ubuntu_Romain
 GIT_PROMPT_FETCH_REMOTE_STATUS=0
