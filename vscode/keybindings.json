@@ -139,6 +139,40 @@
     {
         "key": "ctrl+shift+o",
         "command": "workbench.action.files.openFolder"
+    },
+    {
+        "key": "alt+g",
+        "command": "git.openChange"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "git.stash"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "git.stashPop"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "extension.saveTabSet"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "extension.openTabSet"
+    },
+    {
+        "key": "alt+r",
+        "command": "workbench.action.tasks.build"
+    },
+    {
+        "key": "alt+d",
+        "command": "workbench.action.debug.start",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "ctrl+shift+alt+d",
+        "command": "workbench.action.debug.stop",
+        "when": "inDebugMode"
     }
 ]
 

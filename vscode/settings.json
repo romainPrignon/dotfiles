@@ -2,7 +2,7 @@
     "workbench.colorTheme": "Monokai",
     "editor.fontSize": 16,
     "editor.fontFamily": "'DejaVu Sans Mono', monospace, 'Droid Sans Mono'",
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "wordWrapColumn",
     "editor.lineHeight": 24,
     "editor.rulers": [120],
     "editor.minimap.enabled": false,
@@ -89,6 +89,13 @@
                 "scope": "support.type",
                 "settings": {
                     "foreground": "#F8F8F2"
+                }
+            },
+            {
+                "name": "string.quoted.double.json",
+                "scope": "meta.structure.dictionary.json string.quoted.double.json",
+                "settings": {
+                    "foreground": "#E6DB74"
                 }
             }
         ]
