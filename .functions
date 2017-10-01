@@ -1,9 +1,8 @@
-# open the result of a command in sublime
-function sublime()
+function output()
 {
+    rm -f /tmp/$$.txt
     "$@" > /tmp/$$.txt
-    subl /tmp/$$.txt
-    # rm /tmp/$$.txt;
+    code /tmp/$$.txt
 }
 
 function docker-rm-container()
