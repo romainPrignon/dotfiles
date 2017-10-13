@@ -88,6 +88,8 @@ shopt -s globstar 2> /dev/null
 # Prevent file overwrite on stdout redirection
 set -o noclobber
 
+# autoclear
+bind '"\C-m": "\C-l\C-j"'
 #######################################
 
 # starting command
