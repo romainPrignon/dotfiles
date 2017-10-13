@@ -20,7 +20,7 @@ alias .....="cd ../../../.."
 
 # Shortcuts
 alias d="cd ~/Documents"
-alias dl="cd ~/Download"
+alias dl="cd ~/Downloads"
 alias w="cd ~/workspace"
 alias g="LANGUAGE=en_US.UTF-8 git"
 alias h="history"

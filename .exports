@@ -1,5 +1,5 @@
 export INPUTRC="$HOME/.inputrc"
-export EDITOR="vim";
+export EDITOR="micro";
 
 export COMPOSER_HOME="$HOME/.composer"
 
