@@ -64,5 +64,9 @@ append this file => https://gist.github.com/jakewtaylor/e92acd697409e53a73ebf8e0
 subl $(locate workbench.main.js)
 append this file => https://gist.github.com/WadeShuler/1637073371ad126779076344c34278f3
 
+**gnome-shell**
+BingWallpaper@ineffable-gmail.com  hide-dash@xenatt.github.com       pixel-saver@deadalnix.me
+bottompanel@tmoer93                hide-workspace@xenatt.github.com  TaskBar@zpydr
+
 ## TODO
 - [ ] !

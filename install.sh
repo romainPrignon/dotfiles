@@ -17,9 +17,11 @@ apt install -y \
 add-apt-repository ppa:ultradvorka/ppa -y
 apt update
 apt install -y \
+    chrome-gnome-shell \
     curl \
     git \
     git-extras \
+    gnome-shell-pomodoro \
     hh \
     htop \
     python-pygments \

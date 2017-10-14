@@ -8,7 +8,10 @@ monospace-font-name='Ubuntu Mono 13'
 toolkit-accessibility=false
 
 [notifications]
-application-children=['org-gnome-nautilus', 'gnome-network-panel']
+application-children=['org-gnome-nautilus', 'gnome-network-panel', 'jetbrains-toolbox']
+
+[notifications/application/jetbrains-toolbox]
+application-id='jetbrains-toolbox.desktop'
 
 [notifications/application/gnome-network-panel]
 application-id='gnome-network-panel.desktop'
