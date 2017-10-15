@@ -50,8 +50,7 @@ ln -sf $dotfile_dir_absolute_path/.gdfuse/pro/config $home_dir_absolute_path/.gd
 ln -sf $dotfile_dir_absolute_path/.gdfuse/peaks/config $home_dir_absolute_path/.gdfuse/peaks/config
 ln -sf $dotfile_dir_absolute_path/vscode/settings.json $home_dir_absolute_path/.config/Code/User/settings.json
 ln -sf $dotfile_dir_absolute_path/vscode/keybindings.json $home_dir_absolute_path/.config/Code/User/keybindings.json
-ln -sf $dotfile_dir_absolute_path/.zprofile $home_dir_absolute_path/.zprofile
-ln -sf $dotfile_dir_absolute_path/.zshrc $home_dir_absolute_path/.zshrc
+ln -sf $dotfile_dir_absolute_path/micro/settings.json $home_dir_absolute_path/.config/micro/settings.json
 
 # ln -sf $dotfile_dir_absolute_path/preferences /etc/apt/preferences
 

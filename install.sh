@@ -14,7 +14,6 @@ apt install -y \
     software-properties-common
 
 # install: app
-add-apt-repository ppa:ultradvorka/ppa -y
 apt update
 apt install -y \
     chrome-gnome-shell \
@@ -22,7 +21,6 @@ apt install -y \
     git \
     git-extras \
     gnome-shell-pomodoro \
-    hh \
     htop \
     python-pygments \
     shellcheck \
@@ -30,7 +28,20 @@ apt install -y \
     ssh \
     tree \
     vim \
-    wget
+    wget \
+    xclip
+
+snap install micro --classic
+
+# qfc
+git clone https://github.com/pindexis/qfc $HOME/.qfc
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+#enhancd
+git clone https://github.com/b4b4r07/enhancd ~/.enhancd
 
 # install: runtime
 
@@ -83,7 +94,7 @@ apt install -y \
 apt install -y \
     openjdk-8-jdk
 
-git clone https://github.com/pindexis/qfc $HOME/.qfc
+# docker
 curl -sSL https://get.docker.com | bash
 usermod -aG docker $(whoami)
 

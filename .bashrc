@@ -21,11 +21,6 @@ if [ -f "$HOME/.exports_windows" ]; then
     . "$HOME/.exports_windows"
 fi
 
-# include completion
-if [ -f "$HOME/bash_completion.d/npm" ]; then
-    . "$HOME/bash_completion.d/npm"
-fi
-
 #######################################
 
 # Avoid duplicate entries
@@ -88,8 +83,9 @@ shopt -s globstar 2> /dev/null
 # Prevent file overwrite on stdout redirection
 set -o noclobber
 
-# autoclear
+# always on top
 bind '"\C-m": "\C-l\C-j"'
+
 #######################################
 
 # starting command
@@ -104,13 +100,13 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 # qfc
 [[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh" # Added by qfc (see https://github.com/pindexis/qfc)
 
-# hstr
-export HH_CONFIG=hicolor
-if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/romainprignon/.sdkman"
-[[ -s "/home/romainprignon/.sdkman/bin/sdkman-init.sh" ]] && source "/home/romainprignon/.sdkman/bin/sdkman-init.sh"
+# enhancd
+export ENHANCD_COMMAND=ecd
+export ENHANCD_DISABLE_DOT=1
+[ -f ~/.enhancd/init.sh ] && source ~/.enhancd/init.sh
 
 ###############################################################################
 
