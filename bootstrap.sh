@@ -51,6 +51,9 @@ ln -sf $dotfile_dir_absolute_path/.gdfuse/peaks/config $home_dir_absolute_path/.
 ln -sf $dotfile_dir_absolute_path/vscode/settings.json $home_dir_absolute_path/.config/Code/User/settings.json
 ln -sf $dotfile_dir_absolute_path/vscode/keybindings.json $home_dir_absolute_path/.config/Code/User/keybindings.json
 ln -sf $dotfile_dir_absolute_path/micro/settings.json $home_dir_absolute_path/.config/micro/settings.json
+ln -sf $dotfile_dir_absolute_path/.zprofile $home_dir_absolute_path/.zprofile
+ln -sf $dotfile_dir_absolute_path/.zshrc $home_dir_absolute_path/.zshrc
+yes | cp -rf $dotfile_dir_absolute_path/zsh-git-prompt.sh $home_dir_absolute_path/.zsh/zsh-git-prompt/zshrc.sh
 
 # ln -sf $dotfile_dir_absolute_path/preferences /etc/apt/preferences
 

@@ -29,7 +29,8 @@ apt install -y \
     tree \
     vim \
     wget \
-    xclip
+    xclip \
+    zsh
 
 snap install micro --classic
 
@@ -42,6 +43,12 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 #enhancd
 git clone https://github.com/b4b4r07/enhancd ~/.enhancd
+
+# install: zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+git clone https://github.com/olivierverdier/zsh-git-prompt.git ~/.zsh/zsh-git-prompt
+git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-history-substring-search
 
 # install: runtime
 
