@@ -34,7 +34,7 @@ first-start=false
 
 [extensions/bingwallpaper]
 notify=false
-previous=',/usr/share/backgrounds/gnome/FootFall.jpg'
+previous=',/usr/share/backgrounds/gnome/FootFall.png'
 set-background=false
 hide=true
 
