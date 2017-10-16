@@ -29,6 +29,7 @@ apt install -y \
     tree \
     vim \
     wget \
+    wmctrl \
     xclip \
     zsh
 

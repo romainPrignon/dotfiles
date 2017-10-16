@@ -20,8 +20,9 @@ application-id='gnome-network-panel.desktop'
 application-id='org.gnome.Nautilus.desktop'
 
 [screensaver]
-picture-uri='file:///usr/share/backgrounds/gnome/adwaita-lock.jpg'
+picture-uri='file:///usr/share/backgrounds/gnome/Whispy_Tails.jpg'
 lock-delay=uint32 300
+picture-options='zoom'
 
 [peripherals/touchpad]
 natural-scroll=true
@@ -29,6 +30,9 @@ tap-to-click=true
 
 [peripherals/mouse]
 speed=0.0
+
+[search-providers]
+sort-order=['gnome-contacts.desktop', 'gnome-documents.desktop', 'nautilus.desktop']
 
 [wm/preferences]
 titlebar-font='Ubuntu Medium 11'

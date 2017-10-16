@@ -74,6 +74,7 @@ bottompanel@tmoer93                hide-workspace@xenatt.github.com  TaskBar@zpy
 - atom: install plugins
 - jetbrains: install jetbain-toolbox
 - phpstorm: install plugins
+- phpstorm: remove unused plugins
 - gnome: install extensions
 - file: bookmark (app, workspace)
 - chrome: app shortcuts (cloud9, di.fm, docker, evernote, gantter, gmail peaks, calendar, drive, hub, lucidchart, mockup, pixlr, scribens, slack, spotify, stackedit)

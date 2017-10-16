@@ -34,11 +34,12 @@ first-start=false
 
 [extensions/bingwallpaper]
 notify=false
-previous=',/home/romainprignon/Pictures/BingWallpaper/20171014-Cotoneaster_EN-US13253364410_1920x1080.jpg'
+previous=',/usr/share/backgrounds/gnome/FootFall.jpg'
 set-background=false
 hide=true
 
 [keybindings]
+toggle-message-tray=@as []
 toggle-overview=@as []
 
 [calendar]
