@@ -68,5 +68,12 @@ append this file => https://gist.github.com/WadeShuler/1637073371ad126779076344c
 BingWallpaper@ineffable-gmail.com  hide-dash@xenatt.github.com       pixel-saver@deadalnix.me
 bottompanel@tmoer93                hide-workspace@xenatt.github.com  TaskBar@zpydr
 
-## TODO
-- [ ] !
+## TODO manual
+- sublime: install package control
+- vscode: copy workbench
+- atom: install plugins
+- jetbrains: install jetbain-toolbox
+- phpstorm: install plugins
+- gnome: install extensions
+- file: bookmark (app, workspace)
+- chrome: app shortcuts (cloud9, di.fm, docker, evernote, gantter, gmail peaks, calendar, drive, hub, lucidchart, mockup, pixlr, scribens, slack, spotify, stackedit)

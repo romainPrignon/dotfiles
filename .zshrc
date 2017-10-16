@@ -47,7 +47,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
 precmd () {print -Pn "\e]0;%2~\a"}
 
 PROMPT='
-%(?.%{$fg_bold[green]%}✔%{$reset_color%}.%{$fg_bold[red]%}✘%{$reset_color%}) %{$fg_bold[cyan]%}%n%{$reset_color%} %{$fg_bold[yellow]%}%2~%{$reset_color%} $(git_super_status) %{$fg_bold[white]%}$%{$reset_color%} '
+%(?.%{$fg_bold[green]%}✔%{$reset_color%}.%{$fg_bold[red]%}✘%{$reset_color%}) %{$fg_bold[cyan]%}%n%{$reset_color%} %{$fg_bold[yellow]%}%2~%{$reset_color%} $(git_super_status) %{$fg_bold[white]%}#%{$reset_color%} '
 
 # options
 setopt noautomenu

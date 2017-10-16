@@ -6,37 +6,6 @@ sleep-inactive-ac-timeout=3600
 sleep-inactive-ac-type='nothing'
 sleep-inactive-battery-timeout=1800
 
-[plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/',
-'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/',
-'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/',
-'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
-
-[plugins/media-keys/custom-keybindings/custom4]
-binding='<Super>c'
-command='wmctrl -a Chrome'
-name='Chrome'
-
-[plugins/media-keys/custom-keybindings/custom3]
-binding='<Super>i'
-command='wmctrl -a PhpStorm'
-name='PhpStorm'
-
-[plugins/media-keys/custom-keybindings/custom2]
-binding='<Super>t'
-command='wmctrl -a Terminal'
-name='Terminal'
-
-[plugins/media-keys/custom-keybindings/custom1]
-binding='<Super>h'
-command='wmctrl -a Octobox'
-name='Octobox'
-
-[plugins/media-keys/custom-keybindings/custom0]
-binding='<Super>s'
-command='systemctl suspend'
-name='suspend'
-
 [plugins/xsettings]
 antialiasing='rgba'
 hinting='slight'

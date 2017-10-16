@@ -1,6 +1,6 @@
 [/]
 app-picker-view=uint32 1
-enabled-extensions=['alternate-tab@gnome-shell-extensions.gcampax.github.com', 'hide-dash@xenatt.github.com', 'pixel-saver@deadalnix.me', 'hide-workspace@xenatt.github.com', 'bottompanel@tmoer93', 'BingWallpaper@ineffable-gmail.com', 'TaskBar@zpydr', pomodoro@arun.codito.in]
+enabled-extensions=['alternate-tab@gnome-shell-extensions.gcampax.github.com', 'hide-dash@xenatt.github.com', 'pixel-saver@deadalnix.me', 'hide-workspace@xenatt.github.com', 'bottompanel@tmoer93', 'BingWallpaper@ineffable-gmail.com', 'TaskBar@zpydr', 'pomodoro@arun.codito.in']
 favorite-apps=['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'gnome-terminal.desktop', 'jetbrains-phpstorm.desktop', 'code.desktop', 'chrome-ajibaobpcjphcdfkhogecbieekkafmgo-Default.desktop', 'chrome-lopkjdmeghfmnolpgefmcjbjmicgapdb-Default.desktop']
 
 [extensions/timer]

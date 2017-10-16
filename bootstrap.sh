@@ -9,7 +9,9 @@ cd $home_dir_absolute_path
 mkdir app
 mkdir .atom
 mkdir -p $home_dir_absolute_path/.config/dconf
+mkdir -p $home_dir_absolute_path/.config/micro
 mkdir -p $home_dir_absolute_path/.config/sublime-text-3/Packages/User
+mkdir -p $home_dir_absolute_path/.config/Code/User
 mkdir drive-pro
 mkdir drive-peaks
 mkdir -p $home_dir_absolute_path/.gdfuse/pro
@@ -19,8 +21,12 @@ mkdir .ssh
 sudo chown -R $user:$user $home_dir_absolute_path/.composer
 sudo chown -R $user:$user $home_dir_absolute_path/n
 sudo chown -R $user:$user $home_dir_absolute_path/.qfc
+sudo chown -R $user:$user $home_dir_absolute_path/.fzf
+sudo chown -R $user:$user $home_dir_absolute_path/.enhancd
+sudo chown -R $user:$user $home_dir_absolute_path/.zsh
+sudo chown -R $user:$user $home_dir_absolute_path/.bash-git-prompt
 
-git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
+wget -qO ~/app/hyper.AppImage https://releases.hyper.is/download/AppImage
 
 ln -sf $dotfile_dir_absolute_path/.atom/config.cson $home_dir_absolute_path/.atom/config.cson
 ln -sf $dotfile_dir_absolute_path/.atom/keymap.cson $home_dir_absolute_path/.atom/keymap.cson
@@ -64,7 +70,7 @@ dconf load /org/gnome/shell/ < $dotfile_dir_absolute_path/dconf/shell.dconf
 dconf load /org/gnome/terminal/ < $dotfile_dir_absolute_path/dconf/terminal.dconf
 dconf load /org/gnome/desktop/ < $dotfile_dir_absolute_path/dconf/desktop.dconf
 
-. "$HOME/.profile"
+source "$HOME/.profile"
 
 # PHP
 composer global install
@@ -88,4 +94,4 @@ npm install -g \
     types-checker \
     #node-inspector
 
-apm install --packages-file $dotfile_dir_absolute_path/.atom/atom-package.txt
+#apm install --packages-file $dotfile_dir_absolute_path/.atom/atom-package.txt
