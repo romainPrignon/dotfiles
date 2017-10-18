@@ -97,6 +97,19 @@ export ENHANCD_COMMAND=ecd
 export ENHANCD_DISABLE_DOT=1
 [ -f ~/.enhancd/init.sh ] && source ~/.enhancd/init.sh
 
+# include partner
+if [ -f "$HOME/.m6rc" ]; then
+    . "$HOME/.m6rc"
+fi
+
+if [ -f "$HOME/.llsrc" ]; then
+    . "$HOME/.llsrc"
+fi
+
+if [ -f "$HOME/.yproxrc" ]; then
+    . "$HOME/.yproxrc"
+fi
+
 # must be at the end
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

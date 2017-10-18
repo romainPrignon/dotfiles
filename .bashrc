@@ -48,6 +48,8 @@ GIT_PROMPT_FETCH_REMOTE_STATUS=0
 GIT_PROMPT_IGNORE_STASH=1
 source ~/.bash-git-prompt/gitprompt.sh
 
+echo -e "\e]12;orange\a" # prompt cursor color
+
 #######################################
 
 # append to the history file, don't overwrite it
