@@ -89,10 +89,10 @@ git_super_status() {
 		  STATUS="$STATUS $ZSH_THEME_GIT_PROMPT_UNTRACKED%{${reset_color}%}$GIT_UNTRACKED"
 	  fi
 	  if [ "$GIT_CHANGED" -eq "0" ] && [ "$GIT_CONFLICTS" -eq "0" ] && [ "$GIT_STAGED" -eq "0" ] && [ "$GIT_UNTRACKED" -eq "0" ]; then
-		  STATUS="$STATUS $ZSH_THEME_GIT_PROMPT_CLEAN"
+		  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CLEAN"
 	  fi
 	  STATUS="$STATUS%{${reset_color}%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
-	  echo "$STATUS"
+	  echo " $STATUS"
 	fi
 }
 
@@ -108,6 +108,6 @@ ZSH_THEME_GIT_PROMPT_BEHIND="%{↓·%G%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{↑·%G%}"
 ZSH_THEME_GIT_PROMPT_LOCAL="L"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}…%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}√%{$reset_color%}"
 
 

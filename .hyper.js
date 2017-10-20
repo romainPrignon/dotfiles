@@ -15,7 +15,7 @@ module.exports = {
     fontFamily: '"Ubuntu Mono", "Inconsolata"',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(254,151,32,0.8)',
+    cursorColor: '#FFA500',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
@@ -55,21 +55,21 @@ module.exports = {
     // an array here instead of a color map object
     colors: {
       black: '#000000',
-      red: '#ff0000',
-      green: '#33ff00',
-      yellow: '#ffff00',
-      blue: '#0066ff',
-      magenta: '#cc00ff',
-      cyan: '#00ffff',
-      white: '#d0d0d0',
-      lightBlack: '#808080',
-      lightRed: '#ff0000',
-      lightGreen: '#33ff00',
-      lightYellow: '#ffff00',
-      lightBlue: '#0066ff',
-      lightMagenta: '#cc00ff',
-      lightCyan: '#00ffff',
-      lightWhite: '#ffffff'
+      red: '#cc0000',
+      green: '#4E9A06',
+      yellow: '#C4A000',
+      blue: '#3465A4',
+      magenta: '#75507B',
+      cyan: '#06989A',
+      white: '#D3D7CF',
+      lightBlack: '#555753',
+      lightRed: '#EF2929',
+      lightGreen: '#8AE234',
+      lightYellow: '#FCE94F',
+      lightBlue: '#729FCF',
+      lightMagenta: '#AD7FA8',
+      lightCyan: '#34E2E2',
+      lightWhite: '#EEEEEC'
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -125,8 +125,7 @@ module.exports = {
     'hyper-tabs-enhanced',
     'hyperlinks',
     'hyper-search',
-    //'hyper-solarized-light',
-    'hyperterm-monokai'
+    //'hyper-solarized-light'
   ],
 
   // in development, you can create a directory under
@@ -158,8 +157,8 @@ module.exports = {
     "editor:undo": "ctrl+z",
     "editor:redo": "ctrl+y",
     "editor:cut": "",
-    "editor:copy": "",
-    "editor:paste": "",
+    "editor:copy": "ctrl+v",
+    "editor:paste": "ctrl+b",
     "editor:selectAll": "ctrl+a",
     "editor:clearBuffer": "ctrl+k",
     "plugins:update": ""
