@@ -16,6 +16,7 @@ mkdir drive-pro
 mkdir drive-peaks
 mkdir -p $home_dir_absolute_path/.gdfuse/pro
 mkdir -p $home_dir_absolute_path/.gdfuse/peaks
+mkdir keys
 mkdir .ssh
 
 sudo chown -R $user:$user $home_dir_absolute_path/.composer

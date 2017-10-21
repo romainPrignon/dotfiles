@@ -11,7 +11,7 @@ override_git_prompt_colors() {
   fi
 
   function prompt_callback {
-    local TITLE="$(gp_truncate_pwd)"
+    local TITLE="# $(gp_truncate_pwd)"
     gp_set_window_title "$TITLE"
   }
 

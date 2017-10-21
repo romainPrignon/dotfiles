@@ -16,6 +16,19 @@ if [ -f "$HOME/.functions" ]; then
     . "$HOME/.functions"
 fi
 
+# include partner
+if [ -f "$HOME/.m6rc" ]; then
+    . "$HOME/.m6rc"
+fi
+
+if [ -f "$HOME/.llsrc" ]; then
+    . "$HOME/.llsrc"
+fi
+
+if [ -f "$HOME/.yproxrc" ]; then
+    . "$HOME/.yproxrc"
+fi
+
 # bootstrap
 autoload -U promptinit && promptinit
 autoload -U colors && colors
@@ -44,7 +57,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}%{…%G%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
 
 ## prompt title
-precmd () {print -Pn "\e]0;%2~\a"}
+precmd () {print -Pn "\e]0;# %2~\a"}
 
 PROMPT='
 %(?.%{$fg[green]%}✔%{$reset_color%}.%{$fg[red]%}✘%{$reset_color%}) %{$fg_bold[cyan]%}%n%{$reset_color%} %{$fg_bold[yellow]%}%2~%{$reset_color%}$(git_super_status) %{$fg_bold[white]%}#%{$reset_color%} '
@@ -97,18 +110,6 @@ export ENHANCD_COMMAND=ecd
 export ENHANCD_DISABLE_DOT=1
 [ -f ~/.enhancd/init.sh ] && source ~/.enhancd/init.sh
 
-# include partner
-if [ -f "$HOME/.m6rc" ]; then
-    . "$HOME/.m6rc"
-fi
-
-if [ -f "$HOME/.llsrc" ]; then
-    . "$HOME/.llsrc"
-fi
-
-if [ -f "$HOME/.yproxrc" ]; then
-    . "$HOME/.yproxrc"
-fi
 
 # must be at the end
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

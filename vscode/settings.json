@@ -164,11 +164,13 @@
     "guides.updateDelay": 0.01,
     "guides.sendUsagesAndStats": false,
     "typescript.implementationsCodeLens.enabled": true,
+    "typescript.npm": "/home/romainprignon/n/bin/npm",
     "typescript.useCodeSnippetsOnMethodSuggest": true,
     "telemetry.enableTelemetry": false,
     "php.suggest.basic": false,
     "php.validate.run": "onType",
     "phpcs.standard": "PSR2",
     "javascript.implicitProjectConfig.checkJs": true,
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true
 }

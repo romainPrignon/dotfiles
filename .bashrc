@@ -21,6 +21,19 @@ if [ -f "$HOME/.exports_windows" ]; then
     . "$HOME/.exports_windows"
 fi
 
+# include partner
+if [ -f "$HOME/.m6rc" ]; then
+    . "$HOME/.m6rc"
+fi
+
+if [ -f "$HOME/.llsrc" ]; then
+    . "$HOME/.llsrc"
+fi
+
+if [ -f "$HOME/.yproxrc" ]; then
+    . "$HOME/.yproxrc"
+fi
+
 #######################################
 
 # Avoid duplicate entries
@@ -93,6 +106,22 @@ xmodmap -e "keycode 49 = grave"
 
 #######################################
 
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+#######################################
+
 # starting command
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s` > /dev/null
@@ -112,35 +141,3 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 export ENHANCD_COMMAND=ecd
 export ENHANCD_DISABLE_DOT=1
 [ -f ~/.enhancd/init.sh ] && source ~/.enhancd/init.sh
-
-###############################################################################
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
-###############################################################################
-
-# include partner
-if [ -f "$HOME/.m6rc" ]; then
-    . "$HOME/.m6rc"
-fi
-
-if [ -f "$HOME/.llsrc" ]; then
-    . "$HOME/.llsrc"
-fi
-
-if [ -f "$HOME/.yproxrc" ]; then
-    . "$HOME/.yproxrc"
-fi
-

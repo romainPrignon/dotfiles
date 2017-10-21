@@ -59,10 +59,10 @@ apm install --packages-file atom-package.txt
 
 **vscode**
 subl $(locate workbench.main.css)
-append this file => https://gist.github.com/jakewtaylor/e92acd697409e53a73ebf8e0145d4c28
+append this file => https://gist.github.com/romainPrignon/cfe7087451354456ed0ddd08e02274a4
 
 subl $(locate workbench.main.js)
-append this file => https://gist.github.com/WadeShuler/1637073371ad126779076344c34278f3
+append this file => https://gist.github.com/romainPrignon/e43da544a3deac595582b10aaa15e505
 
 **gnome-shell**
 BingWallpaper@ineffable-gmail.com  hide-dash@xenatt.github.com       pixel-saver@deadalnix.me
@@ -72,6 +72,7 @@ bottompanel@tmoer93                hide-workspace@xenatt.github.com  TaskBar@zpy
 - sublime: install package control
 - vscode: copy workbench
 - atom: install plugins
+- code: install plugins
 - jetbrains: install jetbain-toolbox
 - phpstorm: install plugins
 - phpstorm: remove unused plugins

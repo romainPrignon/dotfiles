@@ -17,7 +17,7 @@ name='chrome'
 
 [plugins/media-keys/custom-keybindings/custom5]
 binding='<Super>t'
-command='wmctrl -a gnome-terminal'
+command='bash /home/romainprignon/scripts/focus-terminal.sh'
 name='terminal'
 
 [plugins/media-keys/custom-keybindings/custom1]
