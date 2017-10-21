@@ -173,6 +173,18 @@
         "key": "ctrl+shift+alt+d",
         "command": "workbench.action.debug.stop",
         "when": "inDebugMode"
+    },
+    {
+        "key": "alt+up",
+        "command": "workbench.action.splitEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.focusFirstEditorGroup"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.focusSecondEditorGroup"
     }
 ]
 

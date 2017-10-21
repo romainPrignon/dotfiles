@@ -88,6 +88,9 @@ set -o noclobber
 # always on top
 bind '"\C-m": "\C-l\C-j"'
 
+# 2 => `
+xmodmap -e "keycode 49 = grave"
+
 #######################################
 
 # starting command
