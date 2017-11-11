@@ -185,6 +185,10 @@
     {
         "key": "ctrl+tab",
         "command": "workbench.action.focusSecondEditorGroup"
+    },
+    {
+        "key": "alt+w",
+        "command": "workbench.action.closePanel"
     }
 ]
 
