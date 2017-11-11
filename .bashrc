@@ -34,6 +34,10 @@ if [ -f "$HOME/.yproxrc" ]; then
     . "$HOME/.yproxrc"
 fi
 
+if [ -f "$HOME/.peaksrc" ]; then
+    . "$HOME/.peaksrc"
+fi
+
 #######################################
 
 # Avoid duplicate entries
