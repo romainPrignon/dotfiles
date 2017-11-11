@@ -29,6 +29,10 @@ if [ -f "$HOME/.yproxrc" ]; then
     . "$HOME/.yproxrc"
 fi
 
+if [ -f "$HOME/.peaksrc" ]; then
+    . "$HOME/.peaksrc"
+fi
+
 # bootstrap
 autoload -U promptinit && promptinit
 autoload -U colors && colors
