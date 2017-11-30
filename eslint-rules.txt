@@ -6,6 +6,7 @@
 // often used
 --rule 'comma-dangle: 1'
 --rule 'object-curly-spacing: 1'
+--rule 'quotes: 1'
 
 // other stylistic issue
 --rule 'array-bracket-newline: 1'
