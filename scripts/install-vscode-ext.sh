@@ -12,6 +12,7 @@ EXTENSIONS=(
   "felixfbecker.php-intellisense" \
   "formulahendry.code-runner" \
   "ikappas.phpcs" \
+  "mikestead.dotenv" \
   "ms-vscode.typescript-javascript-grammar" \
   "msjsdiag.debugger-for-chrome" \
   "pmneo.tsimporter" \

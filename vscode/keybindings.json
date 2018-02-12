@@ -189,6 +189,18 @@
     {
         "key": "alt+w",
         "command": "workbench.action.closePanel"
+    },
+    {
+        "key": "alt+t",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "alt+e",
+        "command": "workbench.actions.view.problems"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "workbench.files.action.showActiveFileInExplorer"
     }
 ]
 

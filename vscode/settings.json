@@ -102,6 +102,8 @@
     },
     "editor.wordWrapColumn": 120,
     "window.openFoldersInNewWindow": "on",
+    "window.menuBarVisibility": "toggle",
+    "window.zoomLevel": 0,
     "workbench.colorCustomizations": {
         "activityBar.background": "#313437",
         "sideBar.background": "#313437",
@@ -124,6 +126,7 @@
         "**/vendor/**": true
     },
     "explorer.openEditors.visible": 0,
+    "explorer.autoReveal": false,
     "search.exclude": {
         // "**/node_modules": true,
         // "**/bower_components": true,
@@ -169,6 +172,7 @@
     "telemetry.enableTelemetry": false,
     "php.suggest.basic": false,
     "php.validate.run": "onType",
+    "eslint.run": "onSave",
     "eslint.autoFixOnSave": true,
     "eslint.options": {
         "rules": {
@@ -181,6 +185,7 @@
     },
     "phpcs.standard": "PSR2",
     "javascript.implicitProjectConfig.checkJs": true,
-    "workbench.iconTheme": "vscode-icons",
-    "vsicons.dontShowNewVersionMessage": true
+    "workbench.iconTheme": "material-icon-theme",
+    "vsicons.dontShowNewVersionMessage": true,
+    "explorer.confirmDelete": false
 }

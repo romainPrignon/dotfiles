@@ -25,11 +25,15 @@ alias w="cd ~/workspace"
 alias g="LANGUAGE=en_US.UTF-8 git"
 alias h="history"
 
-#symfony
+# symfony
 alias sf2="php app/console"
 alias sf3="php bin/console"
 
-#scripts
+# docker
+alias dm="docker-machine"
+alias dc="docker-compose"
+
+# scripts
 alias standup="sh ~/scripts/git-standup.sh"
 alias meteo="curl -4 wttr.in/Lyon"
 alias dog="pygmentize -g"
