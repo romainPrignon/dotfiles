@@ -92,8 +92,8 @@ npm install -g \
     nsp \
     pkgcount \
     stylelint \
+    thanks \
     ttystudio \
-    types-checker \
-    #node-inspector
+    types-checker
 
 #apm install --packages-file $dotfile_dir_absolute_path/.atom/atom-package.txt
