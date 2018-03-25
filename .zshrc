@@ -1,3 +1,5 @@
+export SHELL="/bin/zsh"
+
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-git-prompt/zshrc.sh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -97,6 +99,9 @@ bindkey '^r' history-fzf
 bindkey '\e[1;5C' forward-word
 ## ctrl+left
 bindkey '\e[1;5D' backward-word
+
+## always on top
+bindkey -s '^m' '^l^j'
 
 # external
 
