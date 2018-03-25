@@ -101,6 +101,7 @@
         ]
     },
     "editor.wordWrapColumn": 120,
+    "editor.wordBasedSuggestions": false,
     "window.openFoldersInNewWindow": "on",
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 0,
@@ -127,6 +128,8 @@
     },
     "explorer.openEditors.visible": 0,
     "explorer.autoReveal": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
     "search.exclude": {
         // "**/node_modules": true,
         // "**/bower_components": true,
@@ -158,6 +161,7 @@
             }
         ]
     },
+    "extensions.ignoreRecommendations": true,
     "guides.indent.showFirstIndentGuides": true,
     "guides.active.color.dark": "rgba(60, 60, 60, 0.75)",
     "guides.active.color.light": "rgba(220, 220, 220, 0.75)",
@@ -166,6 +170,8 @@
     "guides.stack.enabled": false,
     "guides.updateDelay": 0.01,
     "guides.sendUsagesAndStats": false,
+    "html.suggest.angular1": false,
+    "html.suggest.ionic": false,
     "typescript.implementationsCodeLens.enabled": true,
     "typescript.npm": "/home/romainprignon/n/bin/npm",
     "typescript.useCodeSnippetsOnMethodSuggest": true,
@@ -187,5 +193,8 @@
     "javascript.implicitProjectConfig.checkJs": true,
     "workbench.iconTheme": "material-icon-theme",
     "vsicons.dontShowNewVersionMessage": true,
-    "explorer.confirmDelete": false
+    "material-icon-theme.showUpdateMessage": false,
+    "[markdown]": {
+        "editor.quickSuggestions": true
+    }
 }
