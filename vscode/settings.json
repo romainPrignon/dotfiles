@@ -115,6 +115,7 @@
     },
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.list.openMode": "doubleClick",
     "workbench.startupEditor": "none",
     "diffEditor.renderSideBySide": true,
     "files.autoSave": "onFocusChange",
@@ -190,7 +191,7 @@
         }
     },
     "phpcs.standard": "PSR2",
-    "javascript.implicitProjectConfig.checkJs": true,
+    "javascript.implicitProjectConfig.checkJs": false,
     "workbench.iconTheme": "material-icon-theme",
     "vsicons.dontShowNewVersionMessage": true,
     "material-icon-theme.showUpdateMessage": false,

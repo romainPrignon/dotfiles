@@ -117,7 +117,7 @@
         "command": "workbench.action.closeActiveEditor"
     },
     {
-        "key": "alt+z",
+        "key": "ctrl+alt+z",
         "command": "git.clean"
     },
     {
@@ -205,6 +205,10 @@
     {
         "key": "ctrl+m",
         "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "alt+z",
+        "command": "git.revertChange"
     }
 ]
 
