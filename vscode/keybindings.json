@@ -28,7 +28,7 @@
     },
     {
         "key": "ctrl+[Period]",
-        "command": "editor.action.commentLine",
+        "command": "macros.comment",
         "when": "editorTextFocus && !editorReadonly"
     },
     {
@@ -209,6 +209,14 @@
     {
         "key": "alt+z",
         "command": "git.revertChange"
+    },
+    {
+        "key": "alt+o",
+        "command": "workbench.action.output.toggleOutput"
+    },
+    {
+        "key": "ctrl+k ctrl+h",
+        "command": "-workbench.action.output.toggleOutput"
     }
 ]
 

@@ -2,6 +2,7 @@ EXTENSIONS=(
   "EditorConfig.EditorConfig" \
   "HvyIndustries.crane" \
   "PeterJausovec.vscode-docker" \
+  "RoscoP.ActiveFileInStatusBar" \
   "christian-kohler.npm-intellisense" \
   "christian-kohler.path-intellisense" \
   "dbaeumer.vscode-eslint" \
@@ -10,7 +11,9 @@ EXTENSIONS=(
   "eg2.vscode-npm-script" \
   "felixfbecker.php-debug" \
   "felixfbecker.php-intellisense" \
+  "formulahendry.auto-close-tag" \
   "formulahendry.code-runner" \
+  "geddski.macros" \
   "ikappas.phpcs" \
   "mikestead.dotenv" \
   "ms-vscode.typescript-javascript-grammar" \
