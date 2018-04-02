@@ -195,7 +195,7 @@
         "command": "workbench.action.terminal.toggleTerminal"
     },
     {
-        "key": "alt+e",
+        "key": "alt+p",
         "command": "workbench.actions.view.problems"
     },
     {
@@ -217,6 +217,11 @@
     {
         "key": "ctrl+k ctrl+h",
         "command": "-workbench.action.output.toggleOutput"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "editor.action.marker.next",
+        "when": "editorFocus && !editorReadonly"
     }
 ]
 

@@ -1,6 +1,5 @@
 EXTENSIONS=(
   "EditorConfig.EditorConfig" \
-  "HvyIndustries.crane" \
   "PeterJausovec.vscode-docker" \
   "RoscoP.ActiveFileInStatusBar" \
   "christian-kohler.npm-intellisense" \
@@ -19,8 +18,6 @@ EXTENSIONS=(
   "ms-vscode.typescript-javascript-grammar" \
   "msjsdiag.debugger-for-chrome" \
   "pmneo.tsimporter" \
-  "robertohuertasm.vscode-icons" \
-  "spywhere.guides" \
   "whatwedo.twig"
 )
 

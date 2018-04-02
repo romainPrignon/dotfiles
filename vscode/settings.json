@@ -1,15 +1,14 @@
 {
-    "workbench.colorTheme": "Monokai",
-    "editor.fontSize": 16,
     "editor.fontFamily": "'DejaVu Sans Mono', monospace, 'Droid Sans Mono'",
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.lineHeight": 24,
-    "editor.rulers": [120],
+    "editor.fontSize": 15,
+    "editor.formatOnPaste": true,    
+    "editor.lineHeight": 22,
     "editor.minimap.enabled": false,
-    "editor.renderIndentGuides": false,
-    "editor.smoothScrolling": true,
     "editor.mouseWheelScrollSensitivity": 3,
     "editor.parameterHints": false,
+    "editor.renderIndentGuides": true,
+    "editor.rulers": [120],
+    "editor.smoothScrolling": true,
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
@@ -101,109 +100,133 @@
             }
         ]
     },
+    "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 120,
-    "editor.wordBasedSuggestions": false,
-    "window.openFoldersInNewWindow": "on",
-    "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 0,
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#313437",
-        "sideBar.background": "#313437",
-        "sideBar.border": "#313437",
-        "tab.activeBorder": "#EEEEEE",
-        "tab.activeBackground": "#4C4F53",
-        "tab.inactiveBackground": "#313437"
-    },
-    "workbench.editor.enablePreview": true,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.list.openMode": "doubleClick",
-    "workbench.startupEditor": "none",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.editor.tabCloseButton": "off",
-    "diffEditor.renderSideBySide": true,
+    
+    "explorer.autoReveal": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 0,
+    
+    "extensions.ignoreRecommendations": true,
+
     "files.autoSave": "onFocusChange",
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": false, // editorconfig
+    "files.trimTrailingWhitespace": false, // editorconfig
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
         "**/node_modules/**": true,
         "**/vendor/**": true
     },
-    "explorer.openEditors.visible": 0,
-    "explorer.autoReveal": false,
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "search.exclude": {
-        // "**/node_modules": true,
-        // "**/bower_components": true,
-        // "**/vendor": true
-    },
+
     "launch": {
-        "version": "0.2.0",
         "configurations": [
             {
+                "name": "debug - node",
                 "type": "node",
                 "request": "attach",
                 "protocol": "inspector",
-                "timeout": 60000,
-                "name": "debug"
+                "timeout": 60000
             },
             {
-                "name": "XDebug listen",
+                "name": "debug - php",
                 "type": "php",
                 "request": "launch",
                 "port": 9000
             },
-            {
-                "name": "xdebug launch current",
-                "type": "php",
-                "request": "launch",
-                "program": "${file}",
-                "cwd": "${fileDirname}",
-                "port": 9000
-            }
-        ]
+        ],
     },
-    "extensions.ignoreRecommendations": true,
-    "guides.indent.showFirstIndentGuides": true,
-    "guides.active.color.dark": "rgba(60, 60, 60, 0.75)",
-    "guides.active.color.light": "rgba(220, 220, 220, 0.75)",
-    "guides.stack.color.dark": "rgba(60, 60, 60, 0.75)",
-    "guides.stack.color.light": "rgba(220, 220, 220, 0.75)",
-    "guides.stack.enabled": false,
-    "guides.updateDelay": 0.01,
-    "guides.sendUsagesAndStats": false,
+
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/vendor": true
+    },
+    "search.location": "panel",
+
+    "telemetry.enableTelemetry": false,
+
+    "window.menuBarVisibility": "toggle",    
+    "window.newWindowDimensions": "fullscreen",
+    "window.openFoldersInNewWindow": "on",
+    "window.zoomLevel": 0.3,
+
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#313437",
+
+        "editorCursor.foreground": "#FFA500",
+
+        "editorIndentGuide.background": "#60606075",
+
+        "editorOverviewRuler.addedForeground": "#232527",
+        "editorOverviewRuler.deletedForeground": "#232527",
+        "editorOverviewRuler.errorForeground": "#FF0000",
+        "editorOverviewRuler.modifiedForeground": "#232527",
+
+        "list.activeSelectionBackground": "#4C4F53",
+        
+        "peekViewEditor.background": "#313437",
+
+        "scrollbarSlider.background": "#FFFFFF10",
+
+        "sideBar.background": "#313437",
+        "sideBar.border": "#313437",
+        "sideBar.foreground": "#F8F8F2",
+        
+        "statusBar.foreground": "#F8F8F2",
+
+        "tab.activeBackground": "#4C4F53",
+        "tab.activeBorder": "#EDEDED",
+        "tab.activeForeground": "#F8F8F2",        
+        "tab.inactiveBackground": "#313437",
+        "tab.inactiveForeground": "#F8F8F2",
+        
+
+    },
+    "workbench.colorTheme": "Monokai",
+    "workbench.editor.enablePreview": true, // false on search someday ? :(
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.tabCloseButton": "off",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.list.openMode": "singleClick",
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.view.alwaysShowHeaderActions": true,    
+    
+    // === langage ===
+
     "html.suggest.angular1": false,
     "html.suggest.ionic": false,
-    "typescript.implementationsCodeLens.enabled": true,
-    "typescript.npm": "/home/romainprignon/n/bin/npm",
-    "typescript.useCodeSnippetsOnMethodSuggest": true,
-    "telemetry.enableTelemetry": false,
-    "php.suggest.basic": false,
-    "php.validate.run": "onType",
-    "eslint.run": "onSave",
-    "eslint.autoFixOnSave": true,
-    "eslint.options": {
-        "rules": {
-            "indent": 0,
-            "eol-last": 0,
-            "no-trailing-spaces": 0,
-            "comma-dangle": 1,
-            "object-curly-spacing": 1
-        }
-    },
-    "phpcs.standard": "PSR2",
-    "javascript.implicitProjectConfig.checkJs": false,
-    "vsicons.dontShowNewVersionMessage": true,
-    "material-icon-theme.showUpdateMessage": false,
+
+    "javascript.implicitProjectConfig.checkJs": true,
+    "javascript.nameSuggestions": true, // allow auto-import
+    "javascript.validate.enable": false,
+
     "[markdown]": {
         "editor.quickSuggestions": true
     },
+
+    "php.suggest.basic": false, // PHP IntelliSense
+
+    "typescript.reportStyleChecksAsWarnings": false, // false for error ?
+    "typescript.useCodeSnippetsOnMethodSuggest": true,
+    
+    // === extension ===
+    
+    "eslint.autoFixOnSave": true,
+    "eslint.run": "onSave",
+
     "macros": {
         "comment": [
             "editor.action.commentLine",
             "cursorDown"
         ]
-    }
+    },
+    
+    "material-icon-theme.hidesExplorerArrows": true,
+    "material-icon-theme.showUpdateMessage": false,
+    
+    "phpcs.standard": "PSR2",
 }
