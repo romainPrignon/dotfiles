@@ -39,4 +39,5 @@ bottompanel@tmoer93                hide-workspace@xenatt.github.com  TaskBar@zpy
 - phpstorm: remove unused plugins
 - gnome: install extensions
 - file: bookmark (app, workspace,...)
+- keyboard: remove caps (/usr/share/X11/xkb/symbols/pc)
 - chrome: app shortcuts (cloud9, di.fm, docker, evernote, gantter, gmail peaks, calendar, drive, hub, lucidchart, mockup, pixlr, scribens, slack, spotify, stackedit)
