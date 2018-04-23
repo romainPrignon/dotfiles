@@ -1,2 +1,0 @@
-bindkey "^K"      kill-whole-line                      # ctrl-k
-bindkey '^Z'      backward-kill-word

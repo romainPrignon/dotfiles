@@ -4,11 +4,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-git-prompt/zshrc.sh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-# env
-if [ -f "$HOME/.exports_linux" ]; then
-    source "$HOME/.exports_linux"
-fi
-
 # alias and func
 if [ -f "$HOME/.aliases" ]; then
     . "$HOME/.aliases"
@@ -25,10 +20,6 @@ fi
 
 if [ -f "$HOME/.llsrc" ]; then
     . "$HOME/.llsrc"
-fi
-
-if [ -f "$HOME/.yproxrc" ]; then
-    . "$HOME/.yproxrc"
 fi
 
 if [ -f "$HOME/.peaksrc" ]; then
@@ -99,6 +90,10 @@ bindkey '^r' history-fzf
 bindkey '\e[1;5C' forward-word
 ## ctrl+left
 bindkey '\e[1;5D' backward-word
+## ctrl+k
+bindkey "^K" kill-whole-line
+## ctrl+z
+bindkey '^Z' backward-kill-word
 
 ## always on top
 bindkey -s '^m' '^l^j'
@@ -113,12 +108,6 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-## enhancd
-export ENHANCD_COMMAND=ecd
-export ENHANCD_DISABLE_DOT=1
-[ -f ~/.enhancd/init.sh ] && source ~/.enhancd/init.sh
-
 
 # must be at the end
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

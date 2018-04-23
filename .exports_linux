@@ -1,3 +1,0 @@
-function cnine() {
-    google-chrome --app="https://ide.c9.io/romainprignon/$1"
-}
