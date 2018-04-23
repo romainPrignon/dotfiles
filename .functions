@@ -42,12 +42,12 @@ function supertouch() {
     touch "$@"
 }
 
-function browserreload() {
-    browser-sync start --port 5000 --proxy "$1" --files "src/*"
-}
-
 function git-dig {
     git log --pretty=format:'%Cred%h%Creset - %Cgreen(%ad)%Creset - %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=short -G"$1" -- $2
+}
+
+function cnine() {
+    google-chrome --app="https://ide.c9.io/romainprignon/$1"
 }
 
 # backup to $1 with name backup-<hostname>-<date>.tgz
@@ -74,7 +74,6 @@ function backup() {
                     /home/romainprignon/Music \
                     /home/romainprignon/Pictures \
                     /home/romainprignon/Videos \
-                    /home/romainprignon/.PhpStorm2016.2 \
                     /home/romainprignon/.ssh \
                     /home/romainprignon/.local/share/gnome-shell/extensions \
                     /etc/apt/sources.list.d"
@@ -84,7 +83,6 @@ function backup() {
     # backup
     dconf dump / > $HOME/backup/dconf.settings
     sudo tar $excluded_files -cpzf $dest/$archive_filename $included_files
-    #cp -r $dest/$archive_filename $HOME/workspace/romainprignon/dotfiles/exported-settings/backup-$hostname.tgz
 }
 
 # restore from $1 to $2

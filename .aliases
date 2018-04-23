@@ -1,17 +1,10 @@
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias grep='grep --color=auto'
-fi
-
-# some more ls aliases
-alias ll='ls -alF'
-alias l='ls -CF'
+alias ls="ls --color=auto"
+alias ll="ls -alF"
+alias dir="dir --color=auto"
+alias grep="grep --color=auto"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
-alias -- -='cd -'
+alias -- -="cd -"
 alias ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
@@ -22,7 +15,8 @@ alias .....="cd ../../../.."
 alias d="cd ~/Documents"
 alias dl="cd ~/Downloads"
 alias w="cd ~/workspace"
-alias g="LANGUAGE=en_US.UTF-8 git"
+
+# Other
 alias h="history"
 
 # symfony

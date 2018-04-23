@@ -5,17 +5,13 @@
 	],
 	"installed_packages":
 	[
-		"AdvancedNewFile",
 		"All Autocomplete",
 		"EditorConfig",
 		"Evernote",
 		"Filter Lines",
-		"Gist",
 		"Modific",
 		"Package Control",
 		"SideBarEnhancements",
-		"Solarized Color Scheme",
-		"Theme - Flatland",
-		"Theme - Solarized Space"
+		"Theme - Flatland"
 	]
 }

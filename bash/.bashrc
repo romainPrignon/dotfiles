@@ -13,14 +13,6 @@ if [ -f "$HOME/.functions" ]; then
     . "$HOME/.functions"
 fi
 
-# include env specific var
-if [ -f "$HOME/.exports_linux" ]; then
-    . "$HOME/.exports_linux"
-fi
-if [ -f "$HOME/.exports_windows" ]; then
-    . "$HOME/.exports_windows"
-fi
-
 # include partner
 if [ -f "$HOME/.m6rc" ]; then
     . "$HOME/.m6rc"
@@ -28,10 +20,6 @@ fi
 
 if [ -f "$HOME/.llsrc" ]; then
     . "$HOME/.llsrc"
-fi
-
-if [ -f "$HOME/.yproxrc" ]; then
-    . "$HOME/.yproxrc"
 fi
 
 if [ -f "$HOME/.peaksrc" ]; then
@@ -107,6 +95,7 @@ bind '"\C-m": "\C-l\C-j"'
 
 # 2 => `
 xmodmap -e "keycode 49 = grave"
+xmodmap -e "keycode 66 = less greater"
 
 #######################################
 
@@ -140,8 +129,3 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# enhancd
-export ENHANCD_COMMAND=ecd
-export ENHANCD_DISABLE_DOT=1
-[ -f ~/.enhancd/init.sh ] && source ~/.enhancd/init.sh

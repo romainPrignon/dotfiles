@@ -9,6 +9,5 @@ fi
 
 # enable google-drive
 if [ -x "$(command -v google-drive-ocamlfuse)" ]; then
-    google-drive-ocamlfuse -label pro /home/$USER/drive-pro
     google-drive-ocamlfuse -label peaks /home/$USER/drive-peaks
 fi

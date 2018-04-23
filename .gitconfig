@@ -37,23 +37,23 @@
     fu = fetch upstream
 
     # Pull
-    pl   	= pull
-    plo 	= pull origin
-    plom 	= pull origin master
-    plog 	= pull origin gh-pages
-    plod 	= pull origin develop
+    pl   = pull
+    plo  = pull origin
+    plom = pull origin master
+    plog = pull origin gh-pages
+    plod = pull origin develop
 
-    plr     = pull --rebase
-    plro    = pull --rebase origin
-    plrom 	= pull --rebase origin master
-    plrog 	= pull --rebase origin gh-pages
-    plrod 	= pull --rebase origin develop
+    plr   = pull --rebase
+    plro  = pull --rebase origin
+    plrom = pull --rebase origin master
+    plrog = pull --rebase origin gh-pages
+    plrod = pull --rebase origin develop
 
-    plu  	= pull upstream
-    plum	= pull upstream master
+    plu  = pull upstream
+    plum = pull upstream master
 
-    plru        = pull --rebase upstream
-    plrum	= pull --rebase upstream master
+    plru  = pull --rebase upstream
+    plrum = pull --rebase upstream master
 
     # Push
     ps   = push
