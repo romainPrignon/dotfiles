@@ -9,6 +9,7 @@ cd $home_dir_absolute_path
 mkdir app
 mkdir drive-peaks
 mkdir .ssh
+mkdir .composer
 
 mkdir -p $home_dir_absolute_path/.config/Code/User
 mkdir -p $home_dir_absolute_path/.config/dconf
@@ -69,4 +70,8 @@ ln -sf $dotfile_dir_absolute_path/vscode/keybindings.json $home_dir_absolute_pat
 npm completion > npm
 sudo mv npm /etc/bash_completion.d/npm
 
+# fzf
+~/.fzf/install
+
 source "$HOME/.profile"
+
