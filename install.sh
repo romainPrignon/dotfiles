@@ -95,6 +95,7 @@ ln -sf /etc/php/7.1/mods-available/xdebug.ini /etc/php/7.2/cli/conf.d/20-xdebug.
 echo '[XDebug]' | tee --append /etc/php/7.2/cli/php.ini
 echo 'xdebug.remote_enable = 1' | tee --append /etc/php/7.2/cli/php.ini
 echo 'xdebug.remote_autostart = 1' | tee --append /etc/php/7.2/cli/php.ini
+cd ..
 rm -rf package.xml
 rm -rf xdebug-2.5.5
 rm -rf xdebug-2.5.5.tgz
