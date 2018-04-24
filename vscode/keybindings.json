@@ -222,6 +222,14 @@
         "key": "ctrl+p",
         "command": "editor.action.marker.next",
         "when": "editorFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+q",
+        "command": "workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
     }
 ]
 
