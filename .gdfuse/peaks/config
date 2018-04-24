@@ -39,6 +39,7 @@ presentation_format=pdf
 presentation_icon=
 read_ahead_buffers=3
 read_only=false
+root_folder=
 shared_with_me=true
 spreadsheet_format=ods
 spreadsheet_icon=

@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # pre-install
-export LANG=en_US.UTF-8
+update-locale LANG=en_US.UTF-8
 
 # install: lib
 apt update
@@ -9,11 +9,12 @@ apt update
 apt install -y \
     apt-transport-https \
     build-essential \
+    ca-certificates \
     dkms \
     gcc \
     language-pack-en-base \
     linux-headers-$(uname -r) \
-    python-software-properties \
+    python3-software-properties \
     software-properties-common
 
 # install: app
@@ -43,7 +44,6 @@ git clone https://github.com/pindexis/qfc ~/.qfc
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
 
 # install: zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
@@ -69,7 +69,7 @@ apt install -y \
     php7.2-intl \
     php7.2-mysql \
     php7.2-zip \
-    php7.2-mcrypt \
+    #php7.2-mcrypt \
     php7.2-mbstring \
     php7.2-json \
     php7.2-xml \
@@ -88,10 +88,12 @@ phpize
 make && make install
 echo 'zend_extension=xdebug.so' | tee --append /etc/php/7.2/mods-available/xdebug.ini
 ln -sf /etc/php/7.1/mods-available/xdebug.ini /etc/php/7.2/cli/conf.d/20-xdebug.ini
-
 echo '[XDebug]' | tee --append /etc/php/7.2/cli/php.ini
 echo 'xdebug.remote_enable = 1' | tee --append /etc/php/7.2/cli/php.ini
 echo 'xdebug.remote_autostart = 1' | tee --append /etc/php/7.2/cli/php.ini
+rm -rf package.xml
+rm -rf xdebug-2.5.5
+rm -rf xdebug-2.5.5.tgz
 
 ## go
 wget -q https://dl.google.com/go/go1.10.1.linux-amd64.tar.gz
@@ -103,7 +105,7 @@ apt install -y \
 
 ## java
 apt install -y \
-    openjdk-9-jdk
+    openjdk-8-jdk
 
 # docker
 curl -sSL https://get.docker.com | bash
@@ -118,10 +120,7 @@ apt install -y \
     xserver-xorg
 
 ## install: desktop-app
-add-apt-repository ppa:alessandro-strada/ppa
-
-# wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
-# echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
+add-apt-repository ppa:alessandro-strada/ppa -y
 
 apt update
 
@@ -145,8 +144,9 @@ apt install -y \
 ## install: font
 apt install -y \
     font-manager \
-    fonts-inconsolata \
     fonts-droid-fallback \
+    fonts-inconsolata \
+    fonts-liberation \
     ttf-dejavu \
     ttf-ancient-fonts \
     ttf-ubuntu-font-family
@@ -160,3 +160,5 @@ snap install sublime-text --classic
 snap install vscode --classic
 
 # post-install
+apt autoremove --purge
+apt clean
