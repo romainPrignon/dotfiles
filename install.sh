@@ -1,7 +1,10 @@
-#! /bin/sh
+#! /bin/sh -x
 
 # pre-install
+locale-gen en_US en_US.UTF-8
 update-locale LANG=en_US.UTF-8
+
+mkdir ~/app
 
 # install: lib
 apt update
@@ -63,6 +66,7 @@ curl -sSL https://git.io/n-install | bash
 add-apt-repository ppa:ondrej/php -y
 apt update
 apt install -y \
+    php-pear \
     php7.2-cli \
     php7.2-curl \
     php7.2-sqlite3 \
@@ -159,6 +163,9 @@ snap install gitkraken --classic
 snap install sublime-text --classic
 snap install vscode --classic
 
+wget -q https://sourceforge.net/projects/stacer/files/v1.0.9/Stacer-x64.AppImage/download -O ~/app/stacer.AppImage
+chmod a+x ~/app/stacer.AppImage
+
 # post-install
-apt autoremove --purge
-apt clean
+apt autoremove --purge -y
+apt clean -y

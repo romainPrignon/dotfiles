@@ -6,7 +6,6 @@ home_dir_absolute_path="/home/$user"
 
 cd $home_dir_absolute_path
 
-mkdir app
 mkdir drive-peaks
 mkdir .ssh
 mkdir .composer
