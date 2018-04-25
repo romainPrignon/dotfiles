@@ -90,11 +90,19 @@ shopt -s globstar 2> /dev/null
 # Prevent file overwrite on stdout redirection
 set -o noclobber
 
+# ctrl+left
+bind '"\e[1;5D": backward-word'
+# ctrl+right
+bind '"\e[1;5C": forward-word'
+# ctrl+k
+bind "\C-k:kill-whole-line"
+
 # always on top
 bind '"\C-m": "\C-l\C-j"'
 
 # 2 => `
 xmodmap -e "keycode 49 = grave"
+# caps_lock => <>
 xmodmap -e "keycode 66 = less greater"
 
 #######################################

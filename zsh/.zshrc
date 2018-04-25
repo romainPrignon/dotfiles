@@ -84,8 +84,9 @@ function history-fzf() {
   zle reset-prompt
 }
 zle -N history-fzf
-bindkey '^r' history-fzf
 
+## ctrl+r
+bindkey '^r' history-fzf
 ## ctrl+right
 bindkey '\e[1;5C' forward-word
 ## ctrl+left
@@ -97,6 +98,11 @@ bindkey '^Z' backward-kill-word
 
 ## always on top
 bindkey -s '^m' '^l^j'
+
+# 2 => `
+xmodmap -e "keycode 49 = grave"
+# caps_lock => <>
+xmodmap -e "keycode 66 = less greater"
 
 # external
 
