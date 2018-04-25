@@ -31,9 +31,9 @@ fi
 # Avoid duplicate entries
 HISTCONTROL="erasedups:ignoreboth:ignorespace"
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=500000
-HISTFILESIZE=100000
+# unlimited history
+HISTSIZE=
+HISTFILESIZE=
 
 # Useful timestamp format
 HISTTIMEFORMAT='%F %T '
@@ -131,9 +131,6 @@ fi
 
 # n
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-# qfc
-[[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh" # Added by qfc (see https://github.com/pindexis/qfc)
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

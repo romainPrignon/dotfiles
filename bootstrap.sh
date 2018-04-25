@@ -19,7 +19,6 @@ mkdir -p $home_dir_absolute_path/workspace/go
 
 sudo chown -R $user:$user $home_dir_absolute_path/.composer
 sudo chown -R $user:$user $home_dir_absolute_path/n
-sudo chown -R $user:$user $home_dir_absolute_path/.qfc
 sudo chown -R $user:$user $home_dir_absolute_path/.fzf
 sudo chown -R $user:$user $home_dir_absolute_path/.zsh
 sudo chown -R $user:$user $home_dir_absolute_path/.bash-git-prompt

@@ -33,8 +33,8 @@ autoload -U compinit && compinit
 
 # history
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=
+SAVEHIST=
 setopt append_history
 setopt inc_append_history
 setopt hist_ignore_all_dups
@@ -108,9 +108,6 @@ xmodmap -e "keycode 66 = less greater"
 
 ## n
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
-
-## qfc
-[[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh"
 
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
