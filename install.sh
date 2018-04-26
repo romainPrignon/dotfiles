@@ -1,4 +1,6 @@
-#! /bin/sh -x
+#! /bin/sh
+
+set -x
 
 # pre-install
 locale-gen en_US en_US.UTF-8
