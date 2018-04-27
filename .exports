@@ -1,5 +1,9 @@
 export INPUTRC="$HOME/.inputrc"
-export EDITOR="micro";
+export EDITOR="micro"
+
+export HISTSIZE=999999999
+export HISTFILESIZE=$HISTSIZE
+export SAVEHIST=$HISTSIZE
 
 export COMPOSER_HOME="$HOME/.composer"
 
