@@ -33,8 +33,6 @@ autoload -U compinit && compinit
 
 # history
 HISTFILE=~/.zsh_history
-HISTSIZE=
-SAVEHIST=
 setopt append_history
 setopt inc_append_history
 setopt hist_ignore_all_dups

@@ -31,10 +31,6 @@ fi
 # Avoid duplicate entries
 HISTCONTROL="erasedups:ignoreboth:ignorespace"
 
-# unlimited history
-HISTSIZE=
-HISTFILESIZE=
-
 # Useful timestamp format
 HISTTIMEFORMAT='%F %T '
 
