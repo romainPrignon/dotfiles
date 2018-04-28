@@ -1,8 +1,11 @@
 install: ## install all packages, runtimes,...
-	sudo bash ./install.sh 2>&1 | tee ~/install.log	
+	sudo bash ./scripts/install.sh 2>&1 | tee ~/install.log	
 
-bootstrap: ## bootstrap dotfiles
-	./bootstrap.sh
+configure: ## configure dotfiles
+	./scripts/configure.sh
+
+desktop: ## install gnome desktop
+	sudo bash ./scripts/desktop.sh
 
 dconf-dump: ## save dconf settings
 	dconf dump /org/gnome/nautilus/ > dconf/nautilus.dconf

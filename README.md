@@ -6,18 +6,9 @@
 ## fast path
 ```bash
 make install
+make desktop
 sudo reboot
-make bootstrap
-sudo reboot
-```
-
-## long path
-```bash
-git clone https://github.com/romainprignon/dotfiles.git
-cd dotfiles
-sudo bash ./install.sh 2>&1 | tee ~/install.log
-sudo reboot
-./bootstrap.sh
+make configure
 sudo reboot
 ```
 
@@ -30,6 +21,7 @@ append this file => https://gist.github.com/romainPrignon/cfe7087451354456ed0ddd
 **gnome-shell**
 BingWallpaper@ineffable-gmail.com  hide-dash@xenatt.github.com       pixel-saver@deadalnix.me
 bottompanel@tmoer93                hide-workspace@xenatt.github.com  TaskBar@zpydr
+(dashToDock)
 
 ## TODO manual
 - sublime: install package control

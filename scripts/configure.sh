@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -x
+
 user="romainprignon"
 dotfile_dir_absolute_path="/home/$user/workspace/romainprignon/dotfiles"
 home_dir_absolute_path="/home/$user"
