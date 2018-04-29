@@ -48,7 +48,6 @@ apt -f -y install
 
 snap install gitkraken --classic
 snap install sublime-text --classic
-snap install vscode --classic
 
 wget -q https://sourceforge.net/projects/stacer/files/v1.0.9/Stacer-x64.AppImage/download -O ~/app/stacer.AppImage
 chmod a+x ~/app/stacer.AppImage

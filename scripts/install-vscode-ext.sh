@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 EXTENSIONS=(
   "EditorConfig.EditorConfig" \
   "PeterJausovec.vscode-docker" \
@@ -18,6 +20,7 @@ EXTENSIONS=(
   "ms-vscode.typescript-javascript-grammar" \
   "msjsdiag.debugger-for-chrome" \
   "pmneo.tsimporter" \
+  "PKief.material-icon-theme" \
   "whatwedo.twig"
 )
 

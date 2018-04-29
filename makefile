@@ -1,5 +1,7 @@
+.PHONY: vscode
+
 install: ## install all packages, runtimes,...
-	sudo bash ./scripts/install.sh 2>&1 | tee ~/install.log	
+	sudo bash ./scripts/install.sh 2>&1 | tee ~/install.log
 
 configure: ## configure dotfiles
 	./scripts/configure.sh
@@ -39,3 +41,7 @@ npm: ## install npm global deps
 		thanks \
 		ttystudio \
 		types-checker
+
+vscode: ## install vscode ext
+	bash ./scripts/install-vscode-ext.sh
+

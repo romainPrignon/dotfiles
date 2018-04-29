@@ -21,9 +21,13 @@ append this file => https://gist.github.com/romainPrignon/cfe7087451354456ed0ddd
 **gnome-shell**
 BingWallpaper@ineffable-gmail.com  hide-dash@xenatt.github.com       pixel-saver@deadalnix.me
 bottompanel@tmoer93                hide-workspace@xenatt.github.com  TaskBar@zpydr
+alternateTab
+userTheme
 (dashToDock)
 
 ## TODO manual
+- setup tlp
+- setup swap (/etc/fstab and /etc/sysctl.conf)
 - sublime: install package control
 - vscode: copy workbench
 - vscode: install plugins
