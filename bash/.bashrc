@@ -26,6 +26,10 @@ if [ -f "$HOME/.peaksrc" ]; then
     . "$HOME/.peaksrc"
 fi
 
+if [ -f "$HOME/.bouquetrc" ]; then
+    . "$HOME/.bouquetrc"
+fi
+
 #######################################
 
 # Avoid duplicate entries
