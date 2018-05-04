@@ -24,6 +24,11 @@
     cia = commit -a
     ciam = commit -a -m
 
+    #merge
+    mg = merge --log
+    mgf = merge --ff
+    mgnf = merge --log --no-ff
+
     #rebase
     rb = rebase
     rbi = rebase -i
