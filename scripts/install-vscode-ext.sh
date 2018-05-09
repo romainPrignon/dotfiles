@@ -19,7 +19,6 @@ EXTENSIONS=(
   "mikestead.dotenv" \
   "ms-vscode.typescript-javascript-grammar" \
   "msjsdiag.debugger-for-chrome" \
-  "pmneo.tsimporter" \
   "PKief.material-icon-theme" \
   "whatwedo.twig"
 )

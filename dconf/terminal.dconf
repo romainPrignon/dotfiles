@@ -38,7 +38,6 @@ use-theme-transparency=false
 font='Monospace 12'
 
 [legacy/profiles:/:67d81f71-9e92-449e-a3f2-703d59856bb6]
-foreground-color='#65657b7b8383'
 visible-name='Light'
 palette=['rgb(0,0,0)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(101,123,131)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(88,110,117)', 'rgb(183,33,129)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(39,106,126)', 'rgb(88,110,117)']
 default-size-columns=160
@@ -49,8 +48,9 @@ use-theme-colors=false
 font='Monospace 12'
 use-theme-transparency=false
 bold-color-same-as-fg=false
-bold-color='#58586e6e7575'
-background-color='#fdfdf6f6e3e3'
+foreground-color='#4d4d4d4d4d4d'
+bold-color='#272728282222'
+background-color='#f7f7f7f7e7e7'
 
 [legacy]
 schema-version=uint32 3
