@@ -25,6 +25,9 @@ alternateTab
 userTheme
 (dashToDock)
 
+**vscode**
+js-graphql-intellij-plugin
+
 ## TODO manual
 - setup tlp
 - setup swap (/etc/fstab and /etc/sysctl.conf)

@@ -32,6 +32,7 @@ npm: ## install npm global deps
 	npm install -g \
 		babel-cli \
 		eslint \
+		gql \
 		http-server \
 		npm-check \
 		now \

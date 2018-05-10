@@ -20,6 +20,7 @@ EXTENSIONS=(
   "ms-vscode.typescript-javascript-grammar" \
   "msjsdiag.debugger-for-chrome" \
   "PKief.material-icon-theme" \
+  "stpn.vscode-graphql" \
   "whatwedo.twig"
 )
 
