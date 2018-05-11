@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 EXTENSIONS=(
+  "eg2.tslint" \
   "EditorConfig.EditorConfig" \
   "PeterJausovec.vscode-docker" \
   "RoscoP.ActiveFileInStatusBar" \
