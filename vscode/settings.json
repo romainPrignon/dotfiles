@@ -332,7 +332,7 @@
             "tab.inactiveBackground": "#313437",
             "tab.inactiveForeground": "#F8F8F2",
         },
-        "editorCursor.foreground": "#F92672",
+        "editorCursor.foreground": "#FFA500",
 
         "editorOverviewRuler.addedForeground": "#232527",
         "editorOverviewRuler.deletedForeground": "#232527",
@@ -399,4 +399,7 @@
     "material-icon-theme.showUpdateMessage": false,
     
     "phpcs.standard": "PSR2",
+
+    "tslint.autoFixOnSave": true,
+    "tslint.run": "onSave"
 }
