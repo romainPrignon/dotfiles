@@ -384,6 +384,14 @@
     
     // === extension ===
     
+    "auto-close-tag.activationOnLanguage": [
+        "html",
+        "xml",
+        "javascript",
+        "javascriptreact",
+        "typescriptreact"
+    ],
+    
     "eslint.autoFixOnSave": true,
     "eslint.run": "onSave",
 
