@@ -33,6 +33,7 @@ npm: ## install npm global deps
 		babel-cli \
 		eslint \
 		gql \
+		hotel \
 		http-server \
 		npm-check \
 		now \
