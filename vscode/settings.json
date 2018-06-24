@@ -13,6 +13,27 @@
         "[Solarized Light]": {
             "textMateRules": [
                 {
+                    "name": "constant.language",
+                    "scope": "constant.language",
+                    "settings": {
+                        "foreground": "#5E4F9B"
+                    }
+                },
+                {
+                    "name": "punctuation.accessor.js",
+                    "scope": "punctuation.accessor.js",
+                    "settings": {
+                        "foreground": "#9B1847"
+                    }
+                },
+                {
+                    "name": "punctuation.accessor.ts",
+                    "scope": "punctuation.accessor.ts",
+                    "settings": {
+                        "foreground": "#9B1847"
+                    }
+                },
+                {
                     "name": "this.self",
                     "scope": "variable.language",
                     "settings": {
@@ -30,14 +51,6 @@
                     "name": "class property",
                     "scope": "variable.other.property",
                     "settings": {
-                        "foreground": "#272822"
-                    }
-                },
-                {
-                    "name": "Class name",
-                    "scope": "entity.name.type",
-                    "settings": {
-                        "fontStyle": "italic",
                         "foreground": "#272822"
                     }
                 },
@@ -60,14 +73,13 @@
                     "name": "support.class",
                     "scope": "support.class",
                     "settings": {
-                        "foreground": "#272822"
+                        "foreground": "#474747"
                     }
                 },
                 {
                     "name": "support.function",
                     "scope": "support.function",
                     "settings": {
-                        "fontStyle": "italic",
                         "foreground": "#268BD2"
                     }
                 },
@@ -79,17 +91,10 @@
                     }
                 },
                 {
-                    "name": "JS dot",
-                    "scope": "punctuation.accessor.js",
-                    "settings": {
-                        "foreground": "#9B1847"
-                    }
-                },
-                {
                     "name": "support.type",
                     "scope": "support.type",
                     "settings": {
-                        "foreground": "#272822"
+                        "foreground": "#474747"
                     }
                 },
                 {
@@ -132,7 +137,7 @@
                     "name": "string",
                     "scope": "string",
                     "settings": {
-                        "foreground": "#979747"
+                        "foreground": "#B58900"
                     }
                 },
                 {
@@ -146,6 +151,20 @@
         },
         "[Monokai]": {
             "textMateRules": [
+                {
+                    "name": "punctuation.accessor.js",
+                    "scope": "punctuation.accessor.js",
+                    "settings": {
+                        "foreground": "#F92672"
+                    }
+                },
+                {
+                    "name": "punctuation.accessor.ts",
+                    "scope": "punctuation.accessor.ts",
+                    "settings": {
+                        "foreground": "#F92672"
+                    }
+                },
                 {
                     "name": "this.self",
                     "scope": "variable.language",
@@ -161,6 +180,14 @@
                     }
                 },
                 {
+                    "name": "variable.parameter",
+                    "scope": "variable.parameter",
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#FD971F"
+                    }
+                },
+                {
                     "name": "class property",
                     "scope": "variable.other.property",
                     "settings": {
@@ -168,10 +195,18 @@
                     }
                 },
                 {
-                    "name": "Class name",
+                    "name": "entity.name.type",
                     "scope": "entity.name.type",
                     "settings": {
-                        "fontStyle": "italic",
+                        "fontStyle": "",
+                        "foreground": "#D7D7D7"
+                    }
+                },
+                {
+                    "name": "entity.name.type.class",
+                    "scope": "entity.name.type.class",
+                    "settings": {
+                        "fontStyle": "",
                         "foreground": "#F8F8F2"
                     }
                 },
@@ -179,14 +214,15 @@
                     "name": "Class extends",
                     "scope": "entity.other.inherited-class",
                     "settings": {
-                        "fontStyle": "italic",
-                        "foreground": "#F8F8F2"
+                        "fontStyle": "",
+                        "foreground": "#D7D7D7"
                     }
                 },
                 {
                     "name": "storage.type",
                     "scope": "storage.type",
                     "settings": {
+                        "fontStyle": "",
                         "foreground": "#F92672"
                     }
                 },
@@ -194,6 +230,7 @@
                     "name": "support.class",
                     "scope": "support.class",
                     "settings": {
+                        "fontStyle": "",
                         "foreground": "#F8F8F2"
                     }
                 },
@@ -201,7 +238,7 @@
                     "name": "support.function",
                     "scope": "support.function",
                     "settings": {
-                        "fontStyle": "italic",
+                        "fontStyle": "",
                         "foreground": "#66D9EF"
                     }
                 },
@@ -213,16 +250,18 @@
                     }
                 },
                 {
-                    "name": "JS dot",
-                    "scope": "punctuation.accessor.js",
-                    "settings": {
-                        "foreground": "#F92672"
-                    }
-                },
-                {
                     "name": "support.type",
                     "scope": "support.type",
                     "settings": {
+                        "fontStyle": "",
+                        "foreground": "#D7D7D7"
+                    }
+                },
+                {
+                    "name": "support.type.property-name.json",
+                    "scope": "support.type.property-name.json",
+                    "settings": {
+                        "fontStyle": "",
                         "foreground": "#F8F8F2"
                     }
                 },
