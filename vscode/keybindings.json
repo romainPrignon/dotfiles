@@ -278,7 +278,7 @@
         "command": "-workbench.debug.action.toggleRepl"
     },
     {
-        "key": "down",
+        "key": "ctrl+shift+alt+down",
         "command": "workbench.action.debug.stepOver",
         "when": "inDebugMode"
     },
@@ -288,7 +288,12 @@
         "when": "inDebugMode"
     },
     {
-        "key": "right",
+        "key": "ctrl+shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+alt+right",
         "command": "workbench.action.debug.stepInto",
         "when": "inDebugMode"
     },
@@ -298,7 +303,7 @@
         "when": "inDebugMode"
     },
     {
-        "key": "left",
+        "key": "ctrl+shift+alt+left",
         "command": "workbench.action.debug.stepOut",
         "when": "inDebugMode"
     },
@@ -309,13 +314,6 @@
     },
     {
         "key": "alt+i",
-        "command": "type",
-        "args": {
-            "text": ".ł()",
-        }
-    },
-    {
-        "key": "alt+i",
         "command": "surround.with",
         "when": "editorHasSelection"
     },
@@ -323,6 +321,20 @@
         "key": "ctrl+shift+t",
         "command": "-surround.with",
         "when": "editorHasSelection"
+    },
+    {
+        "key": "alt+c",
+        "command": "workbench.action.debug.continue",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.continue",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "alt+v",
+        "command": "workbench.debug.action.focusVariablesView"
     }
 ]
 

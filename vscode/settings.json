@@ -295,19 +295,23 @@
         "**/vendor/**": true
     },
 
+    "debug.openDebug": "openOnSessionStart",
+    "debug.openExplorerOnEnd": true,
+
     "launch": {
         "configurations": [
             {
                 "name": "debug - node",
                 "type": "node",
-                "request": "attach",
-                "protocol": "inspector",
-                "timeout": 60000
+                "request": "launch",
+                "program": "${file}",
+                "timeout": 5000
             },
             {
                 "name": "debug - php",
                 "type": "php",
                 "request": "launch",
+                "program": "${file}",
                 "port": 9000
             },
         ],
