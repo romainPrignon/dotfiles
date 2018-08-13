@@ -22,7 +22,8 @@ EXTENSIONS=(
   "msjsdiag.debugger-for-chrome" \
   "PKief.material-icon-theme" \
   "stpn.vscode-graphql" \
-  "whatwedo.twig"
+  "whatwedo.twig" \
+  "yatki.vscode-surround"
 )
 
 for VARIANT in "code" \

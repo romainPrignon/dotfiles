@@ -447,6 +447,15 @@
 
     "phpcs.standard": "PSR2",
 
+    "surround.custom": {
+        "log": {
+            "label": "log",
+            "description": "console.log",
+            "disabled": false,
+            "snippet": "console.log($TM_SELECTED_TEXT)"
+        }
+    },
+
     "tsimporter.emitSemicolon": false,
     "tsimporter.noStatusBar": true,
 

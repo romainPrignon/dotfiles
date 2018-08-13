@@ -313,6 +313,16 @@
         "args": {
             "text": ".ł()",
         }
+    },
+    {
+        "key": "alt+i",
+        "command": "surround.with",
+        "when": "editorHasSelection"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "-surround.with",
+        "when": "editorHasSelection"
     }
 ]
 
