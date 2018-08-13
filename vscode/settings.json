@@ -1,7 +1,7 @@
 {
     "editor.fontFamily": "'DejaVu Sans Mono', monospace, 'Droid Sans Mono'",
     "editor.fontSize": 15,
-    "editor.formatOnPaste": true,    
+    "editor.formatOnPaste": true,
     "editor.lineHeight": 22,
     "editor.minimap.enabled": false,
     "editor.mouseWheelScrollSensitivity": 3,
@@ -277,12 +277,12 @@
     },
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 120,
-    
+
     "explorer.autoReveal": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
-    
+
     "extensions.ignoreRecommendations": true,
 
     "files.autoSave": "onFocusChange",
@@ -322,16 +322,16 @@
 
     "telemetry.enableTelemetry": false,
 
-    "window.menuBarVisibility": "toggle",    
+    "window.menuBarVisibility": "toggle",
     "window.newWindowDimensions": "fullscreen",
     "window.openFoldersInNewWindow": "on",
     "window.zoomLevel": 0.3,
 
     "workbench.colorCustomizations": {
         "[Solarized Light]": {
-            "activityBar.background": "#C7C7C7",
+            "activityBar.background": "#D7D7D7",
 
-            "editor.background": "#F7F7E7",
+            "editor.background": "#F9F7E5",
 
             "editorIndentGuide.background": "#90909075",
 
@@ -340,16 +340,16 @@
 
             "scrollbarSlider.background": "#60606025",
 
-            "sideBar.background": "#C7C7C7",
-            "sideBar.border": "#C7C7C7",
+            "sideBar.background": "#D7D7D7",
+            "sideBar.border": "#D7D7D7",
             "sideBar.foreground": "#272822",
 
             "statusBar.foreground": "#272822",
 
-            "tab.activeBackground": "#A7A7A7",
+            "tab.activeBackground": "#B7B7B7",
             "tab.activeBorder": "#272822",
             "tab.activeForeground": "#272822",
-            "tab.inactiveBackground": "#C7C7C7",
+            "tab.inactiveBackground": "#D7D7D7",
             "tab.inactiveForeground": "#272822",
         },
         "[Monokai]": {
@@ -379,7 +379,7 @@
         "editorOverviewRuler.modifiedForeground": "#232527",
 
         "list.activeSelectionBackground": "#4C4F53",
-        
+
         "peekViewEditor.background": "#313437"
     },
     "workbench.colorTheme": "Monokai",
@@ -391,8 +391,8 @@
     "workbench.startupEditor": "none",
     "workbench.statusBar.feedback.visible": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
-    "workbench.view.alwaysShowHeaderActions": true,    
-    
+    "workbench.view.alwaysShowHeaderActions": true,
+
     // === langage ===
 
     "html.suggest.angular1": false,
@@ -415,14 +415,14 @@
         "editor.codeActionsOnSave": {}
     },
     "[typescript]": {
-        "editor.codeActionsOnSave": {}
+        "editor.codeActionsOnSave": {},  
     },
     "[php]": {
         "editor.codeActionsOnSave": {}
     },
-    
+
     // === extension ===
-    
+
     "auto-close-tag.activationOnLanguage": [
         "html",
         "xml",
@@ -430,7 +430,7 @@
         "javascriptreact",
         "typescriptreact"
     ],
-    
+
     "eslint.autoFixOnSave": true,
     "eslint.run": "onSave",
 
@@ -440,12 +440,15 @@
             "cursorDown"
         ]
     },
-    
+
     "material-icon-theme.hidesExplorerArrows": true,
     "material-icon-theme.showReloadMessage": false,
     "material-icon-theme.showUpdateMessage": false,
-    
+
     "phpcs.standard": "PSR2",
+
+    "tsimporter.emitSemicolon": false,
+    "tsimporter.noStatusBar": true,
 
     "tslint.autoFixOnSave": true,
     "tslint.run": "onSave"
