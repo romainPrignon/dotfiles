@@ -444,6 +444,10 @@
         "comment": [
             "editor.action.commentLine",
             "cursorDown"
+        ],
+        "debugStop": [
+            "workbench.action.debug.stop",
+            "workbench.debug.viewlet.action.removeAllBreakpoints"
         ]
     },
 
