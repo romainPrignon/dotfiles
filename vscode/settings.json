@@ -1,4 +1,6 @@
 {
+    "breadcrumbs.enabled": true,
+
     "editor.fontFamily": "'DejaVu Sans Mono', monospace, 'Droid Sans Mono'",
     "editor.fontSize": 15,
     "editor.formatOnPaste": true,
@@ -386,7 +388,7 @@
 
         "peekViewEditor.background": "#313437"
     },
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Solarized Light",
     "workbench.editor.enablePreview": true, // false on search someday ? :(
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.tabCloseButton": "off",
@@ -464,5 +466,5 @@
     "tsimporter.noStatusBar": true,
 
     "tslint.autoFixOnSave": true,
-    "tslint.run": "onSave"
+    "tslint.run": "onSave",
 }

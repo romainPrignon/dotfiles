@@ -335,6 +335,16 @@
     {
         "key": "alt+v",
         "command": "workbench.debug.action.focusVariablesView"
+    },
+    {
+        "key": "alt+b",
+        "command": "breadcrumbs.focusAndSelect",
+        "when": "breadcrumbsVisible"
+    },
+    {
+        "key": "ctrl+shift+[IntlBackslash]",
+        "command": "-breadcrumbs.focusAndSelect",
+        "when": "breadcrumbsVisible"
     }
 ]
 
