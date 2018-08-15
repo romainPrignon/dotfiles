@@ -32,6 +32,7 @@ npm: ## install npm global deps
 	npm install -g \
 		babel-cli \
 		eslint \
+		gitmoji-cli \
 		gql \
 		hotel \
 		http-server \
