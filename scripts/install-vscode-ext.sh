@@ -14,14 +14,12 @@ EXTENSIONS=(
   "felixfbecker.php-debug" \
   "felixfbecker.php-intellisense" \
   "formulahendry.auto-close-tag" \
-  "formulahendry.code-runner" \
   "geddski.macros" \
   "ikappas.phpcs" \
   "mikestead.dotenv" \
   "ms-vscode.typescript-javascript-grammar" \
   "msjsdiag.debugger-for-chrome" \
   "PKief.material-icon-theme" \
-  "stpn.vscode-graphql" \
   "whatwedo.twig" \
   "yatki.vscode-surround"
 )
