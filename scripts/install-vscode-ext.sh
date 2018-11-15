@@ -4,7 +4,6 @@ EXTENSIONS=(
   "eg2.tslint" \
   "EditorConfig.EditorConfig" \
   "PeterJausovec.vscode-docker" \
-  "RoscoP.ActiveFileInStatusBar" \
   "christian-kohler.npm-intellisense" \
   "christian-kohler.path-intellisense" \
   "dbaeumer.vscode-eslint" \

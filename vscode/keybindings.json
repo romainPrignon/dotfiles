@@ -17,11 +17,6 @@
         "command": "-workbench.action.nextEditor"
     },
     {
-        "key": "ctrl+i",
-        "command": "-expandLineSelection",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "ctrl+q",
         "command": "editor.action.deleteLines",
         "when": "editorTextFocus && !editorReadonly"
@@ -84,11 +79,6 @@
         "key": "ctrl+b",
         "command": "editor.action.goToDeclaration",
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
-        "key": "ctrl+i",
-        "command": "editor.action.goToImplementation",
-        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
         "key": "ctrl+t",
@@ -345,6 +335,29 @@
         "key": "ctrl+shift+[IntlBackslash]",
         "command": "-breadcrumbs.focusAndSelect",
         "when": "breadcrumbsVisible"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "references-view.find",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "shift+alt+f12",
+        "command": "-references-view.find",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "-cursorUndo",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "editor.action.goToTypeDefinition"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build"
     }
 ]
 
