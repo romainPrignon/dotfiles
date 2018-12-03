@@ -331,7 +331,7 @@
     "window.menuBarVisibility": "toggle",
     "window.newWindowDimensions": "fullscreen",
     "window.openFoldersInNewWindow": "on",
-    "window.zoomLevel": 0.3,
+    "window.zoomLevel": 0.4,
 
     "workbench.colorCustomizations": {
         "[Solarized Light]": {
