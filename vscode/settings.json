@@ -18,35 +18,92 @@
                     "name": "constant.language",
                     "scope": "constant.language",
                     "settings": {
-                        "foreground": "#5E4F9B"
+                        "foreground": "#8752E1"
                     }
                 },
                 {
-                    "name": "punctuation.accessor.js",
-                    "scope": "punctuation.accessor.js",
+                    "name": "constant.numeric",
+                    "scope": "constant.numeric",
                     "settings": {
-                        "foreground": "#9B1847"
+                        "foreground": "#8752E1"
                     }
                 },
                 {
-                    "name": "punctuation.accessor.ts",
-                    "scope": "punctuation.accessor.ts",
+                    "name": "punctuation.accessor",
+                    "scope": "punctuation.accessor",
                     "settings": {
-                        "foreground": "#9B1847"
+                        "foreground": "#B4245D"
                     }
                 },
                 {
                     "name": "this.self",
                     "scope": "variable.language",
                     "settings": {
-                        "foreground": "#9B1847"
+                        "foreground": "#B4245D"
+                    }
+                },
+                {
+                    "name": "storage.type",
+                    "scope": "storage.type",
+                    "settings": {
+                        "foreground": "#B4245D"
+                    }
+                },
+                {
+                    "name": "keyword",
+                    "scope": "keyword",
+                    "settings": {
+                        "foreground": "#B4245D"
+                    }
+                },
+                {
+                    "name": "storage",
+                    "scope": "storage",
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#B4245D"
                     }
                 },
                 {
                     "name": "variable",
                     "scope": "variable",
                     "settings": {
-                        "foreground": "#279727"
+                        "foreground": "#007E42"
+                    }
+                },
+                {
+                    "name": "variable.other",
+                    "scope": "variable.other",
+                    "settings": {
+                        "foreground": "#007E42"
+                    }
+                },
+                {
+                    "name": "string",
+                    "scope": "string",
+                    "settings": {
+                        "foreground": "#9F8F44"
+                    }
+                },
+                {
+                    "name": "string.quoted.double.json",
+                    "scope": "meta.structure.dictionary.json string.quoted.double.json",
+                    "settings": {
+                        "foreground": "#9F8F44"
+                    }
+                },
+                {
+                    "name": "support.function",
+                    "scope": "support.function",
+                    "settings": {
+                        "foreground": "#2D73C0"
+                    }
+                },
+                {
+                    "name": "entity.name.function",
+                    "scope": "entity.name.function",
+                    "settings": {
+                        "foreground": "#2D73C0"
                     }
                 },
                 {
@@ -65,31 +122,10 @@
                     }
                 },
                 {
-                    "name": "storage.type",
-                    "scope": "storage.type",
-                    "settings": {
-                        "foreground": "#9B1847"
-                    }
-                },
-                {
                     "name": "support.class",
                     "scope": "support.class",
                     "settings": {
                         "foreground": "#474747"
-                    }
-                },
-                {
-                    "name": "support.function",
-                    "scope": "support.function",
-                    "settings": {
-                        "foreground": "#268BD2"
-                    }
-                },
-                {
-                    "name": "entity.name.function",
-                    "scope": "entity.name.function",
-                    "settings": {
-                        "foreground": "#406A9B"
                     }
                 },
                 {
@@ -100,53 +136,10 @@
                     }
                 },
                 {
-                    "name": "string.quoted.double.json",
-                    "scope": "meta.structure.dictionary.json string.quoted.double.json",
-                    "settings": {
-                        "foreground": "#979747"
-                    }
-                },
-                {
-                    "name": "keyword",
-                    "scope": "keyword",
-                    "settings": {
-                        "foreground": "#9B1847"
-                    }
-                },
-                {
-                    "name": "storage",
-                    "scope": "storage",
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#9B1847"
-                    }
-                },
-                {
                     "name": "entity.name.type",
                     "scope": "entity.name.type",
                     "settings": {
                         "foreground": "#474747"
-                    }
-                },
-                {
-                    "name": "variable.other",
-                    "scope": "variable.other",
-                    "settings": {
-                        "foreground": "#279727"
-                    }
-                },
-                {
-                    "name": "string",
-                    "scope": "string",
-                    "settings": {
-                        "foreground": "#B58900"
-                    }
-                },
-                {
-                    "name": "constant.numeric",
-                    "scope": "constant.numeric",
-                    "settings": {
-                        "foreground": "#5E4F9B"
                     }
                 },
             ]
@@ -395,7 +388,7 @@
 
         "peekViewEditor.background": "#313437"
     },
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Solarized Light",
     "workbench.editor.enablePreview": true, // false on search someday ? :(
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.tabCloseButton": "off",
