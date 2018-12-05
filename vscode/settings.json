@@ -154,15 +154,8 @@
         "[Monokai]": {
             "textMateRules": [
                 {
-                    "name": "punctuation.accessor.js",
-                    "scope": "punctuation.accessor.js",
-                    "settings": {
-                        "foreground": "#F92672"
-                    }
-                },
-                {
-                    "name": "punctuation.accessor.ts",
-                    "scope": "punctuation.accessor.ts",
+                    "name": "punctuation.accessor",
+                    "scope": "punctuation.accessor",
                     "settings": {
                         "foreground": "#F92672"
                     }
@@ -171,6 +164,14 @@
                     "name": "this.self",
                     "scope": "variable.language",
                     "settings": {
+                        "foreground": "#F92672"
+                    }
+                },
+                {
+                    "name": "storage.type",
+                    "scope": "storage.type",
+                    "settings": {
+                        "fontStyle": "",
                         "foreground": "#F92672"
                     }
                 },
@@ -190,50 +191,10 @@
                     }
                 },
                 {
-                    "name": "class property",
-                    "scope": "variable.other.property",
+                    "name": "string.quoted.double.json",
+                    "scope": "meta.structure.dictionary.json string.quoted.double.json",
                     "settings": {
-                        "foreground": "#F8F8F2"
-                    }
-                },
-                {
-                    "name": "entity.name.type",
-                    "scope": "entity.name.type",
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#D7D7D7"
-                    }
-                },
-                {
-                    "name": "entity.name.type.class",
-                    "scope": "entity.name.type.class",
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#F8F8F2"
-                    }
-                },
-                {
-                    "name": "Class extends",
-                    "scope": "entity.other.inherited-class",
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#D7D7D7"
-                    }
-                },
-                {
-                    "name": "storage.type",
-                    "scope": "storage.type",
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#F92672"
-                    }
-                },
-                {
-                    "name": "support.class",
-                    "scope": "support.class",
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#F8F8F2"
+                        "foreground": "#E6DB74"
                     }
                 },
                 {
@@ -252,11 +213,41 @@
                     }
                 },
                 {
-                    "name": "support.type",
-                    "scope": "support.type",
+                    "name": "variable.other.property",
+                    "scope": "variable.other.property",
+                    "settings": {
+                        "foreground": "#F8F8F2"
+                    }
+                },
+                {
+                    "name": "entity.name.type.class",
+                    "scope": "entity.name.type.class",
                     "settings": {
                         "fontStyle": "",
-                        "foreground": "#D7D7D7"
+                        "foreground": "#F8F8F2"
+                    }
+                },
+                {
+                    "name": "entity.other.inherited-class",
+                    "scope": "entity.other.inherited-class",
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#F8F8F2"
+                    }
+                },
+                {
+                    "name": "support.class",
+                    "scope": "support.class",
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#F8F8F2"
+                    }
+                },
+                {
+                    "name": "new.expr",
+                    "scope": "new.expr entity.name.type",
+                    "settings": {
+                        "foreground": "#F8F8F2"
                     }
                 },
                 {
@@ -268,12 +259,28 @@
                     }
                 },
                 {
-                    "name": "string.quoted.double.json",
-                    "scope": "meta.structure.dictionary.json string.quoted.double.json",
+                    "name": "entity.name.type",
+                    "scope": "entity.name.type",
                     "settings": {
-                        "foreground": "#E6DB74"
+                        "fontStyle": "",
+                        "foreground": "#D7D7D7"
                     }
-                }
+                },
+                {
+                    "name": "support.type",
+                    "scope": "support.type",
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#D7D7D7"
+                    }
+                },
+                {
+                    "name": "comment",
+                    "scope": "comment",
+                    "settings": {
+                        "foreground": "#878787"
+                    }
+                },
             ]
         },
     },
