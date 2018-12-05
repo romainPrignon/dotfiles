@@ -32,28 +32,28 @@
                     "name": "punctuation.accessor",
                     "scope": "punctuation.accessor",
                     "settings": {
-                        "foreground": "#B4245D"
+                        "foreground": "#9B1847", // "#B4245D"
                     }
                 },
                 {
                     "name": "this.self",
                     "scope": "variable.language",
                     "settings": {
-                        "foreground": "#B4245D"
+                        "foreground": "#9B1847", // "#B4245D"
                     }
                 },
                 {
                     "name": "storage.type",
                     "scope": "storage.type",
                     "settings": {
-                        "foreground": "#B4245D"
+                        "foreground": "#9B1847", // "#B4245D"
                     }
                 },
                 {
                     "name": "keyword",
                     "scope": "keyword",
                     "settings": {
-                        "foreground": "#B4245D"
+                        "foreground": "#9B1847", // "#B4245D"
                     }
                 },
                 {
@@ -61,7 +61,7 @@
                     "scope": "storage",
                     "settings": {
                         "fontStyle": "",
-                        "foreground": "#B4245D"
+                        "foreground": "#9B1847", // "#B4245D"
                     }
                 },
                 {
@@ -86,13 +86,6 @@
                     }
                 },
                 {
-                    "name": "string.quoted.double.json",
-                    "scope": "meta.structure.dictionary.json string.quoted.double.json",
-                    "settings": {
-                        "foreground": "#9F8F44"
-                    }
-                },
-                {
                     "name": "support.function",
                     "scope": "support.function",
                     "settings": {
@@ -106,18 +99,35 @@
                         "foreground": "#2D73C0"
                     }
                 },
+                // object key when accessed
                 {
-                    "name": "class property",
+                    "name": "variable.other.property",
                     "scope": "variable.other.property",
                     "settings": {
                         "foreground": "#272822"
                     }
                 },
                 {
-                    "name": "Class extends",
+                    "name": "support.variable.property",
+                    "scope": "support.variable.property",
+                    "settings": {
+                        "foreground": "#272822"
+                    }
+                },
+                // class
+                {
+                    "name": "entity.name.type.class",
+                    "scope": "entity.name.type.class",
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#272822"
+                    }
+                },
+                {
+                    "name": "entity.other.inherited-class",
                     "scope": "entity.other.inherited-class",
                     "settings": {
-                        "fontStyle": "italic",
+                        "fontStyle": "",
                         "foreground": "#272822"
                     }
                 },
@@ -125,23 +135,60 @@
                     "name": "support.class",
                     "scope": "support.class",
                     "settings": {
-                        "foreground": "#474747"
+                        "foreground": "#272822"
                     }
                 },
                 {
-                    "name": "support.type",
-                    "scope": "support.type",
+                    "name": "new.expr",
+                    "scope": "new.expr entity.name.type",
                     "settings": {
-                        "foreground": "#474747"
+                        "foreground": "#272822"
+                    }
+                },
+                // object key when declared
+                {
+                    "name": "meta.object-literal.key",
+                    "scope": "meta.object-literal.key",
+                    "settings": {
+                        "foreground": "#272822"
+                    }
+                },
+                {
+                    "name": "support.type.property-name.json",
+                    "scope": "support.type.property-name.json",
+                    "settings": {
+                        "foreground": "#272822"
+                    }
+                },
+                {
+                    "name": "support.type.primitive",
+                    "scope": "support.type.primitive",
+                    "settings": {
+                        "foreground": "#575757"
                     }
                 },
                 {
                     "name": "entity.name.type",
                     "scope": "entity.name.type",
                     "settings": {
-                        "foreground": "#474747"
+                        "foreground": "#575757"
                     }
                 },
+                // kinda special
+                {
+                    "name": "entity.name.class",
+                    "scope": "entity.name.class",
+                    "settings": {
+                        "foreground": "#575757"
+                    }
+                },
+                {
+                    "name": "comment",
+                    "scope": "comment",
+                    "settings": {
+                        "foreground": "#878787"
+                    }
+                }
             ]
         },
         "[Monokai]": {
