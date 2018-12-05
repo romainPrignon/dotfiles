@@ -345,6 +345,37 @@
         "key": "ctrl+shift+[IntlBackslash]",
         "command": "-breadcrumbs.focusAndSelect",
         "when": "breadcrumbsVisible"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "references-view.find",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "shift+alt+f12",
+        "command": "-references-view.find",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "-cursorUndo",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "editor.action.goToTypeDefinition"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build"
+    },
+    {
+        "key": "ctrl+alt+g ctrl+alt+g",
+        "command": "extension.openCodeBlock"
+    },
+    {
+        "key": "ctrl+alt+g ctrl+alt+n",
+        "command": "extension.createCodeBlock"
     }
 ]
 

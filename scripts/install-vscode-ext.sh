@@ -4,7 +4,6 @@ EXTENSIONS=(
   "eg2.tslint" \
   "EditorConfig.EditorConfig" \
   "PeterJausovec.vscode-docker" \
-  "RoscoP.ActiveFileInStatusBar" \
   "christian-kohler.npm-intellisense" \
   "christian-kohler.path-intellisense" \
   "dbaeumer.vscode-eslint" \
@@ -21,7 +20,8 @@ EXTENSIONS=(
   "msjsdiag.debugger-for-chrome" \
   "PKief.material-icon-theme" \
   "whatwedo.twig" \
-  "yatki.vscode-surround"
+  "yatki.vscode-surround" \
+  "kenhowardpdx.vscode-gist"
 )
 
 for VARIANT in "code" \

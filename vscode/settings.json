@@ -388,7 +388,10 @@
 
         "peekViewEditor.background": "#313437"
     },
-    "workbench.colorTheme": "Solarized Light",
+
+    "workbench.colorTheme": "Monokai",
+    "terminal.integrated.drawBoldTextInBrightColors": true, // false for light
+
     "workbench.editor.enablePreview": true, // false on search someday ? :(
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.tabCloseButton": "off",
@@ -434,8 +437,7 @@
         "html",
         "xml",
         "javascript",
-        "javascriptreact",
-        "typescriptreact"
+        "javascriptreact"
     ],
 
     "eslint.autoFixOnSave": true,
@@ -466,9 +468,6 @@
             "snippet": "console.log($TM_SELECTED_TEXT)"
         }
     },
-
-    "tsimporter.emitSemicolon": false,
-    "tsimporter.noStatusBar": true,
 
     "tslint.autoFixOnSave": true,
     "tslint.run": "onSave"
