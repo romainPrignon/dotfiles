@@ -31,19 +31,17 @@ composer: ## install composer global deps
 npm: ## install npm global deps
 	npm install -g \
 		babel-cli \
-		eslint \
+		depcheck \
 		gitmoji-cli \
-		gql \
 		hotel \
 		http-server \
-		npm-check \
 		now \
-		nsp \
 		pkgcount \
 		stylelint \
 		thanks \
 		ttystudio \
-		types-checker
+		types-checker \
+		typescript
 
 vscode: ## install vscode ext
 	bash ./scripts/install-vscode-ext.sh
