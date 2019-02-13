@@ -1,7 +1,7 @@
 {
     "breadcrumbs.enabled": true,
 
-    "editor.fontFamily": "'DejaVu Sans Mono', monospace, 'Droid Sans Mono'",
+    "editor.fontFamily": "'DejaVu Sans Mono', 'Droid Sans Mono'",
     "editor.fontSize": 15,
     "editor.formatOnPaste": true,
     "editor.lineHeight": 22,
@@ -379,6 +379,7 @@
     "window.newWindowDimensions": "fullscreen",
     "window.openFoldersInNewWindow": "on",
     "window.zoomLevel": 0.4,
+    "window.title": "${appName}${separator}${rootName}",
 
     "workbench.colorCustomizations": {
         "[Solarized Light]": {
@@ -448,6 +449,8 @@
     "workbench.statusBar.feedback.visible": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.view.alwaysShowHeaderActions": true,
+    "workbench.tree.indent": 16,
+    "workbench.list.keyboardNavigation": "filter",
 
     // === langage ===
 
@@ -517,5 +520,16 @@
     },
 
     "tslint.autoFixOnSave": true,
-    "tslint.run": "onSave"
+    "tslint.run": "onSave",
+
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.hovers.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.views.repositories.files.layout": "tree",
+    "gitlens.views.lineHistory.enabled": false,
+    "gitlens.views.search.enabled": false,
+    "gitlens.mode.statusBar.alignment": "left",
+    "gitlens.advanced.telemetry.enabled": false,
+    "gitlens.views.fileHistory.location": "scm",
 }
