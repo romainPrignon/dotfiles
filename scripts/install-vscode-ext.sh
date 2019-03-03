@@ -8,7 +8,6 @@ EXTENSIONS=(
   "christian-kohler.path-intellisense" \
   "dbaeumer.vscode-eslint" \
   "devtanc.tab-hero" \
-  "donjayamanne.githistory" \
   "eg2.vscode-npm-script" \
   "felixfbecker.php-debug" \
   "felixfbecker.php-intellisense" \
@@ -21,7 +20,8 @@ EXTENSIONS=(
   "PKief.material-icon-theme" \
   "whatwedo.twig" \
   "yatki.vscode-surround" \
-  "kenhowardpdx.vscode-gist"
+  "kenhowardpdx.vscode-gist" \
+  "eamodio.gitlens"
 )
 
 for VARIANT in "code" \

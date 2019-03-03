@@ -39,7 +39,6 @@ npm: ## install npm global deps
 		pkgcount \
 		stylelint \
 		thanks \
-		ttystudio \
 		types-checker \
 		typescript
 
