@@ -191,10 +191,6 @@
         "command": "workbench.files.action.showActiveFileInExplorer"
     },
     {
-        "key": "alt+z",
-        "command": "git.revertChange"
-    },
-    {
         "key": "alt+o",
         "command": "workbench.action.output.toggleOutput"
     },
@@ -371,7 +367,8 @@
     },
     {
         "key": "alt+c",
-        "command": "gitlens.views.compare:gitlens.focus"
+        "command": "gitlens.views.compare:gitlens.focus",
+        "when": "!inDebugMode"
     },
     {
         "key": "alt+r",
@@ -382,8 +379,12 @@
         "command": "git.stage"
     },
     {
+        "key": "alt+z",
+        "command": "git.revertSelectedRanges"
+    },
+    {
         "key": "alt+enter",
-        "command": "git.stageChange"
+        "command": "git.stageSelectedRanges"
     }
 ]
 

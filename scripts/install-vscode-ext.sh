@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
 EXTENSIONS=(
-  "eg2.tslint" \
+  "ms-vscode.vscode-typescript-tslint-plugin" \
   "EditorConfig.EditorConfig" \
   "PeterJausovec.vscode-docker" \
-  "christian-kohler.npm-intellisense" \
   "christian-kohler.path-intellisense" \
   "dbaeumer.vscode-eslint" \
   "devtanc.tab-hero" \
@@ -20,7 +19,6 @@ EXTENSIONS=(
   "PKief.material-icon-theme" \
   "whatwedo.twig" \
   "yatki.vscode-surround" \
-  "kenhowardpdx.vscode-gist" \
   "eamodio.gitlens"
 )
 
