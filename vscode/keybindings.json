@@ -385,6 +385,10 @@
     {
         "key": "alt+enter",
         "command": "git.stageSelectedRanges"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "workbench.action.openPreviousEditorFromHistory"
     }
 ]
 
