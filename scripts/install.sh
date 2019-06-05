@@ -110,6 +110,12 @@ apt install -y \
 apt install -y \
     openjdk-8-jdk
 
+# rust
+rust_version="1.34.1"
+curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain $rust_version
+source $HOME/.cargo/env
+rustup default $rust_version
+
 # docker
 curl -sSL https://get.docker.com | bash
 usermod -aG docker $(whoami)
