@@ -403,10 +403,10 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.list.openMode": "singleClick",
     "workbench.startupEditor": "none",
-    "workbench.statusBar.feedback.visible": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.view.alwaysShowHeaderActions": true,
     "workbench.tree.indent": 20,
+    "workbench.tree.renderIndentGuides": "always",
     "workbench.list.keyboardNavigation": "filter",
     "workbench.colorCustomizations": {
         "[Solarized Light]": {
@@ -425,7 +425,7 @@
             "editorOverviewRuler.modifiedForeground": "#66AFE0",
             "editorOverviewRuler.deletedForeground": "#CA4B51",
             "editorOverviewRuler.errorForeground": "#FF0000",
-            "editorOverviewRuler.warningForeground": "#00FF00",
+            "editorOverviewRuler.warningForeground": "#FFFF00",
             "editorOverviewRuler.bracketMatchForeground": "#F8F8F2",
             "editorOverviewRuler.wordHighlightStrongForeground": "#F8F8F2",
 
@@ -460,7 +460,7 @@
             "editorOverviewRuler.addedForeground": "#587c0c",
             "editorOverviewRuler.deletedForeground": "#94151B",
             "editorOverviewRuler.errorForeground": "#FF0000",
-            "editorOverviewRuler.warningForeground": "#00FF00",
+            "editorOverviewRuler.warningForeground": "#FFFF00",
             "editorOverviewRuler.bracketMatchForeground": "#272822",
             "editorOverviewRuler.wordHighlightStrongForeground": "#272822",
 
@@ -521,7 +521,8 @@
         "html",
         "xml",
         "javascript",
-        "javascriptreact"
+        "javascriptreact",
+        "typescriptreact"
     ],
 
     "gitlens.currentLine.enabled": false,
