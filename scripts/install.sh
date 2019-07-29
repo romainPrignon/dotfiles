@@ -17,10 +17,17 @@ apt install -y \
     ca-certificates \
     dkms \
     gcc \
+    openssl \
     language-pack-en-base \
     linux-headers-$(uname -r) \
     python3-software-properties \
-    software-properties-common
+    software-properties-common \
+    zlib1g-dev \
+    libffi-dev \
+    libbz2-dev \
+    libreadline-dev \
+    libssl-dev \
+    libsqlite3-dev
 
 # install: app
 apt update
@@ -103,6 +110,7 @@ wget -q https://dl.google.com/go/go1.10.1.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz
 
 ## python
+curl https://pyenv.run | bash
 apt install -y \
     python-pip
 

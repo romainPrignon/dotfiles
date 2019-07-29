@@ -26,6 +26,7 @@ PATH="$JAVA_HOME/jre/bin:$PATH"
 PATH="$HOME/app/phpstorm/bin:$PATH"
 PATH="$HOME/.deno/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
+PATH="$HOME/.pyenv/bin:$PATH"
 
 # proxy
 #export http_proxy=http://some.host:8080
