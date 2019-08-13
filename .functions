@@ -73,9 +73,14 @@ function backup() {
     else
         dest=$1
     fi
-    included_files="/home/romainprignon/.config \
+    included_files="/home/romainprignon/app \
+                    /home/romainprignon/.aws \
+                    /home/romainprignon/.azure \
+                    /home/romainprignon/bin \
+                    /home/romainprignon/.config \
                     /home/romainprignon/backup \
                     /home/romainprignon/Documents \
+                    /home/romainprignon/keys \
                     /home/romainprignon/Music \
                     /home/romainprignon/Pictures \
                     /home/romainprignon/Videos \
