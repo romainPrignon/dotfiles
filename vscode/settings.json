@@ -506,14 +506,19 @@
     "[javascript]": {
         "editor.codeActionsOnSave": {}
     },
-    "[typescript]": {
-        "editor.codeActionsOnSave": {
-            "source.fixAll.tslint": true
-        },
-    },
+    // "[typescript]": {
+    //     "editor.codeActionsOnSave": {
+    //         "source.fixAll.tslint": true
+    //     },
+    // },
     "[php]": {
         "editor.codeActionsOnSave": {}
     },
+
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
 
     // === extension ===
 
@@ -581,5 +586,9 @@
             "disabled": false,
             "snippet": "console.log($TM_SELECTED_TEXT)"
         }
+    },
+    "workbench.statusBar.feedback.visible": false,
+    "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true
     }
 }

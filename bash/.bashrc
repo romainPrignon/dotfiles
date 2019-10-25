@@ -30,6 +30,10 @@ if [ -f "$HOME/.bouquetrc" ]; then
     . "$HOME/.bouquetrc"
 fi
 
+if [ -f "$HOME/.twrrc" ]; then
+    . "$HOME/.twrrc"
+fi
+
 #######################################
 
 # Avoid duplicate entries

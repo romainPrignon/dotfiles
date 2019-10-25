@@ -389,6 +389,14 @@
     {
         "key": "ctrl+shift+e",
         "command": "workbench.action.openPreviousEditorFromHistory"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.keepEditor"
+    },
+    {
+        "key": "ctrl+k enter",
+        "command": "-workbench.action.keepEditor"
     }
 ]
 
