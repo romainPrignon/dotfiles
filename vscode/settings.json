@@ -1,6 +1,7 @@
 {
     "breadcrumbs.enabled": true,
 
+    "editor.fastScrollSensitivity": 10,
     "editor.fontFamily": "'DejaVu Sans Mono', 'Droid Sans Mono'",
     "editor.fontSize": 14.5,
     "editor.formatOnPaste": true,
@@ -11,6 +12,7 @@
     "editor.renderIndentGuides": true,
     "editor.rulers": [120],
     "editor.smoothScrolling": true,
+    "editor.wordBasedSuggestions": false,
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 120,
     "editor.tokenColorCustomizations": {
@@ -345,6 +347,8 @@
         "**/vendor/**": true
     },
 
+    "git.untrackedChanges": "separate",
+
     "debug.openDebug": "openOnSessionStart",
     "debug.openExplorerOnEnd": true,
 
@@ -403,6 +407,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.list.openMode": "singleClick",
     "workbench.startupEditor": "none",
+    "workbench.statusBar.feedback.visible": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.view.alwaysShowHeaderActions": true,
     "workbench.tree.indent": 20,
@@ -411,6 +416,9 @@
     "workbench.colorCustomizations": {
         "[Solarized Light]": {
             "activityBar.background": "#D7D7D7",
+
+            "editorWarning.foreground": "#FFFF00",
+            "editorError.foreground": "#FF0000",
 
             "editor.background": "#F9F7E5",
 
@@ -454,6 +462,9 @@
         },
         "[Monokai]": {
             "activityBar.background": "#313437",
+
+            "editorWarning.foreground": "#FFFF00",
+            "editorError.foreground": "#FF0000",
 
             "editorIndentGuide.background": "#60606075",
 
@@ -530,6 +541,8 @@
         "typescriptreact"
     ],
 
+    "chronicler.ffmpeg-binary": "/usr/bin/ffmpeg",
+
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.hovers.enabled": false,
@@ -538,8 +551,13 @@
     "gitlens.views.lineHistory.enabled": false,
     "gitlens.views.search.enabled": false,
     "gitlens.mode.statusBar.alignment": "left",
+    "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true
+    },
     "gitlens.advanced.telemetry.enabled": false,
     "gitlens.views.fileHistory.location": "scm",
+
+    "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
 
     "eslint.autoFixOnSave": true,
     "eslint.run": "onSave",
@@ -586,9 +604,5 @@
             "disabled": false,
             "snippet": "console.log($TM_SELECTED_TEXT)"
         }
-    },
-    "workbench.statusBar.feedback.visible": false,
-    "gitlens.advanced.messages": {
-        "suppressLineUncommittedWarning": true
     }
 }
