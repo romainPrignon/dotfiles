@@ -357,10 +357,6 @@
         "command": "extension.createCodeBlock"
     },
     {
-        "key": "ctrl+shift+z",
-        "command": "cursorUndo"
-    },
-    {
         "key": "alt+h",
         "command": "gitlens.views.fileHistory:scm.focus"
     },
@@ -454,6 +450,36 @@
         "key": "ctrl+shift+1",
         "command": "-search.action.replaceAllInFolder",
         "when": "folderMatchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+z",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+shift+z",
+        "command": "-editor.action.customEditor.redo",
+        "when": "focusedCustomEditorIsEditable && !inputFocus"
+    },
+    {
+        "key": "ctrl+shift+z",
+        "command": "-redo",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+y",
+        "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+8",
+        "command": "-workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+shift+6",
+        "command": "-workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+8",
+        "command": "-workbench.action.navigateForward"
     }
 ]
 
