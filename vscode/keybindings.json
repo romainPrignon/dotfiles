@@ -17,11 +17,6 @@
         "command": "-workbench.action.nextEditor"
     },
     {
-        "key": "ctrl+i",
-        "command": "-expandLineSelection",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "ctrl+q",
         "command": "editor.action.deleteLines",
         "when": "editorTextFocus && !editorReadonly"
@@ -86,9 +81,12 @@
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-        "key": "ctrl+i",
-        "command": "editor.action.goToImplementation",
-        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+        "key": "ctrl+shift+b",
+        "command": "editor.action.goToTypeDefinition"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build"
     },
     {
         "key": "ctrl+t",
@@ -342,12 +340,13 @@
         "when": "textInputFocus"
     },
     {
-        "key": "ctrl+shift+b",
-        "command": "editor.action.goToTypeDefinition"
+        "key": "ctrl+i",
+        "command": "references-view.findImplementations"
     },
     {
-        "key": "ctrl+shift+b",
-        "command": "-workbench.action.tasks.build"
+        "key": "ctrl+i",
+        "command": "-expandLineSelection",
+        "when": "editorTextFocus"
     },
     {
         "key": "ctrl+alt+g ctrl+alt+g",
@@ -425,6 +424,36 @@
     {
         "key": "ctrl+r r",
         "command": "-npm-script.rerun-last-script"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "search.action.replace",
+        "when": "matchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "-search.action.replace",
+        "when": "matchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "search.action.replaceAllInFile",
+        "when": "fileMatchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "-search.action.replaceAllInFile",
+        "when": "fileMatchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "search.action.replaceAllInFolder",
+        "when": "folderMatchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "-search.action.replaceAllInFolder",
+        "when": "folderMatchFocus && replaceActive && searchViewletVisible"
     }
 ]
 

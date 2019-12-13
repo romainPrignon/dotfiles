@@ -379,7 +379,9 @@
     },
 
     "problems.decorations.enabled": false,
+    "problems.showCurrentInStatus":true,
 
+    "search.enableSearchEditorPreview": true,
     "search.exclude": {
         "**/.idea": true,
         "**/node_modules": true,
