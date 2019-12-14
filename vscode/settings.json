@@ -83,10 +83,17 @@
                     }
                 },
                 {
+                    "name": "variable.parameter",
+                    "scope": "variable.parameter",
+                    "settings": {
+                        "foreground": "#AF671B",
+                    }
+                },
+                {
                     "name": "string",
                     "scope": "string",
                     "settings": {
-                        "foreground": "#9F8F44"
+                        "foreground": "#877C17"
                     }
                 },
                 {
@@ -422,7 +429,15 @@
             "editorWarning.foreground": "#FFFF00",
             "editorError.foreground": "#FF0000",
 
-            "editor.background": "#F9F7E5",
+            "editor.background": "#F7F7F2",
+
+            "editor.selectionBackground": "#BED2D3",
+            "editor.selectionHighlightBackground": "#D1CFC2",
+
+            "editor.wordHighlightBackground": "#F1EBDC",
+            "editor.wordHighlightStrongBackground": "#EEE8D5",
+
+            "editorCursor.foreground": "#AF671B",
 
             "editorIndentGuide.background": "#90909075",
 
@@ -437,7 +452,6 @@
             "editorOverviewRuler.errorForeground": "#FF0000",
             "editorOverviewRuler.warningForeground": "#FFFF00",
             "editorOverviewRuler.bracketMatchForeground": "#F8F8F2",
-            "editorOverviewRuler.wordHighlightStrongForeground": "#F8F8F2",
 
             "list.focusBackground": "#B7B7B7",
             "list.hoverBackground": "#B7B7B7",
@@ -465,6 +479,8 @@
         "[Monokai]": {
             "activityBar.background": "#313437",
 
+            "editorCursor.foreground": "#FFA500",
+
             "editorWarning.foreground": "#FFFF00",
             "editorError.foreground": "#FF0000",
 
@@ -475,7 +491,6 @@
             "editorOverviewRuler.errorForeground": "#FF0000",
             "editorOverviewRuler.warningForeground": "#FFFF00",
             "editorOverviewRuler.bracketMatchForeground": "#272822",
-            "editorOverviewRuler.wordHighlightStrongForeground": "#272822",
 
             "list.focusBackground": "#4C4F53",
             "list.hoverBackground": "#4C4F53",
@@ -499,8 +514,7 @@
             "tab.activeForeground": "#F8F8F2",
             "tab.inactiveBackground": "#313437",
             "tab.inactiveForeground": "#F8F8F2",
-        },
-        "editorCursor.foreground": "#FFA500",
+        }
     },
 
     // === langage ===
