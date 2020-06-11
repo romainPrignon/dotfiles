@@ -480,6 +480,34 @@
     {
         "key": "ctrl+8",
         "command": "-workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+alt+f",
+        "command": "search.action.openNewEditor"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.pinEditor",
+        "when": "config.workbench.editor.showTabs && !editorSticky"
+    },
+    {
+        "key": "ctrl+k shift+enter",
+        "command": "-workbench.action.pinEditor",
+        "when": "config.workbench.editor.showTabs && !editorSticky"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.unpinEditor",
+        "when": "config.workbench.editor.showTabs && editorSticky"
+    },
+    {
+        "key": "ctrl+k shift+enter",
+        "command": "-workbench.action.unpinEditor",
+        "when": "config.workbench.editor.showTabs && editorSticky"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
     }
 ]
 

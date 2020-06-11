@@ -1,6 +1,10 @@
 {
     "breadcrumbs.enabled": true,
 
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+
     "editor.fastScrollSensitivity": 10,
     "editor.fontFamily": "'DejaVu Sans Mono', 'Droid Sans Mono'",
     "editor.fontSize": 14.5,
@@ -11,6 +15,7 @@
     "editor.parameterHints.enabled": false,
     "editor.renderIndentGuides": true,
     "editor.rulers": [120],
+    "editor.semanticHighlighting.enabled": true,
     "editor.smoothScrolling": true,
     "editor.wordBasedSuggestions": false,
     "editor.wordWrap": "wordWrapColumn",
@@ -199,6 +204,13 @@
                     "settings": {
                         "foreground": "#878787"
                     }
+                },
+                {
+                    "name": "entity.name.namespace",
+                    "scope": "entity.name.namespace",
+                    "settings": {
+                        "foreground": "#007E42"
+                    }
                 }
             ]
         },
@@ -332,6 +344,13 @@
                         "foreground": "#878787"
                     }
                 },
+                {
+                    "name": "entity.name.namespace",
+                    "scope": "entity.name.namespace",
+                    "settings": {
+                        "fontStyle": ""
+                    }
+                }
             ]
         },
     },
@@ -395,7 +414,7 @@
         "**/bower_components": true,
         "**/vendor": true
     },
-    "search.location": "panel",
+    "search.useIgnoreFiles": true,
 
     "telemetry.enableTelemetry": false,
 
@@ -479,6 +498,8 @@
         "[Monokai]": {
             "activityBar.background": "#313437",
 
+            "editor.background": "#272825", // #272822 cause rendering bug
+
             "editorCursor.foreground": "#FFA500",
 
             "editorWarning.foreground": "#FFFF00",
@@ -521,9 +542,11 @@
     "javascript.implicitProjectConfig.checkJs": true,
     "javascript.validate.enable": true,
     "javascript.suggest.completeFunctionCalls": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
 
     "typescript.reportStyleChecksAsWarnings": false, // false for error ?
     "typescript.suggest.completeFunctionCalls": true,
+    "typescript.tsserver.maxTsServerMemory": 2048,
 
     "php.suggest.basic": false, // PHP IntelliSense
 
@@ -533,11 +556,11 @@
     "[javascript]": {
         "editor.codeActionsOnSave": {}
     },
-    // "[typescript]": {
-    //     "editor.codeActionsOnSave": {
-    //         "source.fixAll.tslint": true
-    //     },
-    // },
+    "[typescript]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.tslint": true
+        },
+    },
     "[php]": {
         "editor.codeActionsOnSave": {}
     },
@@ -575,26 +598,7 @@
 
     "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
 
-    "eslint.autoFixOnSave": true,
     "eslint.run": "onSave",
-    "eslint.validate": [
-        {
-            "language": "javascript",
-            "autoFix": true
-        },
-        {
-            "language": "javascriptreact",
-            "autoFix": true
-        },
-        {
-            "language": "typescript",
-            "autoFix": true
-        },
-        {
-            "language": "typescriptreact",
-            "autoFix": true
-        },
-    ],
 
     "macros": {
         "comment": [
@@ -620,5 +624,8 @@
             "disabled": false,
             "snippet": "console.log($TM_SELECTED_TEXT)"
         }
-    }
+    },
+
+    "tslint.alwaysShowRuleFailuresAsWarnings": false,
+    "tslint.suppressWhileTypeErrorsPresent": true
 }
