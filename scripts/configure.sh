@@ -73,6 +73,10 @@ ln -sf $dotfile_dir_absolute_path/vscode/keybindings.json $home_dir_absolute_pat
 npm completion > npm
 sudo mv npm /etc/bash_completion.d/npm
 
+# deno
+deno completions bash > deno
+sudo mv deno /etc/bash_completion.d/deno
+
 # fzf
 ~/.fzf/install
 

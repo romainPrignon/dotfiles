@@ -31,6 +31,8 @@ alias dc="docker-compose"
 alias standup="sh ~/scripts/git-standup.sh"
 alias meteo="curl -4 wttr.in/Lyon"
 alias dog="pygmentize -g"
+alias mp3="ydl -x --audio-format mp3 --audio-quality 0"
+alias mp4="ydl -f 22"
 
 # git
 alias git-clean="git remote prune origin && git branch -vv | grep ' gone' | cut -d' ' -f1-3 | xargs -i git branch -D {}"
