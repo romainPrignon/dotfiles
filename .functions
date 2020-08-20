@@ -55,6 +55,10 @@ function cnine() {
     google-chrome --app="https://ide.c9.io/romainprignon/$1"
 }
 
+function shtd {
+    shutdown +$1
+}
+
 # backup to $1 with name backup-<hostname>-<date>.tgz
 function backup() {
     # clean
