@@ -10,33 +10,31 @@
     st = status
     cp = cherry-pick
 
-    #clone
+    # Clone
     cl = clone
     clr = clone --recursive
 
-    # checkout
+    # Checkout
     co = checkout
-    cob = checkout -B
+    cob = checkout -b
 
-    #commit
+    # Commit
     ci = commit
     cim = commit -m
-    cia = commit -a
-    ciam = commit -a -m
 
-    #merge
+    # Merge
     mg = merge --log
     mgf = merge --ff
     mgnf = merge --log --no-ff
 
-    #rebase
+    # Rebase
     rb = rebase
     rbi = rebase -i
     rba = rebase --abort
     rbc = rebase --continue
     rbs = rebase --skip
 
-    # fetch
+    # Fetch
     f = fetch
     fo = fetch origin
     fu = fetch upstream
@@ -44,45 +42,38 @@
     # Pull
     pl   = pull
     plo  = pull origin
-    plom = pull origin master
-    plog = pull origin gh-pages
-    plod = pull origin develop
+    plu  = pull upstream
 
     plr   = pull --rebase
     plro  = pull --rebase origin
-    plrom = pull --rebase origin master
-    plrog = pull --rebase origin gh-pages
-    plrod = pull --rebase origin develop
-
-    plu  = pull upstream
-    plum = pull upstream master
-
     plru  = pull --rebase upstream
-    plrum = pull --rebase upstream master
 
     # Push
     ps   = push
     pso  = push origin
-
-    psom = push origin master
-    psod = push origin develop
-    psog = push origin gh-pages
-
     psu  = push upstream
-    psum = push upstream master
 
-    # log section
+    psf  = push --force-with-lease
+    psfo = push --force-with-lease origin
+    psfu = push --force-with-lease upstream
+
+    # Reset
+    rs   = reset
+    rss  = reset --soft
+    rsh  = reset --hard
+
+    # Log
     lg = log --oneline --graph --abbrev-commit --decorate
     lga = log --graph --oneline --abbrev-commit --decorate --all
 
-    # change last commit message
-    amend = commit --amend -C HEAD
-
-    # undo last commit
-    uncommit = reset --soft HEAD^
-
-	# unstage change
+    # Undo
+    amend = commit --amend
+    uncommit = reset HEAD~
 	unstage = reset HEAD
+
+    # Fixup / Squash
+    fixup = commit --fixup HEAD
+    squash = !GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash
 
     # standup
     standup = log --since '1 day ago' --oneline --author pro.rprignon@gmail.com
