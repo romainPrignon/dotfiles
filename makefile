@@ -37,11 +37,10 @@ npm: ## install npm global deps
 		http-server \
 		now \
 		pkgcount \
-		stylelint \
 		thanks \
+		ts-node \
 		types-checker \
 		typescript
 
 vscode: ## install vscode ext
 	bash ./scripts/install-vscode-ext.sh
-

@@ -8,7 +8,6 @@ home_dir_absolute_path="/home/$user"
 
 cd $home_dir_absolute_path
 
-mkdir drive-peaks
 mkdir .ssh
 mkdir .composer
 mkdir .ngrok2
@@ -17,7 +16,6 @@ mkdir -p $home_dir_absolute_path/.config/Code/User
 mkdir -p $home_dir_absolute_path/.config/dconf
 mkdir -p $home_dir_absolute_path/.config/micro
 mkdir -p $home_dir_absolute_path/.config/sublime-text-3/Packages/User
-mkdir -p $home_dir_absolute_path/.gdfuse/peaks
 mkdir -p $home_dir_absolute_path/workspace/go
 
 sudo chown -R $user:$user $home_dir_absolute_path/.composer
@@ -43,7 +41,6 @@ ln -sf $dotfile_dir_absolute_path/.gdfuse/peaks/config $home_dir_absolute_path/.
 ln -sf $dotfile_dir_absolute_path/micro/settings.json $home_dir_absolute_path/.config/micro/settings.json
 ln -sf $dotfile_dir_absolute_path/ngrok.yml $home_dir_absolute_path/.ngrok2/ngrok.yml
 
-ln -sf $dotfile_dir_absolute_path/.gitattributes $home_dir_absolute_path/.gitattributes
 ln -sf $dotfile_dir_absolute_path/.gitconfig $home_dir_absolute_path/.gitconfig
 ln -sf $dotfile_dir_absolute_path/.gitignore $home_dir_absolute_path/.gitignore
 
@@ -78,7 +75,7 @@ deno completions bash > deno
 sudo mv deno /etc/bash_completion.d/deno
 
 # fzf
-~/.fzf/install
+#~/.fzf/install
 
 source "$HOME/.profile"
 

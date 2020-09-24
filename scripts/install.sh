@@ -17,9 +17,9 @@ apt install -y \
     ca-certificates \
     dkms \
     gcc \
-    openssl \
     language-pack-en-base \
     linux-headers-$(uname -r) \
+    python-pygments \
     python3-software-properties \
     software-properties-common \
     zlib1g-dev \
@@ -34,10 +34,11 @@ apt update
 apt install -y \
     curl \
     ffmpeg \
+    fzf \
     git \
     git-extras \
     htop \
-    python-pygments \
+    openssl \
     shellcheck \
     sqlite3 \
     ssh \
@@ -48,10 +49,12 @@ apt install -y \
     xclip \
     zsh
 
-snap install micro --classic
+# micro
+curl -sSL https://getmic.ro | bash
 
-# fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+# n
+wget -q https://raw.githubusercontent.com/tj/n/master/bin/n $HOME/bin/n
+chmod u+x $HOME/bin/n
 
 # install: zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
@@ -65,27 +68,27 @@ git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt -
 # install: runtime
 
 ## node
-curl -sSL https://git.io/n-install | bash
+$HOME/bin/n latest
+$HOME/bin/n lts
 
 ## php
 add-apt-repository ppa:ondrej/php -y
 apt update
 apt install -y \
-    php-pear \
-    php7.2-cli \
-    php7.2-curl \
-    php7.2-sqlite3 \
-    php7.2-intl \
-    php7.2-mysql \
-    php7.2-zip \
-    #php7.2-mcrypt \
-    php7.2-mbstring \
-    php7.2-json \
-    php7.2-xml \
-    php7.2-common \
-    php7.2-opcache \
-    php7.2-readline \
-    php7.2-dev
+    php7.4-apcu \
+    php7.4-common \
+    php7.4-cli \
+    php7.4-curl \
+    php7.4-dev \
+    php7.4-intl \
+    php7.4-json \
+    php7.4-mbstring \
+    php7.4-mysql \
+    php7.4-opcache \
+    php7.4-readline \
+    php7.4-sqlite3 \
+    php7.4-xml \
+    php7.4-zip
 
 curl -sSL https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -106,20 +109,20 @@ rm -rf xdebug-2.5.5
 rm -rf xdebug-2.5.5.tgz
 
 ## go
-wget -q https://dl.google.com/go/go1.10.1.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz
+wget -q https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.15.2.linux-amd64.tar.gz
 
 ## python
 curl https://pyenv.run | bash
 apt install -y \
-    python-pip
+    python3-pip
 
 ## java
 apt install -y \
-    openjdk-8-jdk
+    openjdk-11-jdk
 
 # rust
-rust_version="1.34.1"
+rust_version="1.46.0"
 curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain $rust_version
 source $HOME/.cargo/env
 rustup default $rust_version
@@ -127,6 +130,10 @@ rustup default $rust_version
 # docker
 curl -sSL https://get.docker.com | bash
 usermod -aG docker $(whoami)
+
+# docker-compose
+wget -q https://github.com/docker/compose/releases/download/1.27.3/docker-compose-Linux-x86_64 $HOME/bin/docker-compose
+chmod u+x $HOME/bin/docker-compose
 
 # post-install
 apt autoremove --purge -y

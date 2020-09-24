@@ -23,11 +23,10 @@ apt install -y \
     gnome-calculator \
     gnome-paint \
     gnome-screenshot \
-    gnome-shell-pomodoro \
     gnome-system-log \
     gnome-terminal \
     gnome-tweak-tool \
-    google-drive-ocamlfuse \
+    # google-drive-ocamlfuse \
     nautilus \
     nautilus-dropbox \
     synaptic
@@ -42,15 +41,25 @@ apt install -y \
     ttf-ancient-fonts \
     ttf-ubuntu-font-family
 
-wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-dpkg -i google-chrome-stable_current_amd64.deb
+# chrome
+wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb /tmp/google-chrome-stable_current_amd64.deb
+dpkg -i /tmp/google-chrome-stable_current_amd64.deb
 apt -f -y install
 
-snap install gitkraken --classic
-snap install sublime-text --classic
+# stacer
+wget -q https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb /tmp/stacer_1.1.0_amd64.deb
+dpkg -i /tmp/stacer_1.1.0_amd64.deb
+apt -f -y install
 
-wget -q https://sourceforge.net/projects/stacer/files/v1.0.9/Stacer-x64.AppImage/download -O ~/app/stacer.AppImage
-chmod a+x ~/app/stacer.AppImage
+# vscode
+wget -q https://update.code.visualstudio.com/1.49.1/linux-deb-x64/stable /tmp/vscode.deb
+dpkg -i /tmp/vscode.deb
+apt -f -y install
+
+# subl
+wget -q https://download.sublimetext.com/sublime-text_build-3211_amd64.deb /tmp/sublime-text_build-3211_amd64.deb
+dpkg -i /tmp/sublime-text_build-3211_amd64.deb
+apt -f -y install
 
 # post-install
 apt autoremove --purge -y
