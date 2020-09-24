@@ -53,7 +53,7 @@ apt install -y \
 curl -sSL https://getmic.ro | bash
 
 # n
-wget -q https://raw.githubusercontent.com/tj/n/master/bin/n $HOME/bin/n
+wget -q -O $HOME/bin/n https://raw.githubusercontent.com/tj/n/master/bin/n
 chmod u+x $HOME/bin/n
 
 # install: zsh
@@ -132,7 +132,7 @@ curl -sSL https://get.docker.com | bash
 usermod -aG docker $(whoami)
 
 # docker-compose
-wget -q https://github.com/docker/compose/releases/download/1.27.3/docker-compose-Linux-x86_64 $HOME/bin/docker-compose
+wget -q -O $HOME/bin/docker-compose https://github.com/docker/compose/releases/download/1.27.3/docker-compose-Linux-x86_64
 chmod u+x $HOME/bin/docker-compose
 
 # post-install
