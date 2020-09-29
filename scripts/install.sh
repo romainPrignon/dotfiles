@@ -29,6 +29,7 @@ sudo apt install -y \
     libssl-dev \
     libsqlite3-dev
 
+sudo locale-gen fr_FR fr_FR.UTF-8
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LANG=en_US.UTF-8
 
