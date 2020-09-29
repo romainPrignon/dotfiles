@@ -6,17 +6,16 @@ user="romainprignon"
 dotfile_dir_absolute_path="/home/$user/workspace/romainprignon/dotfiles"
 home_dir_absolute_path="/home/$user"
 
-#cd $home_dir_absolute_path
+cd $home_dir_absolute_path
 
-mkdir .ssh
-mkdir .composer
-mkdir .ngrok2
-
-mkdir -p $home_dir_absolute_path/.config/Code/User
-mkdir -p $home_dir_absolute_path/.config/dconf
-mkdir -p $home_dir_absolute_path/.config/gtk-3.0
-mkdir -p $home_dir_absolute_path/.config/micro
-mkdir -p $home_dir_absolute_path/.config/sublime-text-3/Packages/User
+mkdir -p $home_dir_absolute_path/.ssh/
+mkdir -p $home_dir_absolute_path/.composer/
+mkdir -p $home_dir_absolute_path/.ngrok2/
+mkdir -p $home_dir_absolute_path/.config/Code/User/
+mkdir -p $home_dir_absolute_path/.config/dconf/
+mkdir -p $home_dir_absolute_path/.config/gtk-3.0/
+mkdir -p $home_dir_absolute_path/.config/micro/
+mkdir -p $home_dir_absolute_path/.config/sublime-text-3/Packages/User/
 #mkdir -p $home_dir_absolute_path/workspace/go
 
 #sudo chown -R $user:$user $home_dir_absolute_path/.composer
@@ -37,7 +36,6 @@ ln -sf $dotfile_dir_absolute_path/.npmrc $home_dir_absolute_path/.npmrc
 ln -sf $dotfile_dir_absolute_path/scripts $home_dir_absolute_path/scripts
 ln -sf $dotfile_dir_absolute_path/.ssh/config $home_dir_absolute_path/.ssh/config
 ln -sf $dotfile_dir_absolute_path/.vimrc $home_dir_absolute_path/.vimrc
-ln -sf $dotfile_dir_absolute_path/.gdfuse/peaks/config $home_dir_absolute_path/.gdfuse/peaks/config
 ln -sf $dotfile_dir_absolute_path/micro/settings.json $home_dir_absolute_path/.config/micro/settings.json
 ln -sf $dotfile_dir_absolute_path/ngrok.yml $home_dir_absolute_path/.ngrok2/ngrok.yml
 
