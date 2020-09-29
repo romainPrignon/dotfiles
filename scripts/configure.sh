@@ -64,14 +64,6 @@ ln -sf $dotfile_dir_absolute_path/gtk.css $home_dir_absolute_path/.config/gtk-3.
 ln -sf $dotfile_dir_absolute_path/vscode/settings.json $home_dir_absolute_path/.config/Code/User/settings.json
 ln -sf $dotfile_dir_absolute_path/vscode/keybindings.json $home_dir_absolute_path/.config/Code/User/keybindings.json
 
-# node
-npm completion > npm
-sudo mv npm /etc/bash_completion.d/npm
-
-# deno
-deno completions bash > deno
-sudo mv deno /etc/bash_completion.d/deno
-
 # fzf
 #~/.fzf/install
 

@@ -77,8 +77,16 @@ git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt -
 sudo $HOME/bin/n latest
 sudo $HOME/bin/n lts
 
+## node: config
+npm completion > npm
+sudo mv npm /etc/bash_completion.d/npm
+
 # deno
 curl -sSL https://deno.land/x/install/install.sh | bash
+
+## deno: config
+$HOME/bin/deno completions bash > deno
+sudo mv deno /etc/bash_completion.d/deno
 
 ## php
 sudo add-apt-repository ppa:ondrej/php -y
