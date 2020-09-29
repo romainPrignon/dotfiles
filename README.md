@@ -1,7 +1,11 @@
 # Usage
 
+> git clone https://github.com/romainprignon/dotfiles
+> git clone https://frama.likn/rp-dot
+
 ## dependencies
  - git
+ - make
 
 ## fast path
 ```bash

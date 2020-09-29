@@ -85,7 +85,7 @@ sudo mv npm /etc/bash_completion.d/npm
 curl -sSL https://deno.land/x/install/install.sh | bash
 
 ## deno: config
-$HOME/bin/deno completions bash > deno
+$HOME/.deno/bin/deno completions bash > deno
 sudo mv deno /etc/bash_completion.d/deno
 
 ## php
