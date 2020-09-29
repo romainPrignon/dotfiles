@@ -7,7 +7,7 @@
  - git
  - make
 
-## fast path
+## auto
 ```bash
 make install
 make desktop
@@ -16,18 +16,29 @@ make configure
 sudo reboot
 ```
 
-# Reminder
+# manual
+
+## dropbox
+- launch and configure
+
+## gnome-shell
+- install extensions:
+    - AlternateTab by fmuellner
+    - BottomPanel by abstract
+    - Hide Dash X by edh
+    - Hide Workspace Thumbnails by edh
+    - Pixel Saver by nMqMgEF
+    - User Themes by fmuellner
+    
+TODO : make it work ! on vm ! reload snapshot and retry till it work
+- reload dconf
+```bash
+make dconf-load
+```
 
 **vscode**
 subl $(locate workbench.main.css)
 append this file => https://gist.github.com/romainPrignon/cfe7087451354456ed0ddd08e02274a4
-
-**gnome-shell**
-BingWallpaper@ineffable-gmail.com  hide-dash@xenatt.github.com       pixel-saver@deadalnix.me
-bottompanel@tmoer93                hide-workspace@xenatt.github.com  TaskBar@zpydr
-alternateTab
-userTheme
-(dashToDock)
 
 **intellij**
 js-graphql-intellij-plugin
@@ -40,6 +51,5 @@ js-graphql-intellij-plugin
 - vscode: install plugins
 - phpstorm: install plugins
 - phpstorm: remove unused plugins
-- gnome: install extensions
-- file: bookmark (app, workspace,...)
+<!-- - file: bookmark (app, workspace,...) -->
 - keyboard: remove caps (/usr/share/X11/xkb/symbols/pc)

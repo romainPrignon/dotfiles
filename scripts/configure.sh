@@ -18,18 +18,6 @@ mkdir -p $home_dir_absolute_path/.config/micro/
 mkdir -p $home_dir_absolute_path/.config/sublime-text-3/Packages/User/
 #mkdir -p $home_dir_absolute_path/workspace/go
 
-#sudo chown -R $user:$user $home_dir_absolute_path/.composer
-#sudo chown -R $user:$user $home_dir_absolute_path/.fzf
-#sudo chown -R $user:$user $home_dir_absolute_path/.zsh
-#sudo chown -R $user:$user $home_dir_absolute_path/.bash-git-prompt
-
-dconf load /org/gnome/nautilus/ < $dotfile_dir_absolute_path/dconf/nautilus.dconf
-dconf load /org/gnome/settings-daemon/ < $dotfile_dir_absolute_path/dconf/settings-daemon.dconf
-dconf load /org/gnome/shell/ < $dotfile_dir_absolute_path/dconf/shell.dconf
-dconf load /org/gnome/terminal/ < $dotfile_dir_absolute_path/dconf/terminal.dconf
-dconf load /org/gnome/desktop/ < $dotfile_dir_absolute_path/dconf/desktop.dconf
-
-
 ln -sf $dotfile_dir_absolute_path/.composer/composer.json $home_dir_absolute_path/.composer/composer.json
 ln -sf $dotfile_dir_absolute_path/.npmrc $home_dir_absolute_path/.npmrc
 ln -sf $dotfile_dir_absolute_path/scripts $home_dir_absolute_path/scripts
@@ -58,7 +46,10 @@ yes | cp -rf $dotfile_dir_absolute_path/zsh/gitstatus.py $home_dir_absolute_path
 ln -sf "$dotfile_dir_absolute_path/subl/Default (Linux).sublime-keymap" "$home_dir_absolute_path/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap"
 ln -sf "$dotfile_dir_absolute_path/subl/Preferences.sublime-settings" "$home_dir_absolute_path/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
 ln -sf "$dotfile_dir_absolute_path/subl/Package Control.sublime-settings" "$home_dir_absolute_path/.config/sublime-text-3/Packages/User/Package Control.sublime-settings"
-ln -sf $dotfile_dir_absolute_path/gtk.css $home_dir_absolute_path/.config/gtk-3.0/gtk.css
+
+ln -sf $dotfile_dir_absolute_path/gtk/gtk.css $home_dir_absolute_path/.config/gtk-3.0/gtk.css
+ln -sf $dotfile_dir_absolute_path/gtk/bookmarks $home_dir_absolute_path/.config/gtk-3.0/bookmarks
+ln -sf $dotfile_dir_absolute_path/gtk/settings.ini $home_dir_absolute_path/.config/gtk-3.0/settings.ini
 
 ln -sf $dotfile_dir_absolute_path/vscode/settings.json $home_dir_absolute_path/.config/Code/User/settings.json
 ln -sf $dotfile_dir_absolute_path/vscode/keybindings.json $home_dir_absolute_path/.config/Code/User/keybindings.json
