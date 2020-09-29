@@ -11,7 +11,6 @@ desktop: ## install gnome desktop
 
 dconf-dump: ## save dconf settings
 	dconf dump /org/gnome/nautilus/ > dconf/nautilus.dconf
-	dconf dump /org/gnome/power-manager/ > dconf/power-manager.dconf
 	dconf dump /org/gnome/settings-daemon/ > dconf/settings-daemon.dconf
 	dconf dump /org/gnome/shell/ > dconf/shell.dconf
 	dconf dump /org/gnome/terminal/ > dconf/terminal.dconf
@@ -19,7 +18,6 @@ dconf-dump: ## save dconf settings
 
 dconf-load: ## restore dconf
 	dconf load /org/gnome/nautilus/ < dconf/nautilus.dconf
-	dconf load /org/gnome/power-manager/ < dconf/power-manager.dconf
 	dconf load /org/gnome/settings-daemon/ < dconf/settings-daemon.dconf
 	dconf load /org/gnome/shell/ < dconf/shell.dconf
 	dconf load /org/gnome/terminal/ < dconf/terminal.dconf

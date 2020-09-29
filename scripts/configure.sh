@@ -24,7 +24,6 @@ mkdir -p $home_dir_absolute_path/.config/sublime-text-3/Packages/User/
 #sudo chown -R $user:$user $home_dir_absolute_path/.bash-git-prompt
 
 dconf load /org/gnome/nautilus/ < $dotfile_dir_absolute_path/dconf/nautilus.dconf
-dconf load /org/gnome/power-manager/ < $dotfile_dir_absolute_path/dconf/power-manager.dconf
 dconf load /org/gnome/settings-daemon/ < $dotfile_dir_absolute_path/dconf/settings-daemon.dconf
 dconf load /org/gnome/shell/ < $dotfile_dir_absolute_path/dconf/shell.dconf
 dconf load /org/gnome/terminal/ < $dotfile_dir_absolute_path/dconf/terminal.dconf
