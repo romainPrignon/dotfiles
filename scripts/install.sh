@@ -54,7 +54,9 @@ sudo apt install -y \
     zsh
 
 # micro
+cd $HOME/bin
 curl -sSL https://getmic.ro | bash
+cd -
 
 # n
 wget -q -O $HOME/bin/n https://raw.githubusercontent.com/tj/n/master/bin/n
