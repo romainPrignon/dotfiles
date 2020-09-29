@@ -1,13 +1,13 @@
 .PHONY: vscode
 
 install: ## install all packages, runtimes,...
-	sudo -u romainprignon bash ./scripts/install.sh 2>&1 | tee ~/install.log
+	sudo -u romainprignon bash ./scripts/install.sh 2>&1 | tee ./logs/install.log
 
 configure: ## configure dotfiles
-	sudo -u romainprignon bash ./scripts/configure.sh
+	sudo -u romainprignon bash ./scripts/configure.sh 2>&1 | tee ./logs/configure.log
 
 desktop: ## install gnome desktop
-	sudo -u romainprignon bash ./scripts/desktop.sh
+	sudo -u romainprignon bash ./scripts/desktop.sh 2>&1 | tee ./logs/desktop.log
 
 dconf-dump: ## save dconf settings
 	dconf dump /org/gnome/nautilus/ > dconf/nautilus.dconf
