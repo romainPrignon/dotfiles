@@ -6,7 +6,7 @@ user="romainprignon"
 dotfile_dir_absolute_path="/home/$user/workspace/romainprignon/dotfiles"
 home_dir_absolute_path="/home/$user"
 
-cd $home_dir_absolute_path
+#cd $home_dir_absolute_path
 
 mkdir .ssh
 mkdir .composer
@@ -14,15 +14,15 @@ mkdir .ngrok2
 
 mkdir -p $home_dir_absolute_path/.config/Code/User
 mkdir -p $home_dir_absolute_path/.config/dconf
+mkdir -p $home_dir_absolute_path/.config/gtk-3.0
 mkdir -p $home_dir_absolute_path/.config/micro
 mkdir -p $home_dir_absolute_path/.config/sublime-text-3/Packages/User
-mkdir -p $home_dir_absolute_path/workspace/go
+#mkdir -p $home_dir_absolute_path/workspace/go
 
-sudo chown -R $user:$user $home_dir_absolute_path/.composer
-sudo chown -R $user:$user $home_dir_absolute_path/n
-sudo chown -R $user:$user $home_dir_absolute_path/.fzf
-sudo chown -R $user:$user $home_dir_absolute_path/.zsh
-sudo chown -R $user:$user $home_dir_absolute_path/.bash-git-prompt
+#sudo chown -R $user:$user $home_dir_absolute_path/.composer
+#sudo chown -R $user:$user $home_dir_absolute_path/.fzf
+#sudo chown -R $user:$user $home_dir_absolute_path/.zsh
+#sudo chown -R $user:$user $home_dir_absolute_path/.bash-git-prompt
 
 dconf load /org/gnome/nautilus/ < $dotfile_dir_absolute_path/dconf/nautilus.dconf
 dconf load /org/gnome/power-manager/ < $dotfile_dir_absolute_path/dconf/power-manager.dconf
@@ -41,8 +41,8 @@ ln -sf $dotfile_dir_absolute_path/.gdfuse/peaks/config $home_dir_absolute_path/.
 ln -sf $dotfile_dir_absolute_path/micro/settings.json $home_dir_absolute_path/.config/micro/settings.json
 ln -sf $dotfile_dir_absolute_path/ngrok.yml $home_dir_absolute_path/.ngrok2/ngrok.yml
 
-ln -sf $dotfile_dir_absolute_path/.gitconfig $home_dir_absolute_path/.gitconfig
-ln -sf $dotfile_dir_absolute_path/.gitignore $home_dir_absolute_path/.gitignore
+ln -sf $dotfile_dir_absolute_path/git/.gitconfig $home_dir_absolute_path/.gitconfig
+ln -sf $dotfile_dir_absolute_path/git/.gitignore $home_dir_absolute_path/.gitignore
 
 ln -sf $dotfile_dir_absolute_path/.aliases $home_dir_absolute_path/.aliases
 ln -sf $dotfile_dir_absolute_path/.exports $home_dir_absolute_path/.exports

@@ -3,7 +3,7 @@
 set -x
 
 ## install: desktop
-apt install -y \
+sudo apt install -y \
     chrome-gnome-shell \
     gdm3 \
     gnome-core \
@@ -11,12 +11,12 @@ apt install -y \
     xserver-xorg
 
 ## install: desktop-app
-add-apt-repository ppa:alessandro-strada/ppa -y
+sudo add-apt-repository ppa:alessandro-strada/ppa -y
 
-apt update
+sudo apt update
 
 # google-drive-ocamlfuse \
-apt install -y \
+sudo apt install -y \
     arc-theme \
     eog \
     evince \
@@ -32,7 +32,7 @@ apt install -y \
     synaptic
 
 ## install: font
-apt install -y \
+sudo apt install -y \
     font-manager \
     fonts-droid-fallback \
     fonts-inconsolata \
@@ -43,24 +43,24 @@ apt install -y \
 
 # chrome
 wget -q -O /tmp/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-dpkg -i /tmp/google-chrome-stable_current_amd64.deb
-apt -f -y install
+sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
+sudo apt -f -y install
 
 # stacer
 wget -q -O /tmp/stacer_1.1.0_amd64.deb https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb
-dpkg -i /tmp/stacer_1.1.0_amd64.deb
-apt -f -y install
+sudo dpkg -i /tmp/stacer_1.1.0_amd64.deb
+sudo apt -f -y install
 
 # vscode
 wget -q -O /tmp/vscode.deb https://update.code.visualstudio.com/1.49.1/linux-deb-x64/stable
-dpkg -i /tmp/vscode.deb
-apt -f -y install
+sudo dpkg -i /tmp/vscode.deb
+sudo apt -f -y install
 
 # subl
 wget -q -O /tmp/sublime-text_build-3211_amd64.deb https://download.sublimetext.com/sublime-text_build-3211_amd64.deb
-dpkg -i /tmp/sublime-text_build-3211_amd64.deb
-apt -f -y install
+sudo dpkg -i /tmp/sublime-text_build-3211_amd64.deb
+sudo apt -f -y install
 
 # post-install
-apt autoremove --purge -y
-apt clean -y
+sudo apt autoremove --purge -y
+sudo apt clean -y

@@ -3,22 +3,22 @@
 set -x
 
 # pre-install
-locale-gen en_US en_US.UTF-8
-update-locale LANG=en_US.UTF-8
-
 mkdir ~/app
+mkdir ~/bin
 
 # install: lib
-apt update
+sudo apt update
 
-apt install -y \
+sudo apt install -y \
     apt-transport-https \
+    apt-utils \
     build-essential \
     ca-certificates \
     dkms \
     gcc \
     language-pack-en-base \
-    linux-headers-$(uname -r) \
+    linux-headers-generic \
+    locales \
     python-pygments \
     python3-software-properties \
     software-properties-common \
@@ -29,9 +29,12 @@ apt install -y \
     libssl-dev \
     libsqlite3-dev
 
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8
+
 # install: app
-apt update
-apt install -y \
+sudo apt update
+sudo apt install -y \
     curl \
     ffmpeg \
     fzf \
@@ -54,7 +57,7 @@ curl -sSL https://getmic.ro | bash
 
 # n
 wget -q -O $HOME/bin/n https://raw.githubusercontent.com/tj/n/master/bin/n
-chmod u+x $HOME/bin/n
+sudo chmod u+x $HOME/bin/n
 
 # install: zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
@@ -68,13 +71,16 @@ git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt -
 # install: runtime
 
 ## node
-$HOME/bin/n latest
-$HOME/bin/n lts
+sudo $HOME/bin/n latest
+sudo $HOME/bin/n lts
+
+# deno
+curl -sSL https://deno.land/x/install/install.sh | bash
 
 ## php
-add-apt-repository ppa:ondrej/php -y
-apt update
-apt install -y \
+sudo add-apt-repository ppa:ondrej/php -y
+sudo apt update
+sudo apt install -y \
     php7.4-apcu \
     php7.4-common \
     php7.4-cli \
@@ -92,9 +98,9 @@ apt install -y \
 
 curl -sSL https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-wget -c "https://xdebug.org/files/xdebug-2.5.5.tgz"
-tar -xf xdebug-2.5.5.tgz
-cd xdebug-2.5.5/
+wget -c "https://xdebug.org/files/xdebug-2.9.8.tgz"
+tar -xf xdebug-2.9.8.tgz
+cd xdebug-2.9.8/
 phpize
 ./configure
 make && make install
@@ -105,20 +111,20 @@ echo 'xdebug.remote_enable = 1' | tee --append /etc/php/7.2/cli/php.ini
 echo 'xdebug.remote_autostart = 1' | tee --append /etc/php/7.2/cli/php.ini
 cd ..
 rm -rf package.xml
-rm -rf xdebug-2.5.5
-rm -rf xdebug-2.5.5.tgz
+rm -rf xdebug-2.9.8
+rm -rf xdebug-2.9.8.tgz
 
 ## go
-wget -q https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.15.2.linux-amd64.tar.gz
+#wget -q -O /tmp/go1.15.2.linux-amd64.tar.gz https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
+#sudo tar -C /usr/local -xzf /tmp/go1.15.2.linux-amd64.tar.gz
 
 ## python
 curl https://pyenv.run | bash
-apt install -y \
+sudo apt install -y \
     python3-pip
 
 ## java
-apt install -y \
+sudo apt install -y \
     openjdk-11-jdk
 
 # rust
@@ -129,12 +135,12 @@ rustup default $rust_version
 
 # docker
 curl -sSL https://get.docker.com | bash
-usermod -aG docker $(whoami)
+sudo usermod -aG docker $(whoami)
 
 # docker-compose
 wget -q -O $HOME/bin/docker-compose https://github.com/docker/compose/releases/download/1.27.3/docker-compose-Linux-x86_64
 chmod u+x $HOME/bin/docker-compose
 
 # post-install
-apt autoremove --purge -y
-apt clean -y
+sudo apt autoremove --purge -y
+sudo apt clean -y
