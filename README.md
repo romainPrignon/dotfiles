@@ -31,6 +31,10 @@ sudo reboot
     - User Themes by fmuellner
     
 TODO : make it work ! on vm ! reload snapshot and retry till it work
+icon
+fav sublime
+prompt not bright
+
 - reload dconf
 ```bash
 make dconf-load

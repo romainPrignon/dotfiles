@@ -11,7 +11,7 @@ gtk-theme='Adwaita-dark'
 clock-show-date=true
 
 [notifications]
-application-children=['application-children=['org-gnome-nautilus']
+application-children=['org-gnome-nautilus']
 
 [notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
