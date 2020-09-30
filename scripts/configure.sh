@@ -55,7 +55,7 @@ ln -sf $dotfile_dir_absolute_path/vscode/settings.json $home_dir_absolute_path/.
 ln -sf $dotfile_dir_absolute_path/vscode/keybindings.json $home_dir_absolute_path/.config/Code/User/keybindings.json
 
 # fzf
-#~/.fzf/install
+bash $HOME/.fzf/install --key-bindings --completion --no-update-rc
 
 source "$HOME/.profile"
 

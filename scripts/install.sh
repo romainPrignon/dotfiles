@@ -38,7 +38,6 @@ sudo apt update
 sudo apt install -y \
     curl \
     ffmpeg \
-    fzf \
     git \
     git-extras \
     htop \
@@ -52,6 +51,9 @@ sudo apt install -y \
     wmctrl \
     xclip \
     zsh
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # micro
 cd $HOME/bin
