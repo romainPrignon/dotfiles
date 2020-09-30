@@ -57,5 +57,12 @@ ln -sf $dotfile_dir_absolute_path/vscode/keybindings.json $home_dir_absolute_pat
 # fzf
 bash $HOME/.fzf/install --key-bindings --completion --no-update-rc
 
+# python
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 2
+
+# pip
+sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
+
 source "$HOME/.profile"
 
