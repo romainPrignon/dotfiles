@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
 EXTENSIONS=(
-  "ms-vscode.vscode-typescript-tslint-plugin" \
-  "EditorConfig.EditorConfig" \
-  "PeterJausovec.vscode-docker" \
   "christian-kohler.path-intellisense" \
   "dbaeumer.vscode-eslint" \
   "devtanc.tab-hero" \
+  "eamodio.gitlens" \
+  "EditorConfig.EditorConfig" \
   "eg2.vscode-npm-script" \
   "felixfbecker.php-debug" \
   "felixfbecker.php-intellisense" \
@@ -14,12 +13,13 @@ EXTENSIONS=(
   "geddski.macros" \
   "ikappas.phpcs" \
   "mikestead.dotenv" \
+  "ms-azuretools.vscode-docker" \
+  "ms-python.python" \
   "ms-vscode.typescript-javascript-grammar" \
+  "ms-vscode.vscode-typescript-tslint-plugin" \
   "msjsdiag.debugger-for-chrome" \
   "PKief.material-icon-theme" \
-  "whatwedo.twig" \
-  "yatki.vscode-surround" \
-  "eamodio.gitlens"
+  "yatki.vscode-surround"
 )
 
 for VARIANT in "code" \
