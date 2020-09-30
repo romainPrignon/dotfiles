@@ -27,33 +27,33 @@ sudo reboot
     - BottomPanel by abstract
     - Hide Dash X by edh
     - Hide Workspace Thumbnails by edh
-    - Pixel Saver by nMqMgEF
+    - No Title Bar - Forked by BebopXD
+    - TaskBar 2020 by c0ldplasma
     - User Themes by fmuellner
-    
-TODO : make it work ! on vm ! reload snapshot and retry till it work
-icon
-fav sublime
-prompt not bright
-
 - reload dconf
-```bash
-make dconf-load
-```
+    ```bash
+    make dconf-load
+    ```
 
-**vscode**
-subl $(locate workbench.main.css)
-append this file => https://gist.github.com/romainPrignon/cfe7087451354456ed0ddd08e02274a4
 
-**intellij**
-js-graphql-intellij-plugin
+## vscode
+- install extensions
+    ```bash
+    make vscode
+    ```
+- reload
+
+
+## subl
+- install package control
+- relaunch
+
+## intellij
+- install extensions:
+    - js-graphql-intellij-plugin
+- remove unused extensions (doc/unused-phpstorm-ext.txt)
 
 ## TODO manual
 - setup tlp
 - setup swap (/etc/fstab and /etc/sysctl.conf)
-- sublime: install package control
-- vscode: copy workbench
-- vscode: install plugins
-- phpstorm: install plugins
-- phpstorm: remove unused plugins
-<!-- - file: bookmark (app, workspace,...) -->
 - keyboard: remove caps (/usr/share/X11/xkb/symbols/pc)
