@@ -1,4 +1,3 @@
 # Global git ignore
 .idea/
 .vscode/
-jsconfig.json
