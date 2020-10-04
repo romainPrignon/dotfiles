@@ -63,6 +63,11 @@ wget -q -O /tmp/sublime-text_build-3211_amd64.deb https://download.sublimetext.c
 sudo dpkg -i /tmp/sublime-text_build-3211_amd64.deb
 sudo apt -f -y install
 
+# jetbrain toolbox
+wget -q -O /tmp/jetbrains-toolbox.tar.gz https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.18.7455.tar.gz
+tar -xf jetbrains-toolbox.tar.gz
+mv /tmp/jetbrains-toolbox/jetbrains-toolbox $HOME/app/jetbrains-toolbox
+
 # post-install
 sudo apt autoremove --purge -y
 sudo apt clean -y
