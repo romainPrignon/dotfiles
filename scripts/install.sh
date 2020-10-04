@@ -154,6 +154,10 @@ sudo usermod -aG docker $(whoami)
 wget -q -O $HOME/bin/docker-compose https://github.com/docker/compose/releases/download/1.27.3/docker-compose-Linux-x86_64
 chmod u+x $HOME/bin/docker-compose
 
+# ansible
+$ sudo apt-add-repository --yes --update ppa:ansible/ansible
+$ sudo apt install ansible
+
 # post-install
 sudo apt autoremove --purge -y
 sudo apt clean -y
