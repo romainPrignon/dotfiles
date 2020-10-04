@@ -12,7 +12,8 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Shortcuts
-alias b="cd ~/bin"
+alias app="cd ~/a"
+alias bin="cd ~/bin"
 alias dl="cd ~/Downloads"
 alias w="cd ~/workspace"
 
