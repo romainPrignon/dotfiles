@@ -29,7 +29,9 @@ sudo apt install -y \
     gnome-tweak-tool \
     nautilus \
     nautilus-dropbox \
-    synaptic
+    synaptic \
+    tlp \
+    tlpui
 
 ## install: font
 sudo apt install -y \
