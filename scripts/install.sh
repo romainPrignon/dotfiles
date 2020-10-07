@@ -78,10 +78,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-sy
 git clone https://github.com/olivierverdier/zsh-git-prompt.git ~/.zsh/zsh-git-prompt
 git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-history-substring-search
 
-# install: bash
+# bash
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
-# install: runtime
+# runtime
 
 ## node
 sudo $HOME/bin/n latest
@@ -163,8 +163,14 @@ wget -q -O $HOME/bin/docker-compose https://github.com/docker/compose/releases/d
 chmod u+x $HOME/bin/docker-compose
 
 # ansible
-$ sudo apt-add-repository --yes --update ppa:ansible/ansible
-$ sudo apt install ansible
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
+
+# packer
+wget -q -O /tmp/packer.zip https://releases.hashicorp.com/packer/1.6.4/packer_1.6.4_linux_amd64.zip
+unzip /tmp/packer.zip 
+mv packer $HOME/bin/packer
+chmod u+x $HOME/bin/packer
 
 # post-install
 sudo apt autoremove --purge -y
