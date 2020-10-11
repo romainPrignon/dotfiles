@@ -18,8 +18,20 @@ sudo reboot
 
 # manual
 
+## Keyboard (if qwerty)
+- in /usr/share/X11/xkb/symbols/pc
+```
+key <CAPS> {    [ Caps_Lock     ]   };
+```
+- remove caps lock
+```
+key <CAPS> {};
+```
+
+
 ## dropbox
 - launch and configure
+
 
 ## gnome-shell
 - install extensions:
@@ -48,17 +60,23 @@ sudo reboot
 - install package control
 - relaunch
 
+
 ## webapp
 - go to chrome://apps/
 - install shortcuts:
     - devdocs
+
 
 ## intellij
 - install extensions:
     - js-graphql-intellij-plugin
 - remove unused extensions (doc/unused-phpstorm-ext.txt)
 
-## TODO manual
-- setup swap (/etc/fstab and /etc/sysctl.conf)
-- keyboard: remove caps (/usr/share/X11/xkb/symbols/pc)
-- focus terminal
+
+## terminal
+- add keyboard shortcut to focus terminal
+    - go to settings > devices > keyboard
+    - add custom shortcut
+        - name: terminal
+        - command: bash /home/romainprignon/scripts/focus-terminal.sh
+        - shortcut: CTRL + T

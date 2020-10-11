@@ -168,9 +168,12 @@ sudo apt install ansible
 
 # packer
 wget -q -O /tmp/packer.zip https://releases.hashicorp.com/packer/1.6.4/packer_1.6.4_linux_amd64.zip
-unzip /tmp/packer.zip 
+unzip /tmp/packer.zip
 mv packer $HOME/bin/packer
 chmod u+x $HOME/bin/packer
+
+# multipass
+sudo snap install multipass
 
 # post-install
 sudo apt autoremove --purge -y
