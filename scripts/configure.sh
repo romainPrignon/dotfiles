@@ -18,6 +18,7 @@ mkdir -p $home_dir_absolute_path/.config/dconf/
 mkdir -p $home_dir_absolute_path/.config/gtk-3.0/
 mkdir -p $home_dir_absolute_path/.config/micro/
 mkdir -p $home_dir_absolute_path/.config/sublime-text-3/Packages/User/
+mkdir -p $home_dir_absolute_path/sandbox
 #mkdir -p $home_dir_absolute_path/workspace/go
 
 sudo ln -sf $dotfile_dir_absolute_path/etc/sysctl.conf /etc/sysctl.conf

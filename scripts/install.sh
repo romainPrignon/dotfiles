@@ -163,8 +163,7 @@ wget -q -O $HOME/bin/docker-compose https://github.com/docker/compose/releases/d
 chmod u+x $HOME/bin/docker-compose
 
 # ansible
-sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt install ansible
+sudo apt install -y ansible
 
 # packer
 wget -q -O /tmp/packer.zip https://releases.hashicorp.com/packer/1.6.4/packer_1.6.4_linux_amd64.zip

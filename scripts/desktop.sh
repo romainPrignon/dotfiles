@@ -30,8 +30,7 @@ sudo apt install -y \
     nautilus \
     nautilus-dropbox \
     synaptic \
-    tlp \
-    tlpui
+    tlp
 
 ## install: font
 sudo apt install -y \

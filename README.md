@@ -26,6 +26,7 @@ sudo reboot
 ## Hostname
 - sudo hostnamectl set-hostname MY_HOSTNAME
 - micro /etc/hosts
+- micro /etc/hostname
 
 
 ## Keyboard (if qwerty)
