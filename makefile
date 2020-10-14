@@ -9,6 +9,9 @@ configure: ## configure dotfiles
 desktop: ## install gnome desktop
 	sudo -u romainprignon bash ./scripts/desktop.sh 2>&1 | tee ./logs/desktop.log
 
+configure-desktop: ## configure gnome desktop
+	gsettings set org.gnome.Terminal.Legacy.Settings headerbar false
+
 dconf-dump: ## save dconf settings
 	dconf dump /org/gnome/nautilus/ > dconf/nautilus.dconf
 	dconf dump /org/gnome/settings-daemon/ > dconf/settings-daemon.dconf
