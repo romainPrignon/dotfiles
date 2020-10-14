@@ -42,6 +42,9 @@ sudo apt install -y \
     ttf-ancient-fonts \
     ttf-ubuntu-font-family
 
+## install: screensaver
+sudo ./scripts/change-focal-gdm-background.sh ./img/screensaver.jpg
+
 # chrome
 wget -q -O /tmp/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
