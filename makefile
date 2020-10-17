@@ -45,3 +45,10 @@ npm: ## install npm global deps
 
 vscode: ## install vscode ext
 	bash ./scripts/install-vscode-ext.sh
+
+swap: ## create swap file if not already done ex: make swap size=8G
+	sudo fallocate -l ${size} /swapfile
+	sudo chmod 600 /swapfile
+	sudo mkswap /swapfile
+	sudo swapon /swapfile
+	echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab

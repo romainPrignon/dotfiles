@@ -19,6 +19,13 @@ sudo reboot
 # manual
 
 
+## Swap
+- Create swap file if not already done
+```bash
+make swap size=8G
+```
+
+
 ## Ntp
 - sudo timedatectl set-timezone My/Timezone
 
