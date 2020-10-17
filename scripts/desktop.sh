@@ -11,7 +11,6 @@ sudo apt install -y \
     xserver-xorg
 
 ## install: desktop-app
-sudo add-apt-repository ppa:alessandro-strada/ppa -y
 
 sudo apt update
 
@@ -42,9 +41,6 @@ sudo apt install -y \
     ttf-ancient-fonts \
     ttf-ubuntu-font-family
 
-## install: screensaver
-sudo ./scripts/change-focal-gdm-background.sh ./img/screensaver.jpg
-
 # chrome
 wget -q -O /tmp/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
@@ -67,8 +63,8 @@ sudo apt -f -y install
 
 # jetbrain toolbox
 wget -q -O /tmp/jetbrains-toolbox.tar.gz https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.18.7455.tar.gz
-tar -xf jetbrains-toolbox.tar.gz
-mv /tmp/jetbrains-toolbox/jetbrains-toolbox $HOME/app/jetbrains-toolbox
+tar -xf /tmp/jetbrains-toolbox.tar.gz
+mv /tmp/jetbrains-toolbox-1.18.7455/jetbrains-toolbox $HOME/app/jetbrains-toolbox
 
 # post-install
 sudo apt autoremove --purge -y

@@ -28,7 +28,8 @@ sudo apt install -y \
     libbz2-dev \
     libreadline-dev \
     libssl-dev \
-    libsqlite3-dev
+    libsqlite3-dev \
+    libglib2.0-dev-bin
 
 sudo locale-gen fr_FR fr_FR.UTF-8
 sudo locale-gen en_US en_US.UTF-8
@@ -47,6 +48,7 @@ sudo apt install -y \
     sqlite3 \
     ssh \
     tree \
+    unzip \
     vim \
     wget \
     wmctrl \
