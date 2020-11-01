@@ -10,6 +10,7 @@ cd $home_dir_absolute_path
 
 sudo mkdir -p /etc/resolvconf/resolv.conf.d
 
+mkdir -p $home_dir_absolute_path/.rc/
 mkdir -p $home_dir_absolute_path/.ssh/
 mkdir -p $home_dir_absolute_path/.composer/
 mkdir -p $home_dir_absolute_path/.ngrok2/
@@ -19,11 +20,13 @@ mkdir -p $home_dir_absolute_path/.config/gtk-3.0/
 mkdir -p $home_dir_absolute_path/.config/micro/
 mkdir -p $home_dir_absolute_path/.config/sublime-text-3/Packages/User/
 mkdir -p $home_dir_absolute_path/sandbox
+mkdir -p $home_dir_absolute_path/workspace/partners
 #mkdir -p $home_dir_absolute_path/workspace/go
 
 sudo ln -sf $dotfile_dir_absolute_path/etc/sysctl.conf /etc/sysctl.conf
 sudo ln -sf $dotfile_dir_absolute_path/etc/resolvconf/head /etc/resolvconf/resolv.conf.d/head
 
+ln -sf $dotfile_dir_absolute_path/.rc/common.rc $home_dir_absolute_path/.rc/common.rc
 ln -sf $dotfile_dir_absolute_path/.composer/composer.json $home_dir_absolute_path/.composer/composer.json
 ln -sf $dotfile_dir_absolute_path/.npmrc $home_dir_absolute_path/.npmrc
 ln -sf $dotfile_dir_absolute_path/scripts $home_dir_absolute_path/scripts

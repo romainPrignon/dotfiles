@@ -14,9 +14,7 @@ if [ -f "$HOME/.functions" ]; then
 fi
 
 # include partner
-if [ -f "$HOME/.peaksrc" ]; then
-    . "$HOME/.peaksrc"
-fi
+for f in $HOME/.rc/*.rc; do source $f; done
 
 # bootstrap
 autoload -U promptinit && promptinit
@@ -133,3 +131,6 @@ ZSH_HIGHLIGHT_STYLES[path_pathseparator]=fg=white
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=011
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=011
 ZSH_HIGHLIGHT_STYLES[assign]=fg=011
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
