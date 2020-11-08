@@ -51,6 +51,10 @@ wget -q -O /tmp/stacer_1.1.0_amd64.deb https://github.com/oguzhaninan/Stacer/rel
 sudo dpkg -i /tmp/stacer_1.1.0_amd64.deb
 sudo apt -f -y install
 
+# hyper
+wget -q -O $HOME/app/hyper.AppImage https://releases.hyper.is/download/AppImage
+chmod a+x $HOME/app/hyper.AppImage
+
 # vscode
 wget -q -O /tmp/vscode.deb https://update.code.visualstudio.com/1.49.1/linux-deb-x64/stable
 sudo dpkg -i /tmp/vscode.deb
