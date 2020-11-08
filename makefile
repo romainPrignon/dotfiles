@@ -17,6 +17,9 @@ configure-partner: ## link partner config file ex: make configure-partner partne
 	ln -sf ~/Dropbox/root/home/romainprignon/.rc/${partner}.rc ~/.rc/${partner}.rc
 	ln -sf ~/Dropbox/root/home/romainprignon/.ssh/${partner} ~/.ssh/${partner}
 
+ngrok:
+	ln -sf ~/Dropbox/root/home/romainprignon/.ngrok2 ~/.ngrok2
+
 dconf-dump: ## save dconf settings
 	dconf dump /org/gnome/nautilus/ > dconf/nautilus.dconf
 	dconf dump /org/gnome/settings-daemon/ > dconf/settings-daemon.dconf
