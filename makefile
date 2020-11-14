@@ -13,12 +13,12 @@ configure-desktop: ## configure gnome desktop
 	gsettings set org.gnome.Terminal.Legacy.Settings headerbar false
 
 configure-partner: ## link partner config file ex: make configure-partner partner=frello
-	ln -sf ~/Dropbox/root/home/romainprignon/workspace/partners/.gitconfig ~/workspace/partners/.gitconfig
-	ln -sf ~/Dropbox/root/home/romainprignon/.rc/${partner}.rc ~/.rc/${partner}.rc
-	ln -sf ~/Dropbox/root/home/romainprignon/.ssh/${partner} ~/.ssh/${partner}
+	ln -sf ~/Gdrive/root/home/romainprignon/workspace/partners/.gitconfig ~/workspace/partners/.gitconfig
+	ln -sf ~/Gdrive/root/home/romainprignon/.rc/${partner}.rc ~/.rc/${partner}.rc
+	ln -sf ~/Gdrive/root/home/romainprignon/.ssh/${partner} ~/.ssh/${partner}
 
 ngrok:
-	ln -sf ~/Dropbox/root/home/romainprignon/.ngrok2 ~/.ngrok2
+	ln -sf ~/Gdrive/root/home/romainprignon/.ngrok2 ~/.ngrok2
 
 dconf-dump: ## save dconf settings
 	dconf dump /org/gnome/nautilus/ > dconf/nautilus.dconf

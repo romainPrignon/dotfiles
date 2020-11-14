@@ -27,7 +27,6 @@ sudo apt install -y \
     gnome-terminal \
     gnome-tweak-tool \
     nautilus \
-    nautilus-dropbox \
     synaptic \
     tlp
 

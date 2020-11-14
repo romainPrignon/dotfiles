@@ -47,7 +47,7 @@ key <CAPS> {};
 ```
 
 
-## dropbox
+## insync
 - launch and configure
 
 
