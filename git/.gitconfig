@@ -1,6 +1,7 @@
 [user]
     name = romainprignon
     email = pro.rprignon@gmail.com
+	signingkey = B5D18794410CBF8E
 
 [alias]
     tags = tag -l

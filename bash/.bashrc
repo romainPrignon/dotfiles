@@ -121,6 +121,9 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
+# gpg
+export GPG_TTY=$(tty)
+
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
