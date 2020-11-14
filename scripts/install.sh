@@ -112,7 +112,7 @@ sudo apt install -y \
     php7.4-xml \
     php7.4-zip
 
-curl -sSL https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+curl -sSL https://getcomposer.org/installer | php -- --install-dir=/$HOME/bin --filename=composer
 
 wget -c "https://xdebug.org/files/xdebug-2.9.8.tgz"
 tar -xf xdebug-2.9.8.tgz
