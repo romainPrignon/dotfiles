@@ -61,6 +61,7 @@ key <CAPS> {};
     - BottomPanel by abstract
     - Hide Dash X by edh
     - Hide Workspace Thumbnails by edh
+    - No Title Bar by franglais125
     - Pixel Saver by nMqMgEF
     - TaskBar 2020 by c0ldplasma
     - User Themes by fmuellner

@@ -64,8 +64,8 @@ curl -sSL https://getmic.ro | bash
 cd -
 
 # n
-wget -q -O $HOME/bin/n https://raw.githubusercontent.com/tj/n/master/bin/n
-sudo chmod u+x $HOME/bin/n
+curl -sSL https://git.io/n-install | bash -s -- -y -n latest lts
+
 
 # install: zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
@@ -77,10 +77,6 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-h
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 # runtime
-
-## node
-sudo $HOME/bin/n latest
-sudo $HOME/bin/n lts
 
 ## node: config
 npm completion > npm

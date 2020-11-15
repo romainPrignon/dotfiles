@@ -14,7 +14,6 @@ sudo apt install -y \
 
 sudo apt update
 
-# google-drive-ocamlfuse \
 sudo apt install -y \
     arc-theme \
     eog \
@@ -66,7 +65,7 @@ sudo apt -f -y install
 
 # jetbrain toolbox
 wget -q -O /tmp/jetbrains-toolbox.tar.gz https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.18.7455.tar.gz
-tar -xf /tmp/jetbrains-toolbox.tar.gz
+tar -xf /tmp/jetbrains-toolbox.tar.gz -C /tmp
 mv /tmp/jetbrains-toolbox-1.18.7455/jetbrains-toolbox $HOME/app/jetbrains-toolbox
 
 # post-install
