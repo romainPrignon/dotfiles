@@ -16,14 +16,16 @@ export GOBIN=$HOME/workspace/go/bin
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export JAVA_OPTIONS=-Xmx512M
 
+export N_PREFIX=$HOME/n
+
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/app:$PATH"
-PATH="$HOME/n/bin:$PATH"
 PATH="$HOME/.deno/bin:$PATH"
 PATH="$HOME/.pyenv/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/.symfony/bin:$PATH"
+PATH="$N_PREFIX/bin:$PATH"
 PATH="$GOROOT/bin:$PATH"
 PATH="$JAVA_HOME/jre/bin:$PATH"
 PATH="$HOME/.composer/vendor/bin:$PATH"
