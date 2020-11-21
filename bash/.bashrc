@@ -22,11 +22,8 @@ for f in $HOME/.rc/*.rc; do source $f; done
 # Avoid duplicate entries
 HISTCONTROL="erasedups:ignoreboth:ignorespace"
 
-# Useful timestamp format
-HISTTIMEFORMAT='%F %T '
-
 # Don't record some commands
-export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+export HISTIGNORE="&:[ ]*:exit:history:clear:cd*:ls*:ll*"
 
 export PROMPT_COMMAND='history -a'
 
