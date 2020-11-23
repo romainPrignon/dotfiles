@@ -23,6 +23,7 @@ sudo apt install -y \
     python3-software-properties \
     resolvconf \
     software-properties-common \
+    smartmontools \
     zlib1g-dev \
     libffi-dev \
     libbz2-dev \
@@ -43,6 +44,7 @@ sudo apt install -y \
     git \
     git-extras \
     htop \
+    net-tools \
     openssl \
     shellcheck \
     sqlite3 \

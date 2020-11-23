@@ -85,6 +85,9 @@ sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 # dns
 sudo service resolvconf restart
 
+# tlp
+sudo systemctl enable tlp
+
 # system
 sudo sysctl --system
 
