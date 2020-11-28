@@ -59,6 +59,7 @@ key <CAPS> {};
 - install extensions:
     - AlternateTab by fmuellner
     - BottomPanel by abstract
+    - Emoji Selector by Maestroschan
     - Hide Dash X by edh
     - Hide Workspace Thumbnails by edh
     - No Title Bar by franglais125
