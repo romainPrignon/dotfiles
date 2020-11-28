@@ -12,6 +12,7 @@ desktop: ## install gnome desktop
 configure-desktop: ## configure gnome desktop
 	gsettings set org.gnome.Terminal.Legacy.Settings headerbar false
 	sudo ./scripts/change-gdm-background.sh ./img/screensaver.jpg
+	sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm3/custom.conf
 
 configure-partner: ## link partner config file ex: make configure-partner partner=frello
 	ln -sf ~/Gdrive/root/home/romainprignon/workspace/partners/.gitconfig ~/workspace/partners/.gitconfig
