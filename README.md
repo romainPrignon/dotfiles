@@ -58,6 +58,7 @@ key <CAPS> {};
     ```
 - install extensions:
     - AlternateTab by fmuellner
+    - AppIndicator and KStatusNotifierItem Support by 3v1n0
     - BottomPanel by abstract
     - Emoji Selector by Maestroschan
     - Hide Dash X by edh
@@ -95,3 +96,11 @@ key <CAPS> {};
 - install extensions:
     - js-graphql-intellij-plugin
 - remove unused extensions (doc/unused-phpstorm-ext.txt)
+
+## git stash
+- remove line `120` from `~/.bash-git-prompt/gitstatus.sh`
+
+## configure gitmoji
+```bash
+gitmoji -g
+```
