@@ -1,0 +1,15 @@
+CPU consumption
+===============
+- either use tlp or cpufreq
+
+tlp
+---
+apt install tlp tlp-ui
+
+cpufreq
+-------
+apt install cpufrequtils indicator-cpufreq
+
+sensors
+=======
+https://doc.ubuntu-fr.org/lm-sensors
