@@ -73,6 +73,17 @@ key <CAPS> {};
     ```
 
 
+## GRUB
+- sudo nano /etc/default/grub
+- GRUB_CMDLINE_LINUX_DEFAULT="splash quiet" => GRUB_CMDLINE_LINUX_DEFAULT="text quiet"
+- sudo update-grub
+
+
+## WIFI
+- sudo nano /etc/netplan/01-netcfg.yaml
+- use `NetworkManager` as renderer
+
+
 ## vscode
 - install extensions
     ```bash
@@ -97,8 +108,10 @@ key <CAPS> {};
     - js-graphql-intellij-plugin
 - remove unused extensions (doc/unused-phpstorm-ext.txt)
 
+
 ## git stash
 - remove line `120` from `~/.bash-git-prompt/gitstatus.sh`
+
 
 ## configure gitmoji
 ```bash
