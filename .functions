@@ -26,7 +26,7 @@ function monit {
 function sandbox {
     name=$1
     type=$2
-    keep=$3
+    rm=$3
 
     case "$type" in
     generic) image="ubuntu:20.04";volume="-v $name:/root" ;;
@@ -42,9 +42,11 @@ function sandbox {
         --opt o=bind \
         $name
 
-    docker start -ai $name || docker run -it --name $name $volume $image
+    network="--network host"
 
-    if [ "$keep" != "--keep" ]; then 
+    docker start -ai $name || docker run -it --name $name $volume $network $image
+
+    if [ "$rm" == "--rm" ]; then
         docker rm $name
         docker volume rm $name
         sudo rm -rf $HOME/sandbox/$name
