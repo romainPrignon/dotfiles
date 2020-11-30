@@ -32,6 +32,7 @@ speed=0.0
 left-handed=false
 
 [search-providers]
+disabled=['org.gnome.Calculator.desktop', 'org.gnome.Characters.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.Software.desktop', 'org.gnome.Terminal.desktop']
 sort-order=['gnome-contacts.desktop', 'gnome-documents.desktop', 'nautilus.desktop']
 
 [wm/preferences]

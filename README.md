@@ -67,6 +67,7 @@ key <CAPS> {};
     - Pixel Saver by nMqMgEF
     - TaskBar 2020 by c0ldplasma
     - User Themes by fmuellner
+    - Window Search Provider by klorenz
 - reload dconf
     ```bash
     make dconf-load
