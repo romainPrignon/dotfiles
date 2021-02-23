@@ -41,7 +41,7 @@ composer: ## install composer global deps
 
 npm: ## install npm global deps
 	npm install -g \
-		babel-cli \
+		@babel/node \
 		depcheck \
 		gitmoji-cli \
 		hotel \

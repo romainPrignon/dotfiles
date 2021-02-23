@@ -414,7 +414,8 @@
         "**/.idea": true,
         "**/node_modules": true,
         "**/bower_components": true,
-        "**/vendor": true
+        "**/vendor": true,
+        "**/coverage": true
     },
     "search.useIgnoreFiles": true,
 
@@ -432,9 +433,11 @@
     "workbench.colorTheme": "Monokai",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.enablePreviewFromCodeNavigation": false,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.pinnedTabSizing": "compact",
     "workbench.editor.tabCloseButton": "off",
+    "workbench.editor.decorations.colors": true,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.list.openMode": "singleClick",
     "workbench.startupEditor": "none",
@@ -542,7 +545,8 @@
     },
 
     // === langage ===
-    "javascript.implicitProjectConfig.checkJs": true,
+    "js/ts.implicitProjectConfig.checkJs": true,
+
     "javascript.validate.enable": true,
     "javascript.suggest.completeFunctionCalls": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
@@ -550,6 +554,7 @@
     "typescript.reportStyleChecksAsWarnings": false, // false for error ?
     "typescript.suggest.completeFunctionCalls": true,
     "typescript.tsserver.maxTsServerMemory": 2048,
+    "typescript.updateImportsOnFileMove.enabled": "always",
 
     "php.suggest.basic": false, // PHP IntelliSense
 
@@ -557,7 +562,7 @@
         "editor.quickSuggestions": true
     },
     "[javascript]": {
-        "editor.codeActionsOnSave": {}
+        "editor.codeActionsOnSave": {},
     },
     "[typescript]": {
         "editor.codeActionsOnSave": {
@@ -630,5 +635,5 @@
     },
 
     "tslint.alwaysShowRuleFailuresAsWarnings": false,
-    "tslint.suppressWhileTypeErrorsPresent": true
+    "tslint.suppressWhileTypeErrorsPresent": true,
 }
