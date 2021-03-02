@@ -50,11 +50,11 @@ sudo dpkg -i /tmp/stacer_1.1.0_amd64.deb
 sudo apt -f -y install
 
 # hyper
-wget -q -O $HOME/app/hyper.AppImage https://releases.hyper.is/download/AppImage
-chmod a+x $HOME/app/hyper.AppImage
+#wget -q -O $HOME/app/hyper.AppImage https://releases.hyper.is/download/AppImage
+#chmod a+x $HOME/app/hyper.AppImage
 
 # vscode
-wget -q -O /tmp/vscode.deb https://update.code.visualstudio.com/1.49.1/linux-deb-x64/stable
+wget -q -O /tmp/vscode.deb https://update.code.visualstudio.com/1.53.2/linux-deb-x64/stable
 sudo dpkg -i /tmp/vscode.deb
 sudo apt -f -y install
 
@@ -64,9 +64,9 @@ sudo dpkg -i /tmp/sublime-text_build-3211_amd64.deb
 sudo apt -f -y install
 
 # jetbrain toolbox
-wget -q -O /tmp/jetbrains-toolbox.tar.gz https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.18.7455.tar.gz
-tar -xf /tmp/jetbrains-toolbox.tar.gz -C /tmp
-mv /tmp/jetbrains-toolbox-1.18.7455/jetbrains-toolbox $HOME/app/jetbrains-toolbox
+#wget -q -O /tmp/jetbrains-toolbox.tar.gz https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.18.7455.tar.gz
+#tar -xf /tmp/jetbrains-toolbox.tar.gz -C /tmp
+#mv /tmp/jetbrains-toolbox-1.18.7455/jetbrains-toolbox $HOME/app/jetbrains-toolbox
 
 # post-install
 sudo apt autoremove --purge -y

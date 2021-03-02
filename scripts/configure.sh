@@ -12,14 +12,14 @@ sudo mkdir -p /etc/resolvconf/resolv.conf.d
 
 mkdir -p $home_dir_absolute_path/.rc/
 mkdir -p $home_dir_absolute_path/.ssh/
-mkdir -p $home_dir_absolute_path/.composer/
+# mkdir -p $home_dir_absolute_path/.composer/
 mkdir -p $home_dir_absolute_path/.config/Code/User/
 mkdir -p $home_dir_absolute_path/.config/dconf/
 mkdir -p $home_dir_absolute_path/.config/gtk-3.0/
 mkdir -p $home_dir_absolute_path/.config/micro/
 mkdir -p $home_dir_absolute_path/.config/sublime-text-3/Packages/User/
 mkdir -p $home_dir_absolute_path/sandbox
-mkdir -p $home_dir_absolute_path/workspace/partners
+mkdir -p $home_dir_absolute_path/workspace/partners # ?
 #mkdir -p $home_dir_absolute_path/workspace/go
 
 # system
@@ -27,8 +27,8 @@ sudo ln -sf $dotfile_dir_absolute_path/etc/sysctl.conf /etc/sysctl.conf
 sudo ln -sf $dotfile_dir_absolute_path/etc/resolvconf/head /etc/resolvconf/resolv.conf.d/head
 
 ln -sf $dotfile_dir_absolute_path/.rc/common.rc $home_dir_absolute_path/.rc/common.rc
-ln -sf $dotfile_dir_absolute_path/.composer/composer.json $home_dir_absolute_path/.composer/composer.json
-ln -sf $dotfile_dir_absolute_path/.npmrc $home_dir_absolute_path/.npmrc
+# ln -sf $dotfile_dir_absolute_path/.composer/composer.json $home_dir_absolute_path/.composer/composer.json
+# ln -sf $dotfile_dir_absolute_path/.npmrc $home_dir_absolute_path/.npmrc
 ln -sf $dotfile_dir_absolute_path/scripts $home_dir_absolute_path/scripts
 ln -sf $dotfile_dir_absolute_path/.ssh/config $home_dir_absolute_path/.ssh/config
 ln -sf $dotfile_dir_absolute_path/.vimrc $home_dir_absolute_path/.vimrc
@@ -70,7 +70,7 @@ ln -sf $dotfile_dir_absolute_path/vscode/settings.json $home_dir_absolute_path/.
 ln -sf $dotfile_dir_absolute_path/vscode/keybindings.json $home_dir_absolute_path/.config/Code/User/keybindings.json
 
 # hyper
-ln -sf $dotfile_dir_absolute_path/.hyper.js $home_dir_absolute_path/.hyper.js
+#ln -sf $dotfile_dir_absolute_path/.hyper.js $home_dir_absolute_path/.hyper.js
 
 # fzf
 bash $HOME/.fzf/install --key-bindings --completion --no-update-rc

@@ -131,6 +131,6 @@ if [ -x "$(command -v pyenv)" ]; then
 fi
 
 # php
-if [ -x "$(command -v symfony-autocomplete)" ]; then
-    eval "$(symfony-autocomplete)"
-fi
+# if [ -x "$(command -v symfony-autocomplete)" ]; then
+#     eval "$(symfony-autocomplete)"
+# fi

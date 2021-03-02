@@ -91,43 +91,6 @@ curl -sSL https://deno.land/x/install/install.sh | bash
 $HOME/.deno/bin/deno completions bash > deno
 sudo mv deno /etc/bash_completion.d/deno
 
-## php
-sudo add-apt-repository ppa:ondrej/php -y
-sudo apt update
-sudo apt install -y \
-    php7.4-apcu \
-    php7.4-common \
-    php7.4-cli \
-    php7.4-curl \
-    php7.4-dev \
-    php7.4-intl \
-    php7.4-json \
-    php7.4-mbstring \
-    php7.4-mysql \
-    php7.4-opcache \
-    php7.4-readline \
-    php7.4-sqlite3 \
-    php7.4-xml \
-    php7.4-zip
-
-curl -sSL https://getcomposer.org/installer | php -- --install-dir=/$HOME/bin --filename=composer
-
-wget -c "https://xdebug.org/files/xdebug-2.9.8.tgz"
-tar -xf xdebug-2.9.8.tgz
-cd xdebug-2.9.8/
-phpize
-./configure
-make && make install
-echo 'zend_extension=xdebug.so' | tee --append /etc/php/7.2/mods-available/xdebug.ini
-ln -sf /etc/php/7.1/mods-available/xdebug.ini /etc/php/7.2/cli/conf.d/20-xdebug.ini
-echo '[XDebug]' | tee --append /etc/php/7.2/cli/php.ini
-echo 'xdebug.remote_enable = 1' | tee --append /etc/php/7.2/cli/php.ini
-echo 'xdebug.remote_autostart = 1' | tee --append /etc/php/7.2/cli/php.ini
-cd ..
-rm -rf package.xml
-rm -rf xdebug-2.9.8
-rm -rf xdebug-2.9.8.tgz
-
 ## go
 #wget -q -O /tmp/go1.15.2.linux-amd64.tar.gz https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
 #sudo tar -C /usr/local -xzf /tmp/go1.15.2.linux-amd64.tar.gz
@@ -136,10 +99,6 @@ rm -rf xdebug-2.9.8.tgz
 curl https://pyenv.run | bash
 sudo apt install -y \
     python3-pip
-
-## java
-sudo apt install -y \
-    openjdk-11-jdk
 
 # rust
 rust_version="1.46.0"

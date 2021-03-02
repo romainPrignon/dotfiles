@@ -7,11 +7,8 @@ EXTENSIONS=(
   "eamodio.gitlens" \
   "EditorConfig.EditorConfig" \
   "eg2.vscode-npm-script" \
-  "felixfbecker.php-debug" \
-  "felixfbecker.php-intellisense" \
   "formulahendry.auto-close-tag" \
   "geddski.macros" \
-  "ikappas.phpcs" \
   "mikestead.dotenv" \
   "ms-azuretools.vscode-docker" \
   "ms-python.python" \
