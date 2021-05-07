@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 EXTENSIONS=(
+  "chakrounanas.turbo-console-log" \
   "christian-kohler.path-intellisense" \
   "dbaeumer.vscode-eslint" \
   "devtanc.tab-hero" \
