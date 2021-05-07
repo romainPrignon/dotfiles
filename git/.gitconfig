@@ -19,6 +19,11 @@
     co = checkout
     cob = checkout -b
 
+    # Add
+    ad = add
+    adp = add -p
+    ade = !EDITOR='code --wait' git add -e
+
     # Commit
     ci = commit
     cim = commit -m
