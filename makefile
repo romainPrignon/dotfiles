@@ -43,6 +43,7 @@ npm: ## install npm global deps
 	npm install -g \
 		@babel/node \
 		depcheck \
+		git-split-diffs \
 		gitmoji-cli \
 		hotel \
 		http-server \
