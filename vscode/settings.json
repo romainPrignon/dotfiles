@@ -100,7 +100,7 @@
                     "name": "string",
                     "scope": "string",
                     "settings": {
-                        "foreground": "#877C17"
+                        "foreground": "#877317"
                     }
                 },
                 {
@@ -565,6 +565,7 @@
         "editor.codeActionsOnSave": {},
     },
     "[typescript]": {
+        "editor.formatOnSave": false,
         "editor.codeActionsOnSave": {
             "source.fixAll.tslint": true
         },
