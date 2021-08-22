@@ -167,6 +167,30 @@ chmod u+x $HOME/bin/packer
 # multipass
 sudo snap install multipass
 
+# terraform
+wget -q -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/1.0.5/terraform_1.0.5_linux_amd64.zip
+unzip /tmp/terraform.zip
+mv terraform $HOME/bin/terraform
+chmod u+x $HOME/bin/terraform
+
+# gh
+wget -q -O /tmp/gh.tar.gz https://github.com/cli/cli/releases/download/v1.14.0/gh_1.14.0_linux_amd64.tar.gz
+tar -xzf /tmp/gh.tar.gz
+mv gh_1.14.0_linux_amd64/bin/gh $HOME/bin/gh
+chmod u+x $HOME/bin/gh
+
+# lazydocker
+wget -q -O /tmp/lazydocker.tar.gz https://github.com/jesseduffield/lazydocker/releases/download/v0.12/lazydocker_0.12_Linux_x86_64.tar.gz
+tar -xzf /tmp/lazydocker.tar.gz
+mv lazydocker $HOME/bin/lazydocker
+chmod u+x $HOME/bin/lazydocker
+
+# lazygit
+wget -q -O /tmp/lazygit.tar.gz https://github.com/jesseduffield/lazygit/releases/download/v0.29/lazygit_0.29_Linux_x86_64.tar.gz
+tar -xzf /tmp/lazygit.tar.gz
+mv lazygit $HOME/bin/lazygit
+chmod u+x $HOME/bin/lazygit
+
 # post-install
 sudo apt autoremove --purge -y
 sudo apt clean -y

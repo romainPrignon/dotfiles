@@ -42,6 +42,7 @@ composer: ## install composer global deps
 npm: ## install npm global deps
 	npm install -g \
 		@babel/node \
+		cdktf-cli \
 		depcheck \
 		git-split-diffs \
 		gitmoji-cli \

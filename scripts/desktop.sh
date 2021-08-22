@@ -54,7 +54,7 @@ wget -q -O $HOME/app/hyper.AppImage https://releases.hyper.is/download/AppImage
 chmod a+x $HOME/app/hyper.AppImage
 
 # vscode
-wget -q -O /tmp/vscode.deb https://update.code.visualstudio.com/1.49.1/linux-deb-x64/stable
+wget -q -O /tmp/vscode.deb https://update.code.visualstudio.com/1.59.1/linux-deb-x64/stable
 sudo dpkg -i /tmp/vscode.deb
 sudo apt -f -y install
 
