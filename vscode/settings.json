@@ -5,7 +5,9 @@
         "source.fixAll.eslint": true
     },
 
+    "editor.smoothScrolling": true,
     "editor.fastScrollSensitivity": 10,
+    "editor.mouseWheelScrollSensitivity": 3,
     "editor.fontFamily": "'DejaVu Sans Mono', 'Droid Sans Mono'",
     "editor.fontSize": 14.5,
     "editor.formatOnPaste": true,
@@ -13,12 +15,11 @@
     "editor.formatOnSaveMode": "modifications",
     "editor.lineHeight": 22,
     "editor.minimap.enabled": false,
-    "editor.mouseWheelScrollSensitivity": 3,
     "editor.parameterHints.enabled": false,
     "editor.renderIndentGuides": true,
-    "editor.rulers": [120],
-    "editor.semanticHighlighting.enabled": true,
-    "editor.smoothScrolling": true,
+    "editor.rulers": [
+        120
+    ],
     "editor.wordBasedSuggestions": false,
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 120,
@@ -43,28 +44,28 @@
                     "name": "punctuation.accessor",
                     "scope": "punctuation.accessor",
                     "settings": {
-                        "foreground": "#9B1847",
+                        "foreground": "#9B1847"
                     }
                 },
                 {
                     "name": "this.self",
                     "scope": "variable.language",
                     "settings": {
-                        "foreground": "#9B1847",
+                        "foreground": "#9B1847"
                     }
                 },
                 {
                     "name": "storage.type",
                     "scope": "storage.type",
                     "settings": {
-                        "foreground": "#9B1847",
+                        "foreground": "#9B1847"
                     }
                 },
                 {
                     "name": "keyword",
                     "scope": "keyword",
                     "settings": {
-                        "foreground": "#9B1847",
+                        "foreground": "#9B1847"
                     }
                 },
                 {
@@ -93,7 +94,7 @@
                     "name": "variable.parameter",
                     "scope": "variable.parameter",
                     "settings": {
-                        "foreground": "#AF671B",
+                        "foreground": "#AF671B"
                     }
                 },
                 {
@@ -439,7 +440,6 @@
     "workbench.editor.tabCloseButton": "off",
     "workbench.editor.decorations.colors": true,
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.list.openMode": "singleClick",
     "workbench.startupEditor": "none",
     "workbench.statusBar.feedback.visible": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
@@ -545,9 +545,6 @@
     },
 
     // === langage ===
-    "js/ts.implicitProjectConfig.checkJs": true,
-
-    "javascript.validate.enable": true,
     "javascript.suggest.completeFunctionCalls": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
 
@@ -580,30 +577,6 @@
     "python.linting.mypyEnabled": true,
 
     // === extension ===
-
-    "auto-close-tag.activationOnLanguage": [
-        "html",
-        "xml",
-        "javascript",
-        "javascriptreact",
-        "typescriptreact"
-    ],
-
-    "chronicler.ffmpeg-binary": "/usr/bin/ffmpeg",
-
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.hovers.enabled": false,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.views.repositories.files.layout": "tree",
-    "gitlens.views.lineHistory.enabled": false,
-    "gitlens.views.search.enabled": false,
-    "gitlens.mode.statusBar.alignment": "left",
-    "gitlens.advanced.messages": {
-        "suppressLineUncommittedWarning": true
-    },
-    "gitlens.advanced.telemetry.enabled": false,
-    "gitlens.views.fileHistory.location": "scm",
 
     "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
 
