@@ -73,7 +73,7 @@
                     "scope": "storage",
                     "settings": {
                         "fontStyle": "",
-                        "foreground": "#9B1847",
+                        "foreground": "#9B1847"
                     }
                 },
                 {
@@ -355,7 +355,7 @@
                     }
                 }
             ]
-        },
+        }
     },
 
     "explorer.autoReveal": false,
@@ -403,8 +403,8 @@
                 "request": "launch",
                 "program": "${file}",
                 "port": 9000
-            },
-        ],
+            }
+        ]
     },
 
     "problems.decorations.enabled": false,
@@ -499,7 +499,7 @@
             "tab.activeBorder": "#272822",
             "tab.activeForeground": "#272822",
             "tab.inactiveBackground": "#D7D7D7",
-            "tab.inactiveForeground": "#272822",
+            "tab.inactiveForeground": "#272822"
         },
         "[Monokai]": {
             "activityBar.background": "#313437",
@@ -540,7 +540,7 @@
             "tab.activeBorder": "#EDEDED",
             "tab.activeForeground": "#F8F8F2",
             "tab.inactiveBackground": "#313437",
-            "tab.inactiveForeground": "#F8F8F2",
+            "tab.inactiveForeground": "#F8F8F2"
         }
     },
 
@@ -559,13 +559,13 @@
         "editor.quickSuggestions": true
     },
     "[javascript]": {
-        "editor.codeActionsOnSave": {},
+        "editor.codeActionsOnSave": {}
     },
     "[typescript]": {
         "editor.formatOnSave": false,
         "editor.codeActionsOnSave": {
             "source.fixAll.tslint": true
-        },
+        }
     },
     "[php]": {
         "editor.codeActionsOnSave": {}
@@ -609,5 +609,5 @@
     },
 
     "tslint.alwaysShowRuleFailuresAsWarnings": false,
-    "tslint.suppressWhileTypeErrorsPresent": true,
+    "tslint.suppressWhileTypeErrorsPresent": true
 }
