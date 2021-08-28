@@ -113,6 +113,9 @@ key <CAPS> {};
 ## git stash
 - remove line `120` from `~/.bash-git-prompt/gitstatus.sh`
 
+## fzf
+- replace `C-t` with `C-e` in /home/romainprignon/.fzf/shell/key-bindings.bash
+- replace `^T` with `^E` in /home/romainprignon/.fzf/shell/key-bindings.zsh
 
 ## configure gitmoji
 ```bash
