@@ -152,7 +152,7 @@ curl -sSL https://get.docker.com | bash
 sudo usermod -aG docker $(whoami)
 
 # docker-compose
-wget -q -O $HOME/bin/docker-compose https://github.com/docker/compose/releases/download/1.27.3/docker-compose-Linux-x86_64
+wget -q -O $HOME/bin/docker-compose https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64
 chmod u+x $HOME/bin/docker-compose
 
 # ansible
