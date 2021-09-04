@@ -98,7 +98,11 @@
     {
         "key": "ctrl+j",
         "command": "workbench.action.unpinEditor",
-        "when": "config.workbench.editor.showTabs && editorSticky"
+        "when": "activeEditorIsPinned"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "workbench.action.toggleMaximizedPanel"
     },
     // pas sur que util
     {
