@@ -25,11 +25,24 @@ alias sf2="php app/console"
 alias sf3="php bin/console"
 
 # docker
+alias d="docker"
+alias dexec="docker exec -it"
+alias drun="docker run --rm -it"
+alias dlog="docker logs -f"
+
 alias dm="docker-machine"
 alias dc="docker-compose"
 
+# heroku
+alias h="heroku"
+alias hlog="heroku logs -n 1000 -s app -t -a"
+
+# kube
+alias k="kubectl"
+
 # git
 alias git-hot-files="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10"
+alias moji="gitmoji"
 
 # task
 #alias task="npx task"
