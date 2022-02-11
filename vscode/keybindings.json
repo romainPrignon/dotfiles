@@ -125,7 +125,7 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+shift+c",
+        "key": "ctrl+shift+v",
         "command": "editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
     },
@@ -159,6 +159,11 @@
         "key": "ctrl+enter",
         "command": "editor.action.quickFix",
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+enter",
+        "command": "github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated"
     },
     {
         "key": "ctrl+p",

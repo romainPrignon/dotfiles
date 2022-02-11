@@ -17,7 +17,7 @@ configure-desktop: ## configure gnome desktop
 configure-partner: ## link partner config file ex: make configure-partner partner=frello
 	ln -sf ~/Gdrive/root/home/romainprignon/workspace/partners/.gitconfig ~/workspace/partners/.gitconfig
 	ln -sf ~/Gdrive/root/home/romainprignon/.rc/${partner}.rc ~/.rc/${partner}.rc
-	ln -sf ~/Gdrive/root/home/romainprignon/.ssh/${partner} ~/.ssh/${partner}
+	#ln -sf ~/Gdrive/root/home/romainprignon/.ssh/${partner} ~/.ssh/${partner}
 
 ngrok:
 	ln -sf ~/Gdrive/root/home/romainprignon/.ngrok2 ~/.ngrok2

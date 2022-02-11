@@ -121,6 +121,12 @@ fi
 # gpg
 export GPG_TTY=$(tty)
 
+# asdf
+if [ -d ~/.asdf/ ]; then
+    source ~/.asdf/asdf.sh
+    source ~/.asdf/completions/asdf.bash
+fi
+
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -139,3 +145,11 @@ fi
 if [ -x "$(command -v terraform)" ]; then
     complete -C /home/romainprignon/bin/terraform terraform
 fi
+
+# begin task completion
+source /home/romainprignon/.task/completion.sh
+# end task completion
+
+# gcloud
+if [ -f '/home/romainprignon/bin/gcloud/path.bash.inc' ]; then . '/home/romainprignon/bin/gcloud/path.bash.inc'; fi
+if [ -f '/home/romainprignon/bin/gcloud/completion.bash.inc' ]; then . '/home/romainprignon/bin/gcloud/completion.bash.inc'; fi

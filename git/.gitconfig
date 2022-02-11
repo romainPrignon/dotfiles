@@ -128,5 +128,8 @@
     cmd = pstorm merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
     trustExitCode = true
 
+[split-diffs]
+    theme-name = solarized-light
+
 [includeIf "gitdir:~/workspace/partners/"]
     path = ~/workspace/partners/.gitconfig

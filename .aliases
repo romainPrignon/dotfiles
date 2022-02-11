@@ -31,6 +31,9 @@ alias dc="docker-compose"
 # git
 alias git-hot-files="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10"
 
+# task
+#alias task="npx task"
+
 # scripts
 alias standup="sh ~/scripts/git-standup.sh"
 alias meteo="curl -4 wttr.in/Lyon"
