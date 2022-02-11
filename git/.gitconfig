@@ -92,6 +92,15 @@
     autocrlf = input
     pager = git-split-diffs --color | less -RFX
 
+[color "status"]
+    added = bold green
+    changed = bold red
+    untracked = bold cyan
+    unmerged = bold magenta
+
+[rebase]
+    autostash = true
+
 [push]
     default = simple
 
