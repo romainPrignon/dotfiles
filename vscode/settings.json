@@ -114,7 +114,7 @@
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.lineHeight": 1.1,
     "terminal.integrated.letterSpacing": 1,
-    "terminal.integrated.drawBoldTextInBrightColors": true, // false for solarized light
+    "terminal.integrated.drawBoldTextInBrightColors": false, // false for solarized light
     // window
     "window.menuBarVisibility": "toggle",
     "window.newWindowDimensions": "inherit",
@@ -172,7 +172,7 @@
         "editor.formatOnSave": false,
         "editor.formatOnPaste": false
     },
-    // terraform 
+    // terraform
     "terraform-ls.experimentalFeatures": {
         "validateOnSave": true
     },
