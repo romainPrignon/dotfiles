@@ -26,12 +26,12 @@
     // editor indent
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 120,
-    "editor.renderIndentGuides": true,
     "editor.rulers": [
         120
     ],
     // editor misc
     "editor.minimap.enabled": false,
+    "editor.bracketPairColorization.enabled": false,
     // explorer
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
@@ -58,11 +58,26 @@
     "launch": {
         "configurations": [
             {
-                "name": "debug - js",
+                "name": "debug - node",
                 "type": "node",
                 "request": "launch",
                 "program": "${file}",
                 "timeout": 5000
+            },
+            {
+                "name": "debug - deno",
+                "type": "node",
+                "port": 9229,
+                "request": "launch",
+                "cwd": "${workspaceFolder}",
+                "runtimeExecutable": "deno",
+                "runtimeArgs": [
+                    "run",
+                    "--inspect-brk",
+                    "-A",
+                    "${file}"
+                ],
+                "timeout": 5000,
             },
             {
                 "name": "debug:attach - js",
@@ -95,6 +110,7 @@
     // terminal
     // "terminal.integrated.defaultLocation": "editor", // editor convient pas forcement
     "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.fontSize": 14,
     "terminal.integrated.drawBoldTextInBrightColors": true, // false for solarized light
     // window
     "window.menuBarVisibility": "toggle",
@@ -188,6 +204,13 @@
     "editor.tokenColorCustomizations": {
         "[Solarized Light]": {
             "textMateRules": [
+                {
+                    "name": "source",
+                    "scope": "source",
+                    "settings": {
+                        "foreground": "#333333"
+                    }
+                },
                 {
                     "name": "constant.language",
                     "scope": "constant.language",
@@ -524,6 +547,7 @@
             "activityBar.background": "#D7D7D7",
             "editorWarning.foreground": "#FFFF00",
             "editorError.foreground": "#FF0000",
+            "editor.foreground": "#333333",
             "editor.background": "#F7F7F2",
             "editor.selectionBackground": "#BED2D3",
             "editor.selectionHighlightBackground": "#D1CFC2",
