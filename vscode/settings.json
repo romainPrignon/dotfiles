@@ -98,6 +98,7 @@
     // problems
     "problems.decorations.enabled": false,
     "problems.showCurrentInStatus": true,
+    "problems.defaultViewMode": "table",
     // search
     "search.exclude": {
         "**/.idea": true,
@@ -111,7 +112,7 @@
     // "terminal.integrated.defaultLocation": "editor", // editor convient pas forcement
     "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.fontFamily": "Ubuntu Mono",
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontSize": 15,
     "terminal.integrated.lineHeight": 1.1,
     "terminal.integrated.letterSpacing": 1,
     "terminal.integrated.drawBoldTextInBrightColors": true, // false for solarized light
@@ -152,6 +153,7 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "typescript.reportStyleChecksAsWarnings": false,
     "typescript.tsserver.maxTsServerMemory": 2048,
+    "typescript.tsdk": "node_modules/typescript/lib",
     "[typescript]": {
         "editor.formatOnSave": false
     },
@@ -187,13 +189,12 @@
         "EditorConfig.EditorConfig",
         "geddski.macros",
         "mikestead.dotenv",
-        "msjsdiag.debugger-for-chrome",
         "PKief.material-icon-theme",
         "yatki.vscode-surround"
     ],
-    "dotfiles.repository": "romainprignon/dotfiles", // make it public ?
-    "dotfiles.targetPath": "/home/romainprignon/workspace/romainprignon/dotfiles",
-    "dotfiles.installCommand": "bash ./scripts/install.sh && bash ./scripts/configure.sh",
+    // either use a project specific dotfiles or make a subset for vscode
+    // "dotfiles.repository": "romainprignon/dotfiles",
+    // "dotfiles.installCommand": "bash ./scripts/install.sh && bash ./scripts/configure.sh",
     "surround.custom": {
         "log": {
             "label": "log",
