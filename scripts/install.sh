@@ -135,7 +135,17 @@ rm -rf xdebug-2.9.8.tgz
 ## python
 curl https://pyenv.run | bash
 sudo apt install -y \
-    python3-pip
+    python3-pip \
+    python3-venv
+
+## poetry
+poetry_path=$HOME/.poetry
+python3 -m venv $poetry_path
+$poetry_path/bin/pip install -U pip setuptools
+$poetry_path/bin/pip install poetry
+$poetry_path/bin/poetry config virtualenvs.in-project true
+$poetry_path/bin/poetry completions bash > poetry
+sudo mv poetry /etc/bash_completion.d/poetry
 
 ## java
 sudo apt install -y \
