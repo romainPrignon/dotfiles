@@ -19,6 +19,7 @@ alias w="cd ~/workspace"
 
 # Other
 alias h="history"
+alias mkae="make"
 
 # symfony
 alias sf2="php app/console"
