@@ -33,6 +33,10 @@ alias dc="docker-compose"
 alias git-hot-files="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10"
 alias moji="gitmoji -c"
 
+# unshell
+alias un="/home/romainprignon/n/bin/unshell"
+alias unp="/home/romainprignon/.pyenv/versions/3.7.3/bin/unshell"
+
 # scripts
 alias standup="sh ~/scripts/git-standup.sh"
 alias meteo="curl -4 wttr.in/Lyon"
