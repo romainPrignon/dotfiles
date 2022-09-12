@@ -194,6 +194,9 @@ tar -xzf /tmp/gh.tar.gz
 mv gh_1.14.0_linux_amd64/bin/gh $HOME/bin/gh
 chmod u+x $HOME/bin/gh
 
+# git machete
+sudo snap install --classic git-machete
+
 # lazydocker
 wget -q -O /tmp/lazydocker.tar.gz https://github.com/jesseduffield/lazydocker/releases/download/v0.12/lazydocker_0.12_Linux_x86_64.tar.gz
 tar -xzf /tmp/lazydocker.tar.gz
