@@ -54,6 +54,7 @@
     },
     // git
     "git.untrackedChanges": "separate",
+    "git.timeline.showUncommitted": true,
     // launch
     "launch": {
         "configurations": [
@@ -139,8 +140,10 @@
     "workbench.editor.enablePreviewFromCodeNavigation": false,
     // workbench tree
     "workbench.tree.indent": 20,
-    "workbench.tree.renderIndentGuides": "always",
+    // "workbench.tree.renderIndentGuides": "always",
     "workbench.list.keyboardNavigation": "filter",
+    // workbench localHistory
+    "workbench.localHistory.maxFileEntries": 10,
     // misc
     "telemetry.enableTelemetry": false,
     "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",

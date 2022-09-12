@@ -15,3 +15,5 @@ fi
 # if [ -x "$(command -v google-drive-ocamlfuse)" ]; then
 #     google-drive-ocamlfuse -label peaks /home/$USER/drive-peaks
 # fi
+
+export PATH="$HOME/.poetry/bin:$PATH"

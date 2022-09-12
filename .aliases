@@ -26,23 +26,42 @@ alias sf3="php bin/console"
 
 # docker
 alias d="docker"
+complete -F _complete_alias d
 alias dexec="docker exec -it"
 alias drun="docker run --rm -it"
 alias dlog="docker logs -f"
 
 alias dm="docker-machine"
 alias dc="docker-compose"
+complete -F _complete_alias dc
 
 # heroku
 alias h="heroku"
+complete -F _complete_alias h
 alias hlog="heroku logs -n 1000 -s app -t -a"
 
 # kube
 alias k="kubectl"
+complete -F __start_kubectl k
+alias kx="kubectx"
+alias knode="kubectl get node"
+alias kpod="kubectl get pod"
+
+# aws
+alias aws-preprod="aws --profile tf-terraform-developer-preprod"
+complete -F _complete_alias aws-preprod
+alias aws-prod="aws --profile tf-terraform-developer-prod"
+complete -F _complete_alias aws-prod
+
+# terraform
+alias tf="terraform"
+complete -F _complete_alias tf
+alias tg="terragrunt"
+complete -F _complete_alias tg
 
 # git
 alias git-hot-files="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10"
-alias moji="gitmoji"
+alias moji="gitmoji -c"
 
 # task
 #alias task="npx task"

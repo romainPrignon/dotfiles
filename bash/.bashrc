@@ -121,6 +121,9 @@ fi
 # gpg
 export GPG_TTY=$(tty)
 
+# alias completion
+source ~/.bash_completion.d/complete_alias
+
 # asdf
 if [ -d ~/.asdf/ ]; then
     source ~/.asdf/asdf.sh
@@ -153,3 +156,6 @@ source /home/romainprignon/.task/completion.sh
 # gcloud
 if [ -f '/home/romainprignon/bin/gcloud/path.bash.inc' ]; then . '/home/romainprignon/bin/gcloud/path.bash.inc'; fi
 if [ -f '/home/romainprignon/bin/gcloud/completion.bash.inc' ]; then . '/home/romainprignon/bin/gcloud/completion.bash.inc'; fi
+
+# kube
+source <(kubectl completion bash)
