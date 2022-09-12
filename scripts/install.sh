@@ -165,6 +165,11 @@ sudo usermod -aG docker $(whoami)
 wget -q -O $HOME/bin/docker-compose https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64
 chmod u+x $HOME/bin/docker-compose
 
+# docker compose
+mkdir -p $HOME/.docker/cli-plugins/
+wget -q -O $HOME/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.10.2/docker-compose-linux-x86_64
+chmod u+x $HOME/.docker/cli-plugins/docker-compose
+
 # ansible
 sudo apt install -y ansible
 
