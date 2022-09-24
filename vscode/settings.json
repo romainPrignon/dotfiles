@@ -77,7 +77,7 @@
                     "-A",
                     "${file}"
                 ],
-                "timeout": 5000,
+                "timeout": 5000
             },
             {
                 "name": "debug:attach - js",
@@ -138,6 +138,9 @@
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.enablePreviewFromCodeNavigation": false,
+    // workbench history
+    "workbench.localHistory.enabled": true,
+    "workbench.localHistory.maxFileEntries": 10,
     // workbench tree
     "workbench.tree.indent": 20,
     "workbench.tree.renderIndentGuides": "always",
@@ -153,7 +156,7 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "typescript.reportStyleChecksAsWarnings": false,
     "typescript.tsserver.maxTsServerMemory": 2048,
-    "typescript.tsdk": "node_modules/typescript/lib",
+    
     "[typescript]": {
         "editor.formatOnSave": false
     },
