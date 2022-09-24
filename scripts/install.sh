@@ -21,7 +21,6 @@ sudo apt install -y \
     locales \
     python-pygments \
     python3-software-properties \
-    resolvconf \
     software-properties-common \
     smartmontools \
     zlib1g-dev \
@@ -46,7 +45,9 @@ sudo apt install -y \
     htop \
     net-tools \
     openssl \
+    resolvconf \
     shellcheck \
+    simplescreenrecorder \
     sqlite3 \
     ssh \
     tree \
