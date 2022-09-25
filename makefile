@@ -11,8 +11,20 @@ desktop: ## install gnome desktop
 
 configure-desktop: ## configure gnome desktop
 	gsettings set org.gnome.Terminal.Legacy.Settings headerbar false
-	sudo ./scripts/change-gdm-background.sh ./img/screensaver.jpg
 	sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm3/custom.conf
+
+completions:
+	npm completion > npm
+	sudo mv npm /etc/bash_completion.d/npm
+	poetry completions bash > poetry
+	sudo mv poetry /etc/bash_completion.d/poetry
+
+login-background:
+	sudo apt update
+	sudo apt install libglib2.0-dev-bin -y
+	wget -q -O /tmp/ubuntu-gdm-set-background.tar.gz https://github.com/PRATAP-KUMAR/ubuntu-gdm-set-background/archive/main.tar.gz
+	tar xzf /tmp/ubuntu-gdm-set-background.tar.gz
+	sudo /tmp/ubuntu-gdm-set-background-main/ubuntu-gdm-set-background --image /home/romainprignon/workspace/romainprignon/dotfiles/img/screensaver.jpg
 
 configure-partner: ## link partner config file ex: make configure-partner partner=frello
 	ln -sf ~/Gdrive/root/home/romainprignon/workspace/partners/.gitconfig ~/workspace/partners/.gitconfig

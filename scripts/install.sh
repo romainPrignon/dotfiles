@@ -19,7 +19,7 @@ sudo apt install -y \
     language-pack-en-base \
     linux-headers-generic \
     locales \
-    python-pygments \
+    python3-pygments \
     python3-software-properties \
     software-properties-common \
     smartmontools \
@@ -67,10 +67,6 @@ cd $HOME/bin
 curl -sSL https://getmic.ro | bash
 cd -
 
-# n
-curl -sSL https://git.io/n-install | bash -s -- -y -n latest lts
-
-
 # install: zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
@@ -82,9 +78,8 @@ git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt -
 
 # runtime
 
-## node: config
-npm completion > npm
-sudo mv npm /etc/bash_completion.d/npm
+# n
+curl -sSL https://git.io/n-install | bash -s -- -y -n latest lts
 
 # deno
 curl -sSL https://deno.land/x/install/install.sh | bash
@@ -97,38 +92,22 @@ sudo mv deno /etc/bash_completion.d/deno
 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt update
 sudo apt install -y \
-    php7.4-apcu \
-    php7.4-common \
-    php7.4-cli \
-    php7.4-curl \
-    php7.4-dev \
-    php7.4-intl \
-    php7.4-json \
-    php7.4-mbstring \
-    php7.4-mysql \
-    php7.4-opcache \
-    php7.4-readline \
-    php7.4-sqlite3 \
-    php7.4-xml \
-    php7.4-zip
+    php8.1-apcu \
+    php8.1-common \
+    php8.1-cli \
+    php8.1-curl \
+    php8.1-dev \
+    php8.1-intl \
+    php8.1-mbstring \
+    php8.1-mysql \
+    php8.1-opcache \
+    php8.1-readline \
+    php8.1-sqlite3 \
+    php8.1-xdebug \
+    php8.1-xml \
+    php8.1-zip
 
 curl -sSL https://getcomposer.org/installer | php -- --install-dir=/$HOME/bin --filename=composer
-
-wget -c "https://xdebug.org/files/xdebug-2.9.8.tgz"
-tar -xf xdebug-2.9.8.tgz
-cd xdebug-2.9.8/
-phpize
-./configure
-make && make install
-echo 'zend_extension=xdebug.so' | tee --append /etc/php/7.2/mods-available/xdebug.ini
-ln -sf /etc/php/7.1/mods-available/xdebug.ini /etc/php/7.2/cli/conf.d/20-xdebug.ini
-echo '[XDebug]' | tee --append /etc/php/7.2/cli/php.ini
-echo 'xdebug.remote_enable = 1' | tee --append /etc/php/7.2/cli/php.ini
-echo 'xdebug.remote_autostart = 1' | tee --append /etc/php/7.2/cli/php.ini
-cd ..
-rm -rf package.xml
-rm -rf xdebug-2.9.8
-rm -rf xdebug-2.9.8.tgz
 
 ## go
 #wget -q -O /tmp/go1.15.2.linux-amd64.tar.gz https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
@@ -146,15 +125,13 @@ python3 -m venv $poetry_path
 $poetry_path/bin/pip install -U pip setuptools
 $poetry_path/bin/pip install poetry
 $poetry_path/bin/poetry config virtualenvs.in-project true
-$poetry_path/bin/poetry completions bash > poetry
-sudo mv poetry /etc/bash_completion.d/poetry
 
 ## java
 sudo apt install -y \
-    openjdk-11-jdk
+    openjdk-17-jdk
 
 # rust
-rust_version="1.46.0"
+rust_version="1.64.0"
 curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain $rust_version
 source $HOME/.cargo/env
 rustup default $rust_version
@@ -169,14 +146,14 @@ chmod u+x $HOME/bin/docker-compose
 
 # docker compose
 mkdir -p $HOME/.docker/cli-plugins/
-wget -q -O $HOME/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.10.2/docker-compose-linux-x86_64
+wget -q -O $HOME/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.11.1/docker-compose-linux-x86_64
 chmod u+x $HOME/.docker/cli-plugins/docker-compose
 
 # ansible
 sudo apt install -y ansible
 
 # packer
-wget -q -O /tmp/packer.zip https://releases.hashicorp.com/packer/1.6.4/packer_1.6.4_linux_amd64.zip
+wget -q -O /tmp/packer.zip https://releases.hashicorp.com/packer/1.8.3/packer_1.8.3_linux_amd64.zip
 unzip /tmp/packer.zip
 mv packer $HOME/bin/packer
 chmod u+x $HOME/bin/packer
@@ -185,15 +162,15 @@ chmod u+x $HOME/bin/packer
 sudo snap install multipass
 
 # terraform
-wget -q -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/1.0.5/terraform_1.0.5_linux_amd64.zip
+wget -q -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/1.3.0/terraform_1.3.0_linux_amd64.zip
 unzip /tmp/terraform.zip
 mv terraform $HOME/bin/terraform
 chmod u+x $HOME/bin/terraform
 
 # gh
-wget -q -O /tmp/gh.tar.gz https://github.com/cli/cli/releases/download/v1.14.0/gh_1.14.0_linux_amd64.tar.gz
+wget -q -O /tmp/gh.tar.gz https://github.com/cli/cli/releases/download/v2.16.0/gh_2.16.0_linux_amd64.tar.gz
 tar -xzf /tmp/gh.tar.gz
-mv gh_1.14.0_linux_amd64/bin/gh $HOME/bin/gh
+mv gh_2.16.0_linux_amd64/bin/gh $HOME/bin/gh
 chmod u+x $HOME/bin/gh
 
 # git-machete

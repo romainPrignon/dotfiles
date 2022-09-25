@@ -11,8 +11,8 @@
 ```bash
 make install
 make desktop
-sudo reboot
 make configure
+make configure-desktop
 sudo reboot
 ```
 
@@ -52,30 +52,32 @@ key <CAPS> {};
 
 
 ## gnome-shell
-- configure desktop settings
-    ```bash
-    make configure-desktop
-    ```
 - install extensions:
-    - AlternateTab by fmuellner
-    - AppIndicator and KStatusNotifierItem Support by 3v1n0
-    - BottomPanel by abstract
     - Emoji Selector by Maestroschan
-    - Hide Dash X by edh
-    - Hide Workspace Thumbnails by edh
-    - No Title Bar by franglais125
-    - Pixel Saver by nMqMgEF
-    - TaskBar 2020 by c0ldplasma
+    - dash to panel by charlesg99
+    - gtk title bar by velitasali OR no titlebar when maximized (focal) OR pixelsaver (focal)
+    - just perfection by JustPerfection
+    - escape overview by rael
+    - start overlay in application view by hex_cz or tmk
+    - alphabetical app grid by stuartheyhurst
+    - sound output device chooser by kgshank
+    - lock screen background by sun_wang (optional)
     - User Themes by fmuellner
-    - Window Search Provider by klorenz
+
 - reload dconf
     ```bash
     make dconf-load
     ```
 
+- after that, configure desktop settings again
+    ```bash
+    make configure-desktop
+    ```
 
 ## GRUB
 - sudo nano /etc/default/grub
+- GRUB_TIMEOUT_STYLE=menu
+- GRUB_TIMEOUT=1
 - GRUB_CMDLINE_LINUX_DEFAULT="splash quiet" => GRUB_CMDLINE_LINUX_DEFAULT="text quiet"
 - sudo update-grub
 
@@ -121,3 +123,21 @@ key <CAPS> {};
 ```bash
 gitmoji -g
 ```
+
+## terminal
+- add keyboard shortcut to focus terminal
+    - go to settings > devices > keyboard
+    - add custom shortcut
+        - name: terminal
+        - command: bash /home/romainprignon/scripts/focus-terminal.sh
+        - shortcut: CTRL + T
+
+## alt+tab
+- add keyboard shortcut to switch windows instead of applications
+    - go to settings > devices > keyboard
+    - look for switch
+    - bind alt+tab to 'switch windows'
+
+## lock and backgroud screen
+- use extension for lock
+- do it manually for backgroud in settings
