@@ -6,8 +6,8 @@ EXTENSIONS=(
   "denoland.vscode-deno" \
   "EditorConfig.EditorConfig" \
   "eg2.vscode-npm-script" \
-  "felixfbecker.php-debug" \
-  "felixfbecker.php-intellisense" \
+  "xdebug.php-debug" \
+  "zobo.php-intellisense" \
   "geddski.macros" \
   "GitHub.remotehub" \
   "ikappas.phpcs" \
