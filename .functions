@@ -1,4 +1,4 @@
-tosubl() {
+function tosubl() {
     TMPDIR=${TMPDIR:-/tmp}  # default to /tmp if TMPDIR isn't set
     F=$(mktemp $TMPDIR/tosubl-XXXXXXXX)
     cat >| $F  # use >| instead of > if you set noclobber in bash
@@ -13,10 +13,6 @@ function webm-to-gif() {
 
 function webm-to-mp4() {
     ffmpeg -i $1 -max_muxing_queue_size 9999 $2
-}
-
-function record-terminal() {
-    ttystudio --interval=150 --delay=150 --no-palette ~/Downloads/$1
 }
 
 function superkill() {

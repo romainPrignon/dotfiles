@@ -47,9 +47,9 @@ sudo apt install -y \
     openssl \
     resolvconf \
     shellcheck \
-    simplescreenrecorder \
     sqlite3 \
     ssh \
+    tar \
     tree \
     unzip \
     vim \
@@ -195,20 +195,8 @@ tar -xzf /tmp/gh.tar.gz
 mv gh_1.14.0_linux_amd64/bin/gh $HOME/bin/gh
 chmod u+x $HOME/bin/gh
 
-# git machete
+# git-machete
 sudo snap install --classic git-machete
-
-# lazydocker
-wget -q -O /tmp/lazydocker.tar.gz https://github.com/jesseduffield/lazydocker/releases/download/v0.12/lazydocker_0.12_Linux_x86_64.tar.gz
-tar -xzf /tmp/lazydocker.tar.gz
-mv lazydocker $HOME/bin/lazydocker
-chmod u+x $HOME/bin/lazydocker
-
-# lazygit
-wget -q -O /tmp/lazygit.tar.gz https://github.com/jesseduffield/lazygit/releases/download/v0.29/lazygit_0.29_Linux_x86_64.tar.gz
-tar -xzf /tmp/lazygit.tar.gz
-mv lazygit $HOME/bin/lazygit
-chmod u+x $HOME/bin/lazygit
 
 # post-install
 sudo apt autoremove --purge -y

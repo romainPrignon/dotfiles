@@ -33,21 +33,12 @@ alias dc="docker-compose"
 alias git-hot-files="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10"
 alias moji="gitmoji -c"
 
-# unshell
-alias un="/home/romainprignon/n/bin/unshell"
-alias unp="/home/romainprignon/.pyenv/versions/3.7.3/bin/unshell"
-
 # scripts
 alias standup="sh ~/scripts/git-standup.sh"
 alias meteo="curl -4 wttr.in/Lyon"
 alias dog="pygmentize -g"
 alias mp3="ydl -x --audio-format mp3 --audio-quality 0"
 alias mp4="ydl -f 22"
-
-# TODO: put into functions
-alias sandbox-focal-generic="docker run -it --rm -v /home/romainprignon/workspace/romainprignon/dotfiles:/root ubuntu:20.04"
-alias sandbox-focal-init="docker run -it --rm -v /home/romainprignon/workspace/romainprignon/dotfiles:/home/romainprignon/workspace/romainprignon/dotfiles romainprignon/desktop/ubuntu/focal:template"
-alias sandbox-focal-latest="docker run -it --rm -v /home/romainprignon/workspace/romainprignon/dotfiles:/home/romainprignon/workspace/romainprignon/dotfiles romainprignon/desktop/ubuntu/focal:latest"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

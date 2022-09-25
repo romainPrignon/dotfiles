@@ -2,15 +2,12 @@
 
 EXTENSIONS=(
   "chakrounanas.turbo-console-log" \
-  # "christian-kohler.path-intellisense" \
-  "cweijan.vscode-mysql-client2" \
   "dbaeumer.vscode-eslint" \
   "denoland.vscode-deno" \
   "EditorConfig.EditorConfig" \
   "eg2.vscode-npm-script" \
   "felixfbecker.php-debug" \
   "felixfbecker.php-intellisense" \
-  # "formulahendry.auto-close-tag" \
   "geddski.macros" \
   "GitHub.remotehub" \
   "ikappas.phpcs" \
@@ -20,7 +17,6 @@ EXTENSIONS=(
   "ms-toolsai.jupyter" \
   "ms-vscode-remote.remote-containers" \
   "ms-vsliveshare.vsliveshare" \
-  # "msjsdiag.debugger-for-chrome" \
   "PKief.material-icon-theme" \
   "redhat.vscode-yaml" \
   "waderyan.gitblame" \

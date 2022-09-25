@@ -65,6 +65,13 @@
                 "timeout": 5000
             },
             {
+                "name": "debug - python",
+                "type": "python",
+                "request": "launch",
+                "program": "${file}",
+                "timeout": 5000
+            },
+            {
                 "name": "debug - deno",
                 "type": "node",
                 "port": 9229,

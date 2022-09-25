@@ -52,7 +52,7 @@ npm: ## install npm global deps
 		thanks \
 		ts-node \
 		types-checker \
-		typescript@4.4
+		typescript \
 
 vscode: ## install vscode ext
 	bash ./scripts/install-vscode-ext.sh
