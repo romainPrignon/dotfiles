@@ -38,10 +38,9 @@ function sandbox {
     rm=$3
 
     case "$type" in
-    generic) image="ubuntu:20.04";volume="-v $name:/root" ;;
-    min) image="romainprignon/ubuntu/focal:latest";volume="-v $name:/home/romainprignon" ;;
-    full) image="romainprignon/desktop/ubuntu/focal:latest";volume="-v $name:/home/romainprignon" ;;
-    *) image="ubuntu:20.04";volume="-v $name:/root" ;;
+    gen) image="ubuntu:jammy";volume="-v $name:/root" ;;
+    min) image="romainprignon/ubuntu/jammy";volume="-v $name:/home/romainprignon" ;;
+    *) image="ubuntu:jammy";volume="-v $name:/root" ;;
     esac
 
     mkdir -p $HOME/sandbox/$name
