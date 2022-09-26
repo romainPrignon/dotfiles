@@ -63,3 +63,11 @@ swap: ## create swap file if not already done ex: make swap size=8G
 	sudo mkswap /swapfile
 	sudo swapon /swapfile
 	echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+
+### next is for contribuing
+
+build: ## make build version=focal
+	docker build -t romainprignon/dotfiles:${version} --build-arg version=${version} .
+
+qa:
+	docker run --rm -it romainprignon/dotfiles:${version}

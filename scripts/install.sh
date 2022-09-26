@@ -47,6 +47,7 @@ sudo apt install -y \
     openssl \
     resolvconf \
     shellcheck \
+    snapd \
     sqlite3 \
     ssh \
     tar \
