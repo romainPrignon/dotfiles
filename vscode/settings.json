@@ -32,6 +32,8 @@
     // editor misc
     "editor.minimap.enabled": false,
     "editor.bracketPairColorization.enabled": false,
+    "editor.stickyScroll.enabled": true,
+    "editor.stickyScroll.maxLineCount": 2,
     // explorer
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
@@ -123,6 +125,8 @@
     "terminal.integrated.lineHeight": 1.1,
     "terminal.integrated.letterSpacing": 1,
     "terminal.integrated.drawBoldTextInBrightColors": true, // false for solarized light
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.shellIntegration.enabled": true,
     // window
     "window.menuBarVisibility": "toggle",
     "window.newWindowDimensions": "inherit",
@@ -177,7 +181,11 @@
     // markdown
     "[markdown]": {
         "editor.wordBasedSuggestions": true,
-        "editor.quickSuggestions": true
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        }
     },
     // extensions
     "eslint.run": "onSave",

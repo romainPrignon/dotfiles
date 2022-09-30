@@ -23,7 +23,7 @@ login-background:
 	sudo apt update
 	sudo apt install libglib2.0-dev-bin -y
 	wget -q -O /tmp/ubuntu-gdm-set-background.tar.gz https://github.com/PRATAP-KUMAR/ubuntu-gdm-set-background/archive/main.tar.gz
-	tar xzf /tmp/ubuntu-gdm-set-background.tar.gz
+	tar -C /tmp -xzf /tmp/ubuntu-gdm-set-background.tar.gz
 	sudo /tmp/ubuntu-gdm-set-background-main/ubuntu-gdm-set-background --image /home/romainprignon/workspace/romainprignon/dotfiles/img/screensaver.jpg
 
 configure-partner: ## link partner config file ex: make configure-partner partner=frello

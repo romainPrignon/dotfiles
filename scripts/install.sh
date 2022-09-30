@@ -169,7 +169,7 @@ chmod u+x $HOME/bin/terraform
 
 # gh
 wget -q -O /tmp/gh.tar.gz https://github.com/cli/cli/releases/download/v2.16.0/gh_2.16.0_linux_amd64.tar.gz
-tar -xzf /tmp/gh.tar.gz
+tar -C /tmp -xzf /tmp/gh.tar.gz
 mv gh_2.16.0_linux_amd64/bin/gh $HOME/bin/gh
 chmod u+x $HOME/bin/gh
 
