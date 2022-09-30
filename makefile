@@ -65,6 +65,11 @@ npm: ## install npm global deps
 		ts-node \
 		types-checker \
 		typescript \
+		zx
+
+pip: ## install python global deps
+	pip install \
+		zxpy
 
 vscode: ## install vscode ext
 	bash ./scripts/install-vscode-ext.sh
