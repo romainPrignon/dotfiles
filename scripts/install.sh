@@ -43,6 +43,7 @@ sudo apt install -y \
     git \
     git-extras \
     htop \
+    jq \
     net-tools \
     openssl \
     resolvconf \
