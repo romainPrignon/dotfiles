@@ -173,9 +173,6 @@ tar -C /tmp -xzf /tmp/gh.tar.gz
 mv gh_2.16.0_linux_amd64/bin/gh $HOME/bin/gh
 chmod u+x $HOME/bin/gh
 
-# git-machete
-sudo snap install --classic git-machete
-
 # post-install
 sudo apt autoremove --purge -y
 sudo apt clean -y
