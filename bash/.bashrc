@@ -124,18 +124,8 @@ export GPG_TTY=$(tty)
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# pyenv
-if [ -x "$(command -v pyenv)" ]; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
+# asdf
+[ -f $HOME/.asdf/asdf.sh ] && source $HOME/.asdf/asdf.sh
 
-# php
-if [ -x "$(command -v symfony-autocomplete)" ]; then
-    eval "$(symfony-autocomplete)"
-fi
-
-# terraform
-if [ -x "$(command -v terraform)" ]; then
-    complete -C /home/romainprignon/bin/terraform terraform
-fi
+# autocomplete
+[ -f $HOME/.completions ] && source $HOME/.completions

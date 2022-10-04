@@ -14,10 +14,15 @@ make desktop
 make configure
 make configure-desktop
 sudo reboot
+make snap
 ```
 
 # manual
 
+Apply what you need from the `makefile`
+- completions
+- pip
+- ...
 
 ## Swap
 - Create swap file if not already done
@@ -79,6 +84,8 @@ key <CAPS> {};
 - GRUB_TIMEOUT_STYLE=menu
 - GRUB_TIMEOUT=1
 - GRUB_CMDLINE_LINUX_DEFAULT="splash quiet" => GRUB_CMDLINE_LINUX_DEFAULT="text quiet"
+- OR
+- GRUB_CMDLINE_LINUX_DEFAULT="splash quiet" => GRUB_CMDLINE_LINUX_DEFAULT="nosplash"
 - sudo update-grub
 
 
