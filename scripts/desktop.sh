@@ -18,7 +18,6 @@ sudo apt install -y \
     arc-theme \
     eog \
     evince \
-    firefox \
     gnome-calculator \
     gnome-paint \
     gnome-screenshot \
@@ -49,27 +48,19 @@ sudo apt install -y \
     fonts-ubuntu \
     fonts-ubuntu-console
 
+# zap
+curl https://raw.githubusercontent.com/srevinsaju/zap/main/install.sh | sudo bash -s
+
 # chrome
 wget -q -O /tmp/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
 sudo apt -f -y install
 
 # stacer
-wget -q -O /tmp/stacer_1.1.0_amd64.deb https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb
-sudo dpkg -i /tmp/stacer_1.1.0_amd64.deb
-sudo apt -f -y install
+zap install --github --from oguzhaninan/Stacer
 
 # hyper
-wget -q -O $HOME/app/hyper.AppImage https://releases.hyper.is/download/AppImage
-chmod a+x $HOME/app/hyper.AppImage
-
-# vscode
-wget -q -O /tmp/vscode.deb https://update.code.visualstudio.com/1.71.2/linux-deb-x64/stable
-sudo dpkg -i /tmp/vscode.deb
-sudo apt -f -y install
-
-# codeterm
-sudo snap install --classic code-insiders
+zap install --github --from vercel/hyper
 
 # subl
 wget -q -O /tmp/sublime-text_build-4126_amd64.deb https://download.sublimetext.com/sublime-text_build-4126_amd64.deb

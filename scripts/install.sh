@@ -6,7 +6,7 @@ set -x
 mkdir ~/app
 mkdir ~/bin
 
-# install: lib
+# lib
 sudo apt update
 
 sudo apt install -y \
@@ -35,15 +35,17 @@ sudo locale-gen fr_FR fr_FR.UTF-8
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LANG=en_US.UTF-8
 
-# install: app
+# app
 sudo apt update
 sudo apt install -y \
     curl \
     ffmpeg \
     git \
     git-extras \
+    grep \
     htop \
     jq \
+    make \
     net-tools \
     openssl \
     resolvconf \
@@ -60,15 +62,7 @@ sudo apt install -y \
     xclip \
     zsh
 
-# fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-
-# micro
-cd $HOME/bin
-curl -sSL https://getmic.ro | bash
-cd -
-
-# install: zsh
+# zsh
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
 git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 git clone --depth=1 https://github.com/olivierverdier/zsh-git-prompt.git ~/.zsh/zsh-git-prompt
@@ -78,17 +72,27 @@ git clone --depth=1 https://github.com/Aloxaf/fzf-tab ~/.zsh/fzf-tab
 # bash
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+
+# asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+source $HOME/.asdf/asdf.sh
+
 # runtime
 
 # n
-curl -sSL https://git.io/n-install | bash -s -- -y -n latest lts
+sudo apt install -y dirmngr gpg curl gawk
+asdf plugin add node https://github.com/asdf-vm/asdf-nodejs.git
+asdf install node latest
+asdf install node lts
+asdf global node lts
 
 # deno
-curl -sSL https://deno.land/x/install/install.sh | bash
-
-## deno: config
-$HOME/.deno/bin/deno completions bash > deno
-sudo mv deno /etc/bash_completion.d/deno
+sudo apt install -y curl git unzip
+asdf plugin-add deno https://github.com/asdf-community/asdf-deno.git
+asdf install deno 1.26.2
+asdf global deno 1.26.2
 
 ## php
 sudo add-apt-repository ppa:ondrej/php -y
@@ -112,31 +116,34 @@ sudo apt install -y \
 curl -sSL https://getcomposer.org/installer | php -- --install-dir=/$HOME/bin --filename=composer
 
 ## go
-#wget -q -O /tmp/go1.15.2.linux-amd64.tar.gz https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
-#sudo tar -C /usr/local -xzf /tmp/go1.15.2.linux-amd64.tar.gz
+sudo apt install -y curl coreutils
+asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+asdf install golang 1.19.2
+asdf global golang 1.19.2
 
 ## python
-curl https://pyenv.run | bash
 sudo apt install -y \
-    python3-pip \
-    python3-venv
+    build-essential curl llvm make wget \
+    zlib1g-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev liblzma-dev libffi-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev
+asdf plugin add python https://github.com/asdf-community/asdf-python.git
+asdf install python 3.8.2
+asdf install python 2.7.18
+asdf global python 3.8.2 2.7.18
 
 ## poetry
-poetry_path=$HOME/.poetry
-python3 -m venv $poetry_path
-$poetry_path/bin/pip install -U pip setuptools
-$poetry_path/bin/pip install poetry
-$poetry_path/bin/poetry config virtualenvs.in-project true
+asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
+asdf install poetry 1.2.1
+asdf global poetry 1.2.1
+poetry config virtualenvs.in-project true
 
 ## java
 sudo apt install -y \
     openjdk-17-jdk
 
 # rust
-rust_version="1.64.0"
-curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain $rust_version
-source $HOME/.cargo/env
-rustup default $rust_version
+asdf plugin-add rust https://github.com/asdf-community/asdf-rust.git
+asdf install rust 1.64.0
+asdf global rust 1.64.0
 
 # docker
 curl -sSL https://get.docker.com | bash
@@ -151,29 +158,25 @@ mkdir -p $HOME/.docker/cli-plugins/
 wget -q -O $HOME/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.11.1/docker-compose-linux-x86_64
 chmod u+x $HOME/.docker/cli-plugins/docker-compose
 
-# ansible
-sudo apt install -y ansible
-
 # packer
-wget -q -O /tmp/packer.zip https://releases.hashicorp.com/packer/1.8.3/packer_1.8.3_linux_amd64.zip
-unzip /tmp/packer.zip
-mv packer $HOME/bin/packer
-chmod u+x $HOME/bin/packer
-
-# multipass
-sudo snap install multipass
+asdf plugin-add packer https://github.com/asdf-community/asdf-hashicorp.git
+asdf install packer 1.8.3
+asdf global packer 1.8.3
 
 # terraform
-wget -q -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/1.3.0/terraform_1.3.0_linux_amd64.zip
-unzip /tmp/terraform.zip
-mv terraform $HOME/bin/terraform
-chmod u+x $HOME/bin/terraform
+asdf plugin-add terraform https://github.com/asdf-community/asdf-hashicorp.git
+asdf install terraform 1.3.1
+asdf global terraform 1.3.1
 
 # gh
-wget -q -O /tmp/gh.tar.gz https://github.com/cli/cli/releases/download/v2.16.0/gh_2.16.0_linux_amd64.tar.gz
-tar -C /tmp -xzf /tmp/gh.tar.gz
-mv gh_2.16.0_linux_amd64/bin/gh $HOME/bin/gh
-chmod u+x $HOME/bin/gh
+asdf plugin-add github-cli https://github.com/bartlomiejdanek/asdf-github-cli.git
+asdf install github-cli 2.16.1
+asdf global github-cli 2.16.1
+
+# kubectl
+asdf plugin-add kubectl https://github.com/asdf-community/asdf-kubectl.git
+asdf install kubectl 1.25.2
+asdf global kubectl 1.25.2
 
 # post-install
 sudo apt autoremove --purge -y

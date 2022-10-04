@@ -76,6 +76,10 @@ ln -sf $dotfile_dir_absolute_path/codeterm/keybindings.json $home_dir_absolute_p
 # hyper
 ln -sf $dotfile_dir_absolute_path/.hyper.js $home_dir_absolute_path/.hyper.js
 
+# completions
+ln -sf $dotfile_dir_absolute_path/.completions $home_dir_absolute_path/.completions
+ln -sf $dotfile_dir_absolute_path/.zcompletions $home_dir_absolute_path/.zcompletions
+
 # fzf
 bash $HOME/.fzf/install --key-bindings --completion --no-update-rc
 

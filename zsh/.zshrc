@@ -53,6 +53,7 @@ PROMPT='
 setopt noautomenu
 setopt auto_cd
 setopt correct
+unsetopt beep
 
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
@@ -104,22 +105,11 @@ fi
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-## pyenv
-if [ -x "$(command -v pyenv)" ]; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
+# asdf
+[ -f $HOME/.asdf/asdf.sh ] && source $HOME/.asdf/asdf.sh
 
-## php
-if [ -x "$(command -v symfony-autocomplete)" ]; then
-  eval "$(symfony-autocomplete)"
-fi
-
-## terraform
-if [ -x "$(command -v terraform)" ]; then
-  autoload -U +X bashcompinit && bashcompinit
-  complete -o nospace -C /home/romainprignon/bin/terraform terraform
-fi
+# autocomplete
+[ -f $HOME/.zcompletions ] && source $HOME/.zcompletions
 
 # must be at the end
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

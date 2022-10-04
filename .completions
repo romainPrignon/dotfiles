@@ -1,0 +1,15 @@
+# pyenv
+if [ -x "$(command -v pyenv)" ]; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+# php
+if [ -x "$(command -v symfony-autocomplete)" ]; then
+    eval "$(symfony-autocomplete)"
+fi
+
+# terraform
+if [ -x "$(command -v terraform)" ]; then
+    complete -C /home/romainprignon/.asdf/installs/terraform/1.3.1/bin/terraform terraform
+fi

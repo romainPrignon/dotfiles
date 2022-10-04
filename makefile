@@ -16,8 +16,11 @@ configure-desktop: ## configure gnome desktop
 completions:
 	npm completion > npm
 	sudo mv npm /etc/bash_completion.d/npm
-	poetry completions bash > poetry
-	sudo mv poetry /etc/bash_completion.d/poetry
+	deno completions bash > deno
+	sudo mv deno /etc/bash_completion.d/deno
+	# broken for now
+	# poetry completions bash > poetry
+	# sudo mv poetry /etc/bash_completion.d/poetry
 
 login-background:
 	sudo apt update
@@ -69,8 +72,17 @@ npm: ## install npm global deps
 
 pip: ## install python global deps
 	pip install \
+		ansible \
 		git-machete \
 		zxpy
+
+# dedicated target so it can work with starter-machines
+snap:
+	snap install multipass
+	snap install firefox
+	snap install --classic code
+	snap install --classic code-insiders
+	snap install --classic micro
 
 vscode: ## install vscode ext
 	bash ./scripts/install-vscode-ext.sh
