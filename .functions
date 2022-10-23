@@ -7,6 +7,10 @@ function tosubl() {
     rm -f $F  # file will be deleted as soon as subl closes it
 }
 
+function opn() {
+    code-insiders -ra $1
+}
+
 function webm-to-gif() {
     ffmpeg -i $1 -pix_fmt rgb8 $2
 }

@@ -68,6 +68,9 @@ wget -q -O /tmp/vscode.deb https://update.code.visualstudio.com/1.71.2/linux-deb
 sudo dpkg -i /tmp/vscode.deb
 sudo apt -f -y install
 
+# codeterm
+sudo snap install --classic code-insiders
+
 # subl
 wget -q -O /tmp/sublime-text_build-4126_amd64.deb https://download.sublimetext.com/sublime-text_build-4126_amd64.deb
 sudo dpkg -i /tmp/sublime-text_build-4126_amd64.deb
