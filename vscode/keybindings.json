@@ -1,6 +1,14 @@
 [
     // workbench
     {
+        "key": "ctrl+shift+m",
+        "command": "revealFileInOS"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "explorer.newFile"
+    },
+    {
         "key": "ctrl+alt+q",
         "command": "workbench.action.quit"
     },

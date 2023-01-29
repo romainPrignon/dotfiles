@@ -111,6 +111,7 @@
     // search
     "search.exclude": {
         "**/.idea": true,
+        "**/.mypy_cache": true,
         "**/node_modules": true,
         "**/vendor": true,
         "**/coverage": true,
