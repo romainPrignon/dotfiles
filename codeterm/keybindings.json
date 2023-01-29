@@ -1,6 +1,14 @@
 [
     // workbench
     {
+        "key": "ctrl+shift+m",
+        "command": "revealFileInOS"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "explorer.newFile"
+    },
+    {
         "key": "alt+left",
         "command": "workbench.action.previousEditor"
     },
@@ -38,6 +46,85 @@
     {
         "key": "alt+q",
         "command": "workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.files.openFolder"
+    },
+    {
+        "key": "alt+w",
+        "command": "workbench.action.closePanel"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.pinEditor",
+        "when": "config.workbench.editor.showTabs && !editorSticky"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.unpinEditor",
+        "when": "activeEditorIsPinned"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    // action on characters
+    {
+        "key": "ctrl+q",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.changeAll",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+up",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "editor.gotoPreviousFold",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "editor.gotoNextFold",
+        "when": "editorTextFocus"
+    },
+    // goto
+    {
+        "key": "ctrl+b",
+        "command": "editor.action.goToDeclaration",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "references-view.find",
+        "when": "editorHasReferenceProvider"
+    },
+    // search
+    {
+        "key": "ctrl+alt+f",
+        "command": "search.action.openNewEditor"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "editor.action.openLink",
+        "when": "inSearchEditor"
     },
     // term
     {
