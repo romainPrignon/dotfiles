@@ -69,7 +69,7 @@ npm: ## install npm global deps
 
 pip: ## install python global deps
 	pip install \
-		git-machete
+		git-machete \
 		zxpy
 
 vscode: ## install vscode ext
