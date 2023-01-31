@@ -14,10 +14,11 @@ mkdir -p $home_dir_absolute_path/.rc/
 mkdir -p $home_dir_absolute_path/.ssh/
 mkdir -p $home_dir_absolute_path/.composer/
 mkdir -p $home_dir_absolute_path/.config/Code/User/
+mkdir -p $home_dir_absolute_path/.config/'Code - Insiders'/User/
 mkdir -p $home_dir_absolute_path/.config/dconf/
 mkdir -p $home_dir_absolute_path/.config/gtk-3.0/
 mkdir -p $home_dir_absolute_path/.config/micro/
-mkdir -p $home_dir_absolute_path/.config/sublime-text-3/Packages/User/
+mkdir -p $home_dir_absolute_path/.config/sublime-text/Packages/User/
 mkdir -p $home_dir_absolute_path/sandbox
 mkdir -p $home_dir_absolute_path/workspace/partners
 #mkdir -p $home_dir_absolute_path/workspace/go
@@ -70,8 +71,8 @@ ln -sf $dotfile_dir_absolute_path/vscode/settings.json $home_dir_absolute_path/.
 ln -sf $dotfile_dir_absolute_path/vscode/keybindings.json $home_dir_absolute_path/.config/Code/User/keybindings.json
 
 # codeterm
-ln -sf $dotfile_dir_absolute_path/codeterm/settings.json $home_dir_absolute_path/.config/Code - Insiders/User/settings.json
-ln -sf $dotfile_dir_absolute_path/codeterm/keybindings.json $home_dir_absolute_path/.config/Code - Insiders/User/keybindings.json
+ln -sf $dotfile_dir_absolute_path/codeterm/settings.json $home_dir_absolute_path/.config/'Code - Insiders'/User/settings.json
+ln -sf $dotfile_dir_absolute_path/codeterm/keybindings.json $home_dir_absolute_path/.config/'Code - Insiders'/User/keybindings.json
 
 # hyper
 ln -sf $dotfile_dir_absolute_path/.hyper.js $home_dir_absolute_path/.hyper.js
