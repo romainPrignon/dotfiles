@@ -33,3 +33,20 @@ do
     done
   fi
 done
+
+CODETERM_EXTENSIONS=(
+  "foam.foam-vscode" \
+  "mushan.vscode-paste-image" \
+  "PKief.material-icon-theme"
+)
+
+for VARIANT in "code-insiders"
+do
+  if hash $VARIANT 2>/dev/null; then
+    echo "Installing extensions for $VARIANT"
+    for CODETERM_EXTENSION in ${CODETERM_EXTENSIONS[@]}
+    do
+      $VARIANT --install-extension $CODETERM_EXTENSION
+    done
+  fi
+done
