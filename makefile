@@ -64,8 +64,10 @@ npm: ## install npm global deps
 		hotel \
 		http-server \
 		pkgcount \
+		pnpm \
 		thanks \
 		ts-node \
+		ts-node-dev \
 		types-checker \
 		typescript \
 		zx

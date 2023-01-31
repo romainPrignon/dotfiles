@@ -23,8 +23,7 @@ EXTENSIONS=(
   "yatki.vscode-surround"
 )
 
-for VARIANT in "code" \
-               "code-insiders"
+for VARIANT in "code"
 do
   if hash $VARIANT 2>/dev/null; then
     echo "Installing extensions for $VARIANT"
