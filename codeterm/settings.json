@@ -2,6 +2,7 @@
     // breadcrumbs
     "breadcrumbs.enabled": true,
     // editor
+    "editor.acceptSuggestionOnEnter": "off",
     "editor.smoothScrolling": true,
     "editor.fastScrollSensitivity": 10,
     "editor.mouseWheelScrollSensitivity": 3,
