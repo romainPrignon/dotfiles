@@ -169,9 +169,6 @@
     "typescript.reportStyleChecksAsWarnings": false,
     "typescript.tsserver.maxTsServerMemory": 2048,
     
-    "[typescript]": {
-        "editor.formatOnSave": false
-    },
     // Python
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
