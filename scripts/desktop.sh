@@ -23,7 +23,7 @@ sudo apt install -y \
     gnome-screenshot \
     gnome-system-log \
     gnome-terminal \
-    gnome-tweak-tool \
+    gnome-tweaks \
     nautilus \
     simplescreenrecorder \
     synaptic \

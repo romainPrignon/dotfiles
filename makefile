@@ -14,10 +14,14 @@ configure-desktop: ## configure gnome desktop
 	sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm3/custom.conf
 
 completions:
+	gh completion -s bash > gh
+	sudo mv gh /etc/bash_completion.d/gh
 	npm completion > npm
 	sudo mv npm /etc/bash_completion.d/npm
 	deno completions bash > deno
 	sudo mv deno /etc/bash_completion.d/deno
+	kubectl completion bash > kubectl
+	sudo mv kubectl /etc/bash_completion.d/kubectl
 	# broken for now
 	# poetry completions bash > poetry
 	# sudo mv poetry /etc/bash_completion.d/poetry

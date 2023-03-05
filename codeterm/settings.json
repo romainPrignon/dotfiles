@@ -41,7 +41,6 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
     "workbench.view.alwaysShowHeaderActions": true,
-    "workbench.statusBar.visible": false,
     "workbench.activityBar.visible": false,
     // workbench editor
     "workbench.editor.highlightModifiedTabs": true,
