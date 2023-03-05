@@ -12,7 +12,7 @@ export SAVEHIST=$HISTSIZE
 export GOPATH=$HOME/workspace/go
 export GOBIN=$HOME/workspace/go/bin
 
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export JAVA_OPTIONS=-Xmx512M
 
 
