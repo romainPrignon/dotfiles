@@ -14,7 +14,8 @@
     // editor font
     "editor.fontFamily": "'DejaVu Sans Mono', 'Droid Sans Mono'",
     // "editor.fontFamily": "Consolas, 'Courier New', monospace", // windows
-    "editor.fontSize": 16,
+    "editor.fontSize": 14.5, // might be 16 on windows
+    "editor.lineHeight": 22, // might be off on windows
     // editor format
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
@@ -35,7 +36,7 @@
     "terminal.integrated.defaultLocation": "editor",
     "window.menuBarVisibility": "hidden",
     "window.customMenuBarAltFocus": false,
-    // "window.zoomLevel": 0.6, // windows
+    "window.zoomLevel": 0.6, // might be off on windows
     // workbench
     "workbench.colorTheme": "Monokai",
     "workbench.iconTheme": "material-icon-theme",
