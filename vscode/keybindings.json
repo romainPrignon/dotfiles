@@ -326,7 +326,7 @@
     },
     // macro
     {
-        "key": "ctrl+[Period]",
+        "key": "ctrl+[Slash]",
         "command": "macros.comment",
         "when": "editorTextFocus && !editorReadonly"
     },
@@ -354,5 +354,19 @@
     {
         "key": "alt+r",
         "command": "remote-containers.openPullRequestInVolume"
+    },
+    {
+        "key": "ctrl+[Period]",
+        "command": "-breadcrumbs.focus"
+    },
+    {
+        "key": "ctrl+alt+b",
+        "command": "breadcrumbs.focus",
+        "when": "breadcrumbsPossible && breadcrumbsVisible"
+    },
+    {
+        "key": "ctrl+[Period]",
+        "command": "-breadcrumbs.focus",
+        "when": "breadcrumbsPossible && breadcrumbsVisible"
     }
 ]

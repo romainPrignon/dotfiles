@@ -127,7 +127,7 @@
     "terminal.integrated.letterSpacing": 1,
     "terminal.integrated.drawBoldTextInBrightColors": true, // false for solarized light
     "terminal.integrated.smoothScrolling": true,
-    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.shellIntegration.enabled": false,
     // window
     "window.menuBarVisibility": "toggle",
     "window.newWindowDimensions": "inherit",
@@ -168,10 +168,9 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "typescript.reportStyleChecksAsWarnings": false,
     "typescript.tsserver.maxTsServerMemory": 2048,
-    
-    "[typescript]": {
-        "editor.formatOnSave": false
-    },
+    // "[typescript]": {
+    //     "editor.formatOnSave": false
+    // },
     // Python
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
@@ -635,5 +634,6 @@
             "tab.inactiveBackground": "#313437",
             "tab.inactiveForeground": "#F8F8F2"
         }
-    }
+    },
+    "security.workspace.trust.untrustedFiles": "open",
 }

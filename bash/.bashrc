@@ -129,3 +129,5 @@ export GPG_TTY=$(tty)
 
 # autocomplete
 [ -f $HOME/.completions ] && source $HOME/.completions
+
+source <(kubectl completion bash)

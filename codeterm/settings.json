@@ -11,9 +11,10 @@
         "_vscode": true
     },
     // editor font
+    "editor.acceptSuggestionOnEnter": "off",
     "editor.fontFamily": "'DejaVu Sans Mono', 'Droid Sans Mono'",
     // "editor.fontFamily": "Consolas, 'Courier New', monospace", // windows
-    "editor.fontSize": 16,
+    "editor.fontSize": 14.5,
     // editor format
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
@@ -34,14 +35,12 @@
     "terminal.integrated.defaultLocation": "editor",
     "window.menuBarVisibility": "hidden",
     "window.customMenuBarAltFocus": false,
-    // "window.zoomLevel": 0.6, // windows
+    "window.zoomLevel": 0.6, // windows
     // workbench
     "workbench.colorTheme": "Monokai",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
     "workbench.view.alwaysShowHeaderActions": true,
-    "workbench.statusBar.visible": false,
-    "workbench.activityBar.visible": false,
     // workbench editor
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.pinnedTabSizing": "compact",
@@ -157,5 +156,6 @@
             "tab.inactiveBackground": "#313437",
             "tab.inactiveForeground": "#F8F8F2"
         }
-    }
+    },
+    "workbench.activityBar.visible": false
 }
