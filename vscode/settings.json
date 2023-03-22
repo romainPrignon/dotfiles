@@ -152,7 +152,7 @@
     "workbench.editor.enablePreviewFromCodeNavigation": false,
     // workbench history
     "workbench.localHistory.enabled": true,
-    "workbench.localHistory.maxFileEntries": 10,
+    "workbench.localHistory.maxFileEntries": 30,
     // workbench tree
     "workbench.tree.indent": 20,
     "workbench.tree.renderIndentGuides": "always",
