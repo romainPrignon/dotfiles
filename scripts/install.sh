@@ -48,6 +48,7 @@ sudo apt install -y \
     make \
     net-tools \
     openssl \
+    pv \
     resolvconf \
     shellcheck \
     snapd \
