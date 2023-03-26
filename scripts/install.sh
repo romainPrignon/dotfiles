@@ -179,6 +179,11 @@ asdf plugin-add kubectl https://github.com/asdf-community/asdf-kubectl.git
 asdf install kubectl 1.25.2
 asdf global kubectl 1.25.2
 
+# broot
+asdf plugin-add broot https://github.com/cmur2/asdf-broot.git
+asdf install broot 1.21.1
+asdf global broot 1.21.1
+
 # post-install
 sudo apt autoremove --purge -y
 sudo apt clean -y

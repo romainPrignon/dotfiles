@@ -111,6 +111,9 @@ fi
 # autocomplete
 [ -f $HOME/.zcompletions ] && source $HOME/.zcompletions
 
+# broot
+[ -f $HOME/.config/broot/launcher/bash/br ] && source /home/romainprignon/.config/broot/launcher/bash/br
+
 # must be at the end
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -129,3 +132,4 @@ ZSH_HIGHLIGHT_STYLES[path_pathseparator]=fg=white
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=011
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=011
 ZSH_HIGHLIGHT_STYLES[assign]=fg=011
+

@@ -129,3 +129,6 @@ export GPG_TTY=$(tty)
 
 # autocomplete
 [ -f $HOME/.completions ] && source $HOME/.completions
+
+# broot
+[ -f $HOME/.config/broot/launcher/bash/br ] && source /home/romainprignon/.config/broot/launcher/bash/br
