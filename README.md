@@ -68,6 +68,7 @@ key <CAPS> {};
     - sound output device chooser by kgshank
     - lock screen background by sun_wang (optional)
     - User Themes by fmuellner
+    - alttab-scroll-workaround by lucasresck
 
 - reload dconf
     ```bash
