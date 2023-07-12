@@ -220,6 +220,8 @@
         }
     },
     "redhat.telemetry.enabled": false,
+    "indentRainbow.includedLanguages": ["python", "yaml"],
+    "indentRainbow.indicatorStyle": "light",
     // themes
     "editor.tokenColorCustomizations": {
         "[Solarized Light]": {

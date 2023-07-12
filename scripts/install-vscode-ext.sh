@@ -17,10 +17,12 @@ EXTENSIONS=(
   "ms-toolsai.jupyter" \
   "ms-vscode-remote.remote-containers" \
   "ms-vsliveshare.vsliveshare" \
+  "oderwat.indent-rainbow" \
   "PKief.material-icon-theme" \
   "redhat.vscode-yaml" \
   "waderyan.gitblame" \
-  "yatki.vscode-surround"
+  "yatki.vscode-surround" \
+  "GitHub.vscode-github-actions",
 )
 
 for VARIANT in "code"
