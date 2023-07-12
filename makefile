@@ -63,6 +63,7 @@ npm: ## install npm global deps
 		@babel/node \
 		cdktf-cli \
 		depcheck \
+		git-open \
 		git-split-diffs \
 		gitmoji-cli \
 		hotel \
