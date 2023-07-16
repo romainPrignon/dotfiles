@@ -27,7 +27,7 @@ alias sf3="php bin/console"
 
 # docker
 alias dm="docker-machine"
-alias dc="docker-compose"
+alias dc="docker compose"
 
 # terraform
 alias tf="terraform"
