@@ -92,8 +92,8 @@ asdf global node lts
 # deno
 sudo apt install -y curl git unzip
 asdf plugin-add deno https://github.com/asdf-community/asdf-deno.git
-asdf install deno 1.26.2
-asdf global deno 1.26.2
+asdf install deno 1.35.1
+asdf global deno 1.35.1
 
 ## php
 sudo add-apt-repository ppa:ondrej/php -y
@@ -119,8 +119,8 @@ curl -sSL https://getcomposer.org/installer | php -- --install-dir=/$HOME/bin --
 ## go
 sudo apt install -y curl coreutils
 asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
-asdf install golang 1.19.2
-asdf global golang 1.19.2
+asdf install golang 1.20.6
+asdf global golang 1.20.6
 
 ## python
 sudo apt install -y \
@@ -133,8 +133,8 @@ asdf global python 3.8.2 2.7.18
 
 ## poetry
 asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
-asdf install poetry 1.2.1
-asdf global poetry 1.2.1
+asdf install poetry 1.5.1
+asdf global poetry 1.5.1
 poetry config virtualenvs.in-project true
 
 ## java
@@ -143,8 +143,8 @@ sudo apt install -y \
 
 # rust
 asdf plugin-add rust https://github.com/asdf-community/asdf-rust.git
-asdf install rust 1.64.0
-asdf global rust 1.64.0
+asdf install rust 1.70.0
+asdf global rust 1.70.0
 
 # docker
 curl -sSL https://get.docker.com | bash
