@@ -7,6 +7,10 @@ function tosubl() {
     rm -f $F  # file will be deleted as soon as subl closes it
 }
 
+function commit() {
+    git diff --staged | ai "Generate git commit message about $1. Do not include filename in commit message" | git commit -F -
+}
+
 function opn() {
     code-insiders -ra $1
 }
