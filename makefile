@@ -13,6 +13,18 @@ configure-desktop: ## configure gnome desktop
 	gsettings set org.gnome.Terminal.Legacy.Settings headerbar false
 	sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm3/custom.conf
 
+update-desktop:
+	sudo apt --only-upgrade install \
+		code \
+		code-insider \
+		dbgate \
+		google-chrome-stable \
+		micro \
+		sublime-text \
+		rambox \
+		virtualbox-6.1 \
+		vlc
+
 completions:
 	gh completion -s bash > gh
 	sudo mv gh /etc/bash_completion.d/gh
@@ -90,10 +102,6 @@ krew:
 # dedicated target so it can work with starter-machines
 snap:
 	snap install multipass
-	snap install firefox
-	snap install --classic code
-	snap install --classic code-insiders
-	snap install --classic micro
 
 vscode: ## install vscode ext
 	bash ./scripts/install-vscode-ext.sh
