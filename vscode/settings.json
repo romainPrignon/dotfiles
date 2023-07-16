@@ -38,7 +38,7 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     "explorer.autoReveal": false,
-    "explorer.openEditors.visible": 0,
+    "explorer.openEditors.visible": 1,
     // extentions
     "extensions.ignoreRecommendations": true,
     //files
@@ -156,9 +156,9 @@
     // workbench tree
     "workbench.tree.indent": 20,
     "workbench.tree.renderIndentGuides": "always",
-    "workbench.list.keyboardNavigation": "filter",
+    "workbench.list.defaultFindMode": "filter",
     // misc
-    "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "off",
     "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
     // javascript
     "javascript.suggest.completeFunctionCalls": true,
@@ -205,7 +205,7 @@
     "material-icon-theme.showReloadMessage": false,
     "material-icon-theme.showUpdateMessage": false,
     "phpcs.standard": "PSR2",
-    "remote.containers.defaultExtensions": [
+    "dev.containers.defaultExtensions": [
         "EditorConfig.EditorConfig",
         "geddski.macros",
         "mikestead.dotenv",
@@ -226,6 +226,7 @@
     "redhat.telemetry.enabled": false,
     "indentRainbow.includedLanguages": ["python", "yaml"],
     "indentRainbow.indicatorStyle": "light",
+    "githubPullRequests.commentExpandState": "collapseAll",
     // themes
     "editor.tokenColorCustomizations": {
         "[Solarized Light]": {
@@ -638,6 +639,5 @@
             "tab.inactiveBackground": "#313437",
             "tab.inactiveForeground": "#F8F8F2"
         }
-    },
-    "githubPullRequests.commentExpandState": "collapseAll"
+    }
 }
