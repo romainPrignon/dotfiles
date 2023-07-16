@@ -79,6 +79,7 @@ key <CAPS> {};
     ```bash
     make configure-desktop
     ```
+    /!\ setting headers might not work on ubuntu 22.04
 
 ## GRUB
 - sudo nano /etc/default/grub
@@ -149,3 +150,7 @@ gitmoji -g
 ## lock and backgroud screen
 - use extension for lock
 - do it manually for backgroud in settings
+
+## scaling issue
+- either use gnome on xorg at login
+- use wayland but use large resolution and scale down
