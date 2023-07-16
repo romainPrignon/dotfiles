@@ -638,5 +638,6 @@
             "tab.inactiveBackground": "#313437",
             "tab.inactiveForeground": "#F8F8F2"
         }
-    }
+    },
+    "githubPullRequests.commentExpandState": "collapseAll"
 }

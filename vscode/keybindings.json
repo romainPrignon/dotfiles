@@ -20,21 +20,44 @@
         "key": "alt+right",
         "command": "workbench.action.nextEditor"
     },
+    // code
     {
         "key": "alt+1",
         "command": "workbench.view.explorer"
     },
+    // test
     {
         "key": "alt+2",
-        "command": "workbench.view.scm"
+        "command": "workbench.view.testing.focus"
     },
+    // debug
     {
         "key": "alt+3",
         "command": "workbench.view.debug"
     },
+    // commit
     {
         "key": "alt+4",
+        "command": "workbench.view.scm"
+    },
+    // review
+    {
+        "key": "alt+5",
+        "command": "workbench.view.extension.github-pull-requests"
+    },
+    // check
+    {
+        "key": "alt+6",
+        "command": "workbench.view.extension.github-actions"
+    },
+    // colab
+    {
+        "key": "alt+8",
         "command": "workbench.view.remote"
+    },
+    {
+        "key": "alt+x",
+        "command": "workbench.view.extensions"
     },
     {
         "key": "alt+k",
@@ -351,8 +374,8 @@
         "when": "liveshare:hasCollaborators && liveshare:isFollowing"
     },
     {
-        "key": "alt+5",
-        "command": "liveshare.session.explorer.focus"
+        "key": "alt+7",
+        "command": "liveshare.session.focus"
     },
     // remote
     {
