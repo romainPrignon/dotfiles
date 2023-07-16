@@ -81,6 +81,7 @@ pip: ## install python global deps
 	pip install \
 		ansible \
 		git-machete \
+		shell-gpt \
 		zxpy
 
 # dedicated target so it can work with starter-machines

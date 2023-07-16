@@ -36,6 +36,14 @@ alias tf="terraform"
 alias git-hot-files="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10"
 alias moji="gitmoji -c"
 
+# ai
+alias ai="sgpt"
+alias aie="sgpt --editor"
+alias aix="sgpt --shell"
+alias aic="sgpt --code"
+alias laic="sgpt --code --repl temp"
+alias lais="sgpt --shell --repl temp"
+
 # scripts
 alias standup="sh ~/scripts/git-standup.sh"
 alias meteo="curl -4 wttr.in/Lyon"
