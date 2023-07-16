@@ -22,9 +22,8 @@ completions:
 	sudo mv deno /etc/bash_completion.d/deno
 	kubectl completion bash > kubectl
 	sudo mv kubectl /etc/bash_completion.d/kubectl
-	# broken for now
-	# poetry completions bash > poetry
-	# sudo mv poetry /etc/bash_completion.d/poetry
+	poetry completions bash > poetry
+	sudo mv poetry /etc/bash_completion.d/poetry
 
 login-background:
 	sudo apt update
