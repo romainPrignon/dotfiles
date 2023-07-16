@@ -2,6 +2,7 @@
 
 EXTENSIONS=(
   "chakrounanas.turbo-console-log" \
+  "danielsanmedium.dscodegpt" \
   "dbaeumer.vscode-eslint" \
   "denoland.vscode-deno" \
   "EditorConfig.EditorConfig" \
@@ -10,6 +11,7 @@ EXTENSIONS=(
   "zobo.php-intellisense" \
   "geddski.macros" \
   "GitHub.remotehub" \
+  "GitHub.vscode-github-actions" \
   "ikappas.phpcs" \
   "mikestead.dotenv" \
   "ms-python.python" \
@@ -21,8 +23,7 @@ EXTENSIONS=(
   "PKief.material-icon-theme" \
   "redhat.vscode-yaml" \
   "waderyan.gitblame" \
-  "yatki.vscode-surround" \
-  "GitHub.vscode-github-actions",
+  "yatki.vscode-surround"
 )
 
 for VARIANT in "code"

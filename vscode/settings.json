@@ -195,6 +195,10 @@
         "debugStop": [
             "workbench.action.debug.stop",
             "workbench.debug.viewlet.action.removeAllBreakpoints"
+        ],
+        "ai": [
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.toggleAuxiliaryBar"
         ]
     },
     "material-icon-theme.hidesExplorerArrows": true,
