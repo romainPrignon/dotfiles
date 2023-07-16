@@ -29,6 +29,11 @@ alias sf3="php bin/console"
 alias dm="docker-machine"
 alias dc="docker compose"
 
+# kuke 
+alias k="kubectl"
+alias kn="kubectl ns"
+alias kx="kubectl ctx"
+
 # terraform
 alias tf="terraform"
 

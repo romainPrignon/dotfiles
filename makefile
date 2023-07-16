@@ -84,6 +84,10 @@ pip: ## install python global deps
 		shell-gpt \
 		zxpy
 
+krew:
+	kubectl krew install ctx
+	kubectl krew install ns
+
 # dedicated target so it can work with starter-machines
 snap:
 	snap install multipass

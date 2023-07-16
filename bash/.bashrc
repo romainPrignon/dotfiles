@@ -130,5 +130,8 @@ export GPG_TTY=$(tty)
 # autocomplete
 [ -f $HOME/.completions ] && source $HOME/.completions
 
+# kube
+[ -f $HOME/.asdf/shims/kubectl ] && complete -o default -F __start_kubectl k
+
 # broot
 [ -f $HOME/.config/broot/launcher/bash/br ] && source /home/romainprignon/.config/broot/launcher/bash/br
