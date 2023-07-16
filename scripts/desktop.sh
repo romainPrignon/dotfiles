@@ -7,6 +7,7 @@ sudo apt install -y \
     chrome-gnome-shell \
     gdm3 \
     gnome-core \
+    gnome-shell-extension-manager \
     xfonts-base \
     xserver-xorg
 
