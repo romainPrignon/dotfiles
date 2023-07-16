@@ -59,6 +59,11 @@ wget -q -O /tmp/dbgate.deb https://github.com/dbgate/dbgate/releases/latest/down
 sudo dpkg -i /tmp/dbgate.deb
 sudo apt -f -y install
 
+# dbeaver
+wget -q -O /tmp/dbeaver.deb https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+sudo dpkg -i /tmp/dbeaver.deb
+sudo apt -f -y install
+
 # stacer
 wget -q -O /tmp/stacer_1.1.0_amd64.deb https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb
 sudo dpkg -i /tmp/stacer_1.1.0_amd64.deb
