@@ -46,6 +46,7 @@ alias ai="sgpt"
 alias aie="sgpt --editor"
 alias aix="sgpt --shell"
 alias aic="sgpt --code"
+alias lai="sgpt --repl temp"
 alias laic="sgpt --code --repl temp"
 alias lais="sgpt --shell --repl temp"
 
