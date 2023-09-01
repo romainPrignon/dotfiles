@@ -476,6 +476,13 @@
                     }
                 },
                 {
+                    "name": "string.quoted.docstring",
+                    "scope": "string.quoted.docstring",
+                    "settings": {
+                        "foreground": "#878787"
+                    }
+                },
+                {
                     "name": "support.function",
                     "scope": "support.function",
                     "settings": {
@@ -567,6 +574,15 @@
                     }
                 }
             ]
+        }
+    },
+    "editor.semanticTokenColorCustomizations": {
+        "[Monokai]": {
+            "enabled": true,
+            "rules": {
+                "variable.typeHint": "#D7D7D7",
+                "class.typeHint": "#D7D7D7"
+            }
         }
     },
     "workbench.colorCustomizations": {
