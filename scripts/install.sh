@@ -46,6 +46,7 @@ sudo apt install -y \
     htop \
     jq \
     make \
+    mmv \
     net-tools \
     openssl \
     pv \
