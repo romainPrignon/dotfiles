@@ -89,6 +89,19 @@
                 "timeout": 5000
             },
             {
+                "name": "debug - ts-node",
+                "type": "node",
+                "port": 9229,
+                "request": "launch",
+                "cwd": "${workspaceFolder}",
+                "runtimeExecutable": "ts-node",
+                "runtimeArgs": [
+                    "--inspect-brk",
+                    "${file}"
+                ],
+                "timeout": 5000
+            },
+            {
                 "name": "debug:attach - js",
                 "type": "node",
                 "request": "attach",
