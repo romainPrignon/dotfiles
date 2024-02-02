@@ -42,7 +42,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
     "workbench.view.alwaysShowHeaderActions": true,
-    "workbench.activityBar.visible": false,
+    "workbench.activityBar.location": "hidden",
     // workbench editor
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.pinnedTabSizing": "compact",
@@ -76,7 +76,7 @@
     // markdown
     "markdown.preview.breaks": true,
     "[markdown]": {
-        "editor.wordBasedSuggestions": true,
+        "editor.wordBasedSuggestions": "matchingDocuments",
         "editor.quickSuggestions": {
             "comments": "on",
             "strings": "on",
