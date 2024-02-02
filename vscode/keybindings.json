@@ -82,6 +82,15 @@
     },
     {
         "key": "alt+t",
+        "command": "workbench.action.createTerminalEditor"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.terminal.killEditor",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "alt+shift+t",
         "command": "workbench.action.terminal.toggleTerminal"
     },
     {
