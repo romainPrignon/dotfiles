@@ -157,7 +157,7 @@ chmod u+x $HOME/bin/docker-compose
 
 # docker compose
 mkdir -p $HOME/.docker/cli-plugins/
-wget -q -O $HOME/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.11.1/docker-compose-linux-x86_64
+wget -q -O $HOME/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.24.5/docker-compose-linux-x86_64
 chmod u+x $HOME/.docker/cli-plugins/docker-compose
 
 # packer
