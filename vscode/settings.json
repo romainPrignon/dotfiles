@@ -18,11 +18,11 @@
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": "explicit"
     },
     // editor completion
     "editor.parameterHints.enabled": false, // might be true if I need to autocomplete param but verbose
-    "editor.wordBasedSuggestions": false, // might be true ??
+    "editor.wordBasedSuggestions": "off", // might be true ??
     // editor indent
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 120,
@@ -159,6 +159,7 @@
     "workbench.editor.pinnedTabSizing": "compact",
     "workbench.editor.tabCloseButton": "off",
     "workbench.editor.decorations.colors": true,
+    "workbench.editor.tabActionCloseVisibility": false,
     // workbench editor preview
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -191,7 +192,7 @@
     "php.suggest.basic": false, // PHP IntelliSense
     // markdown
     "[markdown]": {
-        "editor.wordBasedSuggestions": true,
+        "editor.wordBasedSuggestions": "matchingDocuments",
         "editor.quickSuggestions": {
             "comments": "on",
             "strings": "on",
@@ -610,7 +611,7 @@
             "editor.wordHighlightBackground": "#F1EBDC",
             "editor.wordHighlightStrongBackground": "#EEE8D5",
             "editorCursor.foreground": "#AF671B",
-            "editorIndentGuide.background": "#90909075",
+            "editorIndentGuide.background1": "#90909075",
             "editorLineNumber.foreground": "#909090",
             "editorLineNumber.activeForeground": "#606060",
             "editorGroupHeader.tabsBackground": "#EEE8D5",
@@ -644,7 +645,7 @@
             "editorCursor.foreground": "#FFA500",
             "editorWarning.foreground": "#FFFF00",
             "editorError.foreground": "#FF0000",
-            "editorIndentGuide.background": "#60606075",
+            "editorIndentGuide.background1": "#60606075",
             "editorOverviewRuler.addedForeground": "#587c0c",
             "editorOverviewRuler.deletedForeground": "#94151B",
             "editorOverviewRuler.errorForeground": "#FF0000",
