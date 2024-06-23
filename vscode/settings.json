@@ -139,8 +139,11 @@
     "terminal.integrated.lineHeight": 1.1,
     "terminal.integrated.letterSpacing": 1,
     "terminal.integrated.drawBoldTextInBrightColors": true, // false for solarized light
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.smoothScrolling": true,
     "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.allowMnemonics": true,
     // window
     "window.menuBarVisibility": "toggle",
     "window.newWindowDimensions": "inherit",
@@ -213,6 +216,22 @@
         "ai": [
             "workbench.action.toggleSidebarVisibility",
             "workbench.action.toggleAuxiliaryBar"
+        ],
+        "aiTabOpen": [
+            "workbench.action.toggleSidebarVisibility",
+            "continue.focusContinueInputWithoutClear",
+        ],
+        "aiTabClose": [
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.closeAuxiliaryBar",
+        ],
+        "terminalOpen": [
+            "workbench.action.terminal.toggleTerminal",
+            "workbench.action.toggleMaximizedPanel"
+        ],
+        "terminalClose": [
+            "workbench.action.toggleMaximizedPanel",
+            "workbench.action.terminal.toggleTerminal",
         ]
     },
     "material-icon-theme.hidesExplorerArrows": true,
@@ -241,6 +260,11 @@
     "indentRainbow.includedLanguages": ["python", "yaml"],
     "indentRainbow.indicatorStyle": "light",
     "githubPullRequests.commentExpandState": "collapseAll",
+    "githubPullRequests.focusedMode": "multiDiff",
+    "multiDiffEditor.experimental.enabled": true,
+    "continue.enableTabAutocomplete": false,
+    "continue.showInlineTip": false,
+    "continue.telemetryEnabled": false,
     // themes
     "editor.tokenColorCustomizations": {
         "[Solarized Light]": {

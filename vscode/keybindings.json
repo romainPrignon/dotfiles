@@ -1,12 +1,13 @@
 [
     // workbench
     {
-        "key": "ctrl+shift+m",
+        "key": "ctrl+alt+e",
         "command": "revealFileInOS"
     },
     {
-        "key": "ctrl+shift+n",
-        "command": "explorer.newFile"
+        "key": "ctrl+n",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus"
     },
     {
         "key": "ctrl+alt+q",
@@ -56,11 +57,11 @@
         "command": "workbench.view.remote"
     },
     {
-        "key": "alt+x",
+        "key": "alt+9",
         "command": "workbench.view.extensions"
     },
     {
-        "key": "alt+k",
+        "key": "alt+v",
         "command": "workbench.action.toggleSidebarVisibility"
     },
     {
@@ -80,19 +81,37 @@
         "key": "alt+w",
         "command": "workbench.action.closePanel"
     },
+    // terminal
+    // {
+    //     "key": "alt+t",
+    //     "command": "workbench.action.createTerminalEditor"
+    // },
+    // {
+    //     "key": "ctrl+w",
+    //     "command": "workbench.action.terminal.killEditor",
+    //     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    // },
     {
-        "key": "alt+t",
-        "command": "workbench.action.createTerminalEditor"
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+w",
-        "command": "workbench.action.terminal.killEditor",
-        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
     },
     {
-        "key": "alt+shift+t",
-        "command": "workbench.action.terminal.toggleTerminal"
+        "key": "alt+left",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
     },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+   
     {
         "key": "alt+p",
         "command": "workbench.actions.view.problems"
@@ -107,7 +126,7 @@
         "when": "filesExplorerFocus"
     },
     {
-        "key": "alt+m",
+        "key": "alt+e",
         "command": "workbench.files.action.showActiveFileInExplorer"
     },
     {
@@ -121,10 +140,6 @@
     {
         "key": "alt+up",
         "command": "workbench.action.moveEditorToNextGroup"
-    },
-    {
-        "key": "ctrl+shift+t",
-        "command": "workbench.action.openPreviousEditorFromHistory"
     },
     {
         "key": "ctrl+k",
@@ -141,10 +156,9 @@
         "when": "activeEditorIsPinned"
     },
     {
-        "key": "ctrl+alt+k",
+        "key": "alt+s",
         "command": "workbench.action.toggleMaximizedPanel"
     },
-    // pas sur que util
     {
         "key": "ctrl+shift+z",
         "command": "workbench.action.navigateBack"
@@ -170,7 +184,7 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+l",
+        "key": "ctrl+shift+a",
         "command": "editor.action.smartSelect.grow",
         "when": "editorTextFocus"
     },
@@ -193,6 +207,11 @@
         "key": "ctrl+down",
         "command": "editor.gotoNextFold",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+[Period]",
+        "command": "editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
     },
     // action on code
     {
@@ -226,14 +245,14 @@
     },
     {
         "key": "alt+enter",
-        "command": "git.stageSelectedRanges"
+        "command": "git.stageSelectedRanges",
     },
     {
-        "key": "ctrl+alt+z",
+        "key": "ctrl+alt+backspace",
         "command": "git.clean"
     },
     {
-        "key": "alt+z",
+        "key": "alt+backspace",
         "command": "git.revertSelectedRanges"
     },
     {
@@ -276,7 +295,7 @@
     },
     {
         "key": "ctrl+shift+b",
-        "command": "editor.action.goToTypeDefinition"
+        "command": "typescript.goToSourceDefinition"
     },
     {
         "key": "ctrl+t",
@@ -287,13 +306,13 @@
         "command": "workbench.action.showAllSymbols"
     },
     {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
         "key": "ctrl+u",
         "command": "references-view.find",
         "when": "editorHasReferenceProvider"
-    },
-    {
-        "key": "ctrl+i",
-        "command": "references-view.findImplementations"
     },
     // debug
     {
@@ -356,6 +375,11 @@
         "command": "editor.action.openLink",
         "when": "inSearchEditor"
     },
+    {
+        "key": "shift+f",
+        "command": "search.action.openInEditor",
+        "when": "hasSearchResult && searchViewletFocus"
+    },
     // macro
     {
         "key": "ctrl+[Period]",
@@ -370,6 +394,21 @@
     {
         "key": "alt+a",
         "command": "macros.ai"
+    },
+    {
+        "key": "alt+x",
+        "command": "macros.terminalOpen",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "alt+x",
+        "command": "macros.terminalClose",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+w",
+        "command": "macros.terminalClose",
+        "when": "terminalFocus"
     },
     // live share
     {
@@ -390,5 +429,45 @@
     {
         "key": "alt+r",
         "command": "remote-containers.openPullRequestInVolume"
-    }
+    },
+    // turbo console log
+    {
+        "key": "ctrl+l",
+        "command": "turboConsoleLog.displayLogMessage",
+        "when": "editorTextFocus"
+    },
+    // continue
+    {
+        "key": "ctrl+l",
+        "command": "continue.newSession",
+        "when": "activeAuxiliary === 'workbench.view.extension.continue'"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "continue.quickEdit"
+    },
+    {
+        "key": "alt+i",
+        "command": "macros.aiTabOpen",
+        "when": "activeAuxiliary !== 'workbench.view.extension.continue'"
+    },
+    {
+        "key": "alt+i",
+        "command": "macros.aiTabClose",
+        "when": "activeAuxiliary === 'workbench.view.extension.continue'"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "continue.optimizeCode"
+    },
+    {
+        "key": "alt+enter",
+        "command": "continue.acceptDiff",
+        "when": "continue.diffVisible"
+    },
+    {
+        "key": "alt+backspace",
+        "command": "continue.rejectDiff",
+        "when": "continue.diffVisible"
+    },
 ]
