@@ -213,6 +213,31 @@
         "command": "editor.action.blockComment",
         "when": "editorTextFocus && !editorReadonly"
     },
+    {
+        "key": "ctrl+k ctrl+l",
+        "command": "editor.action.transformToLowercase",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+u",
+        "command": "editor.action.transformToUppercase",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+s",
+        "command": "editor.action.transformToSnakecase",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+c",
+        "command": "editor.action.transformToCamelcase",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+k",
+        "command": "editor.action.transformToKebabcase",
+        "when": "editorTextFocus"
+    },
     // action on code
     {
         "key": "ctrl+enter",
@@ -248,11 +273,11 @@
         "command": "git.stageSelectedRanges",
     },
     {
-        "key": "ctrl+alt+backspace",
+        "key": "ctrl+alt+z",
         "command": "git.clean"
     },
     {
-        "key": "alt+backspace",
+        "key": "alt+z",
         "command": "git.revertSelectedRanges"
     },
     {
@@ -466,7 +491,7 @@
         "when": "continue.diffVisible"
     },
     {
-        "key": "alt+backspace",
+        "key": "alt+z",
         "command": "continue.rejectDiff",
         "when": "continue.diffVisible"
     },

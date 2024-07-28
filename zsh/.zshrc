@@ -16,6 +16,7 @@ for f in $HOME/.rc/*.rc; do source $f; done
 autoload -U promptinit && promptinit
 autoload -U colors && colors
 autoload -U compinit && compinit
+autoload -U edit-command-line
 
 # plugins 
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
@@ -74,7 +75,10 @@ function history-fzf() {
 
   zle reset-prompt
 }
+
+# zle
 zle -N history-fzf
+zle -N edit-command-line
 
 ## ctrl+r
 bindkey '^r' history-fzf
@@ -86,6 +90,9 @@ bindkey '\e[1;5D' backward-word
 bindkey "^K" kill-whole-line
 ## ctrl+z
 bindkey '^Z' backward-kill-word
+
+## editor
+bindkey '^u' edit-command-line
 
 ## always on top
 bindkey -s '^m' '^l^j'

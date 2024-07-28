@@ -84,6 +84,9 @@ bind "\C-k:kill-whole-line"
 # always on top
 bind '"\C-m": "\C-l\C-j"'
 
+# editor
+bind '"\C-u": "\C-x\C-e"'
+
 # 2 => `
 if [[ $DISPLAY ]]; then
   xmodmap -e "keycode 49 = grave"
