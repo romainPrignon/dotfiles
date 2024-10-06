@@ -40,6 +40,11 @@ function monit {
     eval "$1" & top -p $!
 }
 
+function sync-prompt {
+    mkdir .prompts/
+    ln -sf /home/romainprignon/workspace/romainprignon/dotfiles/.prompts/* .prompts/
+}
+
 function sandbox {
     name=$1
     type=$2

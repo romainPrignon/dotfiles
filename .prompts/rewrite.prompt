@@ -1,0 +1,6 @@
+rewrite the selected module/package/component/class/method/function
+
+- do not change any signatures
+- do not introduce any breaking change
+
+{{{ input }}}
