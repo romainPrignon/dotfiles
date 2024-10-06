@@ -330,10 +330,10 @@
         "key": "ctrl+shift+e",
         "command": "workbench.action.showAllSymbols"
     },
-    {
-        "key": "ctrl+shift+t",
-        "command": "workbench.action.showAllSymbols"
-    },
+    // {
+    //     "key": "ctrl+shift+t",
+    //     "command": "workbench.action.showAllSymbols"
+    // },
     {
         "key": "ctrl+u",
         "command": "references-view.find",

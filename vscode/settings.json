@@ -226,12 +226,14 @@
             "workbench.action.closeAuxiliaryBar",
         ],
         "terminalOpen": [
+            "workbench.action.toggleSidebarVisibility",
             "workbench.action.terminal.toggleTerminal",
             "workbench.action.toggleMaximizedPanel"
         ],
         "terminalClose": [
             "workbench.action.toggleMaximizedPanel",
             "workbench.action.terminal.toggleTerminal",
+            "workbench.action.toggleSidebarVisibility",
         ]
     },
     "material-icon-theme.hidesExplorerArrows": true,

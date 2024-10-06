@@ -47,6 +47,7 @@
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.pinnedTabSizing": "compact",
     "workbench.editor.tabCloseButton": "off",
+    "workbench.editor.tabActionCloseVisibility": false,
     // workbench editor preview
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
