@@ -152,6 +152,8 @@
     "window.title": "${appName}${separator}${rootName}",
     "window.titleBarStyle": "native",
     // workbench
+    "workbench.preferredDarkColorTheme": "Monokai",
+    "workbench.preferredLightColorTheme": "Solarized Light",
     "workbench.colorTheme": "Monokai",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
