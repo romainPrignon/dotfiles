@@ -176,6 +176,10 @@
     "workbench.tree.indent": 20,
     "workbench.tree.renderIndentGuides": "always",
     "workbench.list.defaultFindMode": "filter",
+    // diff editor
+    "multiDiffEditor.experimental.enabled": true,
+    "diffEditor.renderSideBySide": false,
+    "diffEditor.experimental.showMoves": true,
     // misc
     "telemetry.telemetryLevel": "off",
     "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
@@ -265,7 +269,6 @@
     "indentRainbow.indicatorStyle": "light",
     "githubPullRequests.commentExpandState": "collapseAll",
     "githubPullRequests.focusedMode": "multiDiff",
-    "multiDiffEditor.experimental.enabled": true,
     "continue.enableTabAutocomplete": false,
     "continue.showInlineTip": false,
     "continue.telemetryEnabled": false,
