@@ -38,7 +38,7 @@ alias kx="kubectl ctx"
 alias tf="terraform"
 
 # git
-alias git-hot-files="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10"
+alias hot="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10"
 alias moji="gitmoji -c"
 
 # ai

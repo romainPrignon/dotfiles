@@ -221,7 +221,16 @@
         ],
         "ai": [
             "workbench.action.toggleSidebarVisibility",
-            "workbench.action.toggleAuxiliaryBar"
+            "workbench.action.toggleAuxiliaryBar",
+        ],
+        "copilotTabOpen": [
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.toggleAuxiliaryBar",
+            "workbench.panel.chat.view.copilot.focus"
+        ],
+        "copilotTabClose": [
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.toggleAuxiliaryBar",
         ],
         "aiTabOpen": [
             "workbench.action.toggleSidebarVisibility",
@@ -269,6 +278,16 @@
     "indentRainbow.indicatorStyle": "light",
     "githubPullRequests.commentExpandState": "collapseAll",
     "githubPullRequests.focusedMode": "multiDiff",
+    // copilot
+    "github.copilot.enable": {
+        "*": false,
+    },
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+            "file": ".prompts/code-style.md"
+        }
+    ],
+    // continue
     "continue.enableTabAutocomplete": false,
     "continue.showInlineTip": false,
     "continue.telemetryEnabled": false,
@@ -700,5 +719,5 @@
             "tab.inactiveBackground": "#313437",
             "tab.inactiveForeground": "#F8F8F2"
         }
-    }
+    },
 }

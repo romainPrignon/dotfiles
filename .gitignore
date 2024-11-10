@@ -1,3 +1,4 @@
+!.prompts/
 logs/
 node_modules/
 !logs/.gitkeep
