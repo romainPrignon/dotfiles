@@ -226,10 +226,17 @@
         ],
         "copilotTabOpen": [
             "workbench.action.toggleSidebarVisibility",
-            "workbench.action.toggleAuxiliaryBar",
             "workbench.panel.chat.view.copilot.focus"
         ],
         "copilotTabClose": [
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.toggleAuxiliaryBar",
+        ],
+        "copilotEditTabOpen": [
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.panel.chat.view.edits.focus"
+        ],
+        "copilotEditTabClose": [
             "workbench.action.toggleSidebarVisibility",
             "workbench.action.toggleAuxiliaryBar",
         ],
@@ -281,6 +288,7 @@
     "githubPullRequests.focusedMode": "multiDiff",
     // copilot
     "github.copilot.editor.enableAutoCompletions": false,
+    "github.copilot.chat.followUps": "never",
     "github.copilot.chat.codeGeneration.instructions": [
         {
             "file": ".prompts/code-style.md"

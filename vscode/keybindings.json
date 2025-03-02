@@ -422,10 +422,10 @@
         "command": "macros.debugStop",
         "when": "inDebugMode"
     },
-    {
-        "key": "alt+a",
-        "command": "macros.ai"
-    },
+    // {
+    //     "key": "alt+a",
+    //     "command": "macros.ai"
+    // },
     {
         "key": "alt+x",
         "command": "macros.terminalOpen",
@@ -471,16 +471,26 @@
     {
         "key": "alt+a",
         "command": "macros.copilotTabOpen",
-        "when": "!workbench.panel.chat.view.copilot.active"
+        "when": "!view.workbench.panel.chat.view.copilot.visible"
     },
     {
         "key": "alt+a",
         "command": "macros.copilotTabClose",
-        "when": "workbench.panel.chat.view.copilot.active"
+        "when": "view.workbench.panel.chat.view.copilot.visible"
+    },
+    {
+      "key": "alt+i",
+      "command": "macros.copilotEditTabOpen",
+      "when": "!auxiliaryBarVisible"
+    },
+    {
+      "key": "alt+i",
+      "command": "macros.copilotEditTabClose",
+      "when": "auxiliaryBarVisible"
     },
     {
         "key": "ctrl+shift+i",
-        "command": "github.copilot.chat.review",
+        "command": "github.copilot.chat.review.stagedChanges",
     },
     // continue
     // {
