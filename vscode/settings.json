@@ -23,6 +23,7 @@
     // editor completion
     "editor.parameterHints.enabled": false, // might be true if I need to autocomplete param but verbose
     "editor.wordBasedSuggestions": "off", // might be true ??
+    "editor.inlineSuggest.enabled": false, // too intrusive
     // editor indent
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 120,
@@ -232,11 +233,11 @@
             "workbench.action.toggleSidebarVisibility",
             "workbench.action.toggleAuxiliaryBar",
         ],
-        "aiTabOpen": [
+        "continueTabOpen": [
             "workbench.action.toggleSidebarVisibility",
             "continue.focusContinueInputWithoutClear",
         ],
-        "aiTabClose": [
+        "continueTabClose": [
             "workbench.action.toggleSidebarVisibility",
             "workbench.action.closeAuxiliaryBar",
         ],
@@ -279,14 +280,13 @@
     "githubPullRequests.commentExpandState": "collapseAll",
     "githubPullRequests.focusedMode": "multiDiff",
     // copilot
-    "github.copilot.enable": {
-        "*": false,
-    },
+    "github.copilot.editor.enableAutoCompletions": false,
     "github.copilot.chat.codeGeneration.instructions": [
         {
             "file": ".prompts/code-style.md"
         }
     ],
+    "github.copilot.chat.reviewSelection.instructions": [],
     // continue
     "continue.enableTabAutocomplete": false,
     "continue.showInlineTip": false,

@@ -467,38 +467,50 @@
         "command": "turboConsoleLog.displayLogMessage",
         "when": "editorTextFocus"
     },
-    // continue
+    // copilot
     {
-        "key": "ctrl+l",
-        "command": "continue.newSession",
-        "when": "activeAuxiliary === 'workbench.view.extension.continue'"
+        "key": "alt+a",
+        "command": "macros.copilotTabOpen",
+        "when": "!workbench.panel.chat.view.copilot.active"
     },
     {
-        "key": "ctrl+i",
-        "command": "continue.quickEdit"
-    },
-    {
-        "key": "alt+i",
-        "command": "macros.aiTabOpen",
-        "when": "activeAuxiliary !== 'workbench.view.extension.continue'"
-    },
-    {
-        "key": "alt+i",
-        "command": "macros.aiTabClose",
-        "when": "activeAuxiliary === 'workbench.view.extension.continue'"
+        "key": "alt+a",
+        "command": "macros.copilotTabClose",
+        "when": "workbench.panel.chat.view.copilot.active"
     },
     {
         "key": "ctrl+shift+i",
-        "command": "continue.optimizeCode"
+        "command": "github.copilot.chat.review",
     },
-    {
-        "key": "alt+enter",
-        "command": "continue.acceptDiff",
-        "when": "continue.diffVisible"
-    },
-    {
-        "key": "alt+z",
-        "command": "continue.rejectDiff",
-        "when": "continue.diffVisible"
-    },
+    // continue
+    // {
+    //     "key": "ctrl+l",
+    //     "command": "continue.newSession",
+    //     "when": "activeAuxiliary === 'workbench.view.extension.continue'"
+    // },
+    // {
+    //     "key": "ctrl+i",
+    //     "command": "editor.action.inlineSuggest.trigger",
+    //     "when": "editorTextFocus && !github.copilot.activated"
+    // },
+    // {
+    //     "key": "alt+a",
+    //     "command": "macros.continueTabOpen",
+    //     "when": "activeAuxiliary !== 'workbench.view.extension.continue'"
+    // },
+    // {
+    //     "key": "alt+a",
+    //     "command": "macros.continueTabClose",
+    //     "when": "activeAuxiliary === 'workbench.view.extension.continue'"
+    // },
+    // {
+    //     "key": "alt+enter",
+    //     "command": "continue.acceptDiff",
+    //     "when": "continue.diffVisible"
+    // },
+    // {
+    //     "key": "alt+z",
+    //     "command": "continue.rejectDiff",
+    //     "when": "continue.diffVisible"
+    // },
 ]

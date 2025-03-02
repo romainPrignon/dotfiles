@@ -34,7 +34,6 @@
     "files.defaultLanguage": "markdown",
     // workbench and windows
     "terminal.integrated.defaultLocation": "editor",
-    "window.menuBarVisibility": "hidden",
     "window.customMenuBarAltFocus": false,
     "window.zoomLevel": 0.6, // might be off on windows
     // workbench
@@ -159,5 +158,9 @@
             "tab.inactiveBackground": "#313437",
             "tab.inactiveForeground": "#F8F8F2"
         }
-    }
+    },
+    "window.menuBarVisibility": "compact",
+    "window.commandCenter": false,
+    "window.customTitleBarVisibility": "never",
+    "window.titleBarStyle": "native"
 }
