@@ -87,6 +87,11 @@
     # find orphans
     orphans = fsck --full
 
+[branch]
+    sort = -committerdate
+[tag]
+    sort = version:refname
+
 [core]
     excludesfile = ~/.gitignore
     autocrlf = input
@@ -103,6 +108,7 @@
 
 [push]
     default = simple
+    autoSetupRemote = true
 
 [diff]
     mnemonicPrefix = true
