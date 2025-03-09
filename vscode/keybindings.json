@@ -122,6 +122,10 @@
         "command": "workbench.action.output.toggleOutput"
     },
     {
+        "key": "alt+m",
+        "command": "workbench.action.focusCommentsPanel"
+    },
+    {
         "key": "ctrl+shift+f",
         "command": "filesExplorer.findInFolder",
         "when": "filesExplorerFocus"
@@ -491,6 +495,21 @@
     {
         "key": "ctrl+shift+i",
         "command": "github.copilot.chat.review.stagedChanges",
+    },
+    {
+        "key": "ctrl+m",
+        "command": "github.copilot.openModelPicker",
+        "when": "view.workbench.panel.chat.view.copilot.visible"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.chat.attachContext",
+        "when": "view.workbench.panel.chat.view.copilot.visible"
+    },
+    {
+        "key": "ctrl+[Period]",
+        "command": "workbench.action.chat.attach.prompt",
+        "when": "view.workbench.panel.chat.view.copilot.visible"
     },
     // continue
     // {
