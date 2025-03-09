@@ -2,5 +2,3 @@ REWRITE the selected module/package/component/class/method/function FOLLOWING us
 
 - do not change any signatures
 - do not introduce any breaking change
-
-{{{ input }}}

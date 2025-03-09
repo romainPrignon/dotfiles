@@ -249,7 +249,8 @@
             "workbench.action.closeAuxiliaryBar",
         ],
         "terminalOpen": [
-            "workbench.action.toggleSidebarVisibility",
+            // "workbench.action.toggleSidebarVisibility",
+            "workbench.action.closeSidebar",
             "workbench.action.terminal.toggleTerminal",
             "workbench.action.toggleMaximizedPanel"
         ],
@@ -287,8 +288,9 @@
     "githubPullRequests.commentExpandState": "collapseAll",
     "githubPullRequests.focusedMode": "multiDiff",
     // copilot
-    "github.copilot.editor.enableAutoCompletions": false,
+    "github.copilot.editor.enableAutoCompletions": false, // when true, use ctrl+i to trigger
     "github.copilot.chat.followUps": "never",
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true,
     "github.copilot.chat.codeGeneration.instructions": [
         {
             "file": ".prompts/code-style.md"
