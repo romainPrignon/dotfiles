@@ -20,6 +20,9 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     },
+    "editor.pasteAs.preferences": [ // legere latence
+        "text.updateImports"
+    ],
     // editor completion
     "editor.parameterHints.enabled": false, // might be true if I need to autocomplete param but verbose
     "editor.wordBasedSuggestions": "off", // might be true ??
@@ -146,12 +149,14 @@
     "terminal.integrated.shellIntegration.enabled": true,
     "terminal.integrated.allowMnemonics": true,
     // window
-    "window.menuBarVisibility": "toggle",
     "window.newWindowDimensions": "inherit",
     "window.openFoldersInNewWindow": "on",
     "window.zoomLevel": 0.6,
     "window.title": "${appName}${separator}${rootName}",
     "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never",
+    "window.menuBarVisibility": "toggle",
+    "window.commandCenter": false,
     // workbench
     "workbench.preferredDarkColorTheme": "Monokai",
     "workbench.preferredLightColorTheme": "Solarized Light",
@@ -222,7 +227,7 @@
         ],
         "ai": [
             "workbench.action.toggleSidebarVisibility",
-            "workbench.action.toggleAuxiliaryBar",
+            "workbench.action.toggleAuxiliaryBar"
         ],
         "copilotTabOpen": [
             "workbench.action.toggleSidebarVisibility",
@@ -230,7 +235,7 @@
         ],
         "copilotTabClose": [
             "workbench.action.toggleSidebarVisibility",
-            "workbench.action.toggleAuxiliaryBar",
+            "workbench.action.toggleAuxiliaryBar"
         ],
         "copilotEditTabOpen": [
             "workbench.action.toggleSidebarVisibility",
@@ -238,15 +243,15 @@
         ],
         "copilotEditTabClose": [
             "workbench.action.toggleSidebarVisibility",
-            "workbench.action.toggleAuxiliaryBar",
+            "workbench.action.toggleAuxiliaryBar"
         ],
         "continueTabOpen": [
             "workbench.action.toggleSidebarVisibility",
-            "continue.focusContinueInputWithoutClear",
+            "continue.focusContinueInputWithoutClear"
         ],
         "continueTabClose": [
             "workbench.action.toggleSidebarVisibility",
-            "workbench.action.closeAuxiliaryBar",
+            "workbench.action.closeAuxiliaryBar"
         ],
         "terminalOpen": [
             // "workbench.action.toggleSidebarVisibility",
@@ -257,7 +262,7 @@
         "terminalClose": [
             "workbench.action.toggleMaximizedPanel",
             "workbench.action.terminal.toggleTerminal",
-            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.toggleSidebarVisibility"
         ]
     },
     "material-icon-theme.hidesExplorerArrows": true,
@@ -296,7 +301,16 @@
             "file": ".prompts/code-style.md"
         }
     ],
-    "github.copilot.chat.reviewSelection.instructions": [],
+    "github.copilot.chat.reviewSelection.instructions": [
+        {
+            "file": ".prompts/review.prompt.md"
+        }
+    ],
+    "chat.promptFiles": true,
+    "chat.promptFilesLocations": {
+        ".github/prompts": true,
+        ".prompts": true
+    },
     // continue
     "continue.enableTabAutocomplete": false,
     "continue.showInlineTip": false,
@@ -729,5 +743,5 @@
             "tab.inactiveBackground": "#313437",
             "tab.inactiveForeground": "#F8F8F2"
         }
-    },
+    }
 }
