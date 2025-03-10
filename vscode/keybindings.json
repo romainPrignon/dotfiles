@@ -165,7 +165,7 @@
         "command": "workbench.action.toggleMaximizedPanel"
     },
     {
-        "key": "ctrl+shift+z",
+        "key": "alt+z",
         "command": "workbench.action.navigateBack"
     },
     {
@@ -278,11 +278,11 @@
         "command": "git.stageSelectedRanges",
     },
     {
-        "key": "ctrl+alt+z",
+        "key": "ctrl+alt+backspace",
         "command": "git.clean"
     },
     {
-        "key": "alt+z",
+        "key": "alt+backspace",
         "command": "git.revertSelectedRanges"
     },
     {
@@ -533,13 +533,28 @@
     //     "when": "activeAuxiliary === 'workbench.view.extension.continue'"
     // },
     // {
+    //     "key": "alt+i",
+    //     "command": "macros.continueEditTabOpen",
+    //     "when": "activeAuxiliary !== 'workbench.view.extension.continue'"
+    // },
+    // {
+    //     "key": "alt+i",
+    //     "command": "macros.continueEditTabClose",
+    //     "when": "activeAuxiliary === 'workbench.view.extension.continue'"
+    // },
+    // {
     //     "key": "alt+enter",
     //     "command": "continue.acceptDiff",
     //     "when": "continue.diffVisible"
     // },
     // {
-    //     "key": "alt+z",
+    //     "key": "alt+backspace",
     //     "command": "continue.rejectDiff",
     //     "when": "continue.diffVisible"
     // },
+    // macro
+    {
+        "key": "ctrl+m ctrl+d",
+        "command": "macros.jsdoc"
+    }
 ]

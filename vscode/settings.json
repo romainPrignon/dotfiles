@@ -56,7 +56,8 @@
         "**/.git/subtree-cache/**": true,
         "**/node_modules/**": true,
         "**/vendor/**": true,
-        "**/coverage/**": true
+        "**/coverage/**": true,
+        "**/dist/**": true
     },
     // git
     "git.untrackedChanges": "separate",
@@ -197,7 +198,7 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "typescript.reportStyleChecksAsWarnings": false,
     "typescript.tsserver.maxTsServerMemory": 2048,
-    
+
     // Python
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
@@ -249,6 +250,14 @@
             "workbench.action.toggleSidebarVisibility",
             "continue.focusContinueInputWithoutClear"
         ],
+        "continueEditTabOpen": [
+            "workbench.action.toggleSidebarVisibility",
+            "continue.focusEditWithoutClear"
+        ],
+        "continueEditTabClose": [
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.closeAuxiliaryBar"
+        ],
         "continueTabClose": [
             "workbench.action.toggleSidebarVisibility",
             "workbench.action.closeAuxiliaryBar"
@@ -263,6 +272,14 @@
             "workbench.action.toggleMaximizedPanel",
             "workbench.action.terminal.toggleTerminal",
             "workbench.action.toggleSidebarVisibility"
+        ],
+        "jsdoc": [
+            {
+                "command": "type",
+                "args": {
+                    "text": "add jsdoc for the selected code. add ONLY @throws directive and nothing else."
+                }
+            }
         ]
     },
     "material-icon-theme.hidesExplorerArrows": true,
@@ -288,10 +305,13 @@
         }
     },
     "redhat.telemetry.enabled": false,
-    "indentRainbow.includedLanguages": ["python", "yaml"],
+    "indentRainbow.includedLanguages": [
+        "python"
+    ],
     "indentRainbow.indicatorStyle": "light",
     "githubPullRequests.commentExpandState": "collapseAll",
     "githubPullRequests.focusedMode": "multiDiff",
+    "githubPullRequests.pullBranch": "never",
     // copilot
     "github.copilot.editor.enableAutoCompletions": false, // when true, use ctrl+i to trigger
     "github.copilot.chat.followUps": "never",
