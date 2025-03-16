@@ -3,3 +3,4 @@
 .prompts/
 .vscode/
 node_modules/
+.continuerules

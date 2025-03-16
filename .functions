@@ -43,6 +43,7 @@ function monit {
 function sync-prompt {
     mkdir .prompts/
     ln -sf /home/romainprignon/workspace/romainprignon/dotfiles/.prompts/* .prompts/
+    ln -sf /home/romainprignon/workspace/romainprignon/dotfiles/.prompts/system.prompt .continuerules
 }
 
 function sandbox {

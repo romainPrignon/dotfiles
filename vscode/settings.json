@@ -316,16 +316,17 @@
     "github.copilot.editor.enableAutoCompletions": false, // when true, use ctrl+i to trigger
     "github.copilot.chat.followUps": "never",
     "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-    "github.copilot.chat.codeGeneration.instructions": [
-        {
-            "file": ".prompts/code-style.md"
-        }
-    ],
-    "github.copilot.chat.reviewSelection.instructions": [
-        {
-            "file": ".prompts/review.prompt.md"
-        }
-    ],
+    // yield worse result (for now)
+    // "github.copilot.chat.codeGeneration.instructions": [
+    //     {
+    //         "file": ".prompts/system.prompt.md"
+    //     }
+    // ],
+    // "github.copilot.chat.reviewSelection.instructions": [
+    //     {
+    //         "file": ".prompts/review.prompt.md"
+    //     }
+    // ],
     "chat.promptFiles": true,
     "chat.promptFilesLocations": {
         ".github/prompts": true,
