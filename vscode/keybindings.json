@@ -147,7 +147,7 @@
         "command": "workbench.action.moveEditorToNextGroup"
     },
     {
-        "key": "ctrl+k",
+        "key": "alt+k",
         "command": "workbench.action.keepEditor"
     },
     {
@@ -275,7 +275,7 @@
     },
     {
         "key": "alt+enter",
-        "command": "git.stageSelectedRanges",
+        "command": "git.stageSelectedRanges"
     },
     {
         "key": "ctrl+alt+backspace",
@@ -494,7 +494,7 @@
     },
     {
         "key": "ctrl+shift+i",
-        "command": "github.copilot.chat.review.stagedChanges",
+        "command": "github.copilot.chat.review.stagedChanges"
     },
     {
         "key": "ctrl+m",
@@ -554,7 +554,7 @@
     // },
     // macro
     {
-        "key": "ctrl+m ctrl+d",
+        "key": "ctrl+k ctrl+d",
         "command": "macros.jsdoc"
     }
 ]

@@ -1,0 +1,43 @@
+{
+    "models": [
+        {
+            "title": "Codestral",
+            "provider": "mistral",
+            "model": "codestral-latest",
+            "apiKey": "",
+            "contextLength": 32000
+        },
+        {
+            "title": "gpt-4o (github)",
+            "provider": "openai",
+            "model": "gpt-4o",
+            "apiKey": "",
+            "apiBase": "https://models.inference.ai.azure.com",
+            "contextLength": 128000
+        },
+        {
+            "title": "gpt-o1 (github)",
+            "provider": "openai",
+            "model": "o1",
+            "apiKey": "",
+            "apiBase": "https://models.inference.ai.azure.com",
+            "contextLength": 128000
+        }
+    ],
+    "tabAutocompleteModel": {
+        "title": "codestral",
+        "provider": "mistral",
+        "model": "codestral-latest",
+        "apiKey": ""
+    },
+    "tabAutocompleteOptions": {
+        "debounceDelay": 0,
+        "onlyMyCode": true
+    },
+    "embeddingsProvider": {
+        "provider": "free-trial"
+    },
+    "reranker": {
+        "name": "free-trial"
+    }
+}

@@ -20,8 +20,8 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     },
-    "editor.pasteAs.preferences": [ // legere latence
-        "text.updateImports"
+    "editor.pasteAs.preferences": [
+        "text.plain"
     ],
     // editor completion
     "editor.parameterHints.enabled": false, // might be true if I need to autocomplete param but verbose
@@ -333,7 +333,7 @@
         ".prompts": true
     },
     // continue
-    "continue.enableTabAutocomplete": false,
+    "continue.enableTabAutocomplete": true,
     "continue.showInlineTip": false,
     "continue.telemetryEnabled": false,
     // themes
@@ -716,6 +716,7 @@
             "editorOverviewRuler.errorForeground": "#FF0000",
             "editorOverviewRuler.warningForeground": "#FFFF00",
             "editorOverviewRuler.bracketMatchForeground": "#F8F8F2",
+            "editorGhostText.foreground": "#555555",
             "list.focusBackground": "#B7B7B7",
             "list.hoverBackground": "#B7B7B7",
             "list.activeSelectionBackground": "#B7B7B7",
@@ -746,6 +747,7 @@
             "editorOverviewRuler.errorForeground": "#FF0000",
             "editorOverviewRuler.warningForeground": "#FFFF00",
             "editorOverviewRuler.bracketMatchForeground": "#272822",
+            "editorGhostText.foreground": "#BBBBBB",
             "list.focusBackground": "#4C4F53",
             "list.hoverBackground": "#4C4F53",
             "list.activeSelectionBackground": "#4C4F53",
