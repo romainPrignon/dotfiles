@@ -446,6 +446,14 @@
         "command": "macros.terminalClose",
         "when": "terminalFocus"
     },
+    {
+        "key": "alt+y",
+        "command": "macros.vibeCommit",
+    },
+    {
+        "key": "ctrl+k ctrl+d",
+        "command": "macros.jsdoc"
+    },
     // live share
     {
         "key": "alt+f",
@@ -463,16 +471,20 @@
     },
     // remote
     {
-        "key": "alt+r",
+        "key": "alt+u",
         "command": "remote-containers.openPullRequestInVolume"
     },
     // turbo console log
     {
-        "key": "ctrl+l",
+        "key": "ctrl+shift+l",
         "command": "turboConsoleLog.displayLogMessage",
         "when": "editorTextFocus"
     },
     // copilot
+    {
+        "key": "ctrl+k ctrl+a",
+        "command": "workbench.action.chat.openInEditor",
+    },
     {
         "key": "alt+a",
         "command": "macros.copilotTabOpen",
@@ -494,12 +506,28 @@
       "when": "auxiliaryBarVisible"
     },
     {
-        "key": "ctrl+shift+i",
-        "command": "github.copilot.chat.review.stagedChanges"
+        "key": "alt+g",
+        "command": "macros.copilotAgentTabOpen",
+        "when": "!auxiliaryBarVisible"
+    },
+    {
+        "key": "alt+g",
+        "command": "macros.copilotAgentTabClose",
+        "when": "auxiliaryBarVisible"
+    },
+    {
+        "key": "alt+r",
+        "command": "github.copilot.chat.review.stagedChanges",
+        "when": "!editorHasSelection"
+    },
+    {
+        "key": "alt+r",
+        "command": "github.copilot.chat.review",
+        "when": "editorHasSelection"
     },
     {
         "key": "ctrl+m",
-        "command": "github.copilot.openModelPicker",
+        "command": "workbench.action.chat.openModelPicker",
         "when": "view.workbench.panel.chat.view.copilot.visible"
     },
     {
@@ -568,9 +596,4 @@
     //     "command": "continue.rejectDiff",
     //     "when": "continue.diffVisible"
     // },
-    // macro
-    {
-        "key": "ctrl+k ctrl+d",
-        "command": "macros.jsdoc"
-    }
 ]
