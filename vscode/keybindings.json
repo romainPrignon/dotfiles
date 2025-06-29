@@ -270,19 +270,20 @@
     },
     //git
     {
-        "key": "ctrl+alt+enter",
-        "command": "git.stage"
+        "key": "ctrl+shift+enter",
+        "command": "git.stage",
+        "when": "editorFocus && !chatEdits.hasEditorModifications"
     },
     {
-        "key": "alt+enter",
+        "key": "ctrl+enter",
         "command": "git.stageSelectedRanges"
     },
     {
-        "key": "ctrl+alt+backspace",
+        "key": "ctrl+shift+backspace",
         "command": "git.clean"
     },
     {
-        "key": "alt+backspace",
+        "key": "ctrl+backspace",
         "command": "git.revertSelectedRanges"
     },
     {
@@ -507,9 +508,24 @@
         "when": "view.workbench.panel.chat.view.copilot.visible"
     },
     {
-        "key": "ctrl+[Period]",
-        "command": "workbench.action.chat.attach.prompt",
-        "when": "view.workbench.panel.chat.view.copilot.visible"
+        "key": "ctrl+enter",
+        "command": "chatEditor.action.acceptHunk",
+        "when": "chatEdits.hasEditorModifications && editorFocus"
+    },
+    {
+        "key": "ctrl+shift+enter",
+        "command": "chatEditor.action.accept",
+        "when": "chatEdits.hasEditorModifications && editorFocus"
+    },
+    {
+        "key": "ctrl+backspace",
+        "command": "chatEditor.action.undoHunk",
+        "when": "chatEdits.hasEditorModifications && editorFocus"
+    },
+    {
+        "key": "ctrl+shift+backspace",
+        "command": "chatEditor.action.reject",
+        "when": "chatEdits.hasEditorModifications && editorFocus"
     },
     // continue
     // {
@@ -543,12 +559,12 @@
     //     "when": "activeAuxiliary === 'workbench.view.extension.continue'"
     // },
     // {
-    //     "key": "alt+enter",
+    //     "key": "ctrl+enter",
     //     "command": "continue.acceptDiff",
     //     "when": "continue.diffVisible"
     // },
     // {
-    //     "key": "alt+backspace",
+    //     "key": "ctrl+backspace",
     //     "command": "continue.rejectDiff",
     //     "when": "continue.diffVisible"
     // },
