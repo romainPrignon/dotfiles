@@ -217,7 +217,7 @@
     },
     // extensions
     "eslint.run": "onSave",
-    "macros": {
+    "macros.list": {
         "comment": [
             "editor.action.commentLine",
             "cursorDown"
@@ -226,13 +226,25 @@
             "workbench.action.debug.stop",
             "workbench.debug.viewlet.action.removeAllBreakpoints"
         ],
+        "vibeCommit": [
+            "git.stageAllTracked",
+            "git.stageAllUntracked",
+            "github.copilot.git.generateCommitMessage",
+            {
+                "command": "$delay",
+                "args": {
+                    "delay": 500
+                }
+            },
+            "git.commit"
+        ],
         "ai": [
             "workbench.action.toggleSidebarVisibility",
             "workbench.action.toggleAuxiliaryBar"
         ],
         "copilotTabOpen": [
             "workbench.action.toggleSidebarVisibility",
-            "workbench.panel.chat.view.copilot.focus"
+            "workbench.action.chat.openAsk"
         ],
         "copilotTabClose": [
             "workbench.action.toggleSidebarVisibility",
@@ -240,9 +252,17 @@
         ],
         "copilotEditTabOpen": [
             "workbench.action.toggleSidebarVisibility",
-            "workbench.panel.chat.view.edits.focus"
+            "workbench.action.chat.openEdit"
         ],
         "copilotEditTabClose": [
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.toggleAuxiliaryBar"
+        ],
+        "copilotAgentTabOpen": [
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.chat.openAgent"
+        ],
+        "copilotAgentTabClose": [
             "workbench.action.toggleSidebarVisibility",
             "workbench.action.toggleAuxiliaryBar"
         ],
@@ -263,8 +283,8 @@
             "workbench.action.closeAuxiliaryBar"
         ],
         "terminalOpen": [
-            // "workbench.action.toggleSidebarVisibility",
             "workbench.action.closeSidebar",
+            "workbench.action.closeAuxiliaryBar",
             "workbench.action.terminal.toggleTerminal",
             "workbench.action.toggleMaximizedPanel"
         ],

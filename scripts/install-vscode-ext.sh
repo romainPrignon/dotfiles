@@ -9,7 +9,7 @@ EXTENSIONS=(
   "eg2.vscode-npm-script" \
   "xdebug.php-debug" \
   "zobo.php-intellisense" \
-  "geddski.macros" \
+  "ctf0.macros" \
   "GitHub.remotehub" \
   "GitHub.vscode-github-actions" \
   "ikappas.phpcs" \
