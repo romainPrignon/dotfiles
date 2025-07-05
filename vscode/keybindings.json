@@ -275,16 +275,17 @@
         "when": "editorFocus && !chatEdits.hasEditorModifications"
     },
     {
-        "key": "ctrl+enter",
-        "command": "git.stageSelectedRanges"
+        "key": "alt+enter",
+        "command": "git.stageSelectedRanges",
     },
     {
         "key": "ctrl+shift+backspace",
-        "command": "git.clean"
+        "command": "git.clean",
+        "when": "editorFocus && !chatEdits.hasEditorModifications"
     },
     {
-        "key": "ctrl+backspace",
-        "command": "git.revertSelectedRanges"
+        "key": "alt+backspace",
+        "command": "git.revertSelectedRanges",
     },
     {
         "key": "alt+c",
