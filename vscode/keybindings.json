@@ -487,6 +487,11 @@
         "command": "workbench.action.chat.openInEditor",
     },
     {
+        "key": "alt+s",
+        "command": "workbench.action.toggleMaximizedAuxiliaryBar",
+        "when": "auxiliaryBarVisible"
+    },
+    {
         "key": "alt+a",
         "command": "macros.copilotTabOpen",
         "when": "!view.workbench.panel.chat.view.copilot.visible"

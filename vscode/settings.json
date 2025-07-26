@@ -334,6 +334,7 @@
     "githubPullRequests.pullBranch": "never",
     // copilot
     "github.copilot.editor.enableAutoCompletions": false, // when true, use ctrl+i to trigger
+    "github.copilot.chat.codesearch.enabled": true,
     "github.copilot.chat.followUps": "never",
     "github.copilot.chat.codeGeneration.useInstructionFiles": true,
     // yield worse result (for now)
