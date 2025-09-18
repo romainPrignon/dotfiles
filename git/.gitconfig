@@ -25,7 +25,7 @@
     ade = !EDITOR='code --wait' git add -e
 
     # Commit
-    ci = commit
+    ci = !oco --yes
     cim = commit -m
 
     # Merge
