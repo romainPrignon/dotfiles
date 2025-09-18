@@ -561,6 +561,10 @@
         "command": "chatEditor.action.reject",
         "when": "chatEdits.hasEditorModifications && editorFocus"
     },
+    {
+        "key": "ctrl+shift+i",
+        "command": "editor.action.inlineSuggest.trigger"
+    },
     // continue
     // {
     //     "key": "ctrl+l",
