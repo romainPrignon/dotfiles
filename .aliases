@@ -40,6 +40,7 @@ alias tf="terraform"
 # git
 alias hot="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10"
 alias moji="gitmoji -c"
+alias commit="git diff --staged | gemini -p 'Generate a commit message. The commit message should be 72 characters long.' | git commit -F -"
 
 # ai
 alias ai="sgpt"
