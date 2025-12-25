@@ -2,11 +2,9 @@
 
 EXTENSIONS=(
   "chakrounanas.turbo-console-log" \
-  "danielsanmedium.dscodegpt" \
   "dbaeumer.vscode-eslint" \
   "denoland.vscode-deno" \
   "EditorConfig.EditorConfig" \
-  "eg2.vscode-npm-script" \
   "xdebug.php-debug" \
   "zobo.php-intellisense" \
   "ctf0.macros" \

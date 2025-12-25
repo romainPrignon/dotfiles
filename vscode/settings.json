@@ -16,9 +16,10 @@
     // editor format
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "modifications",
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit"
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.format": "explicit"
     },
     "editor.pasteAs.preferences": [
         "text.plain"
@@ -61,6 +62,8 @@
     },
     // git
     "git.untrackedChanges": "separate",
+    "git.autofetch": true,
+    "git.autofetchPeriod": 360, // 6 min
     // launch
     "launch": {
         "configurations": [
@@ -193,12 +196,13 @@
     // javascript
     "javascript.suggest.completeFunctionCalls": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "javascript.format.semicolons": "remove",
     // typescript
     "typescript.suggest.completeFunctionCalls": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "typescript.reportStyleChecksAsWarnings": false,
     "typescript.tsserver.maxTsServerMemory": 2048,
-
+    "typescript.format.semicolons": "remove",
     // Python
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
@@ -787,5 +791,10 @@
             "tab.inactiveBackground": "#313437",
             "tab.inactiveForeground": "#F8F8F2"
         }
-    }
+    },
+    // a retester plus tard
+    "terminal.integrated.suggest.enabled": false, // super slow
+    "inlineChat.enableV2": false, // jullet 2025 ca créer des tests ou des truc en plus rien a voir a coté
+    "editor.inlayHints.enabled": "off",
+    "github.copilot.nextEditSuggestions.enabled": false
 }
