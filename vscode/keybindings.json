@@ -522,6 +522,26 @@
         "when": "auxiliaryBarVisible"
     },
     {
+        "key": "alt+t",
+        "command": "macros.copilotThinkTabOpen",
+        "when": "!auxiliaryBarVisible"
+    },
+    {
+        "key": "alt+t",
+        "command": "macros.copilotThinkTabClose",
+        "when": "auxiliaryBarVisible"
+    },
+    {
+        "key": "alt+l",
+        "command": "macros.copilotBackgroundAgentTabOpen",
+        "when": "!auxiliaryBarVisible"
+    },
+    {
+        "key": "alt+l",
+        "command": "macros.copilotBackgroundAgentTabClose",
+        "when": "auxiliaryBarVisible"
+    },
+    {
         "key": "alt+r",
         "command": "github.copilot.chat.review.stagedChanges",
         "when": "!editorHasSelection"
@@ -534,6 +554,11 @@
     {
         "key": "ctrl+m",
         "command": "workbench.action.chat.openModelPicker",
+        "when": "view.workbench.panel.chat.view.copilot.visible"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.chat.openModePicker",
         "when": "view.workbench.panel.chat.view.copilot.visible"
     },
     {

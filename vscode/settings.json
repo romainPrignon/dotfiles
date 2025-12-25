@@ -248,7 +248,7 @@
         ],
         "copilotTabOpen": [
             "workbench.action.toggleSidebarVisibility",
-            "workbench.action.chat.openAsk"
+            "workbench.action.chat.openask"
         ],
         "copilotTabClose": [
             "workbench.action.toggleSidebarVisibility",
@@ -256,7 +256,7 @@
         ],
         "copilotEditTabOpen": [
             "workbench.action.toggleSidebarVisibility",
-            "workbench.action.chat.openEdit"
+            "workbench.action.chat.openedit"
         ],
         "copilotEditTabClose": [
             "workbench.action.toggleSidebarVisibility",
@@ -264,9 +264,25 @@
         ],
         "copilotAgentTabOpen": [
             "workbench.action.toggleSidebarVisibility",
-            "workbench.action.chat.openAgent"
+            "workbench.action.chat.openagent"
         ],
         "copilotAgentTabClose": [
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.toggleAuxiliaryBar"
+        ],
+        "copilotThinkTabOpen": [ // Plan mode
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.chat.openPlan"
+        ],
+        "copilotThinkTabClose": [ // Plan mode
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.toggleAuxiliaryBar"
+        ],
+        "copilotBackgroundAgentTabOpen": [
+            "workbench.action.toggleSidebarVisibility",
+            "workbench.action.chat.openNewSessionSidebar.copilotcli"
+        ],
+        "copilotBackgroundAgentTabClose": [
             "workbench.action.toggleSidebarVisibility",
             "workbench.action.toggleAuxiliaryBar"
         ],
@@ -796,5 +812,6 @@
     "terminal.integrated.suggest.enabled": false, // super slow
     "inlineChat.enableV2": false, // jullet 2025 ca créer des tests ou des truc en plus rien a voir a coté
     "editor.inlayHints.enabled": "off",
-    "github.copilot.nextEditSuggestions.enabled": false
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "chat.viewSessions.orientation": "stacked"
 }
