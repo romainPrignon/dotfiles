@@ -537,11 +537,6 @@
         "when": "!auxiliaryBarVisible"
     },
     {
-        "key": "alt+l",
-        "command": "macros.copilotBackgroundAgentTabClose",
-        "when": "auxiliaryBarVisible"
-    },
-    {
         "key": "alt+r",
         "command": "github.copilot.chat.review.stagedChanges",
         "when": "!editorHasSelection"

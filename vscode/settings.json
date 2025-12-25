@@ -278,14 +278,6 @@
             "workbench.action.toggleSidebarVisibility",
             "workbench.action.toggleAuxiliaryBar"
         ],
-        "copilotBackgroundAgentTabOpen": [
-            "workbench.action.toggleSidebarVisibility",
-            "workbench.action.chat.openNewSessionSidebar.copilotcli"
-        ],
-        "copilotBackgroundAgentTabClose": [
-            "workbench.action.toggleSidebarVisibility",
-            "workbench.action.toggleAuxiliaryBar"
-        ],
         "continueTabOpen": [
             "workbench.action.toggleSidebarVisibility",
             "continue.focusContinueInputWithoutClear"
