@@ -11,7 +11,7 @@ EXTENSIONS=(
   "GitHub.remotehub" \
   "GitHub.vscode-github-actions" \
   "ikappas.phpcs" \
-  "mikestead.dotenv" \
+  # "mikestead.dotenv" \ no longer necessary
   "ms-python.python" \
   "ms-python.vscode-pylance" \
   "ms-toolsai.jupyter" \

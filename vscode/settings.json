@@ -39,6 +39,7 @@
     "editor.bracketPairColorization.enabled": false,
     "editor.stickyScroll.enabled": true,
     "editor.stickyScroll.maxLineCount": 2,
+    "editor.inlayHints.enabled": "off",
     // explorer
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
@@ -169,6 +170,7 @@
     "workbench.startupEditor": "none",
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.view.alwaysShowHeaderActions": true,
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
     // workbench editor
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.pinnedTabSizing": "compact",
@@ -341,14 +343,17 @@
         "python"
     ],
     "indentRainbow.indicatorStyle": "light",
+    "githubPullRequests.codingAgent.codeLens": false,
     "githubPullRequests.commentExpandState": "collapseAll",
     "githubPullRequests.focusedMode": "multiDiff",
     "githubPullRequests.pullBranch": "never",
     // copilot
     "github.copilot.editor.enableAutoCompletions": false, // when true, use ctrl+i to trigger
+    "github.copilot.nextEditSuggestions.enabled": false,
     "github.copilot.chat.codesearch.enabled": true,
     "github.copilot.chat.followUps": "never",
     "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+    "github.copilot.chat.githubMcpServer.enabled": true,
     // yield worse result (for now)
     // "github.copilot.chat.codeGeneration.instructions": [
     //     {
@@ -365,6 +370,10 @@
         ".github/prompts": true,
         ".prompts": true
     },
+    "chat.useNestedAgentsMdFiles": true,
+    "chat.customAgentInSubagent.enabled ": true,
+    "github.copilot.chat.cli.customAgents.enabled": false, // custom agent in background
+    "chat.viewSessions.orientation": "stacked",
     // continue
     "continue.enableTabAutocomplete": true,
     "continue.showInlineTip": false,
@@ -800,10 +809,9 @@
             "tab.inactiveForeground": "#F8F8F2"
         }
     },
+    // en cours de test
+    "inlineChat.enableV2": true, // jullet 2025 ca créer des tests ou des truc en plus rien a voir a coté
     // a retester plus tard
-    "terminal.integrated.suggest.enabled": false, // super slow
-    "inlineChat.enableV2": false, // jullet 2025 ca créer des tests ou des truc en plus rien a voir a coté
-    "editor.inlayHints.enabled": "off",
-    "github.copilot.nextEditSuggestions.enabled": false,
-    "chat.viewSessions.orientation": "stacked"
+    "terminal.integrated.suggest.enabled": false, // clash avec mon tab
+    // a deplacer
 }

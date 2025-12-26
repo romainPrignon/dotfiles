@@ -502,14 +502,14 @@
         "when": "view.workbench.panel.chat.view.copilot.visible"
     },
     {
-      "key": "alt+i",
-      "command": "macros.copilotEditTabOpen",
-      "when": "!auxiliaryBarVisible"
+        "key": "alt+i",
+        "command": "macros.copilotEditTabOpen",
+        "when": "!auxiliaryBarVisible"
     },
     {
-      "key": "alt+i",
-      "command": "macros.copilotEditTabClose",
-      "when": "auxiliaryBarVisible"
+        "key": "alt+i",
+        "command": "macros.copilotEditTabClose",
+        "when": "auxiliaryBarVisible"
     },
     {
         "key": "alt+g",

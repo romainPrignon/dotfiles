@@ -69,6 +69,7 @@ ln -sf $dotfile_dir_absolute_path/gtk/settings.ini $home_dir_absolute_path/.conf
 # vscode
 ln -sf $dotfile_dir_absolute_path/vscode/settings.json $home_dir_absolute_path/.config/Code/User/settings.json
 ln -sf $dotfile_dir_absolute_path/vscode/keybindings.json $home_dir_absolute_path/.config/Code/User/keybindings.json
+ln -sf $dotfile_dir_absolute_path/vscode/mcp.json $home_dir_absolute_path/.config/Code/User/mcp.json
 
 # codeterm
 ln -sf $dotfile_dir_absolute_path/codeterm/settings.json $home_dir_absolute_path/.config/'Code - Insiders'/User/settings.json
