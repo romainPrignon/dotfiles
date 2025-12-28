@@ -15,11 +15,11 @@
     },
     {
         "key": "alt+left",
-        "command": "workbench.action.previousEditor"
+        "command": "workbench.action.previousEditor",
     },
     {
         "key": "alt+right",
-        "command": "workbench.action.nextEditor"
+        "command": "workbench.action.nextEditor",
     },
     // code
     {
@@ -80,7 +80,8 @@
     },
     {
         "key": "alt+w",
-        "command": "workbench.action.closePanel"
+        "command": "workbench.action.closePanel",
+        "when": "panelVisible",
     },
     // terminal
     // {
@@ -112,7 +113,6 @@
         "command": "workbench.action.terminal.focusNext",
         "when": "terminalFocus"
     },
-   
     {
         "key": "alt+p",
         "command": "workbench.actions.view.problems"
@@ -132,7 +132,8 @@
     },
     {
         "key": "alt+e",
-        "command": "workbench.files.action.showActiveFileInExplorer"
+        "command": "workbench.files.action.showActiveFileInExplorer",
+        "when": "editorFocus", // in test
     },
     {
         "key": "alt+q",
@@ -140,15 +141,18 @@
     },
     {
         "key": "alt+down",
-        "command": "workbench.action.moveEditorToPreviousGroup"
+        "command": "workbench.action.moveEditorToPreviousGroup",
+        "when": "editorFocus", // in test
     },
     {
         "key": "alt+up",
-        "command": "workbench.action.moveEditorToNextGroup"
+        "command": "workbench.action.moveEditorToNextGroup",
+        "when": "editorFocus", // in test
     },
     {
         "key": "alt+k",
-        "command": "workbench.action.keepEditor"
+        "command": "workbench.action.keepEditor",
+        "when": "editorFocus", // in test
     },
     {
         "key": "ctrl+j",
@@ -169,7 +173,7 @@
         "command": "workbench.action.navigateBack"
     },
     {
-        "key": "ctrl+shift+y",
+        "key": "alt+f",
         "command": "workbench.action.navigateForward"
     },
     // action on characters
@@ -266,7 +270,8 @@
     },
     {
         "key": "ctrl+r",
-        "command": "editor.action.showDefinitionPreviewHover"
+        "command": "editor.action.showDefinitionPreviewHover",
+        "when": "editorFocus",
     },
     //git
     {
@@ -277,6 +282,7 @@
     {
         "key": "alt+enter",
         "command": "git.stageSelectedRanges",
+        "when": "editorFocus && !chatEdits.hasEditorModifications" // en test
     },
     {
         "key": "ctrl+shift+backspace",
@@ -286,6 +292,7 @@
     {
         "key": "alt+backspace",
         "command": "git.revertSelectedRanges",
+        "when": "editorFocus && !chatEdits.hasEditorModifications" // en test
     },
     {
         "key": "alt+c",
@@ -334,14 +341,14 @@
         "command": "workbench.action.gotoSymbol",
         "when": "!terminalFocus"
     },
-    {
-        "key": "ctrl+shift+e",
-        "command": "workbench.action.showAllSymbols"
-    },
     // {
-    //     "key": "ctrl+shift+t",
+    //     "key": "ctrl+shift+e",
     //     "command": "workbench.action.showAllSymbols"
     // },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.showAllSymbols"
+    },
     {
         "key": "ctrl+u",
         "command": "references-view.find",
