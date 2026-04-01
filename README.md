@@ -1,13 +1,15 @@
 # Usage
 
 > git clone https://github.com/romainprignon/dotfiles
-> git clone https://frama.likn/rp-dot
+> git clone https://frama.link/rp-dot
 
-## dependencies
+## Dependencies
  - git
  - make
 
-## auto
+## Installation (Debian 13+)
+
+### Automated Setup
 ```bash
 make install
 make desktop
@@ -17,12 +19,84 @@ sudo reboot
 make snap
 ```
 
-# manual
+### Runtime Installation (via mise)
+Runtimes are managed via [mise](https://mise.jdx.dev/) and can be installed individually:
 
-Apply what you need from the `makefile`
-- completions
+```bash
+make install-node         # Install Node.js (LTS + latest)
+make install-python       # Install Python 3.12 and 3.8
+make install-go           # Install Go
+make install-rust         # Install Rust
+make install-deno         # Install Deno
+make install-java         # Install Java OpenJDK 17
+make install-poetry       # Install Poetry
+make install-php          # Install PHP 8.1 + Composer
+make install-terraform    # Install Terraform
+make install-packer       # Install Packer
+make install-gh           # Install GitHub CLI
+make install-kubectl      # Install kubectl
+make install-broot        # Install broot
+
+# Or install all runtimes at once
+make install-all-runtimes
+```
+
+## Manual Configuration
+
+## Manual Configuration
+
+Apply what you need from the `makefile`:
+- completions (bash and zsh)
 - pip
+- npm
+- composer
 - ...
+
+## Git SSH Signing
+
+Configure SSH signing for Git commits:
+
+1. Generate an SSH key (if you don't have one):
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+2. Add your SSH public key to GitHub:
+   - Go to GitHub Settings > SSH and GPG keys
+   - Add a new SSH key (Authentication key)
+   - Also add it as a Signing key
+
+3. The `.gitconfig` is already configured to use SSH signing:
+```ini
+[user]
+    signingkey = ~/.ssh/id_ed25519.pub
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
+```
+
+## DNS Configuration
+
+DNS is configured via systemd-resolved to use Cloudflare DNS (1.1.1.1):
+- Configuration: `etc/systemd/resolved.conf.d/cloudflare.conf`
+- Includes IPv4 (1.1.1.1, 1.0.0.1) and IPv6 (2606:4700:4700::1111, 2606:4700:4700::1001)
+- DNSSEC enabled
+- DNS-over-TLS opportunistic mode
+
+## Ghostty Terminal
+
+Ghostty is configured as the default terminal with:
+- Font: JetBrains Mono 12pt
+- Default fullscreen mode
+- Custom keybindings matching previous terminal setup:
+  - `Ctrl+T`: New tab
+  - `Ctrl+V`: Copy to clipboard
+  - `Ctrl+B`: Paste from clipboard
+  - `Alt+Left/Right`: Switch tabs
+  - `Ctrl+W`: Close tab
+
+Configuration file: `ghostty/config`
 
 ## Swap
 - Create swap file if not already done
@@ -34,8 +108,7 @@ make swap size=8G
 ## Ntp
 - sudo timedatectl set-timezone My/Timezone
 
-
-## Hostname
+## Hostname (if needed)
 - sudo hostnamectl set-hostname MY_HOSTNAME
 - micro /etc/hosts
 - micro /etc/hostname
@@ -60,7 +133,7 @@ key <CAPS> {};
 - install extensions:
     - Emoji Selector by Maestroschan
     - dash to panel by charlesg99
-    - gtk title bar by velitasali OR no titlebar when maximized (focal) OR pixelsaver (focal)
+    - gtk title bar by velitasali OR no titlebar when maximized OR pixelsaver
     - just perfection by JustPerfection
     - escape overview by rael
     - start overlay in application view by hex_cz or tmk
@@ -79,7 +152,6 @@ key <CAPS> {};
     ```bash
     make configure-desktop
     ```
-    /!\ setting headers might not work on ubuntu 22.04
 
 ## GRUB
 - sudo nano /etc/default/grub
