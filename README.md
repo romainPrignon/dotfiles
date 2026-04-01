@@ -22,6 +22,19 @@ make snap
 ### Runtime Installation (via mise)
 Runtimes are managed via [mise](https://mise.jdx.dev/) and can be installed individually:
 
+**Note:** mise needs to be installed first (done automatically by `make install`). After installation, mise will download and compile tools on first use.
+
+Default versions are configured in `.mise.toml` but can be overridden:
+```bash
+# Use default versions
+make install-node         # Install Node.js (LTS + latest)
+
+# Override version
+NODE_VERSION=20.0.0 make install-node
+PHP_VERSION=8.2 make install-php
+```
+
+Available runtime installations:
 ```bash
 make install-node         # Install Node.js (LTS + latest)
 make install-python       # Install Python 3.12 and 3.8
@@ -30,7 +43,8 @@ make install-rust         # Install Rust
 make install-deno         # Install Deno
 make install-java         # Install Java OpenJDK 17
 make install-poetry       # Install Poetry
-make install-php          # Install PHP 8.1 + Composer
+make install-php          # Install PHP 8.1 + Composer (via mise)
+make install-docker       # Install Docker (via mise)
 make install-terraform    # Install Terraform
 make install-packer       # Install Packer
 make install-gh           # Install GitHub CLI
@@ -40,8 +54,6 @@ make install-broot        # Install broot
 # Or install all runtimes at once
 make install-all-runtimes
 ```
-
-## Manual Configuration
 
 ## Manual Configuration
 
@@ -76,27 +88,19 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
     gpgsign = true
 ```
 
-## DNS Configuration
+## Fonts
 
-DNS is configured via systemd-resolved to use Cloudflare DNS (1.1.1.1):
-- Configuration: `etc/systemd/resolved.conf.d/cloudflare.conf`
-- Includes IPv4 (1.1.1.1, 1.0.0.1) and IPv6 (2606:4700:4700::1111, 2606:4700:4700::1001)
-- DNSSEC enabled
-- DNS-over-TLS opportunistic mode
+Fonts are stored in the git repository for version control and offline installation:
+- **JetBrains Mono**: Already included in `fonts/jetbrains-mono/`
+- **DejaVu and Ubuntu fonts**: Download with the provided script:
+  ```bash
+  cd fonts
+  ./download-fonts.sh
+  git add .
+  git commit -m "Add DejaVu and Ubuntu fonts"
+  ```
 
-## Ghostty Terminal
-
-Ghostty is configured as the default terminal with:
-- Font: JetBrains Mono 12pt
-- Default fullscreen mode
-- Custom keybindings matching previous terminal setup:
-  - `Ctrl+T`: New tab
-  - `Ctrl+V`: Copy to clipboard
-  - `Ctrl+B`: Paste from clipboard
-  - `Alt+Left/Right`: Switch tabs
-  - `Ctrl+W`: Close tab
-
-Configuration file: `ghostty/config`
+The `make desktop` command will automatically install all fonts from the repository.
 
 ## Swap
 - Create swap file if not already done
@@ -133,8 +137,8 @@ key <CAPS> {};
 - install extensions:
     - Emoji Selector by Maestroschan
     - dash to panel by charlesg99
-    - gtk title bar by velitasali OR no titlebar when maximized OR pixelsaver
-    - just perfection by JustPerfection
+    - **For title bar:** Use "Just Perfection" extension and enable "Hide Window Title Bar on Maximized" OR use "Pixel Saver" extension
+    - just perfection by JustPerfection (recommended for title bar management)
     - escape overview by rael
     - start overlay in application view by hex_cz or tmk
     - alphabetical app grid by stuartheyhurst

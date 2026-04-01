@@ -25,6 +25,7 @@ sudo apt install -y \
     gnome-paint \
     gnome-screenshot \
     gnome-system-log \
+    gnome-terminal \
     gnome-tweaks \
     nautilus \
     simplescreenrecorder \
@@ -39,7 +40,15 @@ sudo apt -f -y install
 ## install: font
 # Install fonts from git repository
 sudo mkdir -p /usr/local/share/fonts/truetype/jetbrains-mono
-sudo cp -r $dotfile_dir_absolute_path/fonts/jetbrains-mono/*.ttf /usr/local/share/fonts/truetype/jetbrains-mono/
+sudo mkdir -p /usr/local/share/fonts/truetype/dejavu
+sudo mkdir -p /usr/local/share/fonts/truetype/ubuntu
+
+# Copy fonts to system
+sudo cp -r $dotfile_dir_absolute_path/fonts/jetbrains-mono/*.ttf /usr/local/share/fonts/truetype/jetbrains-mono/ 2>/dev/null || true
+sudo cp -r $dotfile_dir_absolute_path/fonts/dejavu/*.ttf /usr/local/share/fonts/truetype/dejavu/ 2>/dev/null || true
+sudo cp -r $dotfile_dir_absolute_path/fonts/ubuntu/*.ttf /usr/local/share/fonts/truetype/ubuntu/ 2>/dev/null || true
+
+# Refresh font cache
 sudo fc-cache -f -v
 
 sudo apt install -y \
@@ -49,10 +58,11 @@ sudo apt install -y \
     fonts-liberation \
     ttf-ancient-fonts
 
-# chrome
-wget -q -O /tmp/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
-sudo apt -f -y install
+# brave browser
+wget -q -O /tmp/brave-browser_current_amd64.deb https://github.com/brave/brave-browser/releases/latest/download/brave-browser_current_amd64.deb || \
+    curl -fsSL https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/brave-browser-archive-keyring.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list && \
+    sudo apt update && sudo apt install -y brave-browser
 
 # dbgate
 wget -q -O /tmp/dbgate.deb https://github.com/dbgate/dbgate/releases/latest/download/dbgate-latest.deb
@@ -82,6 +92,11 @@ sudo apt -f -y install
 # micro
 wget -q -O /tmp/micro.deb https://github.com/zyedidia/micro/releases/download/v2.0.11/micro-2.0.11-amd64.deb
 sudo dpkg -i /tmp/micro.deb
+sudo apt -f -y install
+
+# rambox
+curl -sSL "https://rambox.app/api/download?os=linux&package=deb" --output /tmp/rambox.deb
+sudo dpkg -i /tmp/rambox.deb
 sudo apt -f -y install
 
 # subl
