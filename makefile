@@ -203,7 +203,7 @@ swap: ## create swap file if not already done ex: make swap size=8G
 
 ### next is for contribuing
 
-test-qa: ## run QA tests to validate all changes
+test-qa: ## run integration tests (designed to run inside Docker container)
 	bash ./scripts/test-qa.sh
 
 build: ## build Docker image - make build version=trixie (default: trixie)
