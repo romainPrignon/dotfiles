@@ -1,5 +1,8 @@
 .PHONY: vscode
 
+# Default Debian version for Docker build
+version ?= trixie
+
 install: ## install all packages, runtimes,...
 	sudo -u romainprignon bash ./scripts/install.sh 2>&1 | tee ./logs/install.log
 
@@ -200,8 +203,11 @@ swap: ## create swap file if not already done ex: make swap size=8G
 
 ### next is for contribuing
 
-build: ## make build version=focal
+test-qa: ## run QA tests to validate all changes
+	bash ./scripts/test-qa.sh
+
+build: ## build Docker image - make build version=trixie (default: trixie)
 	docker build -t romainprignon/dotfiles:${version} --build-arg version=${version} .
 
-qa:
+qa: ## run QA in Docker - make qa version=trixie (default: trixie)
 	docker run --rm -it romainprignon/dotfiles:${version}
