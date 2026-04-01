@@ -25,6 +25,7 @@ update-desktop:
 		vlc
 
 completions:
+	# bash completions
 	gh completion -s bash > gh
 	sudo mv gh /etc/bash_completion.d/gh
 	npm completion > npm
@@ -35,6 +36,15 @@ completions:
 	sudo mv kubectl /etc/bash_completion.d/kubectl
 	poetry completions bash > poetry
 	sudo mv poetry /etc/bash_completion.d/poetry
+	# zsh completions
+	gh completion -s zsh > _gh
+	sudo mv _gh /usr/local/share/zsh/site-functions/_gh
+	deno completions zsh > _deno
+	sudo mv _deno /usr/local/share/zsh/site-functions/_deno
+	kubectl completion zsh > _kubectl
+	sudo mv _kubectl /usr/local/share/zsh/site-functions/_kubectl
+	poetry completions zsh > _poetry
+	sudo mv _poetry /usr/local/share/zsh/site-functions/_poetry
 
 
 
