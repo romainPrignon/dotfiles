@@ -50,7 +50,6 @@ sudo apt install -y \
     net-tools \
     openssl \
     pv \
-    resolvconf \
     shellcheck \
     snapd \
     sqlite3 \

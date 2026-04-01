@@ -8,8 +8,6 @@ home_dir_absolute_path="/home/$user"
 
 cd $home_dir_absolute_path
 
-sudo mkdir -p /etc/resolvconf/resolv.conf.d
-
 mkdir -p $home_dir_absolute_path/.rc/
 mkdir -p $home_dir_absolute_path/.ssh/
 mkdir -p $home_dir_absolute_path/.composer/
@@ -26,7 +24,8 @@ mkdir -p $home_dir_absolute_path/workspace/partners
 
 # system
 sudo ln -sf $dotfile_dir_absolute_path/etc/sysctl.conf /etc/sysctl.conf
-sudo ln -sf $dotfile_dir_absolute_path/etc/resolvconf/head /etc/resolvconf/resolv.conf.d/head
+sudo mkdir -p /etc/systemd/resolved.conf.d
+sudo ln -sf $dotfile_dir_absolute_path/etc/systemd/resolved.conf.d/cloudflare.conf /etc/systemd/resolved.conf.d/cloudflare.conf
 
 ln -sf $dotfile_dir_absolute_path/.rc/common.rc $home_dir_absolute_path/.rc/common.rc
 ln -sf $dotfile_dir_absolute_path/.composer/composer.json $home_dir_absolute_path/.composer/composer.json
@@ -94,7 +93,7 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 2
 sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 
 # dns
-sudo service resolvconf restart
+sudo systemctl restart systemd-resolved
 
 # tlp
 sudo systemctl enable tlp
