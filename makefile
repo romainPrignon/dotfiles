@@ -103,6 +103,69 @@ krew:
 	kubectl krew install ctx
 	kubectl krew install ns
 
+### Runtime installations (via mise) ###
+
+install-node: ## install Node.js runtime via mise
+	mise use -g node@lts
+	mise use -g node@latest
+
+install-deno: ## install Deno runtime via mise
+	mise use -g deno@latest
+
+install-go: ## install Go runtime via mise
+	mise use -g go@latest
+
+install-python: ## install Python runtime via mise
+	mise use -g python@3.12
+	mise use -g python@3.8
+
+install-poetry: ## install Poetry via mise
+	mise use -g poetry@latest
+	poetry config virtualenvs.in-project true
+
+install-rust: ## install Rust via mise
+	mise use -g rust@latest
+
+install-java: ## install Java via mise
+	mise use -g java@openjdk-17
+
+install-packer: ## install Packer via mise
+	mise use -g packer@latest
+
+install-terraform: ## install Terraform via mise
+	mise use -g terraform@latest
+
+install-gh: ## install GitHub CLI via mise
+	mise use -g github-cli@latest
+
+install-kubectl: ## install kubectl via mise
+	mise use -g kubectl@latest
+
+install-broot: ## install broot via mise
+	mise use -g broot@latest
+
+install-php: ## install PHP and Composer (via apt, not mise)
+	sudo add-apt-repository ppa:ondrej/php -y
+	sudo apt update
+	sudo apt install -y \
+		php8.1-apcu \
+		php8.1-common \
+		php8.1-cli \
+		php8.1-curl \
+		php8.1-dev \
+		php8.1-intl \
+		php8.1-mbstring \
+		php8.1-mysql \
+		php8.1-opcache \
+		php8.1-readline \
+		php8.1-sqlite3 \
+		php8.1-xdebug \
+		php8.1-xml \
+		php8.1-zip
+	curl -sSL https://getcomposer.org/installer | php -- --install-dir=~/bin --filename=composer
+
+install-all-runtimes: install-node install-deno install-go install-python install-poetry install-rust install-java install-packer install-terraform install-gh install-kubectl install-broot install-php ## install all runtimes
+
 # dedicated target so it can work with starter-machines
 snap:
 	snap install multipass

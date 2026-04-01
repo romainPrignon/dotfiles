@@ -112,17 +112,19 @@ fi
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# asdf
-[ -f $HOME/.asdf/asdf.sh ] && source $HOME/.asdf/asdf.sh
+# mise (replaces asdf)
+if [ -f "$HOME/.local/bin/mise" ]; then
+  eval "$($HOME/.local/bin/mise activate zsh)"
+fi
 
 # autocomplete
 [ -f $HOME/.zcompletions ] && source $HOME/.zcompletions
 
 # kube
-[ -f $HOME/.asdf/shims/kubectl ] && complete -o default -F __start_kubectl k
+command -v kubectl > /dev/null && complete -o default -F __start_kubectl k
 
 # broot
-[ -f $HOME/.config/broot/launcher/bash/br ] && source /home/romainprignon/.config/broot/launcher/bash/br
+[ -f $HOME/.config/broot/launcher/bash/br ] && source $HOME/.config/broot/launcher/bash/br
 
 # must be at the end
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
