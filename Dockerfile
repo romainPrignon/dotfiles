@@ -27,5 +27,4 @@ WORKDIR /home/$user/workspace/$user/dotfiles
 
 COPY --chown=$user:$user . .
 
-# Run QA tests by default
-CMD ["make", "test-qa"]
+CMD ["bash"]
