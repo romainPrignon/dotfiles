@@ -2,6 +2,8 @@
 
 set -x
 
+dotfile_dir_absolute_path="/home/romainprignon/workspace/romainprignon/dotfiles"
+
 ## install: desktop
 sudo apt install -y \
     chrome-gnome-shell \
@@ -35,6 +37,11 @@ sudo dpkg -i /tmp/ghostty.deb
 sudo apt -f -y install
 
 ## install: font
+# Install fonts from git repository
+sudo mkdir -p /usr/local/share/fonts/truetype/jetbrains-mono
+sudo cp -r $dotfile_dir_absolute_path/fonts/jetbrains-mono/*.ttf /usr/local/share/fonts/truetype/jetbrains-mono/
+sudo fc-cache -f -v
+
 sudo apt install -y \
     font-manager \
     fonts-droid-fallback \
