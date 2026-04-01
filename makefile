@@ -9,8 +9,7 @@ configure: ## configure dotfiles
 desktop: ## install gnome desktop
 	sudo -u romainprignon bash ./scripts/desktop.sh 2>&1 | tee ./logs/desktop.log
 
-configure-desktop: ## configure gnome desktop
-	gsettings set org.gnome.Terminal.Legacy.Settings headerbar false
+configure-desktop: ## configure desktop
 	sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm3/custom.conf
 
 update-desktop:
@@ -18,10 +17,10 @@ update-desktop:
 		code \
 		code-insider \
 		dbgate \
+		ghostty \
 		google-chrome-stable \
 		micro \
 		sublime-text \
-		rambox \
 		virtualbox-6.1 \
 		vlc
 

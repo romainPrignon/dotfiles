@@ -16,6 +16,7 @@ mkdir -p $home_dir_absolute_path/.composer/
 mkdir -p $home_dir_absolute_path/.config/Code/User/
 mkdir -p $home_dir_absolute_path/.config/'Code - Insiders'/User/
 mkdir -p $home_dir_absolute_path/.config/dconf/
+mkdir -p $home_dir_absolute_path/.config/ghostty/
 mkdir -p $home_dir_absolute_path/.config/gtk-3.0/
 mkdir -p $home_dir_absolute_path/.config/micro/
 mkdir -p $home_dir_absolute_path/.config/sublime-text/Packages/User/
@@ -75,8 +76,8 @@ ln -sf $dotfile_dir_absolute_path/vscode/mcp.json $home_dir_absolute_path/.confi
 ln -sf $dotfile_dir_absolute_path/codeterm/settings.json $home_dir_absolute_path/.config/'Code - Insiders'/User/settings.json
 ln -sf $dotfile_dir_absolute_path/codeterm/keybindings.json $home_dir_absolute_path/.config/'Code - Insiders'/User/keybindings.json
 
-# hyper
-ln -sf $dotfile_dir_absolute_path/.hyper.js $home_dir_absolute_path/.hyper.js
+# ghostty
+ln -sf $dotfile_dir_absolute_path/ghostty/config $home_dir_absolute_path/.config/ghostty/config
 
 # completions
 ln -sf $dotfile_dir_absolute_path/.completions $home_dir_absolute_path/.completions

@@ -23,12 +23,16 @@ sudo apt install -y \
     gnome-paint \
     gnome-screenshot \
     gnome-system-log \
-    gnome-terminal \
     gnome-tweaks \
     nautilus \
     simplescreenrecorder \
     synaptic \
     tlp
+
+# ghostty terminal
+wget -q -O /tmp/ghostty.deb https://github.com/ghostty-org/ghostty/releases/latest/download/ghostty_linux_x86_64.deb
+sudo dpkg -i /tmp/ghostty.deb
+sudo apt -f -y install
 
 ## install: font
 sudo apt install -y \
@@ -68,19 +72,9 @@ curl -sSL "https://code.visualstudio.com/sha/download?build=insider&os=linux-deb
 sudo dpkg -i /tmp/codeterm.deb
 sudo apt -f -y install
 
-# hyper
-wget -q -O /tmp/hyper.deb https://github.com/vercel/hyper/releases/download/v3.4.1/hyper_3.4.1_amd64.deb
-sudo dpkg -i /tmp/hyper.deb
-sudo apt -f -y install
-
 # micro
 wget -q -O /tmp/micro.deb https://github.com/zyedidia/micro/releases/download/v2.0.11/micro-2.0.11-amd64.deb
 sudo dpkg -i /tmp/micro.deb
-sudo apt -f -y install
-
-# rambox
-curl -sSL "https://rambox.app/api/download?os=linux&package=deb" --output /tmp/rambox.deb
-sudo dpkg -i /tmp/rambox.deb
 sudo apt -f -y install
 
 # subl
