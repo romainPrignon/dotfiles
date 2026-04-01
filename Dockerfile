@@ -1,5 +1,5 @@
 ARG version
-FROM ubuntu:$version
+FROM debian:$version
 
 ENV DEBIAN_FRONTEND noninteractive
 

@@ -38,17 +38,6 @@ sudo apt install -y \
     fonts-liberation \
     ttf-ancient-fonts
 
-## install focal fonts
-sudo apt install -y \
-    ttf-dejavu \
-    ttf-ubuntu-font-family
-
-## install jammy fonts
-sudo apt install -y \
-    fonts-dejavu \
-    fonts-ubuntu \
-    fonts-ubuntu-console
-
 # chrome
 wget -q -O /tmp/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
