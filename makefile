@@ -71,21 +71,17 @@ composer: ## install composer global deps
 
 npm: ## install npm global deps
 	npm install -g \
-		@babel/node \
-		cdktf-cli \
+		@github/copilot \
+		@google/gemini-cli \
 		depcheck \
 		git-open \
 		git-split-diffs \
 		gitmoji-cli \
 		hotel \
 		http-server \
-		pkgcount \
+		npm-check-updates \
 		pnpm \
-		thanks \
-		ts-node \
-		ts-node-dev \
-		types-checker \
-		typescript \
+		tsx \
 		zx
 
 pip: ## install python global deps
