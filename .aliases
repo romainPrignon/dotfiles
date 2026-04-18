@@ -61,3 +61,7 @@ alias mp4="youtube-dl -f 22"
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# perf
+alias boost="echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference"
+alias chill="echo balance_power | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference"
