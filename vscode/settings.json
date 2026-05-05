@@ -195,6 +195,7 @@
     // misc
     "telemetry.telemetryLevel": "off",
     "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+    "accessibility.voice.speechLanguage": "fr-FR",
     // javascript
     "javascript.suggest.completeFunctionCalls": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
@@ -256,14 +257,6 @@
             "workbench.action.toggleSidebarVisibility",
             "workbench.action.toggleAuxiliaryBar"
         ],
-        "copilotEditTabOpen": [
-            "workbench.action.toggleSidebarVisibility",
-            "workbench.action.chat.openedit"
-        ],
-        "copilotEditTabClose": [
-            "workbench.action.toggleSidebarVisibility",
-            "workbench.action.toggleAuxiliaryBar"
-        ],
         "copilotAgentTabOpen": [
             "workbench.action.toggleSidebarVisibility",
             "workbench.action.chat.openagent"
@@ -279,22 +272,6 @@
         "copilotThinkTabClose": [ // Plan mode
             "workbench.action.toggleSidebarVisibility",
             "workbench.action.toggleAuxiliaryBar"
-        ],
-        "continueTabOpen": [
-            "workbench.action.toggleSidebarVisibility",
-            "continue.focusContinueInputWithoutClear"
-        ],
-        "continueEditTabOpen": [
-            "workbench.action.toggleSidebarVisibility",
-            "continue.focusEditWithoutClear"
-        ],
-        "continueEditTabClose": [
-            "workbench.action.toggleSidebarVisibility",
-            "workbench.action.closeAuxiliaryBar"
-        ],
-        "continueTabClose": [
-            "workbench.action.toggleSidebarVisibility",
-            "workbench.action.closeAuxiliaryBar"
         ],
         "terminalOpen": [
             "workbench.action.closeSidebar",
@@ -348,7 +325,7 @@
     "githubPullRequests.focusedMode": "multiDiff",
     "githubPullRequests.pullBranch": "never",
     // copilot
-    "github.copilot.editor.enableAutoCompletions": false, // when true, use ctrl+i to trigger
+    "github.copilot.editor.enableAutoCompletions": false, // when true, use ctrl+shift+i to trigger
     "github.copilot.nextEditSuggestions.enabled": false,
     "github.copilot.chat.codesearch.enabled": true,
     "github.copilot.chat.followUps": "never",
@@ -365,6 +342,7 @@
     //         "file": ".prompts/review.prompt.md"
     //     }
     // ],
+    "chat.tips.enabled": false,
     "chat.promptFiles": true,
     "chat.promptFilesLocations": {
         ".github/prompts": true,
@@ -374,10 +352,12 @@
     "chat.customAgentInSubagent.enabled ": true,
     "github.copilot.chat.cli.customAgents.enabled": false, // custom agent in background
     "chat.viewSessions.orientation": "stacked",
-    // continue
-    "continue.enableTabAutocomplete": true,
-    "continue.showInlineTip": false,
-    "continue.telemetryEnabled": false,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false
+    }, // clash avec mon tab
     // themes
     "editor.tokenColorCustomizations": {
         "[Solarized Light]": {
@@ -806,12 +786,24 @@
             "tab.activeBorder": "#EDEDED",
             "tab.activeForeground": "#F8F8F2",
             "tab.inactiveBackground": "#313437",
-            "tab.inactiveForeground": "#F8F8F2"
+            "tab.inactiveForeground": "#F8F8F2",
+            "diffEditor.insertedLineBackground": "#28c04020",
+            "diffEditor.removedLineBackground": "#ff004420",
+            "diffEditor.insertedTextBackground": "#28c04020",
+            "diffEditor.removedTextBackground": "#ff004420"
         }
     },
     // en cours de test
     "inlineChat.enableV2": true, // jullet 2025 ca créer des tests ou des truc en plus rien a voir a coté
+    "chat.agent.sandbox.enabled": "on",
+    "chat.agent.sandbox.fileSystem.linux": {
+        "denyRead": [
+            ".env"
+        ],
+        "denyWrite": [
+            ".en*"
+        ]
+    },
     // a retester plus tard
-    "terminal.integrated.suggest.enabled": false, // clash avec mon tab
-    // a deplacer
+    "terminal.integrated.suggest.enabled": false
 }

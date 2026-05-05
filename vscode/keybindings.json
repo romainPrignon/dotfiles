@@ -341,14 +341,14 @@
         "command": "workbench.action.gotoSymbol",
         "when": "!terminalFocus"
     },
-    // {
-    //     "key": "ctrl+shift+e",
-    //     "command": "workbench.action.showAllSymbols"
-    // },
     {
-        "key": "ctrl+shift+t",
+        "key": "ctrl+shift+e",
         "command": "workbench.action.showAllSymbols"
     },
+    // {
+    //     "key": "ctrl+shift+t",
+    //     "command": "workbench.action.showAllSymbols"
+    // },
     {
         "key": "ctrl+u",
         "command": "references-view.find",
@@ -490,7 +490,7 @@
     },
     // copilot
     {
-        "key": "ctrl+k ctrl+a",
+        "key": "alt+i",
         "command": "workbench.action.chat.openInEditor",
     },
     {
@@ -507,16 +507,6 @@
         "key": "alt+a",
         "command": "macros.copilotTabClose",
         "when": "view.workbench.panel.chat.view.copilot.visible"
-    },
-    {
-        "key": "alt+i",
-        "command": "macros.copilotEditTabOpen",
-        "when": "!auxiliaryBarVisible"
-    },
-    {
-        "key": "alt+i",
-        "command": "macros.copilotEditTabClose",
-        "when": "auxiliaryBarVisible"
     },
     {
         "key": "alt+g",
@@ -559,13 +549,38 @@
         "when": "view.workbench.panel.chat.view.copilot.visible"
     },
     {
+        "key": "ctrl+m",
+        "command": "workbench.action.chat.openModelPicker",
+        "when": "inlineChatFocused"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "workbench.action.chat.history",
+        "when": "view.workbench.panel.chat.view.copilot.visible"
+    },
+    {
         "key": "ctrl+r",
         "command": "workbench.action.chat.openModePicker",
         "when": "view.workbench.panel.chat.view.copilot.visible"
     },
     {
-        "key": "ctrl+e",
+        "key": "ctrl+o",
         "command": "workbench.action.chat.attachContext",
+        "when": "view.workbench.panel.chat.view.copilot.visible"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.chat.attachContext",
+        "when": "inlineChatFocused"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.chat.forkConversation",
+        "when": "view.workbench.panel.chat.view.copilot.visible"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "workbench.action.chat.restoreCheckpoint",
         "when": "view.workbench.panel.chat.view.copilot.visible"
     },
     {
@@ -591,46 +606,5 @@
     {
         "key": "ctrl+shift+i",
         "command": "editor.action.inlineSuggest.trigger"
-    },
-    // continue
-    // {
-    //     "key": "ctrl+l",
-    //     "command": "continue.newSession",
-    //     "when": "activeAuxiliary === 'workbench.view.extension.continue'"
-    // },
-    // {
-    //     "key": "ctrl+i",
-    //     "command": "editor.action.inlineSuggest.trigger",
-    //     "when": "editorTextFocus && !github.copilot.activated"
-    // },
-    // {
-    //     "key": "alt+a",
-    //     "command": "macros.continueTabOpen",
-    //     "when": "activeAuxiliary !== 'workbench.view.extension.continue'"
-    // },
-    // {
-    //     "key": "alt+a",
-    //     "command": "macros.continueTabClose",
-    //     "when": "activeAuxiliary === 'workbench.view.extension.continue'"
-    // },
-    // {
-    //     "key": "alt+i",
-    //     "command": "macros.continueEditTabOpen",
-    //     "when": "activeAuxiliary !== 'workbench.view.extension.continue'"
-    // },
-    // {
-    //     "key": "alt+i",
-    //     "command": "macros.continueEditTabClose",
-    //     "when": "activeAuxiliary === 'workbench.view.extension.continue'"
-    // },
-    // {
-    //     "key": "ctrl+enter",
-    //     "command": "continue.acceptDiff",
-    //     "when": "continue.diffVisible"
-    // },
-    // {
-    //     "key": "ctrl+backspace",
-    //     "command": "continue.rejectDiff",
-    //     "when": "continue.diffVisible"
-    // },
+    }
 ]
