@@ -30,6 +30,8 @@ completions:
 	sudo mv gh /etc/bash_completion.d/gh
 	npm completion > npm
 	sudo mv npm /etc/bash_completion.d/npm
+	pnpm completion bash > pnpm
+	sudo mv pnpm /etc/bash_completion.d/pnpm
 	deno completions bash > deno
 	sudo mv deno /etc/bash_completion.d/deno
 	kubectl completion bash > kubectl

@@ -30,6 +30,7 @@ sudo ln -sf $dotfile_dir_absolute_path/etc/resolvconf/head /etc/resolvconf/resol
 ln -sf $dotfile_dir_absolute_path/.rc/common.rc $home_dir_absolute_path/.rc/common.rc
 ln -sf $dotfile_dir_absolute_path/.composer/composer.json $home_dir_absolute_path/.composer/composer.json
 ln -sf $dotfile_dir_absolute_path/.npmrc $home_dir_absolute_path/.npmrc
+ln -sf $dotfile_dir_absolute_path/.config/pnpm/config.yaml $home_dir_absolute_path/.config/pnpm/config.yaml
 ln -sf $dotfile_dir_absolute_path/scripts $home_dir_absolute_path/scripts
 ln -sf $dotfile_dir_absolute_path/.ssh/config $home_dir_absolute_path/.ssh/config
 ln -sf $dotfile_dir_absolute_path/.vimrc $home_dir_absolute_path/.vimrc
