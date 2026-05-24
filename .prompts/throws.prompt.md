@@ -1,1 +1,0 @@
-add jsdoc for the selected code. add ONLY @throws directive and nothing else.

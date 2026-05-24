@@ -1,5 +1,4 @@
 # Global git ignore
 .idea/
-.prompts/
 .vscode/
 node_modules/

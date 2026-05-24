@@ -21,6 +21,8 @@ mkdir -p $home_dir_absolute_path/.config/micro/
 mkdir -p $home_dir_absolute_path/.config/sublime-text/Packages/User/
 mkdir -p $home_dir_absolute_path/sandbox
 mkdir -p $home_dir_absolute_path/workspace/partners
+mkdir -p $home_dir_absolute_path/.agents/
+mkdir -p $home_dir_absolute_path/.copilot/
 #mkdir -p $home_dir_absolute_path/workspace/go
 
 # system
@@ -82,6 +84,15 @@ ln -sf $dotfile_dir_absolute_path/.hyper.js $home_dir_absolute_path/.hyper.js
 # completions
 ln -sf $dotfile_dir_absolute_path/.completions $home_dir_absolute_path/.completions
 ln -sf $dotfile_dir_absolute_path/.zcompletions $home_dir_absolute_path/.zcompletions
+
+# ai
+rm -rf $home_dir_absolute_path/.copilot/instructions
+ln -sf $dotfile_dir_absolute_path/.copilot/instructions $home_dir_absolute_path/.copilot/instructions
+rm -rf $home_dir_absolute_path/.config/Code/User/prompts
+ln -sf $dotfile_dir_absolute_path/.config/Code/User/prompts $home_dir_absolute_path/.config/Code/User/prompts
+rm -rf $home_dir_absolute_path/.agents/skills
+ln -sf $dotfile_dir_absolute_path/.agents/skills $home_dir_absolute_path/.agents/skills
+
 
 # fzf
 bash $HOME/.fzf/install --key-bindings --completion --no-update-rc
