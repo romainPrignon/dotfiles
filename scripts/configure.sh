@@ -8,14 +8,13 @@ home_dir_absolute_path="/home/$user"
 
 cd $home_dir_absolute_path
 
-sudo mkdir -p /etc/resolvconf/resolv.conf.d
-
 mkdir -p $home_dir_absolute_path/.rc/
 mkdir -p $home_dir_absolute_path/.ssh/
 mkdir -p $home_dir_absolute_path/.composer/
 mkdir -p $home_dir_absolute_path/.config/Code/User/
 mkdir -p $home_dir_absolute_path/.config/'Code - Insiders'/User/
 mkdir -p $home_dir_absolute_path/.config/dconf/
+mkdir -p $home_dir_absolute_path/.config/ghostty/
 mkdir -p $home_dir_absolute_path/.config/gtk-3.0/
 mkdir -p $home_dir_absolute_path/.config/micro/
 mkdir -p $home_dir_absolute_path/.config/sublime-text/Packages/User/
@@ -27,7 +26,8 @@ mkdir -p $home_dir_absolute_path/.copilot/
 
 # system
 sudo ln -sf $dotfile_dir_absolute_path/etc/sysctl.conf /etc/sysctl.conf
-sudo ln -sf $dotfile_dir_absolute_path/etc/resolvconf/head /etc/resolvconf/resolv.conf.d/head
+sudo mkdir -p /etc/systemd/resolved.conf.d
+sudo ln -sf $dotfile_dir_absolute_path/etc/systemd/resolved.conf.d/cloudflare.conf /etc/systemd/resolved.conf.d/cloudflare.conf
 
 ln -sf $dotfile_dir_absolute_path/.rc/common.rc $home_dir_absolute_path/.rc/common.rc
 ln -sf $dotfile_dir_absolute_path/.composer/composer.json $home_dir_absolute_path/.composer/composer.json
@@ -78,8 +78,8 @@ ln -sf $dotfile_dir_absolute_path/vscode/mcp.json $home_dir_absolute_path/.confi
 ln -sf $dotfile_dir_absolute_path/codeterm/settings.json $home_dir_absolute_path/.config/'Code - Insiders'/User/settings.json
 ln -sf $dotfile_dir_absolute_path/codeterm/keybindings.json $home_dir_absolute_path/.config/'Code - Insiders'/User/keybindings.json
 
-# hyper
-ln -sf $dotfile_dir_absolute_path/.hyper.js $home_dir_absolute_path/.hyper.js
+# ghostty
+ln -sf $dotfile_dir_absolute_path/ghostty/config $home_dir_absolute_path/.config/ghostty/config
 
 # completions
 ln -sf $dotfile_dir_absolute_path/.completions $home_dir_absolute_path/.completions
@@ -105,7 +105,7 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 2
 sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 
 # dns
-sudo service resolvconf restart
+sudo systemctl restart systemd-resolved
 
 # tlp
 sudo systemctl enable tlp

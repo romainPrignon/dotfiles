@@ -127,14 +127,16 @@ export GPG_TTY=$(tty)
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# asdf
-[ -f $HOME/.asdf/asdf.sh ] && source $HOME/.asdf/asdf.sh
+# mise (replaces asdf)
+if [ -f "$HOME/.local/bin/mise" ]; then
+  eval "$($HOME/.local/bin/mise activate bash)"
+fi
 
 # autocomplete
 [ -f $HOME/.completions ] && source $HOME/.completions
 
 # kube
-[ -f $HOME/.asdf/shims/kubectl ] && complete -o default -F __start_kubectl k
+command -v kubectl > /dev/null && complete -o default -F __start_kubectl k
 
 # broot
-[ -f $HOME/.config/broot/launcher/bash/br ] && source /home/romainprignon/.config/broot/launcher/bash/br
+[ -f $HOME/.config/broot/launcher/bash/br ] && source $HOME/.config/broot/launcher/bash/br

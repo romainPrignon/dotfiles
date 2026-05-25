@@ -2,6 +2,8 @@
 
 set -x
 
+dotfile_dir_absolute_path="/home/romainprignon/workspace/romainprignon/dotfiles"
+
 ## install: desktop
 sudo apt install -y \
     chrome-gnome-shell \
@@ -30,7 +32,25 @@ sudo apt install -y \
     synaptic \
     tlp
 
+# ghostty terminal
+wget -q -O /tmp/ghostty.deb https://github.com/ghostty-org/ghostty/releases/latest/download/ghostty_linux_x86_64.deb
+sudo dpkg -i /tmp/ghostty.deb
+sudo apt -f -y install
+
 ## install: font
+# Install fonts from git repository
+sudo mkdir -p /usr/local/share/fonts/truetype/jetbrains-mono
+sudo mkdir -p /usr/local/share/fonts/truetype/dejavu
+sudo mkdir -p /usr/local/share/fonts/truetype/ubuntu
+
+# Copy fonts to system
+sudo cp -r $dotfile_dir_absolute_path/fonts/jetbrains-mono/*.ttf /usr/local/share/fonts/truetype/jetbrains-mono/ 2>/dev/null || true
+sudo cp -r $dotfile_dir_absolute_path/fonts/dejavu/*.ttf /usr/local/share/fonts/truetype/dejavu/ 2>/dev/null || true
+sudo cp -r $dotfile_dir_absolute_path/fonts/ubuntu/*.ttf /usr/local/share/fonts/truetype/ubuntu/ 2>/dev/null || true
+
+# Refresh font cache
+sudo fc-cache -f -v
+
 sudo apt install -y \
     font-manager \
     fonts-droid-fallback \
@@ -38,21 +58,11 @@ sudo apt install -y \
     fonts-liberation \
     ttf-ancient-fonts
 
-## install focal fonts
-sudo apt install -y \
-    ttf-dejavu \
-    ttf-ubuntu-font-family
-
-## install jammy fonts
-sudo apt install -y \
-    fonts-dejavu \
-    fonts-ubuntu \
-    fonts-ubuntu-console
-
-# chrome
-wget -q -O /tmp/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
-sudo apt -f -y install
+# brave browser
+wget -q -O /tmp/brave-browser_current_amd64.deb https://github.com/brave/brave-browser/releases/latest/download/brave-browser_current_amd64.deb || \
+    curl -fsSL https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/brave-browser-archive-keyring.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list && \
+    sudo apt update && sudo apt install -y brave-browser
 
 # dbgate
 wget -q -O /tmp/dbgate.deb https://github.com/dbgate/dbgate/releases/latest/download/dbgate-latest.deb
@@ -77,11 +87,6 @@ sudo apt -f -y install
 # codeterm
 curl -sSL "https://code.visualstudio.com/sha/download?build=insider&os=linux-deb-x64" --output /tmp/codeterm.deb
 sudo dpkg -i /tmp/codeterm.deb
-sudo apt -f -y install
-
-# hyper
-wget -q -O /tmp/hyper.deb https://github.com/vercel/hyper/releases/download/v3.4.1/hyper_3.4.1_amd64.deb
-sudo dpkg -i /tmp/hyper.deb
 sudo apt -f -y install
 
 # micro

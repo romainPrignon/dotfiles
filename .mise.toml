@@ -1,0 +1,22 @@
+# mise configuration file with default runtime versions
+# These versions can be overridden by setting environment variables or using mise command-line options
+
+[tools]
+node = "lts"
+python = ["3.12", "3.8"]
+go = "latest"
+rust = "latest"
+deno = "latest"
+java = "openjdk-17"
+poetry = "latest"
+packer = "latest"
+terraform = "latest"
+github-cli = "latest"
+kubectl = "latest"
+broot = "latest"
+php = "8.1"
+composer = "latest"
+docker = "latest"
+
+[settings]
+experimental = true

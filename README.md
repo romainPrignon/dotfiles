@@ -1,13 +1,15 @@
 # Usage
 
 > git clone https://github.com/romainprignon/dotfiles
-> git clone https://frama.likn/rp-dot
+> git clone https://frama.link/rp-dot
 
-## dependencies
+## Dependencies
  - git
  - make
 
-## auto
+## Installation (Debian 13+)
+
+### Automated Setup
 ```bash
 make install
 make desktop
@@ -17,12 +19,88 @@ sudo reboot
 make snap
 ```
 
-# manual
+### Runtime Installation (via mise)
+Runtimes are managed via [mise](https://mise.jdx.dev/) and can be installed individually:
 
-Apply what you need from the `makefile`
-- completions
+**Note:** mise needs to be installed first (done automatically by `make install`). After installation, mise will download and compile tools on first use.
+
+Default versions are configured in `.mise.toml` but can be overridden:
+```bash
+# Use default versions
+make install-node         # Install Node.js (LTS + latest)
+
+# Override version
+NODE_VERSION=20.0.0 make install-node
+PHP_VERSION=8.2 make install-php
+```
+
+Available runtime installations:
+```bash
+make install-node         # Install Node.js (LTS + latest)
+make install-python       # Install Python 3.12 and 3.8
+make install-go           # Install Go
+make install-rust         # Install Rust
+make install-deno         # Install Deno
+make install-java         # Install Java OpenJDK 17
+make install-poetry       # Install Poetry
+make install-php          # Install PHP 8.1 + Composer (via mise)
+make install-docker       # Install Docker (via mise)
+make install-terraform    # Install Terraform
+make install-packer       # Install Packer
+make install-gh           # Install GitHub CLI
+make install-kubectl      # Install kubectl
+make install-broot        # Install broot
+
+# Or install all runtimes at once
+make install-all-runtimes
+```
+
+## Manual Configuration
+
+Apply what you need from the `makefile`:
+- completions (bash and zsh)
 - pip
+- npm
+- composer
 - ...
+
+## Git SSH Signing
+
+Configure SSH signing for Git commits:
+
+1. Generate an SSH key (if you don't have one):
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+2. Add your SSH public key to GitHub:
+   - Go to GitHub Settings > SSH and GPG keys
+   - Add a new SSH key (Authentication key)
+   - Also add it as a Signing key
+
+3. The `.gitconfig` is already configured to use SSH signing:
+```ini
+[user]
+    signingkey = ~/.ssh/id_ed25519.pub
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
+```
+
+## Fonts
+
+Fonts are stored in the git repository for version control and offline installation:
+- **JetBrains Mono**: Already included in `fonts/jetbrains-mono/`
+- **DejaVu and Ubuntu fonts**: Download with the provided script:
+  ```bash
+  cd fonts
+  ./download-fonts.sh
+  git add .
+  git commit -m "Add DejaVu and Ubuntu fonts"
+  ```
+
+The `make desktop` command will automatically install all fonts from the repository.
 
 ## Swap
 - Create swap file if not already done
@@ -34,8 +112,7 @@ make swap size=8G
 ## Ntp
 - sudo timedatectl set-timezone My/Timezone
 
-
-## Hostname
+## Hostname (if needed)
 - sudo hostnamectl set-hostname MY_HOSTNAME
 - micro /etc/hosts
 - micro /etc/hostname
@@ -60,8 +137,8 @@ key <CAPS> {};
 - install extensions:
     - Emoji Selector by Maestroschan
     - dash to panel by charlesg99
-    - gtk title bar by velitasali OR no titlebar when maximized (focal) OR pixelsaver (focal)
-    - just perfection by JustPerfection
+    - **For title bar:** Use "Just Perfection" extension and enable "Hide Window Title Bar on Maximized" OR use "Pixel Saver" extension
+    - just perfection by JustPerfection (recommended for title bar management)
     - escape overview by rael
     - start overlay in application view by hex_cz or tmk
     - alphabetical app grid by stuartheyhurst
@@ -79,7 +156,6 @@ key <CAPS> {};
     ```bash
     make configure-desktop
     ```
-    /!\ setting headers might not work on ubuntu 22.04
 
 ## GRUB
 - sudo nano /etc/default/grub
