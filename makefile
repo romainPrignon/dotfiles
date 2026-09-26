@@ -633,7 +633,7 @@ install-ai-gemini:
 
 install-ai-cli-gemini:
 	@echo ====== install-ai-cli-gemini ======
-	curl -fsSL https://antigravity.google/cli/install.sh --skip-aliases --skip-path | bash
+	mise use -g antigravity-cli@latest
 
 install-ai-cli-copilot:
 	@echo ====== install-ai-cli-copilot ======
