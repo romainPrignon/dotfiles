@@ -633,7 +633,7 @@ install-ai-gemini:
 
 install-ai-cli-gemini:
 	@echo ====== install-ai-cli-gemini ======
-	curl -fsSL https://antigravity.google/cli/install.sh | bash
+	curl -fsSL https://antigravity.google/cli/install.sh --skip-aliases --skip-path | bash
 
 install-ai-cli-copilot:
 	@echo ====== install-ai-cli-copilot ======
@@ -973,9 +973,9 @@ configure-ai-all:
 
 configure-ai-copilot:
 	@echo ====== configure-ai-copilot ======
-	ln -sfn ${HOME}/.dotfiles/agents/agents ${HOME}/.copilot/agents
 	ln -sfn ${HOME}/.dotfiles/copilot/instructions ${HOME}/.copilot/instructions
-	ln -sfn ${HOME}/.dotfiles/copilot/prompts ${HOME}/.config/Code/User/prompts
+	cp -rf ${HOME}/.dotfiles/agents/agents/. ${HOME}/.config/Code/User/prompts/
+	cp -rf ${HOME}/.dotfiles/copilot/prompts/. ${HOME}/.config/Code/User/prompts/
 
 configure-ai-gemini:
 	@echo ====== configure-ai-gemini ======
