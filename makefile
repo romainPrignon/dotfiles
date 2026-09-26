@@ -616,13 +616,12 @@ install-ai-all:
 
 install-ai-agent:
 	@echo ====== install-ai-agent ======
-	mkdir -p ${HOME}/.agents/agents/
 # 	echo installing agent a...
 # 	echo installing agent b...
 
 install-ai-skill:
 	@echo ====== install-ai-skill ======
-	mkdir -p ${HOME}/.agents/skills/
+# 	echo installing skill a...
 
 install-ai-copilot:
 	@echo ====== install-ai-copilot ======
