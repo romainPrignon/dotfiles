@@ -107,6 +107,7 @@ sync:
 ###### bootstrap ######
 
 bootstrap-all:
+	@echo ====== bootstrap-all ======
 	mkdir -p ${HOME}/app
 	mkdir -p ${HOME}/bin
 	mkdir -p ${HOME}/workspace
@@ -167,6 +168,7 @@ install-lib-ubuntu-noble install-lib-ubuntu-resolute:
 		software-properties-common
 
 install-shell-all:
+	@echo ====== install-shell-all ======
 	mkdir -p ${HOME}/.env.d/
 	touch ${HOME}/.env.d/optional
 	mkdir -p ${HOME}/.alias.d/
@@ -334,6 +336,7 @@ install-pkger-krew:
 	mise use -g krew@latest
 
 install-pkg-docker:
+	@echo ====== install-pkg-docker ======
 	sg docker -c "docker pull ${DIST}:${VERSION}"
 	sg docker -c "docker pull node:lts"
 	sg docker -c "docker pull node:latest"
@@ -342,6 +345,7 @@ install-pkg-docker:
 	sg docker -c "docker pull postgres:latest"
 
 install-pkg-node:
+	@echo ====== install-pkg-node ======
 	npm install -g \
 		depcheck \
 		gitmoji-cli \
@@ -353,6 +357,7 @@ install-pkg-node:
 		zx
 
 install-pkg-python:
+	@echo ====== install-pkg-python ======
 	uv tool install --force ansible
 	uv tool install --force git-machete
 	uv tool install --force gnome-extensions-cli
@@ -360,6 +365,7 @@ install-pkg-python:
 	uv tool install --force pyinfra
 
 install-pkg-krew:
+	@echo ====== install-pkg-krew ======
 	[ -x "$$(command -v kubectl-ctx)" ] || krew install ctx
 	[ -x "$$(command -v kubectl-ns)" ] || krew install ns
 
@@ -407,6 +413,7 @@ install-font:
 	$(MAKE) install-font-${DIST}-${VERSION}
 
 install-font-ubuntu-noble install-font-ubuntu-resolute:
+	@echo ====== install-font-ubuntu ======
 	sudo apt update
 	sudo apt install -y \
 		fonts-ubuntu-console
@@ -473,6 +480,7 @@ install-app-virtualbox:
 	$(MAKE) install-app-virtualbox-${DIST}-${VERSION}
 
 install-app-virtualbox-debian-trixie:
+	@echo ====== install-app-virtualbox-debian ======
 	sudo apt update
 	sudo apt install -y linux-headers-amd64
 	sudo apt install -y libqt6core6t64 libqt6widgets6 libqt6gui6 libqt6dbus6 libqt6help6 libqt6printsupport6 libqt6statemachine6 libqt6xml6
@@ -481,6 +489,7 @@ install-app-virtualbox-debian-trixie:
 	sudo apt -f -y install
 
 install-app-virtualbox-debian-bookworm:
+	@echo ====== install-app-virtualbox-debian ======
 	sudo apt update
 	sudo apt install -y linux-headers-amd64
 	curl -fsSL -o /tmp/virtualbox.deb https://download.virtualbox.org/virtualbox/7.2.16/virtualbox-7.2_7.2.16-174877~Debian~bookworm_amd64.deb
@@ -488,6 +497,7 @@ install-app-virtualbox-debian-bookworm:
 	sudo apt -f -y install
 
 install-app-virtualbox-ubuntu-noble:
+	@echo ====== install-app-virtualbox-ubuntu ======
 	sudo apt update
 	sudo apt install -y linux-headers-generic
 	sudo apt install -y libqt6core6t64 libqt6widgets6 libqt6gui6 libqt6dbus6 libqt6help6 libqt6printsupport6 libqt6statemachine6 libqt6xml6
@@ -496,6 +506,7 @@ install-app-virtualbox-ubuntu-noble:
 	sudo apt -f -y install
 
 install-app-virtualbox-ubuntu-resolute:
+	@echo ====== install-app-virtualbox-ubuntu ======
 	sudo apt update
 	sudo apt install -y linux-headers-generic
 	sudo apt install -y libqt6core6 libqt6widgets6 libqt6gui6 libqt6dbus6 libqt6help6 libqt6printsupport6 libqt6statemachine6 libqt6xml6
@@ -517,6 +528,7 @@ install-app-vscode:
 	$(MAKE) install-vscode-ext
 
 install-vscode-ext-all:
+	@echo ====== install-vscode-ext-all ======
 	code --install-extension EditorConfig.EditorConfig
 	code --install-extension ctf0.macros
 	code --install-extension ms-vscode-remote.remote-containers
@@ -528,21 +540,25 @@ install-vscode-ext-all:
 	code --install-extension hashicorp.terraform
 
 install-vscode-ext-node:
+	@echo ====== install-vscode-ext-node ======
 	code --install-extension chakrounanas.turbo-console-log
 	code --install-extension dbaeumer.vscode-eslint
 	code --install-extension oxc.oxc-vscode
 
 install-vscode-ext-python:
+	@echo ====== install-vscode-ext-python ======
 	code --install-extension charliermarsh.ruff
 	code --install-extension ms-python.python
 	code --install-extension ms-python.vscode-pylance
 
 install-vscode-ext-gh:
+	@echo ====== install-vscode-ext-gh ======
 	code --install-extension GitHub.remotehub
 	code --install-extension GitHub.vscode-github-actions
 	code --install-extension github.vscode-pull-request-github
 
 install-vscode-ext-ai:
+	@echo ====== install-vscode-ext-ai ======
 	code --install-extension ms-vscode.vscode-speech
 	code --install-extension ms-vscode.vscode-speech-language-pack-fr-fr
 
@@ -555,6 +571,7 @@ install-app-vscode-insiders:
 	$(MAKE) install-vscode-insiders-ext
 
 install-vscode-insiders-ext-all:
+	@echo ====== install-vscode-insiders-ext-all ======
 	code-insiders --install-extension ctf0.macros
 	code-insiders --install-extension foam.foam-vscode
 	code-insiders --install-extension mushan.vscode-paste-image
@@ -565,21 +582,25 @@ install-app-insync:
 	$(MAKE) install-app-insync-${DIST}-${VERSION}
 
 install-app-insync-debian-trixie:
+	@echo ====== install-app-insync-debian ======
 	curl -fsSL -o /tmp/insync.deb https://cdn.insynchq.com/builds/linux/3.9.11.60043/insync_3.9.11.60043-trixie_amd64.deb
 	sudo dpkg -i /tmp/insync.deb
 	sudo apt -f -y install
 
 install-app-insync-debian-bookworm:
+	@echo ====== install-app-insync-debian ======
 	curl -fsSL -o /tmp/insync.deb https://cdn.insynchq.com/builds/linux/3.9.11.60043/insync_3.9.11.60043-bookworm_amd64.deb
 	sudo dpkg -i /tmp/insync.deb
 	sudo apt -f -y install
 
 install-app-insync-ubuntu-noble:
+	@echo ====== install-app-insync-ubuntu ======
 	curl -fsSL -o /tmp/insync.deb https://cdn.insynchq.com/builds/linux/3.9.11.60043/insync_3.9.11.60043-noble_amd64.deb
 	sudo dpkg -i /tmp/insync.deb
 	sudo apt -f -y install
 
 install-app-insync-ubuntu-resolute:
+	@echo ====== install-app-insync-ubuntu ======
 	curl -fsSL -o /tmp/insync.deb https://cdn.insynchq.com/builds/linux/3.9.11.60043/insync_3.9.11.60043-resolute_amd64.deb
 	sudo dpkg -i /tmp/insync.deb
 	sudo apt -f -y install
@@ -590,29 +611,36 @@ install-app-yaak:
 	chmod a+x ${HOME}/app/yaak.AppImage
 
 install-ai-all:
+	@echo ====== install-ai-all ======
 	mkdir -p ${HOME}/.agents/
 
 install-ai-agent:
+	@echo ====== install-ai-agent ======
 	mkdir -p ${HOME}/.agents/agents/
 # 	echo installing agent a...
 # 	echo installing agent b...
 
 install-ai-skill:
+	@echo ====== install-ai-skill ======
 	mkdir -p ${HOME}/.agents/skills/
 
 install-ai-copilot:
+	@echo ====== install-ai-copilot ======
 	mkdir -p ${HOME}/.copilot/
 	ln -sfn ${HOME}/.agents/agents ${HOME}/.copilot/agents
 
 install-ai-gemini:
+	@echo ====== install-ai-gemini ======
 	mkdir -p ${HOME}/.gemini/config/
 	ln -sfn ${HOME}/.agents/agents ${HOME}/.gemini/config/agents
 	ln -sfn ${HOME}/.agents/skills ${HOME}/.gemini/skills
 
 install-ai-cli-gemini:
+	@echo ====== install-ai-cli-gemini ======
 	curl -fsSL https://antigravity.google/cli/install.sh | bash
 
 install-ai-cli-copilot:
+	@echo ====== install-ai-cli-copilot ======
 	npm install -g \
 		@github/copilot
 
@@ -644,9 +672,11 @@ update-cli-bin:
 	bin update
 
 update-cli-fzf:
+	@echo ====== update-cli-fzf ======
 	mise upgrade fzf
 
 update-cli-micro:
+	@echo ====== update-cli-micro ======
 	mise upgrade micro
 
 update-cli-gh:
@@ -788,18 +818,22 @@ update-app-vscode-insiders:
 ###### configure ######
 
 configure-system-all:
+	@echo ====== configure-system-all ======
 	sudo ln -sf ${HOME}/.dotfiles/system/sysctl.conf /etc/sysctl.conf
 	sudo sysctl --system
 
 configure-system-profile:
+	@echo ====== configure-system-profile ======
 	ln -sf ${HOME}/.dotfiles/system/.inputrc ${HOME}/.inputrc
 	ln -sf ${HOME}/.dotfiles/system/.env ${HOME}/.env
 	ln -sf ${HOME}/.dotfiles/system/.profile ${HOME}/.profile
 
 configure-system-tlp:
+	@echo ====== configure-system-tlp ======
 	sudo systemctl enable tlp
 
 configure-system-locale:
+	@echo ====== configure-system-locale ======
 	$(MAKE) configure-system-locale-${DIST}-${VERSION}
 
 configure-system-locale-debian-trixie configure-system-locale-debian-bookworm:
@@ -865,43 +899,51 @@ configure-cli-ngrok:
 	ln -sf ~/Gdrive/root/home/romainprignon/.ngrok2 ~/.ngrok2
 
 configure-runtime-kubectl:
+	@echo ====== configure-runtime-kubectl ======
 	kubectl completion bash > kubectl_completion
 	sudo mv kubectl_completion /etc/bash_completion.d/kubectl
 	ln -sf ${HOME}/.dotfiles/kube/alias ${HOME}/.alias.d/kubectl
 	ln -sf ${HOME}/.dotfiles/kube/completion ${HOME}/.completion.d/kubectl
 
 configure-pkger-npm:
+	@echo ====== configure-pkger-npm ======
 	cp ${HOME}/.dotfiles/npm/env ${HOME}/.env.d/npm
 	ln -sf ${HOME}/.dotfiles/npm/.npmrc ${HOME}/.npmrc
 	npm completion > npm_completion
 	sudo mv npm_completion /etc/bash_completion.d/npm
 
 configure-pkger-pnpm:
+	@echo ====== configure-pkger-pnpm ======
 	ln -sf ${HOME}/.dotfiles/pnpm/config.yaml ${HOME}/.config/pnpm/config.yaml
 	pnpm completion bash > pnpm_completion
 	sudo mv pnpm_completion /etc/bash_completion.d/pnpm
 
 configure-pkger-poetry:
+	@echo ====== configure-pkger-poetry ======
 	poetry config virtualenvs.in-project true
 	poetry completions bash > poetry_completion
 	sudo mv poetry_completion /etc/bash_completion.d/poetry
 
 configure-pkg-git-machete:
+	@echo ====== configure-pkg-git-machete ======
 	git-machete completion bash > git-machete_completion
 	sudo mv git-machete_completion /etc/bash_completion.d/git-machete
 
 configure-desktop:
+	@echo ====== configure-desktop ======
 	$(MAKE) configure-desktop-env
 	$(MAKE) configure-desktop-ext
 	$(MAKE) configure-browser
 	$(MAKE) configure-app
 
 configure-desktop-env:
+	@echo ====== configure-desktop-env ======
 	ln -sf ${HOME}/.dotfiles/gtk/gtk.css ${HOME}/.config/gtk-3.0/gtk.css
 	ln -sf ${HOME}/.dotfiles/gtk/gtk.css ${HOME}/.config/gtk-4.0/gtk.css
 	ln -sf ${HOME}/.dotfiles/gtk/bookmarks ${HOME}/.config/gtk-3.0/bookmarks
 
 configure-desktop-ext:
+	@echo ====== configure-desktop-ext ======
 	gnome-extensions enable AlphabeticalAppGrid@stuarthayhurst
 	gnome-extensions enable dash-to-panel@jderose9.github.com
 	gnome-extensions enable emoji-copy@felipeftn
@@ -920,28 +962,34 @@ configure-browser-brave:
 # 	brave-browser --app di
 
 configure-app-vscode:
+	@echo ====== configure-app-vscode ======
 	ln -sf ${HOME}/.dotfiles/vscode/settings.json ${HOME}/.config/Code/User/settings.json
 	ln -sf ${HOME}/.dotfiles/vscode/keybindings.json ${HOME}/.config/Code/User/keybindings.json
 
 configure-app-vscode-insiders:
+	@echo ====== configure-app-vscode-insiders ======
 	ln -sf ${HOME}/.dotfiles/insiders/settings.json ${HOME}/.config/'Code - Insiders'/User/settings.json
 	ln -sf ${HOME}/.dotfiles/insiders/keybindings.json ${HOME}/.config/'Code - Insiders'/User/keybindings.json
 
 configure-ai-all:
+	@echo ====== configure-ai-all ======
 	ln -sfn ${HOME}/.dotfiles/agents/agents ${HOME}/.agents/agents
 	ln -sfn ${HOME}/.dotfiles/agents/skills ${HOME}/.agents/skills
 
 configure-ai-copilot:
+	@echo ====== configure-ai-copilot ======
 	ln -sfn ${HOME}/.dotfiles/copilot/instructions ${HOME}/.copilot/instructions
 	ln -sfn ${HOME}/.dotfiles/copilot/prompts ${HOME}/.config/Code/User/prompts
 
 
 configure-partner:
+	@echo ====== configure-partner ======
 	ln -sf ~/Gdrive/root/home/romainprignon/workspace/partners/.gitconfig ${HOME}/workspace/partners/.gitconfig
 
 ###### dump ######
 
 dump-desktop:
+	@echo ====== dump-desktop ======
 	dconf dump /org/gnome/nautilus/ > dconf/nautilus.dconf
 	dconf dump /org/gnome/settings-daemon/ > dconf/settings-daemon.dconf
 	dconf dump /org/gnome/shell/ > dconf/shell.dconf
@@ -956,6 +1004,7 @@ dump-apt:
 ###### load ######
 
 load-desktop:
+	@echo ====== load-desktop ======
 	dconf load /org/gnome/nautilus/ < dconf/nautilus.dconf
 	dconf load /org/gnome/settings-daemon/ < dconf/settings-daemon.dconf
 	dconf load /org/gnome/shell/ < dconf/shell.dconf
@@ -999,4 +1048,5 @@ clean-pkg-python:
 ###### purge ######
 
 purge-mise:
+	@echo ====== purge-mise ======
 	mise prune -y
