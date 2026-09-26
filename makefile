@@ -43,7 +43,7 @@ configure-pkger: configure-pkger-npm configure-pkger-pnpm configure-pkger-poetry
 configure-pkg: configure-pkg-git-machete
 configure-browser: configure-browser-chrome configure-browser-brave
 configure-app: configure-app-vscode configure-app-vscode-insiders
-configure-ai: configure-ai-all configure-ai-copilot
+configure-ai: configure-ai-all configure-ai-copilot configure-ai-gemini
 
 ###### standalone ######
 
@@ -626,13 +626,10 @@ install-ai-skill:
 install-ai-copilot:
 	@echo ====== install-ai-copilot ======
 	mkdir -p ${HOME}/.copilot/
-	ln -sfn ${HOME}/.agents/agents ${HOME}/.copilot/agents
 
 install-ai-gemini:
 	@echo ====== install-ai-gemini ======
 	mkdir -p ${HOME}/.gemini/config/
-	ln -sfn ${HOME}/.agents/agents ${HOME}/.gemini/config/agents
-	ln -sfn ${HOME}/.agents/skills ${HOME}/.gemini/skills
 
 install-ai-cli-gemini:
 	@echo ====== install-ai-cli-gemini ======
@@ -972,14 +969,18 @@ configure-app-vscode-insiders:
 
 configure-ai-all:
 	@echo ====== configure-ai-all ======
-	ln -sfn ${HOME}/.dotfiles/agents/agents ${HOME}/.agents/agents
 	ln -sfn ${HOME}/.dotfiles/agents/skills ${HOME}/.agents/skills
 
 configure-ai-copilot:
 	@echo ====== configure-ai-copilot ======
+	ln -sfn ${HOME}/.dotfiles/agents/agents ${HOME}/.copilot/agents
 	ln -sfn ${HOME}/.dotfiles/copilot/instructions ${HOME}/.copilot/instructions
 	ln -sfn ${HOME}/.dotfiles/copilot/prompts ${HOME}/.config/Code/User/prompts
 
+configure-ai-gemini:
+	@echo ====== configure-ai-gemini ======
+	ln -sfn ${HOME}/.dotfiles/agents/agents ${HOME}/.gemini/config/agents
+	ln -sfn ${HOME}/.dotfiles/agents/skills ${HOME}/.gemini/skills
 
 configure-partner:
 	@echo ====== configure-partner ======
