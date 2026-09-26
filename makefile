@@ -6,9 +6,9 @@ export PATH := $(HOME)/.local/share/mise/shims:$(HOME)/.local/bin:$(PATH)
 
 ###### target ######
 bootstrap: bootstrap-all
-install: install-system install-lib install-shell install-cli install-runtime install-pkger install-pkg install-desktop install-app
+install: install-system install-lib install-shell install-cli install-runtime install-pkger install-pkg install-desktop install-app install-ai
 update: update-system update-shell update-cli update-runtime update-pkger update-pkg update-desktop update-app
-configure: configure-system configure-shell configure-cli configure-runtime configure-pkger configure-pkg configure-desktop configure-app configure-partner
+configure: configure-system configure-shell configure-cli configure-runtime configure-pkger configure-pkg configure-desktop configure-app configure-ai configure-partner
 dump: dump-desktop dump-apt
 load: load-desktop load-apt
 clean: clean-apt clean-docker clean-log clean-mise clean-pkg-node clean-pkg-python
@@ -24,6 +24,8 @@ install-browser: install-browser-chrome install-browser-brave
 install-app: install-app-dbgate install-app-rambox install-app-stacer install-app-virtualbox install-app-vlc install-app-vscode install-app-vscode-insiders install-app-insync install-app-yaak
 install-vscode-ext: install-vscode-ext-all install-vscode-ext-node install-vscode-ext-python install-vscode-ext-gh install-vscode-ext-ai
 install-vscode-insiders-ext: install-vscode-insiders-ext-all
+install-ai: install-ai-all install-ai-agent install-ai-skill install-ai-copilot install-ai-gemini install-ai-cli
+install-ai-cli: install-ai-cli-gemini install-ai-cli-copilot
 
 update-shell: update-shell-bash update-shell-zsh
 update-cli: update-cli-mise update-cli-bin update-cli-fzf update-cli-micro update-cli-gh
@@ -41,6 +43,7 @@ configure-pkger: configure-pkger-npm configure-pkger-pnpm configure-pkger-poetry
 configure-pkg: configure-pkg-git-machete
 configure-browser: configure-browser-chrome configure-browser-brave
 configure-app: configure-app-vscode configure-app-vscode-insiders
+configure-ai: configure-ai-all configure-ai-copilot
 
 ###### standalone ######
 
@@ -586,6 +589,33 @@ install-app-yaak:
 	curl -fsSL -o ${HOME}/app/yaak.AppImage https://yaak.app/releases/v2026.7.1/linux-x86_64/yaak_2026.7.1_amd64.AppImage
 	chmod a+x ${HOME}/app/yaak.AppImage
 
+install-ai-all:
+	mkdir -p ${HOME}/.agents/
+
+install-ai-agent:
+	mkdir -p ${HOME}/.agents/agents/
+# 	echo installing agent a...
+# 	echo installing agent b...
+
+install-ai-skill:
+	mkdir -p ${HOME}/.agents/skills/
+
+install-ai-copilot:
+	mkdir -p ${HOME}/.copilot/
+	ln -sfn ${HOME}/.agents/agents ${HOME}/.copilot/agents
+
+install-ai-gemini:
+	mkdir -p ${HOME}/.gemini/config/
+	ln -sfn ${HOME}/.agents/agents ${HOME}/.gemini/config/agents
+	ln -sfn ${HOME}/.agents/skills ${HOME}/.gemini/skills
+
+install-ai-cli-gemini:
+	curl -fsSL https://antigravity.google/cli/install.sh | bash
+
+install-ai-cli-copilot:
+	npm install -g \
+		@github/copilot
+
 ###### update ######
 
 update-system:
@@ -896,6 +926,15 @@ configure-app-vscode:
 configure-app-vscode-insiders:
 	ln -sf ${HOME}/.dotfiles/insiders/settings.json ${HOME}/.config/'Code - Insiders'/User/settings.json
 	ln -sf ${HOME}/.dotfiles/insiders/keybindings.json ${HOME}/.config/'Code - Insiders'/User/keybindings.json
+
+configure-ai-all:
+	ln -sfn ${HOME}/.dotfiles/agents/agents ${HOME}/.agents/agents
+	ln -sfn ${HOME}/.dotfiles/agents/skills ${HOME}/.agents/skills
+
+configure-ai-copilot:
+	ln -sfn ${HOME}/.dotfiles/copilot/instructions ${HOME}/.copilot/instructions
+	ln -sfn ${HOME}/.dotfiles/copilot/prompts ${HOME}/.config/Code/User/prompts
+
 
 configure-partner:
 	ln -sf ~/Gdrive/root/home/romainprignon/workspace/partners/.gitconfig ${HOME}/workspace/partners/.gitconfig
