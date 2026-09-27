@@ -15,7 +15,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 alias app="cd ~/app"
-alias bin="cd ~/bin"
 alias dl="cd ~/Downloads"
 alias work="cd ~/workspace"
 alias dot="cd ~/.dotfiles"
