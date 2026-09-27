@@ -299,6 +299,10 @@
         "command": "git.openChange"
     },
     {
+        "key": "alt+shift+c",
+        "command": "git.viewChanges"
+    },
+    {
         "key": "alt+h",
         "command": "timeline.focus"
     },
@@ -308,12 +312,12 @@
     },
     {
         "key": "ctrl+pagedown",
-        "command": "workbench.action.compareEditor.previousChange",
+        "command": "workbench.action.compareEditor.nextChange",
         "when": "textCompareEditorVisible"
     },
     {
         "key": "ctrl+pageup",
-        "command": "workbench.action.compareEditor.nextChange",
+        "command": "workbench.action.compareEditor.previousChange",
         "when": "textCompareEditorVisible"
     },
     {
@@ -325,6 +329,16 @@
         "key": "ctrl+pagedown",
         "command": "editor.action.dirtydiff.next",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "multiDiffEditor.goToNextChange",
+        "when": "activeEditor == 'multiDiffEditor'"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "multiDiffEditor.goToPreviousChange",
+        "when": "activeEditor == 'multiDiffEditor'"
     },
     // goto
     {
@@ -456,7 +470,11 @@
     },
     {
         "key": "alt+y",
-        "command": "macros.vibeCommit",
+        "command": "macros.vibeCommit"
+    },
+    {
+        "key": "ctrl+shift+y",
+        "command": "macros.vibeCommitAll"
     },
     {
         "key": "ctrl+k ctrl+d",

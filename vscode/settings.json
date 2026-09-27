@@ -227,6 +227,16 @@
             "workbench.debug.viewlet.action.removeAllBreakpoints"
         ],
         "vibeCommit": [
+            "github.copilot.git.generateCommitMessage",
+            {
+                "command": "$delay",
+                "args": {
+                    "delay": 500
+                }
+            },
+            "git.commit"
+        ],
+        "vibeCommitAll": [
             "git.stageAllTracked",
             "git.stageAllUntracked",
             "github.copilot.git.generateCommitMessage",
