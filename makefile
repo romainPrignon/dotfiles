@@ -349,6 +349,7 @@ install-pkg-node:
 	npm install -g \
 		aicommits \
 		depcheck \
+		git-split-diffs \
 		gitmoji-cli \
 		http-server \
 		json-server \
