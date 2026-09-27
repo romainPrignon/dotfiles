@@ -333,6 +333,14 @@
     "chat.editing.confirmEditRequestRemoval": false,
     // copilot - instructions
     "chat.useNestedAgentsMdFiles": true,
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+        {
+            "text": "Use gitmoji convention"
+        },
+        {
+            "text": "Max 72 characters, no scope, no type"
+        }
+    ],
     // themes
     "editor.tokenColorCustomizations": {
         "[Solarized Light]": {
