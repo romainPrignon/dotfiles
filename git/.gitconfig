@@ -34,8 +34,8 @@
     ade = !EDITOR='code --wait' git add -e
 
     # Commit
-    ci = !oco --yes
-    cim = commit -m
+    cc = !aicommits -y --type conventional
+    cg = !aicommits -y --type gitmoji
 
     # Merge
     mg = merge --log

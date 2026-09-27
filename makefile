@@ -43,7 +43,7 @@ configure-pkger: configure-pkger-npm configure-pkger-pnpm configure-pkger-poetry
 configure-pkg: configure-pkg-git-machete
 configure-browser: configure-browser-chrome configure-browser-brave
 configure-app: configure-app-vscode configure-app-vscode-insiders
-configure-ai: configure-ai-all configure-ai-copilot configure-ai-gemini
+configure-ai: configure-ai-all configure-ai-commit configure-ai-copilot configure-ai-gemini
 
 ###### standalone ######
 
@@ -347,6 +347,7 @@ install-pkg-docker:
 install-pkg-node:
 	@echo ====== install-pkg-node ======
 	npm install -g \
+		aicommits \
 		depcheck \
 		gitmoji-cli \
 		http-server \
@@ -970,6 +971,10 @@ configure-app-vscode-insiders:
 configure-ai-all:
 	@echo ====== configure-ai-all ======
 	ln -sfn ${HOME}/.dotfiles/agents/skills ${HOME}/.agents/skills
+
+configure-ai-commit:
+	@echo ====== configure-ai-commit ======
+	ln -sfn ${HOME}/.dotfiles/git/.aicommits ${HOME}/.aicommits
 
 configure-ai-copilot:
 	@echo ====== configure-ai-copilot ======

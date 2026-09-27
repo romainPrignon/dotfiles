@@ -40,7 +40,9 @@ alias g="git"
 alias gm="git-machete"
 alias hot="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10"
 alias moji="gitmoji -c"
-alias commit="git diff --staged | agy -p 'Generate a commit message. The commit message must be 72 characters long, must not include filenames, must follow gitmoji convention' | git commit -F -"
+
+# ai
+alias ai="agy -p"
 
 # docker
 alias dc="docker compose"
