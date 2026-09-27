@@ -974,8 +974,8 @@ configure-ai-all:
 configure-ai-copilot:
 	@echo ====== configure-ai-copilot ======
 	ln -sfn ${HOME}/.dotfiles/copilot/instructions ${HOME}/.copilot/instructions
-	cp -rf ${HOME}/.dotfiles/agents/agents/. ${HOME}/.config/Code/User/prompts/
-	cp -rf ${HOME}/.dotfiles/copilot/prompts/. ${HOME}/.config/Code/User/prompts/
+	ln -sfn ${HOME}/.dotfiles/agents/agents ${HOME}/.copilot/agents
+	ln -sfn ${HOME}/.dotfiles/copilot/prompts ${HOME}/.config/Code/User/prompts
 
 configure-ai-gemini:
 	@echo ====== configure-ai-gemini ======
