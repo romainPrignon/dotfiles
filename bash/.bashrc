@@ -37,6 +37,15 @@ GIT_PROMPT_FETCH_REMOTE_STATUS=0
 GIT_PROMPT_IGNORE_STASH=1
 [ -f ~/.bash-git-prompt/gitprompt.sh ] && source ~/.bash-git-prompt/gitprompt.sh
 
+if command -v starship > /dev/null ; then
+  set_tab_title() {
+    local formatted_pwd="${PWD/#$HOME/\~}"
+    printf "\033]0;# %s\007" "$formatted_pwd"
+  }
+  starship_precmd_user_func="set_tab_title"
+  eval "$(starship init bash)"
+fi
+
 echo -e "\e]12;orange\a" # prompt cursor color
 
 #######################################

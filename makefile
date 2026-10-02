@@ -185,6 +185,7 @@ install-shell-all:
 install-shell-bash:
 	@echo ====== install-shell-bash ======
 	[ -d ${HOME}/.bash-git-prompt/ ] || git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+	curl -sSL https://starship.rs/install.sh | sh
 
 install-shell-zsh:
 	@echo ====== install-shell-zsh ======
@@ -863,6 +864,7 @@ configure-shell-bash:
 	@echo ====== configure-shell-bash ======
 	ln -sf ${HOME}/.dotfiles/bash/.bashrc ${HOME}/.bashrc
 	ln -sf ${HOME}/.dotfiles/bash/Single_line_Ubuntu_Romain.bgptheme ${HOME}/.bash-git-prompt/themes/Single_line_Ubuntu_Romain.bgptheme
+	ln -sf ${HOME}/.dotfiles/starship/starship.toml ${HOME}/.config/starship.toml
 
 configure-cli-git:
 	@echo ====== configure-cli-git ======
