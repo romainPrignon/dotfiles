@@ -203,7 +203,12 @@
     "js/ts.format.semicolons": "remove",
     // Python
     "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff"
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+        }
     },
     "python.analysis.typeCheckingMode": "strict",
     // markdown
