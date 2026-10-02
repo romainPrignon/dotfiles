@@ -218,6 +218,12 @@
             "comments": "on",
             "strings": "on",
             "other": "on"
+        },
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+            "source.fixAll.markdownlint": "explicit"
         }
     },
     // extensions

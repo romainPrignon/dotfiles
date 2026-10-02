@@ -541,6 +541,8 @@ install-vscode-ext-all:
 	code --install-extension redhat.vscode-yaml
 	code --install-extension yatki.vscode-surround
 	code --install-extension hashicorp.terraform
+	code --install-extension esbenp.prettier-vscode
+	code --install-extension davidanson.vscode-markdownlint
 
 install-vscode-ext-node:
 	@echo ====== install-vscode-ext-node ======
