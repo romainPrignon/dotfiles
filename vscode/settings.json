@@ -158,8 +158,8 @@
     "window.openFoldersInNewWindow": "on",
     "window.zoomLevel": 0.6,
     "window.title": "${appName}${separator}${rootName}",
-    "window.titleBarStyle": "native",
-    "window.customTitleBarVisibility": "never",
+    "window.titleBarStyle": "custom",
+    "window.customTitleBarVisibility": "never", // works for window.titleBarStyle: native
     "window.menuBarVisibility": "toggle",
     "window.commandCenter": false,
     // workbench
