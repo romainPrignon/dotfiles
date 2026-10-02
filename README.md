@@ -18,16 +18,21 @@ Personal workstation provisioning and dotfiles.
 ### automation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/romainPrignon/dotfiles.git ~/.dotfiles
    cd ~/.dotfiles
    ```
+
 2. Configure distribution and version:
+
    ```bash
    cp .env.example .env
    # Edit DIST (e.g., debian, ubuntu) and VERSION (e.g., trixie, noble)
    ```
+
 3. Run the provisioning pipeline:
+
    ```bash
    make swap size=8G # Optional: create swap
    make grub         # configure grub
@@ -45,13 +50,18 @@ Personal workstation provisioning and dotfiles.
 - Open `chrome://apps/` or `brave://apps/` and install shortcuts (DevDocs, Spotify, YouTube).
 - Launch and log in to Insync.
 - Configure gitmoji:
+
   ```bash
   gitmoji -g
   ```
+
 - Link partner configuration if applicable:
+
   ```bash
   make partner partner=<partner-name>
   ```
+
+- configure AppImage Manager extention
 
 ## routine
 
@@ -76,14 +86,16 @@ Personal workstation provisioning and dotfiles.
 ## Specific
 
 ### Huawei
+
 - display 1600x1050
 
 ### starlabs starfighter
-- use https://github.com/zb3/gnome-gamma-tool with gnome-gamma-tool.py -b 0.7 -g 0.95
-   - if using x11: xrandr --output eDP-1 --brightness 0.7 --gamma 0.95
+
+- use <https://github.com/zb3/gnome-gamma-tool> with gnome-gamma-tool.py -b 0.7 -g 0.95
+  - if using x11: xrandr --output eDP-1 --brightness 0.7 --gamma 0.95
 - display 1600x1050, 59,95Hz
 - gnome tweak scaling factor 1,125
-   - can also be 1,0625  if needed
-   explanation: xdpyinfo | grep dots then do 102/96 to find the value or 108/96
+  - can also be 1,0625 if needed
+    explanation: xdpyinfo | grep dots then do 102/96 to find the value or 108/96
 - font are thinner (in vscode and brave and system), font scaling balance that
 - brave: zoom page as needed

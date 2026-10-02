@@ -391,6 +391,7 @@ install-desktop-env:
 install-desktop-ext:
 	@echo ====== install-desktop-ext ======
 	bash ./scripts/install-desktop-ext.sh AlphabeticalAppGridstuarthayhurst.v46
+	bash ./scripts/install-desktop-ext.sh appimage-managerignaci0.v10
 	bash ./scripts/install-desktop-ext.sh dash-to-paneljderose9.github.com.v73
 	bash ./scripts/install-desktop-ext.sh emoji-copyfelipeftn.v38
 	bash ./scripts/install-desktop-ext.sh escape-overviewraelgc.v11
@@ -947,6 +948,7 @@ configure-desktop-env:
 configure-desktop-ext:
 	@echo ====== configure-desktop-ext ======
 	gnome-extensions enable AlphabeticalAppGrid@stuarthayhurst
+	gnome-extensions enable appimage-manager@ignaci0
 	gnome-extensions enable dash-to-panel@jderose9.github.com
 	gnome-extensions enable emoji-copy@felipeftn
 	gnome-extensions enable escape-overview@raelgc
