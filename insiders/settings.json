@@ -34,11 +34,12 @@
     "files.defaultLanguage": "markdown",
     // windows
     "window.zoomLevel": 0.6, // might be off on windows
-    "window.titleBarStyle": "native",
-    "window.customTitleBarVisibility": "never",
+    "window.titleBarStyle": "custom",
+    "window.customTitleBarVisibility": "never", // works for window.titleBarStyle: native
     "window.menuBarVisibility": "toggle",
     "window.commandCenter": false,
     // workbench
+    "workbench.experimental.modernUI": false,
     "workbench.colorTheme": "Solarized Light",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
