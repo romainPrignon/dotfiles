@@ -185,7 +185,8 @@ install-shell-all:
 install-shell-bash:
 	@echo ====== install-shell-bash ======
 	[ -d ${HOME}/.bash-git-prompt/ ] || git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
-	curl -sSL https://starship.rs/install.sh | sh
+	curl -sSL -o /tmp/starship.sh https://starship.rs/install.sh
+	sudo sh /tmp/starship.sh
 
 install-shell-zsh:
 	@echo ====== install-shell-zsh ======

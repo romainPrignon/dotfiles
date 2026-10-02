@@ -13,9 +13,9 @@ k6 = "latest"
 k9s = "latest"
 lazydocker = "latest"
 micro = "latest"
-yt-dlp = "latest"
+yt-dlp = { version = "latest", rename_exe = "yt-dlp" }
 
-node = ["latest", "lts"]
+node = "latest"
 python = "latest"
 poetry = "latest"
 uv = "latest"
@@ -26,5 +26,5 @@ terraform = "latest"
 kubectl = "latest"
 krew = "latest"
 java = "latest"
-kotlin = "latest"
+kotlin = { version = "latest", asset_pattern = "kotlin-compiler-*.zip", bin_path = "kotlinc/bin" }
 antigravity-cli = "latest"

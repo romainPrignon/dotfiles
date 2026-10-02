@@ -163,9 +163,10 @@
     "window.menuBarVisibility": "toggle",
     "window.commandCenter": false,
     // workbench
+    "workbench.experimental.modernUI": false,
     "workbench.preferredDarkColorTheme": "Monokai",
     "workbench.preferredLightColorTheme": "Solarized Light",
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "Monokai",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
     "workbench.settings.enableNaturalLanguageSearch": false,
