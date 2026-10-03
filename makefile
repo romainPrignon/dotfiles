@@ -20,6 +20,7 @@ install-cli: install-cli-all install-cli-mise install-cli-mise-all install-cli-b
 install-runtime: install-runtime-c install-runtime-node install-runtime-python install-runtime-rust install-runtime-go install-runtime-java install-runtime-kotlin install-runtime-docker install-runtime-packer install-runtime-terraform install-runtime-kubectl
 install-pkger: install-pkger-pnpm install-pkger-uv install-pkger-poetry install-pkger-krew
 install-pkg: install-pkg-docker install-pkg-node install-pkg-python install-pkg-krew
+install-terminal: install-terminal-ghostty
 install-browser: install-browser-chrome install-browser-brave
 install-app: install-app-dbgate install-app-rambox install-app-stacer install-app-virtualbox install-app-vlc install-app-vscode install-app-vscode-insiders install-app-insync install-app-yaak
 install-vscode-ext: install-vscode-ext-all install-vscode-ext-node install-vscode-ext-python install-vscode-ext-gh install-vscode-ext-ai
@@ -41,6 +42,7 @@ configure-cli: configure-cli-git configure-cli-ssh configure-cli-mise configure-
 configure-runtime: configure-runtime-kubectl
 configure-pkger: configure-pkger-npm configure-pkger-pnpm configure-pkger-poetry
 configure-pkg: configure-pkg-git-machete
+configure-terminal: configure-terminal-ghostty
 configure-browser: configure-browser-chrome configure-browser-brave
 configure-app: configure-app-vscode configure-app-vscode-insiders
 configure-ai: configure-ai-all configure-ai-commit configure-ai-copilot configure-ai-gemini
@@ -379,6 +381,7 @@ install-desktop:
 	$(MAKE) install-desktop-ext
 	$(MAKE) install-font
 	$(MAKE) install-gnome-app
+	$(MAKE) install-terminal
 	$(MAKE) install-browser
 
 install-desktop-env:
@@ -445,6 +448,10 @@ install-gnome-app:
 install-gnome-app-debian-trixie install-gnome-app-debian-bookworm: ;
 
 install-gnome-app-ubuntu-noble install-gnome-app-ubuntu-resolute: ;
+
+install-terminal-ghostty:
+	bin install https://github.com/pkgforge-dev/ghostty-appimage ${HOME}/app/
+	chmod a+x ${HOME}/app/ghostty.appimage
 
 install-browser-chrome:
 	@echo ====== install-browser-chrome ======
@@ -937,6 +944,7 @@ configure-desktop:
 	@echo ====== configure-desktop ======
 	$(MAKE) configure-desktop-env
 	$(MAKE) configure-desktop-ext
+	$(MAKE) configure-terminal
 	$(MAKE) configure-browser
 	$(MAKE) configure-app
 
@@ -956,6 +964,10 @@ configure-desktop-ext:
 	gnome-extensions enable just-perfection-desktop@just-perfection
 	gnome-extensions enable unlockDialogBackground@sun.wxg@gmail.com
 	gnome-extensions enable start-overlay-in-application-view@Hex_cz
+
+configure-terminal-ghostty:
+	ln -sf ${HOME}/.dotfiles/ghostty/config ${HOME}/.config/ghostty/config
+	ln -sfn ${HOME}/.dotfiles/ghostty/themes ${HOME}/.config/ghostty/themes
 
 configure-browser-chrome:
 	@echo ====== configure-browser-chrome ======

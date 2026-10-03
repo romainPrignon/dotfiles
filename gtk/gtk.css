@@ -2,6 +2,27 @@
 * {
     color: #272822;
 }
+/* revert color for ghostty tab bar and UI */
+#ghostty-window,
+#ghostty-window *,
+.ghostty-window,
+.ghostty-window *,
+tabbar,
+tabbar *,
+popover,
+popover *,
+menu,
+menu *,
+dialog,
+dialog *,
+window.dialog,
+window.dialog *,
+window.modal,
+window.modal *,
+adw-dialog,
+adw-dialog * {
+    color: @window_fg_color;
+}
 /* remove the heavy titlebar on gnome terminal */
 terminal-window headerbar *,
 terminal-window .titlebar {
