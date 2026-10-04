@@ -82,6 +82,10 @@ hostname:
 checkup:
 	bash ./scripts/checkup.sh
 
+## slow down llm calls to use in agentic coding
+llm-proxy:
+	node ./scripts/llm-proxy.js
+
 ## switch to consumer mode just to use the codebase
 consume:
 	git remote set-url origin https://github.com/romainPrignon/dotfiles.git

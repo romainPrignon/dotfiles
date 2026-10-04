@@ -1,0 +1,39 @@
+// ~/.config/Code/User/chatLanguageModels.json
+[
+	{
+		"name": "OpenRouter",
+		"vendor": "openrouter",
+		"apiKey": "${input:chat.lm.secret.-b210ea3}"
+	},
+	{
+		"name": "Docker",
+		"vendor": "customendpoint",
+		"models": [
+			{
+				"id": "docker.io/ai/qwen3.5:9b",
+				"name": "local",
+				"url": "http://localhost:12434/v1",
+				"toolCalling": true,
+				"vision": true,
+				"maxInputTokens": 128000,
+				"maxOutputTokens": 32000
+			}
+		]
+	},
+	{
+		"name": "OpenRouter (free)",
+		"vendor": "customendpoint",
+		"apiKey": "${input:chat.lm.secret.-b210ea3}",
+		"models": [
+			{
+                "id": "qwen/qwen3.8-27b:free",
+				"name": "slow",
+				"url": "http://localhost:4000/v1",
+				"toolCalling": true,
+				"vision": true,
+				"maxInputTokens": 128000,
+				"maxOutputTokens": 32000
+			}
+		]
+	}
+]
