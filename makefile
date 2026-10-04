@@ -486,9 +486,8 @@ install-app-rambox:
 
 install-app-stacer:
 	@echo ====== install-app-stacer ======
-	curl -fsSL -o /tmp/stacer_1.1.0_amd64.deb https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb
-	sudo dpkg -i /tmp/stacer_1.1.0_amd64.deb
-	sudo apt -f -y install
+	bin install https://github.com/oguzhaninan/Stacer ${HOME}/app
+	chmod a+x ${HOME}/app/stacer.appimage
 
 install-app-virtualbox:
 	@echo ====== install-app-virtualbox ======
