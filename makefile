@@ -64,6 +64,11 @@ grub:
 	sudo sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="nosplash"/' /etc/default/grub
 	sudo update-grub
 
+## configure grub bootloader to use xe driver on the starlabs starfighter
+xe:
+	sudo sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="nosplash i915.force_probe=!7d55 xe.force_probe=7d55"/' /etc/default/grub
+	sudo update-grub
+
 ## set timezone ex: make timezone tz=Europe/Paris
 timezone:
 	sudo timedatectl set-timezone ${tz}
