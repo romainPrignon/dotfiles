@@ -23,6 +23,13 @@ adw-dialog,
 adw-dialog * {
     color: @window_fg_color;
 }
+/* restore legible text color on tooltips */
+tooltip,
+tooltip *,
+.tooltip,
+.tooltip * {
+    color: #ffffff;
+}
 /* remove the heavy titlebar on gnome terminal */
 terminal-window headerbar *,
 terminal-window .titlebar {

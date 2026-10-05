@@ -47,6 +47,7 @@
     "explorer.openEditors.visible": 1,
     // extentions
     "extensions.ignoreRecommendations": true,
+    "extensions.autoUpdateDelay": 72,
     //files
     "files.autoSave": "onFocusChange",
     "files.insertFinalNewline": false, // handle by editorconfig
@@ -172,6 +173,8 @@
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.view.alwaysShowHeaderActions": true,
     "workbench.secondarySideBar.defaultVisibility": "hidden",
+    // workbench browser
+    "workbench.browser.searchEngine": "google",
     // workbench editor
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.pinnedTabSizing": "compact",
@@ -799,7 +802,7 @@
         }
     },
     // en cours de test
-    "github.copilot.chat.tools.memory.enabled": true,
+    // a retester plus tard
     "chat.agent.sandbox.enabled": "off",
     "chat.agent.sandbox.fileSystem.linux": {
         "denyRead": [
@@ -809,8 +812,8 @@
             ".env*"
         ]
     },
-    // a retester plus tard
     "terminal.integrated.suggest.enabled": false,
+    // ranger
     "yaml.disableSchemaDetection": [
         "**/.github/workflows/*.yml",
         "**/.github/workflows/*.yaml",
