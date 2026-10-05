@@ -470,7 +470,8 @@
     },
     {
         "key": "alt+y",
-        "command": "macros.vibeCommit"
+        "command": "macros.vibeCommit",
+        "systemWide": true
     },
     {
         "key": "ctrl+shift+y",

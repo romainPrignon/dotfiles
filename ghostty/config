@@ -8,7 +8,6 @@ keybind = alt+arrow_left=previous_tab
 keybind = alt+arrow_right=next_tab
 keybind = ctrl+w=close_tab
 keybind = alt+q=close_window
-keybind = alt+y=text:\x15git cc\n
 gtk-titlebar = false
 cursor-style = bar
 font-family = Ubuntu Mono Medium
