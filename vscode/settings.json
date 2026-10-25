@@ -199,12 +199,21 @@
     "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
     "accessibility.voice.speechLanguage": "fr-FR",
     // javascript
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     // typescript
     "js/ts.suggest.completeFunctionCalls": true,
     "js/ts.updateImportsOnFileMove.enabled": "always",
     "js/ts.reportStyleChecksAsWarnings": false,
     "js/ts.tsserver.maxMemory": 2048,
     "js/ts.format.semicolons": "remove",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     // Python
     "[python]": {
         "editor.formatOnSave": true,
