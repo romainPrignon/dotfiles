@@ -103,13 +103,13 @@ partner:
 
 ## make build dist=ubuntu version=focal
 build:
-	docker build -t romainprignon/dotfiles:${dist}-${version} --build-arg dist=${dist} --build-arg version=${version} .
+	docker build -t romainprignon/dotfiles:${DIST}-${VERSION} --build-arg dist=${DIST} --build-arg version=${VERSION} .
 
 dev:
-	docker run --rm -it -v ${PWD}:/home/romainprignon/.dotfiles/ romainprignon/dotfiles:${dist}-${version}
+	docker run --rm -it -v ${PWD}:/home/romainprignon/.dotfiles/ romainprignon/dotfiles:${DIST}-${VERSION}
 
 run:
-	docker run --rm -it romainprignon/dotfiles:${dist}-${version}
+	docker run --rm -it romainprignon/dotfiles:${DIST}-${VERSION}
 
 ## use to sync dotfiles to a vm with openssh-server using 2222 port
 sync:
