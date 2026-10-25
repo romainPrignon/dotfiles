@@ -331,7 +331,7 @@
     // either use a project specific dotfiles or make a subset for vscode
     "dotfiles.repository": "romainprignon/dotfiles",
     "dotfiles.targetPath": "~/.dotfiles",
-    "dotfiles.installCommand": "bash ~/.dotfiles/vscode/install-dotfiles.sh",
+    "dotfiles.installCommand": "vscode/install-dotfiles.sh",
     "surround.custom": {
         "log": {
             "label": "log",
