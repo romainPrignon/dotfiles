@@ -441,6 +441,7 @@ install-gnome-app:
 	@echo ====== install-gnome-app ======
 	sudo apt update
 	sudo apt install -y \
+		baobab \
 		eog \
 		evince \
 		gnome-calculator \
