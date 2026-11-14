@@ -486,7 +486,7 @@ install-app-dbgate:
 
 install-app-rambox:
 	@echo ====== install-app-rambox ======
-	curl -sSL "https://rambox.app/api/download?os=linux&package=deb" --output /tmp/rambox.deb
+	curl -sSL "https://api.rambox.app/download?os=linux&package=deb&version=" --output /tmp/rambox.deb
 	sudo dpkg -i /tmp/rambox.deb
 	sudo apt -f -y install
 
