@@ -447,6 +447,7 @@ install-gnome-app:
 		gnome-calculator \
 		gnome-logs \
 		gnome-screenshot \
+		gnome-system-monitor \
 		gnome-terminal \
 		gnome-tweaks \
 		krita \
