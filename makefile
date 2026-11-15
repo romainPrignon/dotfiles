@@ -280,6 +280,13 @@ install-cli-gh:
 	@echo ====== install-cli-gh ======
 	mise use -g gh@latest
 
+install-cli-greywall:
+	@echo ====== install-cli-greywall ======
+	sudo apt install -y bubblewrap socat xdg-dbus-proxy libsecret-tools
+	mise use -g github:GreyhavenHQ/greywall
+	mise use -g github:GreyhavenHQ/greyproxy
+
+
 install-runtime-c:
 	@echo ====== install-runtime-c ======
 	sudo apt update
@@ -360,6 +367,7 @@ install-pkg-docker:
 install-pkg-node:
 	@echo ====== install-pkg-node ======
 	npm install -g \
+		@devcontainers/cli \
 		aicommits \
 		depcheck \
 		git-split-diffs \
@@ -977,6 +985,7 @@ configure-desktop-ext:
 	gnome-extensions enable start-overlay-in-application-view@Hex_cz
 
 configure-terminal-ghostty:
+	mkdir -p ${HOME}/.config/ghostty
 	ln -sf ${HOME}/.dotfiles/ghostty/config ${HOME}/.config/ghostty/config
 	ln -sfn ${HOME}/.dotfiles/ghostty/themes ${HOME}/.config/ghostty/themes
 
