@@ -423,6 +423,7 @@ install-font:
 		fonts-inconsolata \
 		fonts-jetbrains-mono \
 		fonts-liberation \
+		fonts-noto-color-emoji \
 		fonts-noto-mono \
 		fonts-roboto \
 		fonts-symbola \
