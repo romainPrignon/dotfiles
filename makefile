@@ -1020,7 +1020,6 @@ configure-ai-copilot:
 	@echo ====== configure-ai-copilot ======
 	ln -sfn ${HOME}/.dotfiles/copilot/instructions ${HOME}/.copilot/instructions
 	ln -sfn ${HOME}/.dotfiles/agents/agents ${HOME}/.copilot/agents
-	ln -sfn ${HOME}/.dotfiles/copilot/prompts ${HOME}/.config/Code/User/prompts
 
 configure-ai-gemini:
 	@echo ====== configure-ai-gemini ======
