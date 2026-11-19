@@ -194,10 +194,14 @@
     // diff editor
     "diffEditor.renderSideBySide": false,
     "diffEditor.experimental.showMoves": true,
+    // voice
+    "accessibility.voice.speechLanguage": "fr-FR",
+    "dictation.enabled": false, // use microsoft speech for now
+    "dictation.experimental.llmCleanupModel": "gpt-5.6-luna", // better for fr
+    "dictation.model": "mai", // better for fr
     // misc
     "telemetry.telemetryLevel": "off",
     "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
-    "accessibility.voice.speechLanguage": "fr-FR",
     // javascript
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"

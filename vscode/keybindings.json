@@ -574,7 +574,7 @@
     },
     {
         "key": "ctrl+f",
-        "command": "workbench.action.chat.history",
+        "command": "agentSessionsViewer.find",
         "when": "view.workbench.panel.chat.view.copilot.visible"
     },
     {
