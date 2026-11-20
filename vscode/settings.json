@@ -816,16 +816,7 @@
         }
     },
     // en cours de test
-    // a retester plus tard
-    "chat.agent.sandbox.enabled": "off",
-    "chat.agent.sandbox.fileSystem.linux": {
-        "denyRead": [
-            ".env"
-        ],
-        "denyWrite": [
-            ".env*"
-        ]
-    },
+    "git.detectWorktrees": true,
     "terminal.integrated.suggest.enabled": false,
     // ranger
     "yaml.disableSchemaDetection": [

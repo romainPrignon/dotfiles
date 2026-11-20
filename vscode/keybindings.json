@@ -538,6 +538,16 @@
         "when": "auxiliaryBarVisible"
     },
     {
+        "key": "alt+g",
+        "command": "macros.claudeTabOpen",
+        "when": "config.workspace.isClaude && !auxiliaryBarVisible"
+    },
+    {
+        "key": "alt+g",
+        "command": "macros.claudeTabClose",
+        "when": "config.workspace.isClaude && auxiliaryBarVisible"
+    },
+    {
         "key": "alt+t",
         "command": "macros.copilotThinkTabOpen",
         "when": "!auxiliaryBarVisible"
