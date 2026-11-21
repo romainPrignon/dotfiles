@@ -86,6 +86,10 @@ checkup:
 llm-proxy:
 	node ./scripts/llm-proxy.js
 
+## use claude sub
+llm-claude-proxy:
+	node ./scripts/llm-claude-proxy.js
+
 ## switch to consumer mode just to use the codebase
 consume:
 	git remote set-url origin https://github.com/romainPrignon/dotfiles.git

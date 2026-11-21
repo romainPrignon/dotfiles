@@ -35,5 +35,21 @@
 				"maxOutputTokens": 32000
 			}
 		]
+	},
+	{
+		"name": "Anthropic (sub)",
+		"vendor": "customendpoint",
+		"apiKey": "",
+		"models": [
+			{
+                "id": "claude",
+				"name": "claude-code",
+				"url": "http://localhost:4001/v1",
+				"toolCalling": false,
+				"vision": false,
+				"maxInputTokens": 128000,
+				"maxOutputTokens": 128000
+			}
+		]
 	}
 ]
